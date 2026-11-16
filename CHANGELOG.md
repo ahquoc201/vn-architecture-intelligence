@@ -1,3 +1,10 @@
+## 0.1.2 — R1 Batch 002 (orientation engineering foundation)
+
+- Add true-north drawing-vector orientation calculator, uncertainty-aware octant boundary results and read-only CLI.
+- Add documented JSON input schema, demo, edition review queue and research evidence note.
+- Add tests for geometric edge cases, validation, CLI and non-executable feng shui guardrails.
+- Bát Trạch/Dương Trạch numerical rules **remain unapproved**; no CAD writes or technical compliance claims.
+
 # Changelog
 
 ## [0.1.1] — R1/BATCH-001 evidence corpus (2026-11-16)

@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vn-architecture-intelligence"
-version = "0.1.1"
+version = "0.1.2"
 description = "Source-grounded Vietnamese residential architecture knowledge and advisory tools for AI agents"
 readme = "README.md"
 requires-python = ">=3.11"
-license = {text = "MIT"}
+license = "MIT"
 authors = [{name = "VN Architecture Intelligence contributors"}]
 dependencies = ["PyYAML>=6.0,<7", "Shapely>=2.0,<3"]
 

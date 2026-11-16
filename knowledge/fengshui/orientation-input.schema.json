@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VNAI Site Orientation Input (geometric only)",
+  "description": "No feng shui approval and no technical compliance approval.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "site_id", "north_reference", "north_vector_drawing_xy",
+    "frontage_outward_vector_drawing_xy", "facing_definition",
+    "measurement_uncertainty_degrees"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "site_id": {"type": "string", "minLength": 1},
+    "north_reference": {"const": "true_north"},
+    "north_vector_drawing_xy": {"$ref": "#/$defs/vector"},
+    "frontage_outward_vector_drawing_xy": {"$ref": "#/$defs/vector"},
+    "facing_definition": {"const": "building_to_street"},
+    "measurement_uncertainty_degrees": {"type": "number", "minimum": 0, "exclusiveMaximum": 22.5}
+  },
+  "$defs": {
+    "vector": {
+      "type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2,
+      "description": "Non-zero finite (x,y) vector in drawing XY coordinates; checked at runtime."
+    }
+  }
+}
