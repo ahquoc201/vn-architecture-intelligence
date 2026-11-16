@@ -1,0 +1,170 @@
+schema_version: 1
+reviewed_at: '2026-11-16'
+notes: >-
+  Source metadata reviewed via public publisher/library/regulator records on this date.
+  This does NOT mean copyrighted full texts were read or rules authorized.
+sources:
+  - id: ARCH-NDT-2023
+    title: 'Nguyên lý thiết kế kiến trúc dân dụng - Kiến trúc nhà ở'
+    creators: ['Nguyễn Đức Thiềm']
+    kind: book
+    edition_year: 2023
+    publisher: 'Nhà xuất bản Xây dựng'
+    isbn: '978-604-82-7550-1'
+    url: 'https://nxbxaydung.com.vn/nguyen-ly-thiet-ke-kien-truc-dan-dung-kien-truc-nha-o-b12049.html'
+    selection: core_candidate
+    domains: [residential_architecture, spatial_programming, housing_typology]
+    evidence_level: toc_checked
+    rule_authority: none
+    rights: metadata_only
+    notes: 'Bản giấy 2023, 308 trang. Chưa thẩm định đầy đủ chương và kích thước.'
+
+  - id: ARCH-NGVD-2011
+    title: 'Tuyển họa thực hành cơ sở kiến trúc'
+    creators: ['Nguyễn Ngọc Giả', 'Võ Đình Diệp']
+    kind: book
+    edition_year: 2011
+    publisher: 'Nhà xuất bản Xây dựng'
+    isbn: '978-604-82-1908-6'
+    url: 'https://nxbxaydung.com.vn/tuyen-hoa-thuc-hanh-co-so-kien-truc-b6398.html'
+    selection: core_candidate
+    domains: [architectural_drafting, floorplan, human_factors, stairs]
+    evidence_level: toc_checked
+    rule_authority: none
+    rights: metadata_only
+    notes: 'Mục lục công khai có chương về thiết kế mặt bằng, chỉ số nhân trắc, cầu thang; chưa đọc chương.'
+
+  - id: CLIM-PDN-2023
+    title: 'Kiến trúc sinh khí hậu - Thiết kế sinh khí hậu trong kiến trúc Việt Nam'
+    creators: ['Phạm Đức Nguyên']
+    kind: book
+    edition_year: 2023
+    publisher: 'Nhà xuất bản Xây dựng'
+    isbn: '978-604-82-7244-9'
+    url: 'https://nxbxaydung.com.vn/kien-truc-sinh-khi-hau-thiet-ke-sinh-khi-hau-trong-kien-truc-viet-nam-b5805.html'
+    selection: core_candidate
+    domains: [bioclimatic_architecture, regional_climate, building_orientation]
+    evidence_level: toc_checked
+    rule_authority: none
+    rights: metadata_only
+    notes: 'Bản 2023, 264 trang; mục lục công khai. Cần đọc chương và kiểm chứng số liệu.'
+
+  - id: FENG-NTD-2011
+    title: 'Hướng dẫn áp dụng phong thủy học trong xây dựng nhà'
+    creators: ['Nguyễn Tiến Đích']
+    kind: book
+    edition_year: 2011
+    publisher: 'Thông tin và Truyền thông'
+    isbn: null
+    url: 'https://phucvu.thuvientphcm.gov.vn/Item/ItemDetail/478010'
+    selection: core_candidate
+    domains: [traditional_interpretation, residential_fengshui]
+    evidence_level: metadata_verified
+    rule_authority: none
+    rights: metadata_only
+    notes: 'Thư viện KHTH TP.HCM ghi nhận tái bản lần 1, 373 trang; chưa đọc toàn văn.'
+
+  - id: FENG-KTH-2016
+    title: 'Phong thủy trong tổ chức môi trường cư trú truyền thống vùng Đồng bằng Bắc Bộ'
+    creators: ['Khuất Tân Hưng']
+    kind: journal_article
+    edition_year: 2016
+    publisher: 'Tạp chí Kiến trúc, số 04/2016'
+    isbn: null
+    url: 'https://www.tapchikientruc.com.vn/chuyen-muc/phong-thuy-trong-chuc-moi-truong-cu-tru-truyen-thong-vung-dong-bang-bac-bo.html'
+    selection: core_candidate
+    domains: [cultural_case_study, traditional_housing, site_context]
+    evidence_level: public_article_reviewed
+    rule_authority: none
+    rights: metadata_only
+    notes: 'Bài viết công khai, trang web đăng lại 2018; không được suy rộng quy tắc nhà truyền thống thành nhà phố.'
+
+  - id: FENG-LTS-2012
+    title: 'Phong thủy không phải là phép màu'
+    creators: ['Lý Thái Sơn']
+    kind: journal_article
+    edition_year: 2012
+    publisher: 'Tạp chí Kiến trúc'
+    isbn: null
+    url: 'https://www.tapchikientruc.com.vn/chuyen-muc/phong-thuy-khong-phai-la-phep-mau.html'
+    selection: reference_candidate
+    domains: [design_philosophy, cultural_interpretation]
+    evidence_level: public_article_sampled
+    rule_authority: none
+    rights: metadata_only
+    notes: 'Dùng làm ngữ cảnh phản biện, không là chứng minh khoa học cho công thức phong thuỷ.'
+
+  - id: STD-TCVN13967-2024
+    title: 'TCVN 13967:2024 - Nhà ở riêng lẻ - Yêu cầu chung về thiết kế'
+    creators: ['Việt Nam - cơ quan ban hành tiêu chuẩn']
+    kind: standard
+    edition_year: 2024
+    publisher: 'VSQI (cổng thông tin tiêu chuẩn)'
+    isbn: null
+    url: 'https://tieuchuan.vsqi.gov.vn/tieuchuan/view?sohieu=TCVN+13967%3A2024'
+    selection: standards_reference
+    domains: [residential_standards, technical_review]
+    evidence_level: official_scope_checked
+    rule_authority: none
+    rights: reference_only
+    notes: 'Phạm vi và tình trạng còn hiệu lực xác minh tại ngày kiểm tra; không có rule kiểm tra điều khoản được duyệt.'
+
+  - id: STD-QCVN02-2022
+    title: 'QCVN 02:2022/BXD - Số liệu điều kiện tự nhiên dùng trong xây dựng'
+    creators: ['Bộ Xây dựng']
+    kind: regulation
+    edition_year: 2022
+    publisher: 'VSQI (cổng thông tin quy chuẩn)'
+    isbn: null
+    url: 'https://tieuchuanxaydung.vsqi.gov.vn/quychuan/view?sohieu=QCVN%C2%A002%3A2022%2FBXD'
+    selection: standards_reference
+    domains: [climate_data, natural_conditions, technical_review]
+    evidence_level: official_scope_checked
+    rule_authority: none
+    rights: reference_only
+    notes: 'Chỉ lưu chỉ dẫn nguồn; không tích hợp nguyên bảng số liệu khi chưa có quyền và chưa kiểm chứng.'
+
+  - id: STD-TCVN9411-2012
+    title: 'TCVN 9411:2012 - Nhà ở liền kế - Tiêu chuẩn thiết kế'
+    creators: ['Việt Nam - cơ quan ban hành tiêu chuẩn']
+    kind: standard
+    edition_year: 2012
+    publisher: 'VSQI (cổng thông tin tiêu chuẩn)'
+    isbn: null
+    url: 'https://tieuchuan.vsqi.gov.vn/tieuchuan/view?sohieu=TCVN+9411%3A2012'
+    selection: standards_reference
+    domains: [row_house, technical_review]
+    evidence_level: official_scope_checked
+    rule_authority: none
+    rights: reference_only
+    notes: 'Phạm vi áp dụng nhà ở thành dãy theo thiết kế đô thị; không mặc định áp dụng toàn bộ cho mọi nhà phố.'
+
+  - id: FENG-BAT-TRACH-MINH-KINH
+    title: 'Bát Trạch Minh Kính (cần xác định ấn bản sử dụng)'
+    creators: []
+    kind: historical_text
+    edition_year: null
+    publisher: null
+    isbn: null
+    url: null
+    selection: pending_full_text
+    domains: [traditional_interpretation, bat_trach]
+    evidence_level: candidate_unverified_edition
+    rule_authority: none
+    rights: unknown
+    notes: 'Chưa chốt ấn bản, dịch giả, nguyên văn, phép tính; không chạy rule.'
+
+  - id: FENG-DUONG-TRACH-TAM-YEU
+    title: 'Dương Trạch Tam Yếu (cần xác định ấn bản sử dụng)'
+    creators: []
+    kind: historical_text
+    edition_year: null
+    publisher: null
+    isbn: null
+    url: null
+    selection: pending_full_text
+    domains: [traditional_interpretation, mon_chu_tao]
+    evidence_level: candidate_unverified_edition
+    rule_authority: none
+    rights: unknown
+    notes: 'Chưa chốt ấn bản và bảng tra; không chạy rule.'

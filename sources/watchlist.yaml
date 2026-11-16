@@ -1,0 +1,27 @@
+schema_version: 1
+sources:
+  - id: official-standards
+    name: 'VSQI - Cổng tra cứu tiêu chuẩn'
+    url: 'https://tieuchuan.vsqi.gov.vn/tim-kiem'
+    category: standards
+    frequency: weekly
+  - id: official-construction
+    name: 'Bộ Xây dựng'
+    url: 'https://moc.gov.vn/'
+    category: regulatory_updates
+    frequency: weekly
+  - id: journal-architecture
+    name: 'Tạp chí Kiến trúc'
+    url: 'https://www.tapchikientruc.com.vn/'
+    category: academic_articles
+    frequency: monthly
+  - id: publisher-construction
+    name: 'Nhà xuất bản Xây dựng'
+    url: 'https://nxbxaydung.com.vn/'
+    category: books
+    frequency: monthly
+  - id: hannom-institute
+    name: 'Viện Nghiên cứu Hán Nôm'
+    url: 'https://hannom.vass.gov.vn/'
+    category: historical_sources
+    frequency: quarterly

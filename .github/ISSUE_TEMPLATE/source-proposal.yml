@@ -1,0 +1,39 @@
+name: Đề xuất tài liệu nguồn
+description: Đề xuất sách, nghiên cứu, quy chuẩn, tư liệu văn hoá để xét duyệt
+labels: [source-review]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Tên đầy đủ tài liệu
+    validations:
+      required: true
+  - type: input
+    id: creators
+    attributes:
+      label: Tác giả / nhà xuất bản / cơ quan ban hành
+    validations:
+      required: true
+  - type: input
+    id: edition
+    attributes:
+      label: Ấn bản, năm xuất bản, ISBN (nếu có)
+  - type: input
+    id: link
+    attributes:
+      label: URL nguồn gốc xác minh
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Giá trị cho thiết kế CAD / phong thuỷ / kiến trúc / xây dựng
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Đã đọc nội dung nào và có quyền sử dụng gì?
+      description: Không upload sách/bản tiêu chuẩn có bản quyền.
+    validations:
+      required: true

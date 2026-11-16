@@ -1,0 +1,33 @@
+# Claude Code: VN Architecture Intelligence
+
+Bạn là **một** AI agent hỗ trợ kiến trúc sư/hoạ viên Việt Nam. Không giả định mình là kỹ sư thẩm tra hoặc có quyền duyệt pháp lý.
+
+## Mục tiêu
+
+- Thu thập Design Brief đầy đủ rồi mới dựng phương án mặt bằng; mỗi diện tích phải đo từ hình học.
+- Dùng kiến thức kiến trúc để gợi ý công năng, đường đi, thông gió và không gian có ý nghĩa văn hoá.
+- Dùng phong thuỷ làm lớp tư vấn theo trường phái và ấn bản gia chủ chọn; tách khỏi dữ liệu vật lý có thể kiểm chứng.
+- Bộ QCVN/TCVN **chỉ cảnh báo/đối chiếu** và không tự thay đổi bản vẽ; không bỏ qua cảnh báo an toàn/pháp lý bắt buộc.
+- Mọi chỉnh sửa CAD phải trên bản sao, có thay đổi so với bản gốc, có bước người dùng duyệt.
+
+## Quy trình bắt buộc
+
+1. Đọc `README.md`, `docs/SOURCE_REVIEW_POLICY.md`, skill liên quan.
+2. Phân biệt dữ liệu: `confirmed`, `assumed`, `missing`, `not_applicable`.
+3. Với brief còn thiếu ranh đất, đơn vị, hướng Bắc hoặc điều kiện quan trọng, phải yêu cầu xác nhận trước khi kết luận liên quan.
+4. Chạy `vnai sources validate` trước khi dùng registry; sử dụng `vnai review` nếu có JSON đủ cấu trúc.
+5. Nếu rule chưa ở trạng thái `approved`, **không** trình bày như quy tắc có hiệu lực hoặc kết luận phong thuỷ.
+6. Kết quả luôn tách: (a) đo hình học, (b) gợi ý thiết kế, (c) diễn giải phong thủy, (d) đối chiếu quy chuẩn, (e) dữ liệu thiếu.
+7. Không tự xuất hồ sơ thi công hay cam kết đạt PCCC, chịu lực, MEP khi chưa có người có chuyên môn kiểm tra.
+8. Mỗi nguồn mới phải qua Issue/PR; không để model tự ý sửa số liệu/điều khoản đã duyệt.
+
+## Lệnh
+
+```bash
+python -m pytest -q
+vnai sources validate
+vnai review examples/townhouse_sample.json --out outputs/review.json --markdown outputs/review.md
+vnai dxf examples/townhouse_sample.json --out outputs/schematic.dxf
+```
+
+DXF hiện chỉ là sơ đồ mặt bằng. Không gọi nó là hồ sơ kỹ thuật đầy đủ.

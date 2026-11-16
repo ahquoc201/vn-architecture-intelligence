@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "project_id": "demo-townhouse-4x20",
+  "design_stage": "concept",
+  "units": "mm",
+  "site": {
+    "outline_mm": [[0, 0], [4000, 0], [4000, 20000], [0, 20000]],
+    "true_north_degrees": 0,
+    "frontage_facing_degrees": 180
+  },
+  "levels": [
+    {
+      "id": "L01",
+      "name": "Tầng 1",
+      "rooms": [
+        {
+          "id": "L01-LIVING",
+          "name": "Phòng khách (minh họa)",
+          "polygon_mm": [[0,0],[4000,0],[4000,5500],[0,5500]],
+          "target_area_m2": 22
+        },
+        {
+          "id": "L01-KITCHEN",
+          "name": "Bếp + ăn (minh họa)",
+          "polygon_mm": [[0,5500],[4000,5500],[4000,10500],[0,10500]],
+          "target_area_m2": 20
+        },
+        {
+          "id": "L01-BEDROOM",
+          "name": "Phòng ngủ (minh họa)",
+          "polygon_mm": [[0,10500],[4000,10500],[4000,15500],[0,15500]],
+          "target_area_m2": 20
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Demo chỉ là hình học đơn giản, không phải mặt bằng kiến trúc được phê duyệt.",
+    "Không mô tả tường/cửa/cầu thang/WC, không có điều kiện quy hoạch và mặt bằng kỹ thuật."
+  ]
+}

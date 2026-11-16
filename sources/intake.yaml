@@ -1,0 +1,5 @@
+schema_version: 1
+candidates: []
+# Mỗi ứng viên mới cần issue/PR với: title, creator, canonical_url, kind,
+# edition, access_rights, why_relevant, available_content, reviewer.
+# Đừng đổi status sang approved chỉ dựa trên giới thiệu bán sách.

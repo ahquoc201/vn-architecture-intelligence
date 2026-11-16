@@ -1,0 +1,22 @@
+name: Source URL watch (review-only)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * 1'  # Monday weekly UTC
+permissions:
+  contents: read
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'PyYAML>=6.0,<7'
+      - run: python scripts/source_watch.py --out outputs/source-watch.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-access-report
+          path: outputs/source-watch.json
+      - run: echo 'This checks curated URL access only; new works and legal amendments require manual research and PR review.' >> "$GITHUB_STEP_SUMMARY"
