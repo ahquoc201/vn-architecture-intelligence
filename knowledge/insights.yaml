@@ -1,0 +1,98 @@
+# Research observations, NOT executable design rules. v1 requires human approval for any CAD modification.
+schema_version: 1
+reviewed_at: '2026-11-16'
+insights:
+  - id: VNAI-OBS-001
+    title: Site selection and cultural context in traditional Northern Delta settlements
+    domain: cultural_case_study
+    conclusion_type: documented_observation
+    source_ids: [FENG-KTH-2016]
+    source_locator: 'Lựa chọn địa điểm cư trú; Tổ chức địa điểm cư trú'
+    statement: >-
+      The article documents interactions among landscape, circulation, settlement custom and feng shui
+      narratives in vernacular Northern Delta built environments.
+    design_implication: >-
+      In an early brief, invite review of landscape, road alignment, privacy, water and surrounding buildings;
+      do not use the historical cases as universal siting constraints for modern townhouses.
+    applicability: 'Cultural precedent and site-context discussion only; Northern Delta case studies.'
+    limitations: 'Not a quantified ventilation or structural criterion; no automatic site optimization rule.'
+    verification_status: source_checked
+    allowed_use: advisory_only
+    expert_approved: false
+    executable: false
+
+  - id: VNAI-OBS-002
+    title: Entrance alignment and visual privacy as optional design conversation
+    domain: cultural_case_study
+    conclusion_type: documented_observation
+    source_ids: [FENG-KTH-2016]
+    source_locator: 'Tổ chức địa điểm cư trú (mục nói về cổng, bình phong, sân trước)'
+    statement: >-
+      The author describes examples with a gate offset from the main dwelling and screens used in
+      traditional settlements, alongside exceptions within surveyed examples.
+    design_implication: >-
+      Offer entrance offset, planted screen or foyer as OPTIONAL privacy/site-planning concepts
+      when site conditions and household preferences support them.
+    applicability: 'Historical precedents; not a rule that gates must never face the main door.'
+    limitations: 'Does not establish a universal feng shui prohibition or fire/egress requirement.'
+    verification_status: source_checked
+    allowed_use: advisory_only
+    expert_approved: false
+    executable: false
+
+  - id: VNAI-OBS-003
+    title: Worship-space brief should reflect household priorities
+    domain: architectural_advisory
+    conclusion_type: author_recommendation
+    source_ids: [FENG-NVT-NVH-2022]
+    source_locator: 'Một vài suy nghĩ về không gian thờ cúng trong nhà ở truyền thống và chung cư hiện đại'
+    statement: >-
+      The authors recommend a dignified and, where feasible, separate worship space while noting
+      modern homes may integrate a smaller worship area with other living spaces.
+    design_implication: >-
+      If the household requests a worship area, ask about private room versus shared room,
+      ceremony circulation and acoustic/privacy priorities before suggesting a location.
+    applicability: 'Only where a household wants a worship space; culturally variable.'
+    limitations: 'Not universal to every Vietnamese household; no assumed owner religion or belief.'
+    verification_status: source_checked
+    allowed_use: advisory_only
+    expert_approved: false
+    executable: false
+
+  - id: VNAI-OBS-004
+    title: Worship-space relationships require separate safety assessment
+    domain: architectural_advisory
+    conclusion_type: author_recommendation
+    source_ids: [FENG-NVT-NVH-2022]
+    source_locator: 'Một vài suy nghĩ về không gian thờ cúng trong nhà ở truyền thống và chung cư hiện đại'
+    statement: >-
+      The article discusses privacy and placement away from heavily trafficked spaces and bathrooms,
+      and raises concerns regarding incense smoke and fire in compact homes.
+    design_implication: >-
+      Present circulation/privacy and incense ventilation as topics for owner/architect review;
+      route actual fire, electrical and ventilation questions to a separate technical assessment.
+    applicability: 'Preliminary design advisory when a worship area is requested.'
+    limitations: 'No automatic legal pass/fail or fixed numeric clearance is implied by this article.'
+    verification_status: source_checked
+    allowed_use: advisory_only
+    expert_approved: false
+    executable: false
+
+  - id: VNAI-OBS-005
+    title: Scope of TCVN 13967:2024 is not a numerical rule set
+    domain: standard_scope_reference
+    conclusion_type: official_scope
+    source_ids: [STD-TCVN13967-2024]
+    source_locator: 'VSQI public scope, clauses 1.1–1.3; review date 2026-11-16'
+    statement: >-
+      The official listing scopes the standard to general design requirements for newly built
+      single dwellings, with additional qualifications and references for certain contexts.
+    design_implication: >-
+      For relevant projects, flag the standard for a qualified technical review. Do not infer
+      any specific room dimension, staircase requirement or compliance result from this listing.
+    applicability: 'Reference-only scope screening for houses; professional review required.'
+    limitations: 'No full standard text or clause-level compliance implementation in this repository.'
+    verification_status: source_checked
+    allowed_use: reference_only
+    expert_approved: false
+    executable: false

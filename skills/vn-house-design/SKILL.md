@@ -22,3 +22,7 @@ Người dùng mô tả kích thước khu đất, số tầng, nhu cầu phòng
 ## Kết quả phải trả
 
 Brief, assumption register, phương án/khác biệt, bảng diện tích đo được, kết quả QA hình học, tài liệu nguồn, các hạng mục chưa thể xác nhận và review gate.
+
+## R1 provenance check
+
+For suggestions rooted in regional architecture or worship spaces, use only the non-executable observations in `knowledge/insights.yaml`, explicitly distinguishing historical case studies from authors' design preferences. Do not derive a numerical room size, stair count or cardinal-direction rule from a table of contents. Keep design geometry sourced from the client's confirmed dimensions and the tested geometry engine.

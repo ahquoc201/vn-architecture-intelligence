@@ -20,3 +20,7 @@ Chưa có thuật toán Bát Trạch/Dương Trạch được chuyên gia duyệ
 3. Với nguồn chưa duyệt: trả `NEEDS_SOURCE_REVIEW`, chỉ đưa khung câu hỏi/gợi ý văn hoá dưới dạng tùy chọn và không biến thành yêu cầu thiết kế bắt buộc.
 4. Không đồng nhất kiến giải phong thủy với khí hậu hay pháp luật; nếu thay đổi vị trí cửa/bếp/tường có ảnh hưởng an toàn, báo cho kiến trúc sư.
 5. Trong tương lai: chỉ gọi executable engine nếu rule có ấn bản, trang, review, test và version.
+
+## R1 source-backed insights (non-executable)
+
+Read `knowledge/insights.yaml` and `docs/R1_EVIDENCE_CONTRACT.md` to offer conditional architectural conversation starters. Insights `VNAI-OBS-001` to `VNAI-OBS-004` are **not** Bát Trạch/Dương Trạch formulas, certified design prescriptions, or evidence of outcomes. Cite `source_ids` and `source_locator` and ask the household whether these cultural preferences matter. Never activate CAD writing solely because a qualitative observation exists.

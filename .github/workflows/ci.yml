@@ -16,6 +16,7 @@ jobs:
       - run: python -m pytest -q
       - run: ruff check src tests scripts
       - run: vnai sources validate
+      - run: vnai knowledge validate
       - run: vnai review examples/townhouse_sample.json --out outputs/check.json --markdown outputs/check.md
       - run: vnai dxf examples/townhouse_sample.json --out outputs/schematic.dxf
       - uses: actions/upload-artifact@v4

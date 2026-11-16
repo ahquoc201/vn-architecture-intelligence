@@ -1,6 +1,6 @@
 # Vietnam Architecture Intelligence (VNAI)
 
-**Phiên bản 0.1.0 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
+**Phiên bản 0.1.1 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
 
 Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, với ba nhiệm vụ tách biệt:
 
@@ -12,6 +12,7 @@ Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, v�
 
 - Danh mục nguồn ban đầu có URL, xuất xứ, mức độ đọc nội dung và trạng thái thẩm định.
 - Kiểm tra tính toàn vẹn của source registry, tránh nâng nguồn chưa được đọc thành rule đã duyệt.
+- **R1/BATCH-001:** 5 nhận định nghiên cứu có dẫn nguồn (`knowledge/insights.yaml`), phân biệt nghiên cứu trường hợp, ý kiến tác giả và phạm vi tiêu chuẩn; chưa cái nào được duyệt thành rule thực thi.
 - Kiểm tra hình học mặt bằng JSON (đa giác hợp lệ, diện tích phòng, sai lệch mục tiêu, phòng chồng lấn/vượt ranh). Chỉ đo vùng phòng do người dùng khai báo; **không nhận dạng phòng tự động từ DWG**.
 - Tính hướng theo góc phương vị địa lý khi được cung cấp; không suy luận cung mệnh/phong thủy nếu chưa có engine được duyệt.
 - Báo cáo JSON/Markdown có các trạng thái `MEASURED`, `WARNING`, `NEEDS_DATA`, `NOT_EVALUATED`.
@@ -34,6 +35,7 @@ python -m venv .venv
 python -m pip install -e ".[dev,cad]"
 python -m pytest -q
 vnai sources validate
+vnai knowledge validate
 vnai review examples/townhouse_sample.json --out outputs/review.json --markdown outputs/review.md
 vnai dxf examples/townhouse_sample.json --out outputs/townhouse_schematic.dxf
 ```
@@ -49,6 +51,8 @@ Trên Linux/WSL thay dòng kích hoạt bằng `source .venv/bin/activate`.
 - `sources/bibliography.yaml`: danh mục có thẩm định thư mục và cấp độ tiếp cận nội dung.
 - `docs/SOURCE_REVIEW_POLICY.md`: điều kiện để nâng từ nguồn tham khảo sang quy tắc chạy máy.
 - `sources/intake.yaml`: nguồn mới chờ kiểm chứng; quy trình review qua PR.
+- `knowledge/insights.yaml`: nhận định nguồn công khai đã kiểm tra, chỉ cho phép tư vấn, không tự động sửa CAD.
+- `research/source-reviews/R1-BATCH-001.md`: ghi chép thẩm định cấp nội dung và các giới hạn còn mở.
 - `docs/ROADMAP.md`: roadmap giai đoạn R0–R3.
 - `knowledge/`: thiết kế ontology và quy tắc, không chứa sách PDF thương mại.
 

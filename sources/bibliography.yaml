@@ -168,3 +168,33 @@ sources:
     rule_authority: none
     rights: unknown
     notes: 'Chưa chốt ấn bản và bảng tra; không chạy rule.'
+
+  - id: FENG-NVT-NVH-2022
+    title: 'Không gian thờ cúng tổ tiên của người Việt: Từ nhà ở nông thôn truyền thống đến căn hộ chung cư hiện đại'
+    creators: ['Nguyễn Việt Tùng', 'Nguyễn Việt Huy']
+    kind: journal_article
+    edition_year: 2022
+    publisher: 'Tạp chí Kiến trúc, số 02/2022; online 07/04/2022'
+    isbn: null
+    url: 'https://www.tapchikientruc.com.vn/chuyen-muc/khong-gian-tho-cung-to-tien-cua-nguoi-viet-tu-nha-o-nong-thon-truyen-thong-den-can-ho-chung-cu-hien-dai.html'
+    selection: reference_candidate
+    domains: [worship_space, cultural_case_study, residential_architecture]
+    evidence_level: public_article_reviewed
+    rule_authority: none
+    rights: metadata_only
+    notes: 'Đã đối chiếu bài công khai về nhà ở truyền thống và đề xuất bố trí nơi thờ; không phải quy chuẩn hay chứng minh thực nghiệm.'
+
+  - id: FENG-NTD-2014
+    title: 'Hướng dẫn áp dụng phong thủy học trong xây dựng nhà'
+    creators: ['Nguyễn Tiến Đích']
+    kind: book
+    edition_year: 2014
+    publisher: 'Thông tin và Truyền thông'
+    isbn: null
+    url: 'https://www.emiclib.com/Item/ItemDetail/2037490'
+    selection: reference_candidate
+    domains: [traditional_interpretation, residential_fengshui]
+    evidence_level: metadata_verified
+    rule_authority: none
+    rights: metadata_only
+    notes: 'Bản tái bản lần 2 có sửa đổi; biểu ghi thư viện ghi 414 trang. Không gộp với bản 2011 (373 trang) khi chưa đối chiếu.'

@@ -8,6 +8,8 @@
 - [ ] Có KTS và nhà nghiên cứu phong thủy phản biện quy ước tính
 
 ## R1 — Văn hóa, phong thủy, kiến trúc nhà Việt
+- [x] Batch-001: kiểm tra trực tiếp hai bài báo công khai, phạm vi TCVN và tạo 5 insight advisory-only có provenance/test
+- [ ] Chốt từng ấn bản sách đã đọc hợp pháp và review chương/trang trước khi tạo rule
 - [ ] Bảng thuật ngữ hướng/tọa, Môn–Chủ–Táo, trường phái và dị bản
 - [ ] Lựa chọn một phương pháp Bát Trạch với nguồn ấn bản được xác minh
 - [ ] Thẩm định test oracle từ người có chuyên môn, thêm thuật toán (không từ prompt)
