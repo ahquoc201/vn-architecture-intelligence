@@ -1,0 +1,27 @@
+schema_version: 1
+purpose: source_review_queue_only
+notes: >-
+  These entries reference the existing source registry. No original-language edition,
+  chapter/page or translation has been reviewed for numerical Bát Trạch/Dương Trạch
+  formulas. Therefore no feng shui formula is authorized for execution.
+entries:
+  - source_id: FENG-BAT-TRACH-MINH-KINH
+    school: bat_trach
+    edition_confirmed: false
+    primary_text_reviewed: false
+    reviewer_approved: false
+    executable_rules: false
+    questions:
+      - Which original edition and Vietnamese translation will be used?
+      - How do editions define house facing, sitting direction, Kua and sector boundaries?
+      - Which cases need an expert-created oracle and an ambiguity warning?
+  - source_id: FENG-DUONG-TRACH-TAM-YEU
+    school: duong_trach_tam_yeu
+    edition_confirmed: false
+    primary_text_reviewed: false
+    reviewer_approved: false
+    executable_rules: false
+    questions:
+      - Which original text, compiler/author credit, translation and chapter locators apply?
+      - How are Mon, Chu and Tao identified for single-family and contemporary houses?
+      - Which interpretations disagree, and which are optional cultural preferences?

@@ -8,6 +8,7 @@ from pathlib import Path
 from vnai.dxf_adapter import export_schematic_dxf
 from vnai.insights import validate_repo_insights
 from vnai.review import review_markdown, review_plan
+from vnai.site_orientation import review_site_orientation
 from vnai.source_registry import load_registry, validate_registry
 
 DEFAULT_SOURCES = Path(__file__).resolve().parents[2] / "sources" / "bibliography.yaml"
@@ -37,6 +38,12 @@ def main(argv: list[str] | None = None) -> int:
     validate_k.add_argument("--file", default=str(DEFAULT_INSIGHTS))
     validate_k.add_argument("--sources", default=str(DEFAULT_SOURCES))
 
+    fengshui = sub.add_parser("fengshui", help="Geometric orientation, not divination")
+    feng_sub = fengshui.add_subparsers(dest="action", required=True)
+    orientation = feng_sub.add_parser("orientation", help="Compass azimuth from site vectors")
+    orientation.add_argument("input", help="Orientation JSON with true north and outward frontage")
+    orientation.add_argument("--out", help="Save JSON result to this file")
+
     review = sub.add_parser("review", help="Review concept polygon geometry")
     review.add_argument("plan")
     review.add_argument("--out", help="Path for JSON report")
@@ -63,6 +70,17 @@ def main(argv: list[str] | None = None) -> int:
                     print(f"ERROR: {issue}", file=sys.stderr)
                 return 1
             print("Research insights structurally valid (NOT executable or expert-approved).")
+            return 0
+        if args.command == "fengshui":
+            report = review_site_orientation(load_plan(args.input))
+            result = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
+            if args.out:
+                target = Path(args.out)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(result, encoding="utf-8")
+                print(f"Orientation JSON (no feng shui approval): {target}")
+            else:
+                print(result, end="")
             return 0
         if args.command == "review":
             report = review_plan(load_plan(args.plan))

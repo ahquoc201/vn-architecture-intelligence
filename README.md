@@ -1,6 +1,6 @@
 # Vietnam Architecture Intelligence (VNAI)
 
-**Phiên bản 0.1.1 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
+**Phiên bản 0.1.2 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
 
 Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, với ba nhiệm vụ tách biệt:
 
@@ -13,8 +13,9 @@ Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, v�
 - Danh mục nguồn ban đầu có URL, xuất xứ, mức độ đọc nội dung và trạng thái thẩm định.
 - Kiểm tra tính toàn vẹn của source registry, tránh nâng nguồn chưa được đọc thành rule đã duyệt.
 - **R1/BATCH-001:** 5 nhận định nghiên cứu có dẫn nguồn (`knowledge/insights.yaml`), phân biệt nghiên cứu trường hợp, ý kiến tác giả và phạm vi tiêu chuẩn; chưa cái nào được duyệt thành rule thực thi.
+- **R1/BATCH-002:** có schema và CLI tính hướng Bắc thực từ vector CAD, báo hướng mơ hồ gần ranh giới; bảng câu hỏi ấn bản Bát Trạch/Dương Trạch chưa được kiểm chứng.
 - Kiểm tra hình học mặt bằng JSON (đa giác hợp lệ, diện tích phòng, sai lệch mục tiêu, phòng chồng lấn/vượt ranh). Chỉ đo vùng phòng do người dùng khai báo; **không nhận dạng phòng tự động từ DWG**.
-- Tính hướng theo góc phương vị địa lý khi được cung cấp; không suy luận cung mệnh/phong thủy nếu chưa có engine được duyệt.
+- Tính hướng từ góc phương vị hoặc từ vector Bắc thực và hướng mặt tiền đi từ nhà ra đường; cảnh báo vùng ranh giới, không suy luận cung mệnh/phong thủy khi chưa có engine được duyệt.
 - Báo cáo JSON/Markdown có các trạng thái `MEASURED`, `WARNING`, `NEEDS_DATA`, `NOT_EVALUATED`.
 - Xuất DXF **sơ đồ hình học** tùy chọn, không phải bản vẽ kiến trúc thi công đầy đủ.
 - Ba skill mẫu cho Claude Code và CI kiểm thử.
@@ -36,6 +37,7 @@ python -m pip install -e ".[dev,cad]"
 python -m pytest -q
 vnai sources validate
 vnai knowledge validate
+vnai fengshui orientation examples/townhouse_orientation.json
 vnai review examples/townhouse_sample.json --out outputs/review.json --markdown outputs/review.md
 vnai dxf examples/townhouse_sample.json --out outputs/townhouse_schematic.dxf
 ```

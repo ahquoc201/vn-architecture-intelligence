@@ -10,7 +10,8 @@
 ## R1 — Văn hóa, phong thủy, kiến trúc nhà Việt
 - [x] Batch-001: kiểm tra trực tiếp hai bài báo công khai, phạm vi TCVN và tạo 5 insight advisory-only có provenance/test
 - [ ] Chốt từng ấn bản sách đã đọc hợp pháp và review chương/trang trước khi tạo rule
-- [ ] Bảng thuật ngữ hướng/tọa, Môn–Chủ–Táo, trường phái và dị bản
+- [x] R1 Batch-002: schema vector Bắc thực/hướng ra đường, engine phân loại 8 hướng có xử lý sai số ranh giới; ma trận câu hỏi ấn bản chưa duyệt
+- [ ] Bảng thuật ngữ hướng/tọa, Môn–Chủ–Táo, trường phái và dị bản (cần chuyên gia thẩm định)
 - [ ] Lựa chọn một phương pháp Bát Trạch với nguồn ấn bản được xác minh
 - [ ] Thẩm định test oracle từ người có chuyên môn, thêm thuật toán (không từ prompt)
 - [ ] Dữ liệu nhà theo vùng và điều kiện tự nhiên; không gộp với rule pháp lý

@@ -24,3 +24,18 @@ Chưa có thuật toán Bát Trạch/Dương Trạch được chuyên gia duyệ
 ## R1 source-backed insights (non-executable)
 
 Read `knowledge/insights.yaml` and `docs/R1_EVIDENCE_CONTRACT.md` to offer conditional architectural conversation starters. Insights `VNAI-OBS-001` to `VNAI-OBS-004` are **not** Bát Trạch/Dương Trạch formulas, certified design prescriptions, or evidence of outcomes. Cite `source_ids` and `source_locator` and ask the household whether these cultural preferences matter. Never activate CAD writing solely because a qualitative observation exists.
+
+## R1 Batch 002: true-north orientation tool (geometry only)
+
+Run `vnai fengshui orientation examples/townhouse_orientation.json` only when the
+input explicitly confirms **true north in drawing XY**, and **frontage outward from
+building to street**. Read `knowledge/fengshui/orientation-input.schema.json` and
+`research/source-reviews/R1-BATCH-002.md` before relying on the result.
+
+- `COMPUTED` means a numeric azimuth was derived from input vectors; **not** surveyed,
+  feng-shui approved, technically compliant or ready for CAD edits.
+- `NEEDS_REVIEW` with `AMBIGUOUS_BOUNDARY` means the uncertainty interval overlaps two
+  compass sectors. Present both, never choose an auspicious sector.
+- `NEEDS_DATA` means direction convention, true north or uncertainty needs confirmation.
+- Do not derive Kua, Bát Trạch auspicious directions, Môn–Chủ–Táo or rule verdicts:
+  `research/editions/r1-batch002.yaml` documents unreviewed editions.
