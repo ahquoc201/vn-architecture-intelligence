@@ -26,3 +26,22 @@ Brief, assumption register, phương án/khác biệt, bảng diện tích đo �
 ## R1 provenance check
 
 For suggestions rooted in regional architecture or worship spaces, use only the non-executable observations in `knowledge/insights.yaml`, explicitly distinguishing historical case studies from authors' design preferences. Do not derive a numerical room size, stair count or cardinal-direction rule from a table of contents. Keep design geometry sourced from the client's confirmed dimensions and the tested geometry engine.
+
+
+## R2 Batch 004: required brief/program gate before step 3
+
+1. Collect a brief using `knowledge/architecture/design-brief.schema.json` and
+   `docs/DESIGN_BRIEF_CONTRACT.md`; start from `examples/townhouse_4x20_brief.json`.
+   Preserve stable requirement IDs, origin, type, confirmation and priority.
+2. Keep mandatory requirements, preferences, assumptions and questions distinct.
+   Do not invent footprints, room dimensions, floor assignments or orientations.
+3. Run `vnai design brief validate <brief.json>` and `vnai design brief report <brief.json>`.
+   INVALID (exit 1) needs correction; INCOMPLETE (exit 3) needs questions linked to requirement IDs.
+   Input/read failures return exit 2. Preserve earlier briefs/reports with versioned filenames.
+4. Run `vnai design program build <brief.json>` for declared rooms and hard/soft relationships.
+   Explain missing information, conflicts and unresolved decisions. Area sums do not prove feasibility.
+5. Obtain explicit architect approval of the brief/program before the layout steps above, even
+   when VALID. Do not derive room minima or unsupported recommendations from general knowledge.
+6. Keep Feng Shui and QCVN/TCVN reviews separate under the source review policy. VALID never
+   grants specialist approval or authorization to change CAD. Any CAD write needs explicit approval.
+7. Maintain this skill in `skills/vn-house-design/`; do not create a duplicate installed copy here.

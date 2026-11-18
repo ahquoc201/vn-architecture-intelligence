@@ -1,6 +1,6 @@
 # Vietnam Architecture Intelligence (VNAI)
 
-**Phiên bản 0.1.3 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
+**Phiên bản 0.1.4 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
 
 Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, với ba nhiệm vụ tách biệt:
 
@@ -20,6 +20,24 @@ Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, v�
 - Báo cáo JSON/Markdown có các trạng thái `MEASURED`, `WARNING`, `NEEDS_DATA`, `NOT_EVALUATED`.
 - Xuất DXF **sơ đồ hình học** tùy chọn, không phải bản vẽ kiến trúc thi công đầy đủ.
 - Ba skill mẫu cho Claude Code và CI kiểm thử.
+
+## R2 Batch 004 - Design Brief & Space Program
+
+Versioned JSON Schema v1 and Python validation preserve requirement provenance and
+confirmation. The deterministic program expands room instances and client-supplied
+hard/soft relationships without inventing floor assignments, dimensions or layouts.
+
+```powershell
+vnai design brief validate examples/townhouse_4x20_brief.json
+vnai design brief report examples/townhouse_4x20_brief.json
+vnai design program build examples/townhouse_4x20_brief.json
+```
+
+All commands emit JSON to stdout. Exit codes: `0` VALID, `1` INVALID,
+`2` input/read/parse failure, `3` INCOMPLETE. This example intentionally returns `3`:
+80 m2 declared rectangular lot, seven rooms, unresolved room areas, floors and footprint.
+VALID means data-ready for the supported workflow, still subject to architect approval.
+See [the data contract](docs/DESIGN_BRIEF_CONTRACT.md) for field semantics and limits.
 
 ## Chưa làm và không được tuyên bố đã làm
 

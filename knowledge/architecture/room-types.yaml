@@ -1,0 +1,13 @@
+schema_version: 1
+purpose: vocabulary_only_not_design_standards
+room_types:
+  bedroom: Bedroom
+  living: Living room
+  kitchen_dining: Kitchen and dining
+  prayer: Prayer room
+  laundry: Laundry
+  bathroom: Bathroom
+  circulation: Internal circulation
+  stair: Stair space
+  courtyard: Courtyard
+  other: Client-defined space; describe in notes

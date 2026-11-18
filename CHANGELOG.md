@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.4] - R2/BATCH-004 Design Brief & Space Program (2026-11-18)
+
+- Add shared JSON Schema v1/Python validation, requirement provenance and explicit planning-data gates.
+- Add deterministic room instances, client-supplied hard/soft relationships, contradiction checks and independent area aggregates.
+- Add read-only `vnai design brief validate/report` and `vnai design program build` with JSON output and documented exit codes.
+- Include synthetic 4x20 m brief, contract, skill instructions and regression/negative tests.
+- No layout generation, CAD writes, normative room minima or executable specialist rules.
+
 ## [0.1.3] — R1/BATCH-003 bibliographic research guards (2026-11-16)
 
 - Track six **catalog claims** (not full-book attestations) across Bát Trạch Minh Kính and Dương Trạch Tam Yếu.

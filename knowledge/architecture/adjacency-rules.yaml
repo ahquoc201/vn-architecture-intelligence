@@ -1,0 +1,9 @@
+schema_version: 1
+purpose: client_supplied_relationships_only
+relations:
+  adjacent: Same-storey adjacency requested; no door or geometry inferred
+  separate: Separation requested; distance and construction remain unresolved
+strengths:
+  hard: Confirmed mandatory requirement; conflicts block readiness
+  soft: Preference only; conflicts produce warnings
+# No default room-pair prescriptions or normative dimensions.

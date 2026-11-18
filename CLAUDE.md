@@ -26,8 +26,12 @@ Bạn là **một** AI agent hỗ trợ kiến trúc sư/hoạ viên Việt Nam.
 ```bash
 python -m pytest -q
 vnai sources validate
+vnai design brief validate examples/townhouse_4x20_brief.json
+vnai design program build examples/townhouse_4x20_brief.json
 vnai review examples/townhouse_sample.json --out outputs/review.json --markdown outputs/review.md
 vnai dxf examples/townhouse_sample.json --out outputs/schematic.dxf
 ```
 
 DXF hiện chỉ là sơ đồ mặt bằng. Không gọi nó là hồ sơ kỹ thuật đầy đủ.
+
+Brief/program contracts: `docs/DESIGN_BRIEF_CONTRACT.md`. Exit 3 means incomplete data, not command failure; ask the architect to resolve missing information before layout generation.
