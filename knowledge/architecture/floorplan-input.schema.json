@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "geometry": {
+      "$ref": "geometry.schema.json"
+    },
+    "fixed_elements_status": {
+      "enum": [
+        "unknown",
+        "complete"
+      ]
+    },
+    "room_dimensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "room_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "width": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "min": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "max": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            },
+            "required": [
+              "min",
+              "max"
+            ]
+          },
+          "depth": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "min": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "max": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            },
+            "required": [
+              "min",
+              "max"
+            ]
+          }
+        },
+        "required": [
+          "room_id",
+          "requirement_id",
+          "width",
+          "depth"
+        ]
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "grid_step": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "max_steps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200000
+        },
+        "solution_limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        "candidate_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        }
+      },
+      "required": []
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "purpose": {
+          "const": "preliminary_generation_only"
+        },
+        "record": {
+          "$ref": "zoning.schema.json#/$defs/approval"
+        }
+      },
+      "required": [
+        "purpose",
+        "record"
+      ]
+    }
+  },
+  "required": [
+    "schema_version"
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "report_schema_version": 1,
+  "engine_version": "0.1.6",
+  "contract": "floorplan-generation-v1",
+  "status": "SEARCH_EXHAUSTED",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "NO_VALID_GRID_CANDIDATE",
+      "path": "search",
+      "message": "No validated candidate found in this grid/budget; continuous infeasibility is not proven.",
+      "requirement_ids": []
+    }
+  ],
+  "missing_information": [],
+  "diagnostics": [],
+  "cad_writes_permitted": false,
+  "standards_review": "NOT_EVALUATED",
+  "fengshui_review": "NOT_EVALUATED",
+  "algorithm": "bounded-grid-rect-v1",
+  "candidates": [],
+  "search": {
+    "steps": 1,
+    "termination": "STEP_LIMIT",
+    "optimality_proven": false,
+    "distinct_solutions_evaluated": 0,
+    "equivalent_layouts_deduplicated": true
+  },
+  "approval_status": "PROPOSED",
+  "unresolved_checks": [
+    "CIRCULATION_CONNECTIVITY_NOT_VERIFIED",
+    "DOORS_WINDOWS_NOT_GENERATED",
+    "STAIR_GEOMETRY_NOT_GENERATED",
+    "STRUCTURE_MEP_NOT_EVALUATED",
+    "DAYLIGHT_VENTILATION_NOT_SIMULATED",
+    "ACCESSIBILITY_EGRESS_NOT_VERIFIED",
+    "ARCHITECT_REVIEW_REQUIRED"
+  ],
+  "input_spatial_validation": {
+    "report_schema_version": 1,
+    "engine_version": "0.1.6",
+    "contract": "geometry-v1",
+    "status": "INCOMPLETE",
+    "errors": [],
+    "warnings": [],
+    "missing_information": [
+      {
+        "code": "ROOM_GEOMETRY_MISSING",
+        "path": "BED:1",
+        "message": "Program room has no supplied polygon.",
+        "requirement_ids": [
+          "REQ-BED"
+        ]
+      },
+      {
+        "code": "ROOM_GEOMETRY_MISSING",
+        "path": "LIVING:1",
+        "message": "Program room has no supplied polygon.",
+        "requirement_ids": [
+          "REQ-LIVING"
+        ]
+      }
+    ],
+    "diagnostics": [],
+    "cad_writes_permitted": false,
+    "standards_review": "NOT_EVALUATED",
+    "fengshui_review": "NOT_EVALUATED",
+    "polygon_areas_m2": {
+      "SITE": 80.0,
+      "FOOTPRINT": 16.0
+    },
+    "floor_areas": [
+      {
+        "floor_id": "F1",
+        "envelope_id": "FOOTPRINT",
+        "envelope_area_m2": 16.0,
+        "envelope_approved": false,
+        "net_room_polygon_sum_m2": 0,
+        "net_room_polygon_union_m2": 0.0,
+        "geometric_residual_m2": 16.0,
+        "note": "Polygon accounting only; residual is not verified usable area or GFA."
+      }
+    ],
+    "site_area_m2": 80.0,
+    "footprint_area_m2": 16.0,
+    "gross_floor_area_m2": null,
+    "envelope_approval": {
+      "SITE": false,
+      "FOOTPRINT": false
+    },
+    "architectural_approval": "APPROVED",
+    "buildability": "NOT_EVALUATED",
+    "zoning_validation": {
+      "report_schema_version": 1,
+      "engine_version": "0.1.6",
+      "contract": "zoning-v1",
+      "status": "VALID",
+      "errors": [],
+      "warnings": [],
+      "missing_information": [],
+      "diagnostics": [],
+      "cad_writes_permitted": false,
+      "standards_review": "NOT_EVALUATED",
+      "fengshui_review": "NOT_EVALUATED",
+      "assignments": [
+        {
+          "id": "ASSIGN-1",
+          "room_id": "BED:1",
+          "requirement_id": "REQ-BED",
+          "floor_id": "F1",
+          "zone": "private",
+          "provenance": "source_design_brief",
+          "confirmation": "confirmed",
+          "status": "approved"
+        },
+        {
+          "id": "ASSIGN-2",
+          "room_id": "LIVING:1",
+          "requirement_id": "REQ-LIVING",
+          "floor_id": "F1",
+          "zone": "public",
+          "provenance": "source_design_brief",
+          "confirmation": "confirmed",
+          "status": "approved"
+        }
+      ],
+      "unassigned_room_ids": [],
+      "relationships": [],
+      "architect_approved": true,
+      "source_brief_status": "VALID",
+      "source_brief_missing_information": []
+    }
+  },
+  "input_zoning_validation": {
+    "report_schema_version": 1,
+    "engine_version": "0.1.6",
+    "contract": "zoning-v1",
+    "status": "VALID",
+    "errors": [],
+    "warnings": [],
+    "missing_information": [],
+    "diagnostics": [],
+    "cad_writes_permitted": false,
+    "standards_review": "NOT_EVALUATED",
+    "fengshui_review": "NOT_EVALUATED",
+    "assignments": [
+      {
+        "id": "ASSIGN-1",
+        "room_id": "BED:1",
+        "requirement_id": "REQ-BED",
+        "floor_id": "F1",
+        "zone": "private",
+        "provenance": "source_design_brief",
+        "confirmation": "confirmed",
+        "status": "approved"
+      },
+      {
+        "id": "ASSIGN-2",
+        "room_id": "LIVING:1",
+        "requirement_id": "REQ-LIVING",
+        "floor_id": "F1",
+        "zone": "public",
+        "provenance": "source_design_brief",
+        "confirmation": "confirmed",
+        "status": "approved"
+      }
+    ],
+    "unassigned_room_ids": [],
+    "relationships": [],
+    "architect_approved": true,
+    "source_brief_status": "VALID",
+    "source_brief_missing_information": []
+  },
+  "unmodeled_architectural_requests": {
+    "site": {
+      "dimensions": {
+        "requirement_id": "REQ-LOT",
+        "value": {
+          "shape": "rectangle",
+          "width": 4,
+          "length": 20,
+          "unit": "m"
+        }
+      },
+      "north_degrees": {
+        "requirement_id": "Q-NORTH",
+        "value": 0
+      },
+      "frontage": {
+        "requirement_id": "Q-FRONTAGE",
+        "value": "test frontage"
+      },
+      "road_access": {
+        "requirement_id": "Q-ROAD",
+        "value": "test road access"
+      },
+      "constraints": {
+        "requirement_id": "Q-SITE-LIMITS",
+        "value": [
+          "Synthetic site limits provided by test client"
+        ]
+      }
+    },
+    "client": {
+      "style": {
+        "requirement_id": "REQ-STYLE",
+        "value": "Modern minimalist"
+      },
+      "occupants": {
+        "requirement_id": "Q-OCCUPANTS",
+        "value": 4
+      }
+    }
+  },
+  "unmodeled_building_requests": {
+    "skylight": {
+      "requirement_id": "REQ-SKYLIGHT",
+      "value": "Skylight requested; position and size unresolved"
+    },
+    "lighting": {
+      "requirement_id": "REQ-LIGHT",
+      "value": "Prioritize natural daylight"
+    },
+    "ventilation": {
+      "requirement_id": "REQ-AIR",
+      "value": "Prioritize natural ventilation"
+    },
+    "stairs": {
+      "requirement_id": "Q-STAIR",
+      "value": "Test client requests stairs, detailed design pending"
+    },
+    "internal_circulation": {
+      "requirement_id": "REQ-internal_circulation",
+      "value": "Test circulation request"
+    },
+    "vertical_circulation": {
+      "requirement_id": "REQ-vertical_circulation",
+      "value": "Test circulation request"
+    }
+  },
+  "input_digest": "e244afe83b722c27a867d6d9adaefdd40ef840c00ed992a7f0743375e1564ea0",
+  "parameters": {
+    "candidate_count": 3,
+    "max_steps": 1,
+    "solution_limit": 32,
+    "grid_step": 1
+  }
+}

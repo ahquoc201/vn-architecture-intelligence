@@ -14,7 +14,13 @@ from referencing import Registry, Resource
 from vnai import __version__
 from vnai.resources import data_path
 
-SCHEMA_NAMES = ("design-brief.schema.json", "zoning.schema.json", "geometry.schema.json")
+SCHEMA_NAMES = (
+    "design-brief.schema.json",
+    "zoning.schema.json",
+    "geometry.schema.json",
+    "floorplan-input.schema.json",
+    "floorplan-candidate.schema.json",
+)
 BASE = "https://vnai.invalid/contracts/"
 
 

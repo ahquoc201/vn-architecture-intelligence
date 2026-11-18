@@ -62,6 +62,8 @@ def run() -> None:
         )
         for source in (root / "examples" / "batch005").glob("*.json"):
             shutil.copyfile(source, work / source.name)
+        for source in (root / "examples/batch006a").glob("*.json"):
+            shutil.copyfile(source, work / ("floorplan-" + source.name))
         shutil.copyfile(root / "examples/townhouse_4x20_brief.json", work / "brief.json")
         shutil.copyfile(root / "examples/townhouse_sample.json", work / "legacy.json")
         commands = [
@@ -77,6 +79,19 @@ def run() -> None:
             (["geometry", "validate", "geometry-valid.json"], 0),
             (["geometry", "report", "geometry-linked-approved.json"], 0),
             (["review", "legacy.json"], 0),
+            (
+                [
+                    "design",
+                    "floorplan",
+                    "generate",
+                    "floorplan-alternatives.json",
+                    "--candidates",
+                    "3",
+                ],
+                0,
+            ),
+            (["design", "floorplan", "generate", "floorplan-missing-footprint.json"], 3),
+            (["design", "floorplan", "generate", "floorplan-search-budget.json"], 6),
         ]
         for args, expected in commands:
             result = subprocess.run(
@@ -90,6 +105,15 @@ def run() -> None:
             )
             if result.returncode != expected:
                 raise RuntimeError(f"{args}: {result.returncode}, {result.stdout}, {result.stderr}")
+            if args[:3] == ["design", "floorplan", "generate"] and expected == 0:
+                generated = json.loads(result.stdout)
+                if len(generated["candidates"]) != 3 or any(
+                    c["hard_validation"]["spatial_report"]["status"] != "VALID"
+                    or c["approval_status"] != "PROPOSED"
+                    or c["cad_writes_permitted"]
+                    for c in generated["candidates"]
+                ):
+                    raise RuntimeError("Wheel generator violated its candidate contract")
             results.append({"command": args, "exit_code": result.returncode})
         location = subprocess.check_output(
             [str(python), "-I", "-c", "import vnai; print(vnai.__file__)"],

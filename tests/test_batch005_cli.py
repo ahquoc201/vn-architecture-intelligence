@@ -13,7 +13,12 @@ NAMES = sorted(p.stem for p in (ROOT / "examples/batch005").glob("*.json"))
 
 
 @pytest.mark.parametrize("name", NAMES)
-def test_full_golden_report(name):
+def test_full_golden_report(name, monkeypatch):
+    # Preserve 0.1.5 snapshots while exercising current implementations with historical stamps.
+    import vnai.contracts
+    import vnai.design_brief
+    monkeypatch.setattr(vnai.contracts, "__version__", "0.1.5")
+    monkeypatch.setattr(vnai.design_brief, "__version__", "0.1.5")
     doc = fixture(name)
     report = validate_zoning(doc) if name.startswith("zoning") else validate_geometry(doc)
     expected = json.loads((ROOT / "tests/golden/batch005" / (name + ".json")).read_text())

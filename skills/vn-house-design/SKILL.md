@@ -66,3 +66,26 @@ For suggestions rooted in regional architecture or worship spaces, use only the 
 - VALID geometry means only the supported spatial checks passed; it is not evidence of
   a buildable, structurally safe or legally compliant design. Keep code/Feng Shui review separate.
   CAD modifications still need explicit authorization, even after architect-approved zoning.
+
+
+## R2 Batch 006-A: preliminary polygon candidates
+
+- Read `docs/FLOORPLAN_CONTRACT.md`. Generation requires a complete validated brief/program,
+  approved source zoning, supplied rectangular floor envelopes, explicit per-room area/dimension
+  bounds, a declaration of known fixed elements, and content-bound authorization for preliminary
+  generation. Unknown footprint, floor assignments or fixed elements remain INCOMPLETE.
+- Run `vnai design floorplan generate <spec.json> --candidates 3`. Use `--out` only for a new,
+  versioned report file. Source room/requirement IDs remain authoritative. Never use the lot as
+  a building footprint or silently turn preferences into hard minimum dimensions.
+- Inspect all hard_validation/spatial_report results before comparing soft_scores. Scores rank
+  only discovered valid candidates; they never excuse a failed hard constraint. Candidate geometry
+  must be distinct; fewer alternatives are reported rather than invented.
+- SEARCH_EXHAUSTED means the grid or operation budget found no valid candidate, not proof of
+  mathematical infeasibility. INFEASIBLE is reserved for explicit area/dimensional contradictions.
+  Report UNSUPPORTED constraints, including hard separation without a defined metric.
+- Reserved circulation/stairwell/shaft polygons are only enforced when supplied. Explain that
+  circulation connectivity, access, egress, doors, windows, stairs, structure and MEP are unresolved.
+  Room polygons are preliminary concept proposals, not a complete architectural drawing.
+- Every generated candidate stays PROPOSED even when its source zoning was approved. Obtain
+  architect review before adoption. Never regenerate human approval records for generated output.
+  CAD writes remain disabled and require separate explicit authorization in a future adapter.
