@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vn-architecture-intelligence"
-version = "0.1.6"
+version = "0.1.7"
 description = "Source-grounded Vietnamese residential architecture knowledge and advisory tools for AI agents"
 readme = "README.md"
 requires-python = ">=3.11"

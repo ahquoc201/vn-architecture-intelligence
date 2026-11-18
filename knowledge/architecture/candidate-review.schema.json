@@ -1,0 +1,647 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "fixture_notice": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "candidate": {
+      "$ref": "floorplan-candidate.schema.json"
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "candidate_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "candidate_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "candidate_digest"
+      ]
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "state": {
+            "enum": [
+              "SELECTED",
+              "REVIEWED",
+              "APPROVED",
+              "REJECTED",
+              "SUPERSEDED"
+            ]
+          },
+          "record": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "actor": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "role": {
+                "enum": [
+                  "user",
+                  "architect"
+                ]
+              },
+              "recorded_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "digest": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "provenance": {
+                "type": "string",
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "actor",
+              "role",
+              "recorded_at",
+              "digest",
+              "provenance"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "state",
+          "record"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 128
+    },
+    "exteriors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "floor_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "boundary_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "approach_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "provenance": {
+            "type": "string",
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "id",
+          "floor_id",
+          "boundary_id",
+          "provenance"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 128
+    },
+    "openings": {
+      "type": "array",
+      "items": {
+        "$ref": "opening.schema.json"
+      },
+      "minItems": 0,
+      "maxItems": 128
+    },
+    "openings_complete": {
+      "type": "boolean"
+    },
+    "stairs": {
+      "type": "array",
+      "items": {
+        "$ref": "stair-connection.schema.json"
+      },
+      "minItems": 0,
+      "maxItems": 64
+    },
+    "stairs_complete": {
+      "type": "boolean"
+    },
+    "fixed_obstacles": {
+      "type": "array",
+      "items": {
+        "$ref": "geometry.schema.json#/properties/polygons/items"
+      },
+      "minItems": 0,
+      "maxItems": 128
+    },
+    "fixed_obstacles_complete": {
+      "type": "boolean"
+    },
+    "clearance_regions": {
+      "type": "array",
+      "items": {
+        "$ref": "geometry.schema.json#/properties/polygons/items"
+      },
+      "minItems": 0,
+      "maxItems": 128
+    },
+    "passages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "space_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "floor_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "frame_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "units": {
+            "enum": [
+              "m",
+              "mm"
+            ]
+          },
+          "path": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "minItems": 2,
+            "maxItems": 64
+          },
+          "width": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "opening_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 1,
+            "maxItems": 2,
+            "uniqueItems": true
+          },
+          "provenance": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "confirmation": {
+            "enum": [
+              "proposed",
+              "confirmed"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "space_id",
+          "floor_id",
+          "frame_id",
+          "units",
+          "path",
+          "width",
+          "opening_ids",
+          "provenance",
+          "confirmation"
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 128
+    }
+  },
+  "required": [
+    "schema_version",
+    "candidate"
+  ],
+  "$defs": {
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "role": {
+          "enum": [
+            "user",
+            "architect"
+          ]
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "provenance": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "actor",
+        "role",
+        "recorded_at",
+        "digest",
+        "provenance"
+      ]
+    },
+    "result": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "report_schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "engine_version": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "contract": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "status": {
+          "enum": [
+            "VALID",
+            "INVALID",
+            "INCOMPLETE"
+          ]
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0,
+                "maxItems": 128
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0,
+                "maxItems": 128
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "missing_information": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0,
+                "maxItems": 128
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0,
+                "maxItems": 128
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "cad_writes_permitted": {
+          "const": false
+        },
+        "standards_review": {
+          "const": "NOT_EVALUATED"
+        },
+        "fengshui_review": {
+          "const": "NOT_EVALUATED"
+        },
+        "candidate_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "candidate_digest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "design_digest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "review_state": {
+          "enum": [
+            "UNSELECTED",
+            "SELECTED",
+            "REVIEWED",
+            "APPROVED",
+            "REJECTED",
+            "SUPERSEDED"
+          ]
+        },
+        "approval_record_valid": {
+          "type": "boolean"
+        },
+        "geometry_status": {
+          "enum": [
+            "VALID",
+            "INVALID",
+            "INCOMPLETE",
+            "NOT_EVALUATED"
+          ]
+        },
+        "source_candidate_preserved": {
+          "const": true
+        },
+        "unsupported_evaluations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "maxItems": 128
+        },
+        "decision_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "state": {
+                "enum": [
+                  "SELECTED",
+                  "REVIEWED",
+                  "APPROVED",
+                  "REJECTED",
+                  "SUPERSEDED"
+                ]
+              },
+              "record": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "actor": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "role": {
+                    "enum": [
+                      "user",
+                      "architect"
+                    ]
+                  },
+                  "recorded_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "digest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "provenance": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "actor",
+                  "role",
+                  "recorded_at",
+                  "digest",
+                  "provenance"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "state",
+              "record"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 128
+        },
+        "selection_record": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "candidate_id": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "candidate_digest": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "candidate_id",
+                "candidate_digest"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "report_schema_version",
+        "engine_version",
+        "contract",
+        "status",
+        "errors",
+        "warnings",
+        "missing_information",
+        "diagnostics",
+        "cad_writes_permitted",
+        "standards_review",
+        "fengshui_review",
+        "candidate_id",
+        "candidate_digest",
+        "design_digest",
+        "review_state",
+        "approval_record_valid",
+        "geometry_status",
+        "source_candidate_preserved",
+        "unsupported_evaluations",
+        "decision_history",
+        "selection_record"
+      ]
+    }
+  }
+}

@@ -43,3 +43,8 @@ architect approval from fixture data or from a validator success. CAD writes req
 Batch 006-A: `docs/FLOORPLAN_CONTRACT.md` describes explicit generation inputs and finite
 search semantics. `vnai design floorplan generate` produces PROPOSED room polygons only.
 Approved source zoning never grants automatic candidate approval or permission to write CAD.
+
+Batch 006-B: `docs/CIRCULATION_CONTRACT.md` separates candidate selection, explicit opening
+geometry, graph connectivity, bounded walking clearance and architect decision records.
+Never infer a door from adjacency, or approval from selection/VALID/GRAPH_CONNECTED.
+Missing opening, obstacle or stair data remains unresolved. Technical compliance is a separate review.

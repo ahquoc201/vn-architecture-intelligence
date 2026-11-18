@@ -20,6 +20,13 @@ SCHEMA_NAMES = (
     "geometry.schema.json",
     "floorplan-input.schema.json",
     "floorplan-candidate.schema.json",
+    "candidate-review.schema.json",
+    "opening.schema.json",
+    "stair-connection.schema.json",
+    "circulation-graph.schema.json",
+    "opening-result.schema.json",
+    "stair-result.schema.json",
+    "architectural-review.schema.json",
 )
 BASE = "https://vnai.invalid/contracts/"
 
@@ -120,7 +127,12 @@ def schema_check(doc: Any, name: str, report: dict) -> bool:
             return False
         return datetime.fromisoformat(value.upper().replace("Z", "+00:00")).utcoffset() is not None
 
-    validator = Draft202012Validator(schemas[name], registry=registry, format_checker=checker)
+    selected = (
+        schemas[name]
+        if "#" not in name
+        else {"$schema": "https://json-schema.org/draft/2020-12/schema", "$ref": BASE + name}
+    )
+    validator = Draft202012Validator(selected, registry=registry, format_checker=checker)
     from vnai.design_brief import _nonfinite
 
     for path in _nonfinite(doc):

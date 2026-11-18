@@ -64,6 +64,8 @@ def run() -> None:
             shutil.copyfile(source, work / source.name)
         for source in (root / "examples/batch006a").glob("*.json"):
             shutil.copyfile(source, work / ("floorplan-" + source.name))
+        for source in (root / "examples/batch006b").glob("*.json"):
+            shutil.copyfile(source, work / ("review-" + source.name))
         shutil.copyfile(root / "examples/townhouse_4x20_brief.json", work / "brief.json")
         shutil.copyfile(root / "examples/townhouse_sample.json", work / "legacy.json")
         commands = [
@@ -92,6 +94,13 @@ def run() -> None:
             ),
             (["design", "floorplan", "generate", "floorplan-missing-footprint.json"], 3),
             (["design", "floorplan", "generate", "floorplan-search-budget.json"], 6),
+            (["design", "candidate", "review", "review-selected-only.json"], 0),
+            (["design", "openings", "validate", "review-corridor-clearance.json"], 0),
+            (["design", "circulation", "analyze", "review-corridor-graph-only.json"], 0),
+            (["design", "stairs", "validate", "review-stairs-connected.json"], 0),
+            (["design", "architectural-review", "review-corridor-clearance.json"], 0),
+            (["design", "architectural-review", "review-missing-openings.json"], 3),
+            (["design", "architectural-review", "review-swing-obstacle.json"], 1),
         ]
         for args, expected in commands:
             result = subprocess.run(
@@ -114,6 +123,19 @@ def run() -> None:
                     for c in generated["candidates"]
                 ):
                     raise RuntimeError("Wheel generator violated its candidate contract")
+            if args[:3] == ["design", "candidate", "review"]:
+                selected = json.loads(result.stdout)
+                if selected["review_state"] != "SELECTED" or selected["approval_record_valid"]:
+                    raise RuntimeError("Wheel inferred approval from selection")
+            if args[:2] == ["design", "architectural-review"] and expected == 0:
+                reviewed = json.loads(result.stdout)
+                if (
+                    reviewed["physical_circulation_status"] != "GEOMETRICALLY_TRAVERSABLE"
+                    or reviewed["fully_verified"]
+                    or reviewed["technical_compliance"] != "NOT_EVALUATED"
+                    or reviewed["cad_writes_permitted"]
+                ):
+                    raise RuntimeError("Wheel architectural review violated its bounded scope")
             results.append({"command": args, "exit_code": result.returncode})
         location = subprocess.check_output(
             [str(python), "-I", "-c", "import vnai; print(vnai.__file__)"],

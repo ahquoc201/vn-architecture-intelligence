@@ -89,3 +89,29 @@ For suggestions rooted in regional architecture or worship spaces, use only the 
 - Every generated candidate stays PROPOSED even when its source zoning was approved. Obtain
   architect review before adoption. Never regenerate human approval records for generated output.
   CAD writes remain disabled and require separate explicit authorization in a future adapter.
+
+
+## R2 Batch 006-B: candidate selection and circulation review
+
+- Read `docs/CIRCULATION_CONTRACT.md`. Keep the generated candidate immutable; select its
+  exact candidate_id and canonical candidate_digest in the review sidecar. Run
+  `vnai design candidate review <file>`; SELECTED/REVIEWED does not mean APPROVED.
+- Obtain explicit human records for review/approval, including provenance, timestamp and exact
+  design_digest. Do not invent an architect identity, rewrite old approval records, or promote
+  a proposal automatically. Changing doors/routes/stairs invalidates prior design approval.
+- Collect explicit openings, boundary hosts, clear widths and hinge/slide metadata. Run
+  `vnai design openings validate <file>`. Shared boundaries never imply a door. Request missing
+  information; no minimum door/passage width may be invented from unverified standards.
+- Run `vnai design circulation analyze <file>` and inspect components, entrance reachability and
+  isolated rooms. GRAPH_CONNECTED means graph topology, not demonstrated walking clearance.
+- Collect known fixed obstacles, local opening clearance regions and explicit width-checked
+  walking paths when clearance matters. Unknown inventories/routes remain NOT_VERIFIED.
+  Known geometric conflicts are reported as BLOCKED and must not be hidden by other passes.
+- Run `vnai design stairs validate <file>` for actual stairwell/landing and entry/exit references.
+  Envelope alignment or a stair graph edge does not validate treads, risers, headroom or safety.
+- Run `vnai design architectural-review <file>` and present geometry, graph, clearance,
+  technical-compliance and approval fields separately. Explain unresolved/unsupported evaluations
+  and ask the architect to review exact content before adoption. Even bounded 2D traversal never
+  establishes complete accessibility/egress certification or construction readiness.
+- Keep QCVN/TCVN and Feng Shui review separate. cad_writes_permitted stays false, including for
+  APPROVED review records. CAD modifications require explicit authorization in a future workflow.
