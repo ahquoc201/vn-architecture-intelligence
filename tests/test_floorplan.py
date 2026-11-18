@@ -391,7 +391,12 @@ def test_multifloor_processing_preserves_ids_and_does_not_compare_across_planes(
         "search-budget",
     ],
 )
-def test_full_golden_reproducibility(name):
+def test_full_golden_reproducibility(name, monkeypatch):
+    import vnai.contracts
+    import vnai.design_brief
+
+    monkeypatch.setattr(vnai.contracts, "__version__", "0.1.6")
+    monkeypatch.setattr(vnai.design_brief, "__version__", "0.1.6")
     spec = json.loads((ROOT / "examples/batch006a" / (name + ".json")).read_text())
     golden = json.loads((ROOT / "tests/golden/batch006a-v0.1.6" / (name + ".json")).read_text())
     assert generate_floorplans(spec) == golden

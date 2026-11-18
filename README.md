@@ -1,6 +1,6 @@
 # Vietnam Architecture Intelligence (VNAI)
 
-**Phiên bản 0.1.6 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
+**Phiên bản 0.1.7 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
 
 Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, với ba nhiệm vụ tách biệt:
 
@@ -76,6 +76,26 @@ Fixtures and their approval records are synthetic. The first example yields thre
 proposals; the missing-footprint example is INCOMPLETE (exit 3). Search exhaustion is not
 proof of continuous infeasibility. No circulation connectivity or buildability is claimed.
 See [the generation contract](docs/FLOORPLAN_CONTRACT.md) for inputs, statuses and limits.
+
+## R2 Batch 006-B - Circulation, openings and stair connectivity
+
+Candidate selection/review uses exact content digests. Explicit boundary-hosted doors
+produce a graph; supplied walking routes, widths and clearance envelopes provide a
+separate bounded 2D check. Stair envelopes/entry points do not certify staircase design.
+
+```powershell
+vnai design candidate review examples/batch006b/selected-only.json
+vnai design openings validate examples/batch006b/corridor-clearance.json
+vnai design circulation analyze examples/batch006b/corridor-graph-only.json
+vnai design stairs validate examples/batch006b/stairs-connected.json
+vnai design architectural-review examples/batch006b/corridor-clearance.json
+```
+
+All examples and actors are synthetic. GRAPH_CONNECTED is distinct from verified
+walking clearance. Missing information remains INCOMPLETE (exit 3), known errors INVALID
+(exit 1). VALID (exit 0) applies only to the stated check scope; technical compliance
+remains NOT_EVALUATED and CAD writes remain disabled. See
+[the circulation review contract](docs/CIRCULATION_CONTRACT.md).
 
 ## Chưa làm và không được tuyên bố đã làm
 

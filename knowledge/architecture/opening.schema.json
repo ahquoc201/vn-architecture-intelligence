@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "floor_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "frame_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "units": {
+      "enum": [
+        "m",
+        "mm"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "interior",
+        "entrance"
+      ]
+    },
+    "door_type": {
+      "enum": [
+        "hinged",
+        "sliding",
+        "open_passage"
+      ]
+    },
+    "space_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true
+    },
+    "host": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "end": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ]
+    },
+    "start": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "end": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "clear_width": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "swing": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "hinge": {
+          "enum": [
+            "start",
+            "end"
+          ]
+        },
+        "rotation": {
+          "enum": [
+            "cw",
+            "ccw"
+          ]
+        },
+        "angle_degrees": {
+          "const": 90
+        },
+        "opens_into": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "hinge",
+        "rotation",
+        "angle_degrees",
+        "opens_into"
+      ]
+    },
+    "clearance_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "sliding_envelope_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "provenance": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "confirmation": {
+      "enum": [
+        "proposed",
+        "confirmed"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "floor_id",
+    "frame_id",
+    "units",
+    "kind",
+    "door_type",
+    "space_ids",
+    "host",
+    "start",
+    "end",
+    "clear_width",
+    "provenance",
+    "confirmation"
+  ]
+}

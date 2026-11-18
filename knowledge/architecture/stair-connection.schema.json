@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "floor_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "stairwell_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "space_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "point": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "opening_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "landing_id": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "floor_id",
+        "stairwell_id",
+        "space_id"
+      ]
+    },
+    "destination": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "floor_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "stairwell_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "space_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "point": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "opening_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "landing_id": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "floor_id",
+        "stairwell_id",
+        "space_id"
+      ]
+    },
+    "direction": {
+      "enum": [
+        "up",
+        "down"
+      ]
+    },
+    "frame_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "units": {
+      "enum": [
+        "m",
+        "mm"
+      ]
+    },
+    "alignment_required": {
+      "type": "boolean"
+    },
+    "confirmation": {
+      "enum": [
+        "proposed",
+        "confirmed"
+      ]
+    },
+    "review_status": {
+      "enum": [
+        "proposed",
+        "reviewed"
+      ]
+    },
+    "provenance": {
+      "type": "string",
+      "pattern": "\\S"
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "source",
+    "destination",
+    "direction",
+    "frame_id",
+    "units",
+    "alignment_required",
+    "confirmation",
+    "review_status",
+    "provenance"
+  ]
+}

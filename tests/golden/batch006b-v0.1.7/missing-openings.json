@@ -1,0 +1,377 @@
+{
+  "report_schema_version": 1,
+  "engine_version": "0.1.7",
+  "contract": "architectural-review-v1",
+  "status": "INCOMPLETE",
+  "errors": [],
+  "warnings": [],
+  "missing_information": [
+    {
+      "code": "OPENING_INFORMATION_INCOMPLETE",
+      "path": "openings_complete",
+      "message": "Opening inventory is unknown or incomplete; absence is not a verified blockage.",
+      "requirement_ids": []
+    },
+    {
+      "code": "ENTRANCE_NOT_DEMONSTRATED",
+      "path": "exteriors",
+      "message": "Entrance connection is not demonstrated; missing data is not automatically a blocked door.",
+      "requirement_ids": []
+    },
+    {
+      "code": "ROOM_ACCESS_UNKNOWN",
+      "path": "BED:1",
+      "message": "No opening/stair chain from an exterior is demonstrated for this room.",
+      "requirement_ids": []
+    },
+    {
+      "code": "ROOM_ACCESS_UNKNOWN",
+      "path": "LIVING:1",
+      "message": "No opening/stair chain from an exterior is demonstrated for this room.",
+      "requirement_ids": []
+    },
+    {
+      "code": "WALKING_ROUTE_NOT_VERIFIED",
+      "path": "BED:1",
+      "message": "No complete chain of verified local opening clearances and supplied width-checked routes demonstrates access to this room.",
+      "requirement_ids": []
+    },
+    {
+      "code": "WALKING_ROUTE_NOT_VERIFIED",
+      "path": "LIVING:1",
+      "message": "No complete chain of verified local opening clearances and supplied width-checked routes demonstrates access to this room.",
+      "requirement_ids": []
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "DISCONNECTED_COMPONENTS",
+      "path": "graph",
+      "message": "Declared space graph contains disconnected components.",
+      "requirement_ids": []
+    }
+  ],
+  "cad_writes_permitted": false,
+  "standards_review": "NOT_EVALUATED",
+  "fengshui_review": "NOT_EVALUATED",
+  "candidate_id": "FP-89dcd989926dfdce3d6b4b7f4c36e2b51a5f6d6a6a725efe315ca0ce80013a78",
+  "candidate_digest": "2bf876370f03566f51f791c6e620cb3d32ebe249b31d30036fc984f86d4bd35b",
+  "design_digest": "8df6aee382a0bdfef64acda3fb46fb96ea49880c01739c49df2297686df991bb",
+  "candidate_review": {
+    "report_schema_version": 1,
+    "engine_version": "0.1.7",
+    "contract": "candidate-review-v1",
+    "status": "VALID",
+    "errors": [],
+    "warnings": [],
+    "missing_information": [],
+    "diagnostics": [],
+    "cad_writes_permitted": false,
+    "standards_review": "NOT_EVALUATED",
+    "fengshui_review": "NOT_EVALUATED",
+    "candidate_id": "FP-89dcd989926dfdce3d6b4b7f4c36e2b51a5f6d6a6a725efe315ca0ce80013a78",
+    "candidate_digest": "2bf876370f03566f51f791c6e620cb3d32ebe249b31d30036fc984f86d4bd35b",
+    "design_digest": "8df6aee382a0bdfef64acda3fb46fb96ea49880c01739c49df2297686df991bb",
+    "review_state": "SELECTED",
+    "decision_history": [
+      {
+        "id": "EVENT-1",
+        "state": "SELECTED",
+        "record": {
+          "actor": "SYNTHETIC_TEST_REVIEWER_NOT_A_REAL_ARCHITECT",
+          "role": "user",
+          "recorded_at": "2026-11-18T00:00:00Z",
+          "digest": "8df6aee382a0bdfef64acda3fb46fb96ea49880c01739c49df2297686df991bb",
+          "provenance": "Synthetic fixture record; not real approval"
+        }
+      }
+    ],
+    "selection_record": {
+      "candidate_id": "FP-89dcd989926dfdce3d6b4b7f4c36e2b51a5f6d6a6a725efe315ca0ce80013a78",
+      "candidate_digest": "2bf876370f03566f51f791c6e620cb3d32ebe249b31d30036fc984f86d4bd35b"
+    },
+    "approval_record_valid": false,
+    "geometry_status": "VALID",
+    "source_candidate_preserved": true,
+    "unsupported_evaluations": [
+      "ARCHITECT_IDENTITY_NOT_AUTHENTICATED",
+      "ORIGINAL_SOLVER_DIMENSION_INPUT_NOT_REPLAYED"
+    ]
+  },
+  "opening_validation": {
+    "report_schema_version": 1,
+    "engine_version": "0.1.7",
+    "contract": "opening-validation-v1",
+    "status": "INCOMPLETE",
+    "errors": [],
+    "warnings": [],
+    "missing_information": [
+      {
+        "code": "OPENING_INFORMATION_INCOMPLETE",
+        "path": "openings_complete",
+        "message": "Opening inventory is unknown or incomplete; absence is not a verified blockage.",
+        "requirement_ids": []
+      }
+    ],
+    "diagnostics": [],
+    "cad_writes_permitted": false,
+    "standards_review": "NOT_EVALUATED",
+    "fengshui_review": "NOT_EVALUATED",
+    "candidate_id": "FP-89dcd989926dfdce3d6b4b7f4c36e2b51a5f6d6a6a725efe315ca0ce80013a78",
+    "candidate_digest": "2bf876370f03566f51f791c6e620cb3d32ebe249b31d30036fc984f86d4bd35b",
+    "design_digest": "8df6aee382a0bdfef64acda3fb46fb96ea49880c01739c49df2297686df991bb",
+    "opening_results": [],
+    "space_nodes": [
+      {
+        "id": "BED:1",
+        "kind": "room",
+        "floor_id": "F1",
+        "geometry_id": "GENERATED-ROOM-1"
+      },
+      {
+        "id": "EXT",
+        "kind": "exterior",
+        "floor_id": "F1",
+        "geometry_id": "FOOTPRINT"
+      },
+      {
+        "id": "LIVING:1",
+        "kind": "room",
+        "floor_id": "F1",
+        "geometry_id": "GENERATED-ROOM-2"
+      }
+    ],
+    "door_information_complete": false
+  },
+  "circulation_graph": {
+    "report_schema_version": 1,
+    "engine_version": "0.1.7",
+    "contract": "circulation-graph-v1",
+    "status": "INCOMPLETE",
+    "errors": [],
+    "warnings": [],
+    "missing_information": [
+      {
+        "code": "ENTRANCE_NOT_DEMONSTRATED",
+        "path": "exteriors",
+        "message": "Entrance connection is not demonstrated; missing data is not automatically a blocked door.",
+        "requirement_ids": []
+      },
+      {
+        "code": "ROOM_ACCESS_UNKNOWN",
+        "path": "BED:1",
+        "message": "No opening/stair chain from an exterior is demonstrated for this room.",
+        "requirement_ids": []
+      },
+      {
+        "code": "ROOM_ACCESS_UNKNOWN",
+        "path": "LIVING:1",
+        "message": "No opening/stair chain from an exterior is demonstrated for this room.",
+        "requirement_ids": []
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": "DISCONNECTED_COMPONENTS",
+        "path": "graph",
+        "message": "Declared space graph contains disconnected components.",
+        "requirement_ids": []
+      }
+    ],
+    "cad_writes_permitted": false,
+    "standards_review": "NOT_EVALUATED",
+    "fengshui_review": "NOT_EVALUATED",
+    "candidate_id": "FP-89dcd989926dfdce3d6b4b7f4c36e2b51a5f6d6a6a725efe315ca0ce80013a78",
+    "candidate_digest": "2bf876370f03566f51f791c6e620cb3d32ebe249b31d30036fc984f86d4bd35b",
+    "design_digest": "8df6aee382a0bdfef64acda3fb46fb96ea49880c01739c49df2297686df991bb",
+    "graph_status": "NOT_VERIFIED",
+    "nodes": [
+      {
+        "id": "BED:1",
+        "kind": "room",
+        "floor_id": "F1",
+        "geometry_id": "GENERATED-ROOM-1"
+      },
+      {
+        "id": "EXT",
+        "kind": "exterior",
+        "floor_id": "F1",
+        "geometry_id": "FOOTPRINT"
+      },
+      {
+        "id": "LIVING:1",
+        "kind": "room",
+        "floor_id": "F1",
+        "geometry_id": "GENERATED-ROOM-2"
+      }
+    ],
+    "edges": [],
+    "components": [
+      [
+        "BED:1"
+      ],
+      [
+        "EXT"
+      ],
+      [
+        "LIVING:1"
+      ]
+    ],
+    "isolated_room_ids": [
+      "BED:1",
+      "LIVING:1"
+    ],
+    "room_access": {
+      "BED:1": {
+        "graph_reachable": false,
+        "status": "NOT_VERIFIED"
+      },
+      "LIVING:1": {
+        "graph_reachable": false,
+        "status": "NOT_VERIFIED"
+      }
+    },
+    "entrance_status": "UNKNOWN",
+    "opening_validation": {
+      "report_schema_version": 1,
+      "engine_version": "0.1.7",
+      "contract": "opening-validation-v1",
+      "status": "INCOMPLETE",
+      "errors": [],
+      "warnings": [],
+      "missing_information": [
+        {
+          "code": "OPENING_INFORMATION_INCOMPLETE",
+          "path": "openings_complete",
+          "message": "Opening inventory is unknown or incomplete; absence is not a verified blockage.",
+          "requirement_ids": []
+        }
+      ],
+      "diagnostics": [],
+      "cad_writes_permitted": false,
+      "standards_review": "NOT_EVALUATED",
+      "fengshui_review": "NOT_EVALUATED",
+      "candidate_id": "FP-89dcd989926dfdce3d6b4b7f4c36e2b51a5f6d6a6a725efe315ca0ce80013a78",
+      "candidate_digest": "2bf876370f03566f51f791c6e620cb3d32ebe249b31d30036fc984f86d4bd35b",
+      "design_digest": "8df6aee382a0bdfef64acda3fb46fb96ea49880c01739c49df2297686df991bb",
+      "opening_results": [],
+      "space_nodes": [
+        {
+          "id": "BED:1",
+          "kind": "room",
+          "floor_id": "F1",
+          "geometry_id": "GENERATED-ROOM-1"
+        },
+        {
+          "id": "EXT",
+          "kind": "exterior",
+          "floor_id": "F1",
+          "geometry_id": "FOOTPRINT"
+        },
+        {
+          "id": "LIVING:1",
+          "kind": "room",
+          "floor_id": "F1",
+          "geometry_id": "GENERATED-ROOM-2"
+        }
+      ],
+      "door_information_complete": false
+    },
+    "stair_validation": {
+      "report_schema_version": 1,
+      "engine_version": "0.1.7",
+      "contract": "stair-validation-v1",
+      "status": "VALID",
+      "errors": [],
+      "warnings": [],
+      "missing_information": [],
+      "diagnostics": [],
+      "cad_writes_permitted": false,
+      "standards_review": "NOT_EVALUATED",
+      "fengshui_review": "NOT_EVALUATED",
+      "candidate_id": "FP-89dcd989926dfdce3d6b4b7f4c36e2b51a5f6d6a6a725efe315ca0ce80013a78",
+      "candidate_digest": "2bf876370f03566f51f791c6e620cb3d32ebe249b31d30036fc984f86d4bd35b",
+      "design_digest": "8df6aee382a0bdfef64acda3fb46fb96ea49880c01739c49df2297686df991bb",
+      "stair_results": [],
+      "stair_information_complete": true,
+      "technical_stair_design": "NOT_EVALUATED"
+    }
+  },
+  "stair_validation": {
+    "report_schema_version": 1,
+    "engine_version": "0.1.7",
+    "contract": "stair-validation-v1",
+    "status": "VALID",
+    "errors": [],
+    "warnings": [],
+    "missing_information": [],
+    "diagnostics": [],
+    "cad_writes_permitted": false,
+    "standards_review": "NOT_EVALUATED",
+    "fengshui_review": "NOT_EVALUATED",
+    "candidate_id": "FP-89dcd989926dfdce3d6b4b7f4c36e2b51a5f6d6a6a725efe315ca0ce80013a78",
+    "candidate_digest": "2bf876370f03566f51f791c6e620cb3d32ebe249b31d30036fc984f86d4bd35b",
+    "design_digest": "8df6aee382a0bdfef64acda3fb46fb96ea49880c01739c49df2297686df991bb",
+    "stair_results": [],
+    "stair_information_complete": true,
+    "technical_stair_design": "NOT_EVALUATED"
+  },
+  "clearance": {
+    "report_schema_version": 1,
+    "engine_version": "0.1.7",
+    "contract": "circulation-clearance-v1",
+    "status": "INCOMPLETE",
+    "errors": [],
+    "warnings": [],
+    "missing_information": [
+      {
+        "code": "WALKING_ROUTE_NOT_VERIFIED",
+        "path": "BED:1",
+        "message": "No complete chain of verified local opening clearances and supplied width-checked routes demonstrates access to this room.",
+        "requirement_ids": []
+      },
+      {
+        "code": "WALKING_ROUTE_NOT_VERIFIED",
+        "path": "LIVING:1",
+        "message": "No complete chain of verified local opening clearances and supplied width-checked routes demonstrates access to this room.",
+        "requirement_ids": []
+      }
+    ],
+    "diagnostics": [],
+    "cad_writes_permitted": false,
+    "standards_review": "NOT_EVALUATED",
+    "fengshui_review": "NOT_EVALUATED",
+    "candidate_id": "FP-89dcd989926dfdce3d6b4b7f4c36e2b51a5f6d6a6a725efe315ca0ce80013a78",
+    "candidate_digest": "2bf876370f03566f51f791c6e620cb3d32ebe249b31d30036fc984f86d4bd35b",
+    "design_digest": "8df6aee382a0bdfef64acda3fb46fb96ea49880c01739c49df2297686df991bb",
+    "physical_status": "NOT_VERIFIED",
+    "scope": "SUPPLIED_PLANAR_PATHS_ONLY",
+    "passage_results": [],
+    "room_physical_access": {
+      "BED:1": "NOT_VERIFIED",
+      "LIVING:1": "NOT_VERIFIED"
+    },
+    "technical_compliance": "NOT_EVALUATED"
+  },
+  "geometry_status": "VALID",
+  "graph_status": "NOT_VERIFIED",
+  "physical_circulation_status": "NOT_VERIFIED",
+  "technical_compliance": "NOT_EVALUATED",
+  "architectural_approval": "SELECTED",
+  "fully_verified": false,
+  "blocking_issues": [],
+  "unsupported_evaluations": [
+    "AUTHENTICATION_AND_SIGNATURES",
+    "COMPLETE_WALL_MODEL",
+    "DOOR_HARDWARE_AND_LEAF_THICKNESS",
+    "STAIR_TREAD_RISER_HEADROOM",
+    "FULL_ACCESSIBILITY_EGRESS_CERTIFICATION",
+    "STRUCTURE_MEP",
+    "QCVN_TCVN_AND_FENGSHUI_RULES"
+  ],
+  "next_actions": [
+    "Provide and confirm the listed opening, route, obstacle and stair information.",
+    "Obtain explicit architect review/approval of the exact immutable design content.",
+    "Keep technical/code/Feng Shui review separate; no CAD writes are permitted."
+  ]
+}

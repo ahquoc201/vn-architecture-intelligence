@@ -5,6 +5,11 @@ import json
 import sys
 from pathlib import Path
 
+from vnai.candidate_review import review_candidate
+from vnai.openings import validate_openings
+from vnai.circulation import analyze_circulation
+from vnai.stairs import validate_stairs
+from vnai.architectural_review import architectural_review
 from vnai.contracts import load_json
 from vnai.design_brief import validate_design_brief
 from vnai.dxf_adapter import export_schematic_dxf
@@ -71,6 +76,10 @@ def main(argv: list[str] | None = None) -> int:
         ("program", ("build",)),
         ("zoning", ("validate", "report")),
         ("floorplan", ("generate",)),
+        ("candidate", ("review",)),
+        ("openings", ("validate",)),
+        ("circulation", ("analyze",)),
+        ("stairs", ("validate",)),
     ):
         group = design_sub.add_parser(kind)
         action_sub = group.add_subparsers(dest="design_action", required=True)
@@ -80,7 +89,14 @@ def main(argv: list[str] | None = None) -> int:
             if kind == "floorplan":
                 command.add_argument("--candidates", type=int, choices=(1, 2, 3))
                 command.add_argument("--max-steps", type=int)
-                command.add_argument("--out", help="Write JSON report to a new file; never overwrite")
+                command.add_argument(
+                    "--out", help="Write JSON report to a new file; never overwrite"
+                )
+
+    architecture = design_sub.add_parser(
+        "architectural-review", help="Separate geometry, graph, clearance and approval results"
+    )
+    architecture.add_argument("input", help="Candidate review context JSON")
 
     geometry = sub.add_parser("geometry", help="2D spatial contract; no CAD writes")
     geometry_sub = geometry.add_subparsers(dest="geometry_action", required=True)
@@ -105,10 +121,29 @@ def main(argv: list[str] | None = None) -> int:
                 if args.command == "geometry":
                     report = validate_geometry(brief)
                     validation = report
+                elif args.design_kind in {
+                    "candidate",
+                    "openings",
+                    "circulation",
+                    "stairs",
+                    "architectural-review",
+                }:
+                    handlers = {
+                        "candidate": review_candidate,
+                        "openings": validate_openings,
+                        "circulation": analyze_circulation,
+                        "stairs": validate_stairs,
+                        "architectural-review": architectural_review,
+                    }
+                    report = handlers[args.design_kind](brief)
+                    validation = report
                 elif args.design_kind == "floorplan":
-                    report = generate_floorplans(brief, candidate_count=args.candidates,
-                                                 max_steps=args.max_steps)
-                    payload = json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False) + "\n"
+                    report = generate_floorplans(
+                        brief, candidate_count=args.candidates, max_steps=args.max_steps
+                    )
+                    payload = (
+                        json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False) + "\n"
+                    )
                     if args.out:
                         target = Path(args.out)
                         # Exclusive creation preserves reports and prevents overwriting any input.
@@ -125,14 +160,26 @@ def main(argv: list[str] | None = None) -> int:
                     validation = report["validation"]
                 else:
                     validation = validate_design_brief(brief)
-                    report = ({**validation, "input_brief": brief}
-                              if args.design_action == "report" else validation)
+                    report = (
+                        {**validation, "input_brief": brief}
+                        if args.design_action == "report"
+                        else validation
+                    )
                 print(json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False))
                 return {"VALID": 0, "INVALID": 1, "INCOMPLETE": 3}[validation["status"]]
             except (ValueError, OSError) as exc:
-                print(json.dumps({"report_schema_version": 1, "status": "INVALID",
-                                  "code": "INPUT_ERROR", "message": str(exc),
-                                  "cad_writes_permitted": False}, ensure_ascii=True))
+                print(
+                    json.dumps(
+                        {
+                            "report_schema_version": 1,
+                            "status": "INVALID",
+                            "code": "INPUT_ERROR",
+                            "message": str(exc),
+                            "cad_writes_permitted": False,
+                        },
+                        ensure_ascii=True,
+                    )
+                )
                 return 2
         if args.command == "sources":
             issues = validate_registry(load_registry(args.file))

@@ -17,6 +17,7 @@ def test_full_golden_report(name, monkeypatch):
     # Preserve 0.1.5 snapshots while exercising current implementations with historical stamps.
     import vnai.contracts
     import vnai.design_brief
+
     monkeypatch.setattr(vnai.contracts, "__version__", "0.1.5")
     monkeypatch.setattr(vnai.design_brief, "__version__", "0.1.5")
     doc = fixture(name)

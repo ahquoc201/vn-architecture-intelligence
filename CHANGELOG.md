@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.7] - R2/BATCH-006-B circulation, openings and stairs (2026-11-18)
+
+- Add immutable candidate selection and content-bound review/approval history; stale IDs/digests and invalid promotions are rejected.
+- Validate explicit boundary-hosted hinged/sliding/passage openings, conservative swing geometry, clearances and known fixed collisions without inventing doors or width standards.
+- Add deterministic space/portal graphs, supplied passage-width checks and explicit stairwell/landing/entry/elevation/alignment checks.
+- Separate graph reachability, bounded planar traversal, technical compliance and architect records; no complete verification or CAD authorization is inferred.
+- Add versioned schemas, synthetic fixtures/golden reports, negative/CLI tests and fresh-wheel coverage for every new command. Preserve historical 0.1.5/0.1.6 golden snapshots.
+
+
 ## [0.1.6] - R2/BATCH-006-A deterministic floorplan generation (2026-11-18)
 
 - Add bounded grid rectangle search using explicit area/dimension constraints, source zoning and content-bound generation authorization.
