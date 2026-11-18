@@ -1,0 +1,1026 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VNAI Design Brief v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "type": {
+          "enum": [
+            "townhouse",
+            "detached_house",
+            "renovation",
+            "other"
+          ]
+        },
+        "phase": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "architect_notes": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "type",
+        "phase"
+      ]
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/requirement"
+      }
+    },
+    "site": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/dimensions"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "geometry_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "road_access": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "frontage": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "north_degrees": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0,
+                  "exclusiveMaximum": 360
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "frontage_degrees": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0,
+                  "exclusiveMaximum": 360
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "adjacent_buildings": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "minItems": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "constraints": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "minItems": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "unverified_measurements": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "minItems": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        }
+      },
+      "required": []
+    },
+    "building": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "storeys": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "floors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/floor"
+          }
+        },
+        "rooms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/room"
+          }
+        },
+        "relationships": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relationship"
+          }
+        },
+        "excluded_room_types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/exclusion"
+          }
+        },
+        "footprint": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/area"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "gross_floor_area": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/area"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "internal_circulation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "vertical_circulation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "stairs": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "lighting": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "ventilation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "skylight": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "courtyard": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "accessibility": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        }
+      },
+      "required": []
+    },
+    "client": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "occupants": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "priorities": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "minItems": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "privacy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "fengshui": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        },
+        "budget": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requirement_id": {
+              "$ref": "#/$defs/id"
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "amount": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "currency": {
+                      "enum": [
+                        "VND",
+                        "USD"
+                      ]
+                    },
+                    "scope": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "currency",
+                    "scope"
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "requirement_id",
+            "value"
+          ]
+        }
+      },
+      "required": []
+    }
+  },
+  "required": [
+    "schema_version",
+    "project",
+    "requirements"
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+    },
+    "text": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "area": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "enum": [
+            "m2",
+            "mm2"
+          ]
+        },
+        "target": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "min": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "max": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "unit"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "target"
+          ]
+        },
+        {
+          "required": [
+            "min"
+          ]
+        },
+        {
+          "required": [
+            "max"
+          ]
+        }
+      ]
+    },
+    "requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "enum": [
+            "mandatory",
+            "preference",
+            "assumption",
+            "question"
+          ]
+        },
+        "origin": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "confirmation": {
+          "enum": [
+            "confirmed",
+            "unconfirmed",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "priority": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "origin",
+        "confirmation",
+        "priority"
+      ]
+    },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "shape": {
+          "enum": [
+            "rectangle"
+          ]
+        },
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "length": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "unit": {
+          "enum": [
+            "m",
+            "mm"
+          ]
+        }
+      },
+      "required": [
+        "shape",
+        "width",
+        "length",
+        "unit"
+      ]
+    },
+    "floor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "label": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ]
+    },
+    "room": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "quantity": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "requirement_id": {
+          "$ref": "#/$defs/id"
+        },
+        "floor_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "area": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/area"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "quantity",
+        "requirement_id"
+      ]
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "requirement_id": {
+          "$ref": "#/$defs/id"
+        },
+        "room_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "relation": {
+          "enum": [
+            "adjacent",
+            "separate"
+          ]
+        },
+        "strength": {
+          "enum": [
+            "hard",
+            "soft"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "requirement_id",
+        "room_ids",
+        "relation",
+        "strength"
+      ]
+    },
+    "exclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "room_type": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "requirement_id": {
+          "$ref": "#/$defs/id"
+        },
+        "strength": {
+          "enum": [
+            "hard",
+            "soft"
+          ]
+        }
+      },
+      "required": [
+        "room_type",
+        "requirement_id",
+        "strength"
+      ]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+schema_version: 1
+purpose: data_integrity_only_not_building_compliance
+planning_critical_site_fields: [road_access, frontage, north_degrees, constraints]
+planning_critical_building_fields: [internal_circulation, vertical_circulation]
+# These are workflow data gates, never QCVN/TCVN or design minima.

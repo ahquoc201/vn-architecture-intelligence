@@ -2,14 +2,17 @@
 
 import argparse
 import json
+import math
 import sys
 from pathlib import Path
 
+from vnai.design_brief import validate_design_brief
 from vnai.dxf_adapter import export_schematic_dxf
 from vnai.fengshui_knowledge import report_repo_fengshui, validate_repo_fengshui
 from vnai.insights import validate_repo_insights
 from vnai.review import review_markdown, review_plan
 from vnai.site_orientation import review_site_orientation
+from vnai.space_program import build_space_program
 from vnai.source_registry import load_registry, validate_registry
 
 DEFAULT_SOURCES = Path(__file__).resolve().parents[2] / "sources" / "bibliography.yaml"
@@ -57,6 +60,15 @@ def main(argv: list[str] | None = None) -> int:
         if action == "report":
             command.add_argument("--out", help="Save research queue JSON")
 
+    design = sub.add_parser("design", help="Design brief and room program; no CAD writes")
+    design_sub = design.add_subparsers(dest="design_kind", required=True)
+    for kind, actions in (("brief", ("validate", "report")), ("program", ("build",))):
+        group = design_sub.add_parser(kind)
+        action_sub = group.add_subparsers(dest="design_action", required=True)
+        for action in actions:
+            command = action_sub.add_parser(action)
+            command.add_argument("input", help="Design brief JSON")
+
     review = sub.add_parser("review", help="Review concept polygon geometry")
     review.add_argument("plan")
     review.add_argument("--out", help="Path for JSON report")
@@ -68,6 +80,43 @@ def main(argv: list[str] | None = None) -> int:
 
     args = parser.parse_args(argv)
     try:
+        if args.command == "design":
+            try:
+                # Reject duplicate object keys rather than silently replacing a requirement.
+                def unique_object(pairs: list[tuple[str, object]]) -> dict:
+                    value = {}
+                    for key, child in pairs:
+                        if key in value:
+                            raise ValueError(f"Duplicate JSON object key: {key}")
+                        value[key] = child
+                    return value
+
+                def reject_constant(value: str) -> None:
+                    raise ValueError(f"Nonfinite JSON number: {value}")
+
+                def finite_float(value: str) -> float:
+                    number = float(value)
+                    if not math.isfinite(number):
+                        raise ValueError(f"JSON number outside finite range: {value}")
+                    return number
+
+                with Path(args.input).open(encoding="utf-8") as stream:
+                    brief = json.load(stream, object_pairs_hook=unique_object,
+                                      parse_constant=reject_constant, parse_float=finite_float)
+                if args.design_kind == "program":
+                    report = build_space_program(brief)
+                    validation = report["validation"]
+                else:
+                    validation = validate_design_brief(brief)
+                    report = ({**validation, "input_brief": brief}
+                              if args.design_action == "report" else validation)
+                print(json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False))
+                return {"VALID": 0, "INVALID": 1, "INCOMPLETE": 3}[validation["status"]]
+            except (ValueError, OSError) as exc:
+                print(json.dumps({"report_schema_version": 1, "status": "INVALID",
+                                  "code": "INPUT_ERROR", "message": str(exc),
+                                  "cad_writes_permitted": False}, ensure_ascii=True))
+                return 2
         if args.command == "sources":
             issues = validate_registry(load_registry(args.file))
             if issues:

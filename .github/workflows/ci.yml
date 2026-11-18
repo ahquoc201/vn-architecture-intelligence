@@ -21,6 +21,18 @@ jobs:
       - run: ruff check src tests scripts
       - run: vnai sources validate
       - run: vnai knowledge validate
+      - name: Incomplete design brief example preserves planning gate
+        run: |
+          set +e
+          vnai design brief validate examples/townhouse_4x20_brief.json
+          result=$?
+          test "$result" -eq 3
+      - name: Build incomplete room program without layout
+        run: |
+          set +e
+          vnai design program build examples/townhouse_4x20_brief.json > /tmp/design-program.json
+          result=$?
+          test "$result" -eq 3
       - run: vnai fengshui knowledge validate
       - run: vnai fengshui knowledge report --out outputs/fengshui_research_queue.json
       - run: vnai review examples/townhouse_sample.json --out outputs/check.json --markdown outputs/check.md
