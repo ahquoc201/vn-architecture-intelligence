@@ -35,6 +35,7 @@ jobs:
           test "$result" -eq 3
       - run: vnai design zoning report examples/batch005/zoning-approved.json
       - run: vnai geometry report examples/batch005/geometry-linked-approved.json
+      - run: vnai design floorplan generate examples/batch006a/alternatives.json --candidates 3 --out outputs/floorplan-v0.1.6.json
       - name: Fresh wheel outside checkout
         run: python scripts/smoke_wheel.py
       - run: vnai fengshui knowledge validate

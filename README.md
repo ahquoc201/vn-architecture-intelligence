@@ -1,6 +1,6 @@
 # Vietnam Architecture Intelligence (VNAI)
 
-**Phiên bản 0.1.5 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
+**Phiên bản 0.1.6 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
 
 Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, với ba nhiệm vụ tách biệt:
 
@@ -59,6 +59,23 @@ No example is a real architect approval or a client-confirmed layout.
 See [the zoning/geometry contract](docs/ZONING_GEOMETRY_CONTRACT.md).
 The wheel bundles authored runtime data; the smoke script installs it in a fresh venv
 outside the checkout and exercises old and new commands with isolated Python.
+
+## R2 Batch 006-A - Deterministic preliminary floorplans
+
+The generator searches rectangular room polygons on an explicit finite grid. It uses
+approved source zoning, supplied footprints/reservations and hard area/dimension bounds.
+Every proposal passes the spatial validator and remains PROPOSED, with CAD writes disabled.
+
+```powershell
+vnai design floorplan generate examples/batch006a/alternatives.json --candidates 3
+vnai design floorplan generate examples/batch006a/fixed-stair.json
+vnai design floorplan generate examples/batch006a/missing-footprint.json
+```
+
+Fixtures and their approval records are synthetic. The first example yields three distinct
+proposals; the missing-footprint example is INCOMPLETE (exit 3). Search exhaustion is not
+proof of continuous infeasibility. No circulation connectivity or buildability is claimed.
+See [the generation contract](docs/FLOORPLAN_CONTRACT.md) for inputs, statuses and limits.
 
 ## Chưa làm và không được tuyên bố đã làm
 

@@ -123,7 +123,8 @@
               "site",
               "footprint",
               "floor_outline",
-              "room"
+              "room",
+              "reservation"
             ]
           },
           "owner_id": {
@@ -204,6 +205,18 @@
               "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
             },
             "minItems": 0
+          },
+          "reservation_kind": {
+            "enum": [
+              "circulation",
+              "stairwell",
+              "service_shaft",
+              "other"
+            ]
+          },
+          "provenance": {
+            "type": "string",
+            "pattern": "\\S"
           }
         },
         "required": [

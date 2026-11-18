@@ -39,3 +39,7 @@ Brief/program contracts: `docs/DESIGN_BRIEF_CONTRACT.md`. Exit 3 means incomplet
 Batch 005: read `docs/ZONING_GEOMETRY_CONTRACT.md`; validate zoning and supplied geometry
 before layout work. Proposed/reviewed zoning is not approved. Never synthesize a real
 architect approval from fixture data or from a validator success. CAD writes require explicit authorization.
+
+Batch 006-A: `docs/FLOORPLAN_CONTRACT.md` describes explicit generation inputs and finite
+search semantics. `vnai design floorplan generate` produces PROPOSED room polygons only.
+Approved source zoning never grants automatic candidate approval or permission to write CAD.

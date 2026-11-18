@@ -9,6 +9,7 @@ from vnai.contracts import load_json
 from vnai.design_brief import validate_design_brief
 from vnai.dxf_adapter import export_schematic_dxf
 from vnai.fengshui_knowledge import report_repo_fengshui, validate_repo_fengshui
+from vnai.floorplan import generate_floorplans, EXIT_CODES as FLOORPLAN_EXIT_CODES
 from vnai.insights import validate_repo_insights
 from vnai.resources import data_path
 from vnai.review import review_markdown, review_plan
@@ -69,12 +70,17 @@ def main(argv: list[str] | None = None) -> int:
         ("brief", ("validate", "report")),
         ("program", ("build",)),
         ("zoning", ("validate", "report")),
+        ("floorplan", ("generate",)),
     ):
         group = design_sub.add_parser(kind)
         action_sub = group.add_subparsers(dest="design_action", required=True)
         for action in actions:
             command = action_sub.add_parser(action)
-            command.add_argument("input", help="Design brief JSON")
+            command.add_argument("input", help="Design contract JSON")
+            if kind == "floorplan":
+                command.add_argument("--candidates", type=int, choices=(1, 2, 3))
+                command.add_argument("--max-steps", type=int)
+                command.add_argument("--out", help="Write JSON report to a new file; never overwrite")
 
     geometry = sub.add_parser("geometry", help="2D spatial contract; no CAD writes")
     geometry_sub = geometry.add_subparsers(dest="geometry_action", required=True)
@@ -99,6 +105,18 @@ def main(argv: list[str] | None = None) -> int:
                 if args.command == "geometry":
                     report = validate_geometry(brief)
                     validation = report
+                elif args.design_kind == "floorplan":
+                    report = generate_floorplans(brief, candidate_count=args.candidates,
+                                                 max_steps=args.max_steps)
+                    payload = json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False) + "\n"
+                    if args.out:
+                        target = Path(args.out)
+                        # Exclusive creation preserves reports and prevents overwriting any input.
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        with target.open("x", encoding="utf-8", newline="\n") as stream:
+                            stream.write(payload)
+                    print(payload, end="")
+                    return FLOORPLAN_EXIT_CODES[report["status"]]
                 elif args.design_kind == "zoning":
                     report = validate_zoning(brief)
                     validation = report

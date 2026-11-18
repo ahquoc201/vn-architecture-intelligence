@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "input_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "algorithm": {
+      "const": "bounded-grid-rect-v1"
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "grid_step": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "max_steps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200000
+        },
+        "solution_limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        "candidate_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        }
+      },
+      "required": [
+        "grid_step"
+      ]
+    },
+    "floor_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "floor_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      }
+    },
+    "geometry": {
+      "$ref": "geometry.schema.json"
+    },
+    "room_areas_m2": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      }
+    },
+    "hard_validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "passed": {
+          "const": true
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          }
+        },
+        "spatial_report": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "passed",
+        "checks",
+        "spatial_report"
+      ]
+    },
+    "soft_scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preferred_adjacency": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "preferred_area": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "total": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "weights": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "preferred_adjacency": {
+              "const": 0.5
+            },
+            "preferred_area": {
+              "const": 0.5
+            }
+          },
+          "required": [
+            "preferred_adjacency",
+            "preferred_area"
+          ]
+        }
+      },
+      "required": [
+        "preferred_adjacency",
+        "preferred_area",
+        "total",
+        "weights"
+      ]
+    },
+    "unresolved_checks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      }
+    },
+    "generation_status": {
+      "const": "GENERATED"
+    },
+    "approval_status": {
+      "const": "PROPOSED"
+    },
+    "cad_writes_permitted": {
+      "const": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "input_digest",
+    "algorithm",
+    "parameters",
+    "floor_id",
+    "floor_ids",
+    "geometry",
+    "room_areas_m2",
+    "hard_validation",
+    "soft_scores",
+    "unresolved_checks",
+    "generation_status",
+    "approval_status",
+    "cad_writes_permitted"
+  ]
+}

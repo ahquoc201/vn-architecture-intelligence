@@ -167,7 +167,7 @@ def validate_geometry(doc: Any) -> dict:
                         "Only one outline per floor supported.",
                     )
                 floor_outlines[row.get("floor_id", "")] = row["id"]
-            else:
+            elif row["role"] == "room":
                 if not row.get("room_id") or not row.get("requirement_id"):
                     issue(
                         report,
@@ -185,6 +185,19 @@ def validate_geometry(doc: Any) -> dict:
                         "Room instance has multiple polygons.",
                     )
                 room_instances.add(row.get("room_id", ""))
+            elif (
+                not row.get("reservation_kind")
+                or not row.get("requirement_id")
+                or not row.get("provenance")
+                or "room_id" in row
+            ):
+                issue(
+                    report,
+                    "errors",
+                    "RESERVATION_METADATA",
+                    path,
+                    "Reservations require kind, requirement provenance and no room identity.",
+                )
         approval = row.get("approval")
         valid_approval = bool(approval and approval["digest"] == geometry_digest(doc, row))
         approved[row["id"]] = row["status"] == "approved" and valid_approval
@@ -404,6 +417,25 @@ def validate_geometry(doc: Any) -> dict:
                             room_id,
                             f"Positive overlap within declared tolerance: {area} m2.",
                         )
+            reserved_ids = [
+                r["id"]
+                for r in doc["polygons"]
+                if r["role"] == "reservation" and r["floor_id"] == floor_id
+            ]
+            for reserved_id in reserved_ids:
+                contain(reserved_id, envelope_id)
+                for room_id in room_ids:
+                    if (
+                        shapes[room_id].intersection(shapes[reserved_id]).area
+                        > doc["tolerances"]["overlap_m2"]
+                    ):
+                        issue(
+                            report,
+                            "errors",
+                            "ROOM_IN_RESERVED_REGION",
+                            room_id,
+                            f"Room intersects supplied reservation {reserved_id}.",
+                        )
             union = unary_union([shapes[key] for key in room_ids])
             report["floor_areas"].append(
                 {
@@ -486,6 +518,14 @@ def validate_geometry(doc: Any) -> dict:
                 if r["status"] not in {"rejected", "superseded"}
             }
             for row in doc["polygons"]:
+                if row["role"] == "reservation" and row["requirement_id"] not in requirements:
+                    issue(
+                        report,
+                        "errors",
+                        "RESERVATION_TRACEABILITY",
+                        row["id"],
+                        "Reservation references an unknown source requirement.",
+                    )
                 if row["role"] != "room":
                     continue
                 room, assignment = program_rooms.get(row["room_id"]), active.get(row["room_id"])

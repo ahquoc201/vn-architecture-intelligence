@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.6] - R2/BATCH-006-A deterministic floorplan generation (2026-11-18)
+
+- Add bounded grid rectangle search using explicit area/dimension constraints, source zoning and content-bound generation authorization.
+- Generate up to three distinct spatially validated proposals with stable digests/IDs, traceability, hard checks and normalized soft scores.
+- Add supplied circulation/stairwell/shaft reservation polygons to geometry v1 without changing existing reports for older geometry.
+- Distinguish incomplete/invalid/unsupported inputs, proven area/dimension contradictions and bounded search exhaustion; no automatic approval or CAD writes.
+- Add CLI, synthetic fixtures, versioned golden reports, negative tests and generator coverage in the fresh-wheel smoke test. Preserve Batch 005 golden snapshots with their historical version stamps.
+
+
 ## [0.1.5] - R2/BATCH-005 Zoning and Geometry Contract (2026-11-18)
 
 - Reuse Design Brief/Space Program instances in versioned floor zoning with explicit provenance, unresolved decisions and digest-bound architect decision history.
