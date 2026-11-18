@@ -1,6 +1,6 @@
 # Vietnam Architecture Intelligence (VNAI)
 
-**Phiên bản 0.1.4 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
+**Phiên bản 0.1.5 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
 
 Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, với ba nhiệm vụ tách biệt:
 
@@ -38,6 +38,27 @@ All commands emit JSON to stdout. Exit codes: `0` VALID, `1` INVALID,
 80 m2 declared rectangular lot, seven rooms, unresolved room areas, floors and footprint.
 VALID means data-ready for the supported workflow, still subject to architect approval.
 See [the data contract](docs/DESIGN_BRIEF_CONTRACT.md) for field semantics and limits.
+
+## R2 Batch 005 - Zoning and Geometry Contract
+
+Floor zoning preserves source room instances and explicit architect review records.
+The 2D contract validates polygons, holes, ownership, units, tolerances, envelopes and
+same-floor overlaps without repairing geometry or generating a layout.
+
+```powershell
+vnai design zoning validate examples/batch005/zoning-proposed.json
+vnai design zoning report examples/batch005/zoning-approved.json
+vnai geometry validate examples/batch005/geometry-valid.json
+vnai geometry report examples/batch005/geometry-linked-approved.json
+python scripts/smoke_wheel.py
+```
+
+The proposal intentionally returns exit 3 (INCOMPLETE); approved **synthetic fixture**
+and valid geometry examples return 0. Exit 1 means INVALID; exit 2 means an input error.
+No example is a real architect approval or a client-confirmed layout.
+See [the zoning/geometry contract](docs/ZONING_GEOMETRY_CONTRACT.md).
+The wheel bundles authored runtime data; the smoke script installs it in a fresh venv
+outside the checkout and exercises old and new commands with isolated Python.
 
 ## Chưa làm và không được tuyên bố đã làm
 

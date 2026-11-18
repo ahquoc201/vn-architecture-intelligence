@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "proposal_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "brief": {
+      "$ref": "#/$defs/brief"
+    },
+    "floors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "elevation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit": {
+                "enum": [
+                  "m",
+                  "mm"
+                ]
+              }
+            },
+            "required": [
+              "value",
+              "unit"
+            ]
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "minItems": 0
+    },
+    "assignments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "room_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "floor_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "zone": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "provenance": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "confirmation": {
+            "enum": [
+              "proposed",
+              "confirmed"
+            ]
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "reviewed",
+              "approved",
+              "rejected",
+              "superseded"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "id",
+          "room_id",
+          "requirement_id",
+          "floor_id",
+          "zone",
+          "provenance",
+          "confirmation",
+          "status"
+        ]
+      },
+      "minItems": 0
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "decision_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "action": {
+            "enum": [
+              "reviewed",
+              "approved",
+              "rejected",
+              "superseded"
+            ]
+          },
+          "record": {
+            "$ref": "#/$defs/approval"
+          }
+        },
+        "required": [
+          "id",
+          "decision_id",
+          "action",
+          "record"
+        ]
+      },
+      "minItems": 0
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "floor_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "room_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 1
+          },
+          "kind": {
+            "enum": [
+              "require",
+              "exclude"
+            ]
+          },
+          "requirement_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "strength": {
+            "enum": [
+              "hard",
+              "soft"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "floor_id",
+          "room_ids",
+          "kind",
+          "requirement_id",
+          "strength"
+        ]
+      },
+      "minItems": 0
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "requirement_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "description": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "provenance": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "resolved": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "requirement_id",
+          "description",
+          "provenance",
+          "resolved"
+        ]
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "proposal_id",
+    "revision",
+    "brief",
+    "floors",
+    "assignments",
+    "decisions",
+    "constraints",
+    "assumptions"
+  ],
+  "$defs": {
+    "brief": {
+      "$ref": "design-brief.schema.json"
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "role": {
+          "const": "architect"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "actor",
+        "role",
+        "recorded_at",
+        "digest"
+      ]
+    }
+  }
+}

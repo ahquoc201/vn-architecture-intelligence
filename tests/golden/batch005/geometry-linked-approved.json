@@ -1,0 +1,162 @@
+{
+  "report_schema_version": 1,
+  "engine_version": "0.1.5",
+  "contract": "geometry-v1",
+  "status": "VALID",
+  "errors": [],
+  "warnings": [],
+  "missing_information": [],
+  "diagnostics": [],
+  "cad_writes_permitted": false,
+  "standards_review": "NOT_EVALUATED",
+  "fengshui_review": "NOT_EVALUATED",
+  "polygon_areas_m2": {
+    "SITE": 80.0,
+    "FOOTPRINT": 72.0,
+    "ROOM-1": 10.0,
+    "ROOM-2": 10.0,
+    "ROOM-3": 10.0,
+    "ROOM-4": 10.0,
+    "ROOM-5": 10.0,
+    "ROOM-6": 10.0,
+    "ROOM-7": 10.0
+  },
+  "floor_areas": [
+    {
+      "floor_id": "F1",
+      "envelope_id": "FOOTPRINT",
+      "envelope_area_m2": 72.0,
+      "envelope_approved": true,
+      "net_room_polygon_sum_m2": 70.0,
+      "net_room_polygon_union_m2": 70.0,
+      "geometric_residual_m2": 2.0,
+      "note": "Polygon accounting only; residual is not verified usable area or GFA."
+    },
+    {
+      "floor_id": "F2",
+      "envelope_id": "FOOTPRINT",
+      "envelope_area_m2": 72.0,
+      "envelope_approved": true,
+      "net_room_polygon_sum_m2": 0,
+      "net_room_polygon_union_m2": 0.0,
+      "geometric_residual_m2": 72.0,
+      "note": "Polygon accounting only; residual is not verified usable area or GFA."
+    },
+    {
+      "floor_id": "F3",
+      "envelope_id": "FOOTPRINT",
+      "envelope_area_m2": 72.0,
+      "envelope_approved": true,
+      "net_room_polygon_sum_m2": 0,
+      "net_room_polygon_union_m2": 0.0,
+      "geometric_residual_m2": 72.0,
+      "note": "Polygon accounting only; residual is not verified usable area or GFA."
+    }
+  ],
+  "site_area_m2": 80.0,
+  "footprint_area_m2": 72.0,
+  "gross_floor_area_m2": null,
+  "envelope_approval": {
+    "SITE": true,
+    "FOOTPRINT": true,
+    "ROOM-1": false,
+    "ROOM-2": false,
+    "ROOM-3": false,
+    "ROOM-4": false,
+    "ROOM-5": false,
+    "ROOM-6": false,
+    "ROOM-7": false
+  },
+  "architectural_approval": "APPROVED",
+  "buildability": "NOT_EVALUATED",
+  "zoning_validation": {
+    "report_schema_version": 1,
+    "engine_version": "0.1.5",
+    "contract": "zoning-v1",
+    "status": "VALID",
+    "errors": [],
+    "warnings": [],
+    "missing_information": [],
+    "diagnostics": [],
+    "cad_writes_permitted": false,
+    "standards_review": "NOT_EVALUATED",
+    "fengshui_review": "NOT_EVALUATED",
+    "assignments": [
+      {
+        "id": "ASSIGN-1",
+        "room_id": "BED:1",
+        "requirement_id": "REQ-BED",
+        "floor_id": "F1",
+        "zone": "private",
+        "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+        "confirmation": "confirmed",
+        "status": "approved"
+      },
+      {
+        "id": "ASSIGN-2",
+        "room_id": "BED:2",
+        "requirement_id": "REQ-BED",
+        "floor_id": "F1",
+        "zone": "private",
+        "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+        "confirmation": "confirmed",
+        "status": "approved"
+      },
+      {
+        "id": "ASSIGN-3",
+        "room_id": "BED:3",
+        "requirement_id": "REQ-BED",
+        "floor_id": "F1",
+        "zone": "private",
+        "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+        "confirmation": "confirmed",
+        "status": "approved"
+      },
+      {
+        "id": "ASSIGN-4",
+        "room_id": "LIVING:1",
+        "requirement_id": "REQ-LIVING",
+        "floor_id": "F1",
+        "zone": "public",
+        "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+        "confirmation": "confirmed",
+        "status": "approved"
+      },
+      {
+        "id": "ASSIGN-5",
+        "room_id": "KITCHEN:1",
+        "requirement_id": "REQ-KITCHEN",
+        "floor_id": "F1",
+        "zone": "service",
+        "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+        "confirmation": "confirmed",
+        "status": "approved"
+      },
+      {
+        "id": "ASSIGN-6",
+        "room_id": "PRAYER:1",
+        "requirement_id": "REQ-PRAYER",
+        "floor_id": "F1",
+        "zone": "private",
+        "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+        "confirmation": "confirmed",
+        "status": "approved"
+      },
+      {
+        "id": "ASSIGN-7",
+        "room_id": "LAUNDRY:1",
+        "requirement_id": "REQ-LAUNDRY",
+        "floor_id": "F1",
+        "zone": "service",
+        "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+        "confirmation": "confirmed",
+        "status": "approved"
+      }
+    ],
+    "unassigned_room_ids": [],
+    "relationships": [],
+    "architect_approved": true,
+    "source_brief_status": "VALID",
+    "source_brief_missing_information": []
+  }
+}

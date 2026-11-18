@@ -1,0 +1,389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+    },
+    "fixture_notice": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "units": {
+      "enum": [
+        "m",
+        "mm"
+      ]
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+        },
+        "kind": {
+          "enum": [
+            "local_site",
+            "world"
+          ]
+        },
+        "axes": {
+          "const": "x_east_y_north"
+        },
+        "origin_world": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "rotation_degrees": {
+          "type": "number"
+        },
+        "world_crs": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "axes"
+      ]
+    },
+    "tolerances": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "boundary_m": {
+          "type": "number",
+          "minimum": 0
+        },
+        "overlap_m2": {
+          "type": "number",
+          "minimum": 0
+        },
+        "min_area_m2": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "target_area_m2": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "boundary_m",
+        "overlap_m2",
+        "min_area_m2",
+        "target_area_m2"
+      ]
+    },
+    "floors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "elevation_m": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "minItems": 1
+    },
+    "polygons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "role": {
+            "enum": [
+              "site",
+              "footprint",
+              "floor_outline",
+              "room"
+            ]
+          },
+          "owner_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "floor_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "room_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "frame_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "units": {
+            "enum": [
+              "m",
+              "mm"
+            ]
+          },
+          "exterior": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "minItems": 3
+          },
+          "holes": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "minItems": 3
+            },
+            "minItems": 0
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "approved"
+            ]
+          },
+          "approval": {
+            "$ref": "#/$defs/approval"
+          },
+          "wall_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            },
+            "minItems": 0
+          },
+          "opening_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "id",
+          "role",
+          "owner_id",
+          "frame_id",
+          "units",
+          "exterior",
+          "status"
+        ]
+      },
+      "minItems": 1
+    },
+    "points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "owner_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "xy": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "required": [
+          "id",
+          "owner_id",
+          "xy"
+        ]
+      },
+      "minItems": 0
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "owner_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "start": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "end": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          }
+        },
+        "required": [
+          "id",
+          "owner_id",
+          "start",
+          "end"
+        ]
+      },
+      "minItems": 0
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "geometry_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true
+          },
+          "kind": {
+            "const": "intentional_overlap"
+          },
+          "requirement_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+          },
+          "provenance": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "rationale": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "approved"
+            ]
+          },
+          "approval": {
+            "$ref": "#/$defs/approval"
+          }
+        },
+        "required": [
+          "id",
+          "geometry_ids",
+          "kind",
+          "requirement_id",
+          "provenance",
+          "rationale",
+          "status"
+        ]
+      },
+      "minItems": 0
+    },
+    "zoning": {
+      "$ref": "#/$defs/zoning"
+    }
+  },
+  "required": [
+    "schema_version",
+    "project_id",
+    "units",
+    "frame",
+    "tolerances",
+    "floors",
+    "polygons",
+    "points",
+    "segments",
+    "relationships"
+  ],
+  "$defs": {
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "actor": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "role": {
+          "const": "architect"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "actor",
+        "role",
+        "recorded_at",
+        "digest"
+      ]
+    },
+    "zoning": {
+      "$ref": "zoning.schema.json"
+    }
+  }
+}

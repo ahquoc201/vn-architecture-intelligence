@@ -2,22 +2,25 @@
 
 import argparse
 import json
-import math
 import sys
 from pathlib import Path
 
+from vnai.contracts import load_json
 from vnai.design_brief import validate_design_brief
 from vnai.dxf_adapter import export_schematic_dxf
 from vnai.fengshui_knowledge import report_repo_fengshui, validate_repo_fengshui
 from vnai.insights import validate_repo_insights
+from vnai.resources import data_path
 from vnai.review import review_markdown, review_plan
 from vnai.site_orientation import review_site_orientation
 from vnai.space_program import build_space_program
 from vnai.source_registry import load_registry, validate_registry
+from vnai.spatial import validate_geometry
+from vnai.zoning import validate_zoning
 
-DEFAULT_SOURCES = Path(__file__).resolve().parents[2] / "sources" / "bibliography.yaml"
-DEFAULT_INSIGHTS = Path(__file__).resolve().parents[2] / "knowledge" / "insights.yaml"
-DEFAULT_FENG_ROOT = Path(__file__).resolve().parents[2] / "knowledge" / "fengshui"
+DEFAULT_SOURCES = data_path("sources/bibliography.yaml")
+DEFAULT_INSIGHTS = data_path("knowledge/insights.yaml")
+DEFAULT_FENG_ROOT = data_path("knowledge/fengshui")
 
 
 def load_plan(file: str | Path) -> dict:
@@ -62,12 +65,22 @@ def main(argv: list[str] | None = None) -> int:
 
     design = sub.add_parser("design", help="Design brief and room program; no CAD writes")
     design_sub = design.add_subparsers(dest="design_kind", required=True)
-    for kind, actions in (("brief", ("validate", "report")), ("program", ("build",))):
+    for kind, actions in (
+        ("brief", ("validate", "report")),
+        ("program", ("build",)),
+        ("zoning", ("validate", "report")),
+    ):
         group = design_sub.add_parser(kind)
         action_sub = group.add_subparsers(dest="design_action", required=True)
         for action in actions:
             command = action_sub.add_parser(action)
             command.add_argument("input", help="Design brief JSON")
+
+    geometry = sub.add_parser("geometry", help="2D spatial contract; no CAD writes")
+    geometry_sub = geometry.add_subparsers(dest="geometry_action", required=True)
+    for action in ("validate", "report"):
+        command = geometry_sub.add_parser(action)
+        command.add_argument("input", help="Geometry contract JSON")
 
     review = sub.add_parser("review", help="Review concept polygon geometry")
     review.add_argument("plan")
@@ -80,30 +93,16 @@ def main(argv: list[str] | None = None) -> int:
 
     args = parser.parse_args(argv)
     try:
-        if args.command == "design":
+        if args.command in {"design", "geometry"}:
             try:
-                # Reject duplicate object keys rather than silently replacing a requirement.
-                def unique_object(pairs: list[tuple[str, object]]) -> dict:
-                    value = {}
-                    for key, child in pairs:
-                        if key in value:
-                            raise ValueError(f"Duplicate JSON object key: {key}")
-                        value[key] = child
-                    return value
-
-                def reject_constant(value: str) -> None:
-                    raise ValueError(f"Nonfinite JSON number: {value}")
-
-                def finite_float(value: str) -> float:
-                    number = float(value)
-                    if not math.isfinite(number):
-                        raise ValueError(f"JSON number outside finite range: {value}")
-                    return number
-
-                with Path(args.input).open(encoding="utf-8") as stream:
-                    brief = json.load(stream, object_pairs_hook=unique_object,
-                                      parse_constant=reject_constant, parse_float=finite_float)
-                if args.design_kind == "program":
+                brief = load_json(args.input)
+                if args.command == "geometry":
+                    report = validate_geometry(brief)
+                    validation = report
+                elif args.design_kind == "zoning":
+                    report = validate_zoning(brief)
+                    validation = report
+                elif args.design_kind == "program":
                     report = build_space_program(brief)
                     validation = report["validation"]
                 else:

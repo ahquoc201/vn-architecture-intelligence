@@ -33,6 +33,10 @@ jobs:
           vnai design program build examples/townhouse_4x20_brief.json > /tmp/design-program.json
           result=$?
           test "$result" -eq 3
+      - run: vnai design zoning report examples/batch005/zoning-approved.json
+      - run: vnai geometry report examples/batch005/geometry-linked-approved.json
+      - name: Fresh wheel outside checkout
+        run: python scripts/smoke_wheel.py
       - run: vnai fengshui knowledge validate
       - run: vnai fengshui knowledge report --out outputs/fengshui_research_queue.json
       - run: vnai review examples/townhouse_sample.json --out outputs/check.json --markdown outputs/check.md

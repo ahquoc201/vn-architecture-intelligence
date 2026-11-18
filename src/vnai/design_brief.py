@@ -5,15 +5,15 @@ from dataclasses import dataclass
 from decimal import Decimal
 import json
 import math
-from pathlib import Path
 from typing import Any
 
 from jsonschema import Draft202012Validator
 import yaml
 
 from vnai import __version__
+from vnai.resources import data_path
 
-ARCHITECTURE = Path(__file__).resolve().parents[2] / "knowledge" / "architecture"
+ARCHITECTURE = data_path("knowledge/architecture")
 MAX_ROOM_INSTANCES = 10000  # Resource limit, not an architectural requirement.
 
 

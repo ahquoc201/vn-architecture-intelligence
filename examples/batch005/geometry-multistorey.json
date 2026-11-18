@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "project_id": "SYNTHETIC-GEOMETRY",
+  "fixture_notice": "All coordinates are synthetic test data, not client decisions or a buildable layout.",
+  "units": "m",
+  "frame": {
+    "id": "LOCAL",
+    "kind": "local_site",
+    "axes": "x_east_y_north"
+  },
+  "tolerances": {
+    "boundary_m": 0.001,
+    "overlap_m2": 1e-06,
+    "min_area_m2": 1e-06,
+    "target_area_m2": 0.01
+  },
+  "floors": [
+    {
+      "id": "F1",
+      "elevation_m": 0
+    },
+    {
+      "id": "F2",
+      "elevation_m": 3
+    }
+  ],
+  "polygons": [
+    {
+      "id": "SITE",
+      "role": "site",
+      "owner_id": "SYNTHETIC-GEOMETRY",
+      "frame_id": "LOCAL",
+      "units": "m",
+      "exterior": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          20
+        ],
+        [
+          0,
+          20
+        ]
+      ],
+      "holes": [],
+      "status": "approved",
+      "approval": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:00:00Z",
+        "digest": "7bf5a367165c89a8f7c9a69ebfa9cdb0aa17c4669ff5994be2b8d60ae25e9cce"
+      }
+    },
+    {
+      "id": "FOOTPRINT",
+      "role": "footprint",
+      "owner_id": "SYNTHETIC-GEOMETRY",
+      "frame_id": "LOCAL",
+      "units": "m",
+      "exterior": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          18
+        ],
+        [
+          0,
+          18
+        ]
+      ],
+      "holes": [],
+      "status": "approved",
+      "approval": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:00:00Z",
+        "digest": "1afd82a54c0e0a602e240e0f16290b4b41ba052fad313a46d961de29ec727f56"
+      }
+    },
+    {
+      "id": "ROOM-A",
+      "role": "room",
+      "owner_id": "F1",
+      "frame_id": "LOCAL",
+      "units": "m",
+      "exterior": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "holes": [],
+      "status": "proposed",
+      "floor_id": "F1",
+      "room_id": "A:1",
+      "requirement_id": "REQ-A"
+    },
+    {
+      "id": "ROOM-B",
+      "role": "room",
+      "owner_id": "F2",
+      "frame_id": "LOCAL",
+      "units": "m",
+      "exterior": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "holes": [],
+      "status": "proposed",
+      "floor_id": "F2",
+      "room_id": "B:1",
+      "requirement_id": "REQ-B"
+    }
+  ],
+  "points": [],
+  "segments": [],
+  "relationships": []
+}

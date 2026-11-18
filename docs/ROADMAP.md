@@ -19,7 +19,8 @@
 
 ## R2 — Engine thiết kế và quality gate
 - [x] R2 Batch-004: design brief schema v1, requirement governance, multi-floor room program, hard/soft relationships and tested planning-data gates
-- [ ] Batch-005: architect-approved floor zoning, geometry feasibility and versioned layout decisions
+- [x] Batch-005: versioned floor zoning, explicit architect decision records, 2D spatial diagnostics and wheel data verification
+- [ ] Batch-006: reviewed layout generation candidates, reproducible design decisions and circulation/door/stair geometry checks
 - [ ] Chuẩn hóa brief multi-floor, room type, walls/openings/doors, heights
 - [ ] Kiểm tra giao thông, cửa, cầu thang, công năng, nội thất, bảng diện tích
 - [ ] 2–3 phương án mặt bằng với quyết định thiết kế và thay đổi có thể tái tạo

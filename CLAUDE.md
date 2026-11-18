@@ -35,3 +35,7 @@ vnai dxf examples/townhouse_sample.json --out outputs/schematic.dxf
 DXF hiện chỉ là sơ đồ mặt bằng. Không gọi nó là hồ sơ kỹ thuật đầy đủ.
 
 Brief/program contracts: `docs/DESIGN_BRIEF_CONTRACT.md`. Exit 3 means incomplete data, not command failure; ask the architect to resolve missing information before layout generation.
+
+Batch 005: read `docs/ZONING_GEOMETRY_CONTRACT.md`; validate zoning and supplied geometry
+before layout work. Proposed/reviewed zoning is not approved. Never synthesize a real
+architect approval from fixture data or from a validator success. CAD writes require explicit authorization.
