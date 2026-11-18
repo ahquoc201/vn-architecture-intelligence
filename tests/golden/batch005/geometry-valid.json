@@ -1,0 +1,42 @@
+{
+  "report_schema_version": 1,
+  "engine_version": "0.1.5",
+  "contract": "geometry-v1",
+  "status": "VALID",
+  "errors": [],
+  "warnings": [],
+  "missing_information": [],
+  "diagnostics": [],
+  "cad_writes_permitted": false,
+  "standards_review": "NOT_EVALUATED",
+  "fengshui_review": "NOT_EVALUATED",
+  "polygon_areas_m2": {
+    "SITE": 80.0,
+    "FOOTPRINT": 72.0,
+    "ROOM-A": 8.0,
+    "ROOM-B": 8.0
+  },
+  "floor_areas": [
+    {
+      "floor_id": "F1",
+      "envelope_id": "FOOTPRINT",
+      "envelope_area_m2": 72.0,
+      "envelope_approved": true,
+      "net_room_polygon_sum_m2": 16.0,
+      "net_room_polygon_union_m2": 16.0,
+      "geometric_residual_m2": 56.0,
+      "note": "Polygon accounting only; residual is not verified usable area or GFA."
+    }
+  ],
+  "site_area_m2": 80.0,
+  "footprint_area_m2": 72.0,
+  "gross_floor_area_m2": null,
+  "envelope_approval": {
+    "SITE": true,
+    "FOOTPRINT": true,
+    "ROOM-A": false,
+    "ROOM-B": false
+  },
+  "architectural_approval": "NOT_EVALUATED",
+  "buildability": "NOT_EVALUATED"
+}

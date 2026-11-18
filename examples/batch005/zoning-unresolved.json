@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "proposal_id": "SYNTHETIC-UNRESOLVED",
+  "revision": 1,
+  "brief": {
+    "schema_version": 1,
+    "project": {
+      "id": "demo-townhouse-4x20-brief",
+      "name": "Vietnamese townhouse 4 x 20 m (synthetic example)",
+      "type": "townhouse",
+      "phase": "brief"
+    },
+    "requirements": [
+      {
+        "id": "REQ-BED",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-LIVING",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-KITCHEN",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-PRAYER",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-LAUNDRY",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-LOT",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "Q-NORTH",
+        "type": "question",
+        "origin": "synthetic_client_brief",
+        "confirmation": "unknown",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-FRONTAGE",
+        "type": "question",
+        "origin": "synthetic_client_brief",
+        "confirmation": "unknown",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-ROAD",
+        "type": "question",
+        "origin": "synthetic_client_brief",
+        "confirmation": "unknown",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-SITE-LIMITS",
+        "type": "question",
+        "origin": "synthetic_client_brief",
+        "confirmation": "unknown",
+        "priority": "medium"
+      },
+      {
+        "id": "REQ-STOREYS",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-SKYLIGHT",
+        "type": "preference",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "REQ-LIGHT",
+        "type": "preference",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "REQ-AIR",
+        "type": "preference",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-STAIR",
+        "type": "question",
+        "origin": "synthetic_client_brief",
+        "confirmation": "unknown",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-FOOTPRINT",
+        "type": "question",
+        "origin": "synthetic_client_brief",
+        "confirmation": "unknown",
+        "priority": "medium"
+      },
+      {
+        "id": "REQ-STYLE",
+        "type": "preference",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-OCCUPANTS",
+        "type": "question",
+        "origin": "synthetic_client_brief",
+        "confirmation": "unknown",
+        "priority": "medium"
+      }
+    ],
+    "site": {
+      "dimensions": {
+        "requirement_id": "REQ-LOT",
+        "value": {
+          "shape": "rectangle",
+          "width": 4,
+          "length": 20,
+          "unit": "m"
+        }
+      },
+      "north_degrees": {
+        "requirement_id": "Q-NORTH",
+        "value": null
+      },
+      "frontage": {
+        "requirement_id": "Q-FRONTAGE",
+        "value": null
+      },
+      "road_access": {
+        "requirement_id": "Q-ROAD",
+        "value": null
+      },
+      "constraints": {
+        "requirement_id": "Q-SITE-LIMITS",
+        "value": null
+      }
+    },
+    "building": {
+      "storeys": {
+        "requirement_id": "REQ-STOREYS",
+        "value": 3
+      },
+      "rooms": [
+        {
+          "id": "BED",
+          "type": "bedroom",
+          "quantity": 3,
+          "requirement_id": "REQ-BED",
+          "floor_id": null,
+          "area": null
+        },
+        {
+          "id": "LIVING",
+          "type": "living",
+          "quantity": 1,
+          "requirement_id": "REQ-LIVING",
+          "floor_id": null,
+          "area": null
+        },
+        {
+          "id": "KITCHEN",
+          "type": "kitchen_dining",
+          "quantity": 1,
+          "requirement_id": "REQ-KITCHEN",
+          "floor_id": null,
+          "area": null
+        },
+        {
+          "id": "PRAYER",
+          "type": "prayer",
+          "quantity": 1,
+          "requirement_id": "REQ-PRAYER",
+          "floor_id": null,
+          "area": null
+        },
+        {
+          "id": "LAUNDRY",
+          "type": "laundry",
+          "quantity": 1,
+          "requirement_id": "REQ-LAUNDRY",
+          "floor_id": null,
+          "area": null
+        }
+      ],
+      "skylight": {
+        "requirement_id": "REQ-SKYLIGHT",
+        "value": "Skylight requested; position and size unresolved"
+      },
+      "lighting": {
+        "requirement_id": "REQ-LIGHT",
+        "value": "Prioritize natural daylight"
+      },
+      "ventilation": {
+        "requirement_id": "REQ-AIR",
+        "value": "Prioritize natural ventilation"
+      },
+      "stairs": {
+        "requirement_id": "Q-STAIR",
+        "value": null
+      },
+      "footprint": {
+        "requirement_id": "Q-FOOTPRINT",
+        "value": null
+      }
+    },
+    "client": {
+      "style": {
+        "requirement_id": "REQ-STYLE",
+        "value": "Modern minimalist"
+      },
+      "occupants": {
+        "requirement_id": "Q-OCCUPANTS",
+        "value": null
+      }
+    }
+  },
+  "floors": [],
+  "assignments": [
+    {
+      "id": "ASSIGN-1",
+      "room_id": "BED:1",
+      "requirement_id": "REQ-BED",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-2",
+      "room_id": "BED:2",
+      "requirement_id": "REQ-BED",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-3",
+      "room_id": "BED:3",
+      "requirement_id": "REQ-BED",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-4",
+      "room_id": "LIVING:1",
+      "requirement_id": "REQ-LIVING",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-5",
+      "room_id": "KITCHEN:1",
+      "requirement_id": "REQ-KITCHEN",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-6",
+      "room_id": "PRAYER:1",
+      "requirement_id": "REQ-PRAYER",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-7",
+      "room_id": "LAUNDRY:1",
+      "requirement_id": "REQ-LAUNDRY",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    }
+  ],
+  "decisions": [],
+  "constraints": [],
+  "assumptions": []
+}

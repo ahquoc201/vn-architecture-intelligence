@@ -1,0 +1,484 @@
+{
+  "report_schema_version": 1,
+  "engine_version": "0.1.5",
+  "contract": "zoning-v1",
+  "status": "INCOMPLETE",
+  "errors": [],
+  "warnings": [],
+  "missing_information": [
+    {
+      "code": "SOURCE_BRIEF_INCOMPLETE",
+      "path": "brief",
+      "message": "Zoning does not resolve the source brief; preserve its missing-data register.",
+      "requirement_ids": []
+    },
+    {
+      "code": "STOREY_COUNT_CONFLICT",
+      "path": "floors",
+      "message": "Supply floor IDs matching the source storey count.",
+      "requirement_ids": [
+        "REQ-STOREYS"
+      ]
+    },
+    {
+      "code": "ARCHITECT_APPROVAL_REQUIRED",
+      "path": "assignments.ASSIGN-1",
+      "message": "Proposed/reviewed assignments are not architect-approved.",
+      "requirement_ids": [
+        "REQ-BED"
+      ]
+    },
+    {
+      "code": "ZONE_UNRESOLVED",
+      "path": "assignments.ASSIGN-1",
+      "message": "Choose an explicit functional zone; no room-type mapping is inferred.",
+      "requirement_ids": [
+        "REQ-BED"
+      ]
+    },
+    {
+      "code": "ARCHITECT_APPROVAL_REQUIRED",
+      "path": "assignments.ASSIGN-2",
+      "message": "Proposed/reviewed assignments are not architect-approved.",
+      "requirement_ids": [
+        "REQ-BED"
+      ]
+    },
+    {
+      "code": "ZONE_UNRESOLVED",
+      "path": "assignments.ASSIGN-2",
+      "message": "Choose an explicit functional zone; no room-type mapping is inferred.",
+      "requirement_ids": [
+        "REQ-BED"
+      ]
+    },
+    {
+      "code": "ARCHITECT_APPROVAL_REQUIRED",
+      "path": "assignments.ASSIGN-3",
+      "message": "Proposed/reviewed assignments are not architect-approved.",
+      "requirement_ids": [
+        "REQ-BED"
+      ]
+    },
+    {
+      "code": "ZONE_UNRESOLVED",
+      "path": "assignments.ASSIGN-3",
+      "message": "Choose an explicit functional zone; no room-type mapping is inferred.",
+      "requirement_ids": [
+        "REQ-BED"
+      ]
+    },
+    {
+      "code": "ARCHITECT_APPROVAL_REQUIRED",
+      "path": "assignments.ASSIGN-4",
+      "message": "Proposed/reviewed assignments are not architect-approved.",
+      "requirement_ids": [
+        "REQ-LIVING"
+      ]
+    },
+    {
+      "code": "ZONE_UNRESOLVED",
+      "path": "assignments.ASSIGN-4",
+      "message": "Choose an explicit functional zone; no room-type mapping is inferred.",
+      "requirement_ids": [
+        "REQ-LIVING"
+      ]
+    },
+    {
+      "code": "ARCHITECT_APPROVAL_REQUIRED",
+      "path": "assignments.ASSIGN-5",
+      "message": "Proposed/reviewed assignments are not architect-approved.",
+      "requirement_ids": [
+        "REQ-KITCHEN"
+      ]
+    },
+    {
+      "code": "ZONE_UNRESOLVED",
+      "path": "assignments.ASSIGN-5",
+      "message": "Choose an explicit functional zone; no room-type mapping is inferred.",
+      "requirement_ids": [
+        "REQ-KITCHEN"
+      ]
+    },
+    {
+      "code": "ARCHITECT_APPROVAL_REQUIRED",
+      "path": "assignments.ASSIGN-6",
+      "message": "Proposed/reviewed assignments are not architect-approved.",
+      "requirement_ids": [
+        "REQ-PRAYER"
+      ]
+    },
+    {
+      "code": "ZONE_UNRESOLVED",
+      "path": "assignments.ASSIGN-6",
+      "message": "Choose an explicit functional zone; no room-type mapping is inferred.",
+      "requirement_ids": [
+        "REQ-PRAYER"
+      ]
+    },
+    {
+      "code": "ARCHITECT_APPROVAL_REQUIRED",
+      "path": "assignments.ASSIGN-7",
+      "message": "Proposed/reviewed assignments are not architect-approved.",
+      "requirement_ids": [
+        "REQ-LAUNDRY"
+      ]
+    },
+    {
+      "code": "ZONE_UNRESOLVED",
+      "path": "assignments.ASSIGN-7",
+      "message": "Choose an explicit functional zone; no room-type mapping is inferred.",
+      "requirement_ids": [
+        "REQ-LAUNDRY"
+      ]
+    },
+    {
+      "code": "ROOM_UNASSIGNED",
+      "path": "BED:1",
+      "message": "Room remains unassigned; no floor is inferred.",
+      "requirement_ids": [
+        "REQ-BED"
+      ]
+    },
+    {
+      "code": "ROOM_UNASSIGNED",
+      "path": "BED:2",
+      "message": "Room remains unassigned; no floor is inferred.",
+      "requirement_ids": [
+        "REQ-BED"
+      ]
+    },
+    {
+      "code": "ROOM_UNASSIGNED",
+      "path": "BED:3",
+      "message": "Room remains unassigned; no floor is inferred.",
+      "requirement_ids": [
+        "REQ-BED"
+      ]
+    },
+    {
+      "code": "ROOM_UNASSIGNED",
+      "path": "LIVING:1",
+      "message": "Room remains unassigned; no floor is inferred.",
+      "requirement_ids": [
+        "REQ-LIVING"
+      ]
+    },
+    {
+      "code": "ROOM_UNASSIGNED",
+      "path": "KITCHEN:1",
+      "message": "Room remains unassigned; no floor is inferred.",
+      "requirement_ids": [
+        "REQ-KITCHEN"
+      ]
+    },
+    {
+      "code": "ROOM_UNASSIGNED",
+      "path": "PRAYER:1",
+      "message": "Room remains unassigned; no floor is inferred.",
+      "requirement_ids": [
+        "REQ-PRAYER"
+      ]
+    },
+    {
+      "code": "ROOM_UNASSIGNED",
+      "path": "LAUNDRY:1",
+      "message": "Room remains unassigned; no floor is inferred.",
+      "requirement_ids": [
+        "REQ-LAUNDRY"
+      ]
+    }
+  ],
+  "diagnostics": [],
+  "cad_writes_permitted": false,
+  "standards_review": "NOT_EVALUATED",
+  "fengshui_review": "NOT_EVALUATED",
+  "assignments": [
+    {
+      "id": "ASSIGN-1",
+      "room_id": "BED:1",
+      "requirement_id": "REQ-BED",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-2",
+      "room_id": "BED:2",
+      "requirement_id": "REQ-BED",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-3",
+      "room_id": "BED:3",
+      "requirement_id": "REQ-BED",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-4",
+      "room_id": "LIVING:1",
+      "requirement_id": "REQ-LIVING",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-5",
+      "room_id": "KITCHEN:1",
+      "requirement_id": "REQ-KITCHEN",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-6",
+      "room_id": "PRAYER:1",
+      "requirement_id": "REQ-PRAYER",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    },
+    {
+      "id": "ASSIGN-7",
+      "room_id": "LAUNDRY:1",
+      "requirement_id": "REQ-LAUNDRY",
+      "floor_id": null,
+      "zone": "unresolved",
+      "provenance": "source_design_brief",
+      "confirmation": "proposed",
+      "status": "proposed"
+    }
+  ],
+  "unassigned_room_ids": [
+    "BED:1",
+    "BED:2",
+    "BED:3",
+    "LIVING:1",
+    "KITCHEN:1",
+    "PRAYER:1",
+    "LAUNDRY:1"
+  ],
+  "relationships": [],
+  "architect_approved": false,
+  "source_brief_status": "INCOMPLETE",
+  "source_brief_missing_information": [
+    {
+      "code": "REQUIREMENT_UNRESOLVED",
+      "path": "requirements[6]",
+      "message": "Confirm, resolve or explicitly mark this requirement not applicable.",
+      "requirement_ids": [
+        "Q-NORTH"
+      ]
+    },
+    {
+      "code": "REQUIREMENT_UNRESOLVED",
+      "path": "requirements[7]",
+      "message": "Confirm, resolve or explicitly mark this requirement not applicable.",
+      "requirement_ids": [
+        "Q-FRONTAGE"
+      ]
+    },
+    {
+      "code": "REQUIREMENT_UNRESOLVED",
+      "path": "requirements[8]",
+      "message": "Confirm, resolve or explicitly mark this requirement not applicable.",
+      "requirement_ids": [
+        "Q-ROAD"
+      ]
+    },
+    {
+      "code": "REQUIREMENT_UNRESOLVED",
+      "path": "requirements[9]",
+      "message": "Confirm, resolve or explicitly mark this requirement not applicable.",
+      "requirement_ids": [
+        "Q-SITE-LIMITS"
+      ]
+    },
+    {
+      "code": "REQUIREMENT_UNRESOLVED",
+      "path": "requirements[14]",
+      "message": "Confirm, resolve or explicitly mark this requirement not applicable.",
+      "requirement_ids": [
+        "Q-STAIR"
+      ]
+    },
+    {
+      "code": "REQUIREMENT_UNRESOLVED",
+      "path": "requirements[15]",
+      "message": "Confirm, resolve or explicitly mark this requirement not applicable.",
+      "requirement_ids": [
+        "Q-FOOTPRINT"
+      ]
+    },
+    {
+      "code": "REQUIREMENT_UNRESOLVED",
+      "path": "requirements[17]",
+      "message": "Confirm, resolve or explicitly mark this requirement not applicable.",
+      "requirement_ids": [
+        "Q-OCCUPANTS"
+      ]
+    },
+    {
+      "code": "PLANNING_DATA_MISSING",
+      "path": "site.road_access",
+      "message": "Confirmed data required before downstream planning.",
+      "requirement_ids": [
+        "Q-ROAD"
+      ]
+    },
+    {
+      "code": "PLANNING_DATA_MISSING",
+      "path": "site.frontage",
+      "message": "Confirmed data required before downstream planning.",
+      "requirement_ids": [
+        "Q-FRONTAGE"
+      ]
+    },
+    {
+      "code": "PLANNING_DATA_MISSING",
+      "path": "site.north_degrees",
+      "message": "Confirmed data required before downstream planning.",
+      "requirement_ids": [
+        "Q-NORTH"
+      ]
+    },
+    {
+      "code": "PLANNING_DATA_MISSING",
+      "path": "site.constraints",
+      "message": "Confirmed data required before downstream planning.",
+      "requirement_ids": [
+        "Q-SITE-LIMITS"
+      ]
+    },
+    {
+      "code": "PLANNING_DATA_MISSING",
+      "path": "building.internal_circulation",
+      "message": "Confirmed data required before downstream planning.",
+      "requirement_ids": []
+    },
+    {
+      "code": "PLANNING_DATA_MISSING",
+      "path": "building.vertical_circulation",
+      "message": "Confirmed data required before downstream planning.",
+      "requirement_ids": []
+    },
+    {
+      "code": "PLANNING_DATA_MISSING",
+      "path": "building.footprint",
+      "message": "Confirmed data required before downstream planning.",
+      "requirement_ids": [
+        "Q-FOOTPRINT"
+      ]
+    },
+    {
+      "code": "FLOORS_MISSING",
+      "path": "building.floors",
+      "message": "Supply floor designations.",
+      "requirement_ids": []
+    },
+    {
+      "code": "PLANNING_DATA_MISSING",
+      "path": "building.stairs",
+      "message": "Confirmed data required before downstream planning.",
+      "requirement_ids": [
+        "Q-STAIR"
+      ]
+    },
+    {
+      "code": "ROOM_FLOOR_MISSING",
+      "path": "building.rooms.BED",
+      "message": "Assign room instances to a floor after architect review.",
+      "requirement_ids": [
+        "REQ-BED"
+      ]
+    },
+    {
+      "code": "ROOM_AREA_MISSING",
+      "path": "building.rooms.BED",
+      "message": "No client-supplied area target or bounds.",
+      "requirement_ids": [
+        "REQ-BED"
+      ]
+    },
+    {
+      "code": "ROOM_FLOOR_MISSING",
+      "path": "building.rooms.LIVING",
+      "message": "Assign room instances to a floor after architect review.",
+      "requirement_ids": [
+        "REQ-LIVING"
+      ]
+    },
+    {
+      "code": "ROOM_AREA_MISSING",
+      "path": "building.rooms.LIVING",
+      "message": "No client-supplied area target or bounds.",
+      "requirement_ids": [
+        "REQ-LIVING"
+      ]
+    },
+    {
+      "code": "ROOM_FLOOR_MISSING",
+      "path": "building.rooms.KITCHEN",
+      "message": "Assign room instances to a floor after architect review.",
+      "requirement_ids": [
+        "REQ-KITCHEN"
+      ]
+    },
+    {
+      "code": "ROOM_AREA_MISSING",
+      "path": "building.rooms.KITCHEN",
+      "message": "No client-supplied area target or bounds.",
+      "requirement_ids": [
+        "REQ-KITCHEN"
+      ]
+    },
+    {
+      "code": "ROOM_FLOOR_MISSING",
+      "path": "building.rooms.PRAYER",
+      "message": "Assign room instances to a floor after architect review.",
+      "requirement_ids": [
+        "REQ-PRAYER"
+      ]
+    },
+    {
+      "code": "ROOM_AREA_MISSING",
+      "path": "building.rooms.PRAYER",
+      "message": "No client-supplied area target or bounds.",
+      "requirement_ids": [
+        "REQ-PRAYER"
+      ]
+    },
+    {
+      "code": "ROOM_FLOOR_MISSING",
+      "path": "building.rooms.LAUNDRY",
+      "message": "Assign room instances to a floor after architect review.",
+      "requirement_ids": [
+        "REQ-LAUNDRY"
+      ]
+    },
+    {
+      "code": "ROOM_AREA_MISSING",
+      "path": "building.rooms.LAUNDRY",
+      "message": "No client-supplied area target or bounds.",
+      "requirement_ids": [
+        "REQ-LAUNDRY"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "report_schema_version": 1,
+  "engine_version": "0.1.5",
+  "contract": "geometry-v1",
+  "status": "INVALID",
+  "errors": [
+    {
+      "code": "INVALID_POLYGON",
+      "path": "polygons.ROOM-B",
+      "message": "Self-intersection[1 1]",
+      "requirement_ids": []
+    },
+    {
+      "code": "NEAR_ZERO_AREA",
+      "path": "polygons.ROOM-B",
+      "message": "Polygon area must exceed the explicit minimum tolerance.",
+      "requirement_ids": []
+    }
+  ],
+  "warnings": [],
+  "missing_information": [],
+  "diagnostics": [],
+  "cad_writes_permitted": false,
+  "standards_review": "NOT_EVALUATED",
+  "fengshui_review": "NOT_EVALUATED",
+  "polygon_areas_m2": {
+    "SITE": 80.0,
+    "FOOTPRINT": 72.0,
+    "ROOM-A": 8.0
+  },
+  "floor_areas": [],
+  "site_area_m2": null,
+  "footprint_area_m2": null,
+  "gross_floor_area_m2": null,
+  "envelope_approval": {
+    "SITE": true,
+    "FOOTPRINT": true,
+    "ROOM-A": false,
+    "ROOM-B": false
+  },
+  "architectural_approval": "NOT_EVALUATED",
+  "buildability": "NOT_EVALUATED"
+}

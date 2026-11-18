@@ -1,0 +1,544 @@
+{
+  "schema_version": 1,
+  "proposal_id": "SYNTHETIC-PROPOSAL",
+  "revision": 1,
+  "brief": {
+    "schema_version": 1,
+    "project": {
+      "id": "demo-townhouse-4x20-brief",
+      "name": "Vietnamese townhouse 4 x 20 m (synthetic example)",
+      "type": "townhouse",
+      "phase": "brief"
+    },
+    "requirements": [
+      {
+        "id": "REQ-BED",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-LIVING",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-KITCHEN",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-PRAYER",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-LAUNDRY",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-LOT",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "Q-NORTH",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-FRONTAGE",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-ROAD",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-SITE-LIMITS",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "REQ-STOREYS",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-SKYLIGHT",
+        "type": "preference",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "REQ-LIGHT",
+        "type": "preference",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "REQ-AIR",
+        "type": "preference",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-STAIR",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-FOOTPRINT",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "REQ-STYLE",
+        "type": "preference",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "Q-OCCUPANTS",
+        "type": "mandatory",
+        "origin": "synthetic_client_brief",
+        "confirmation": "confirmed",
+        "priority": "medium"
+      },
+      {
+        "id": "REQ-internal_circulation",
+        "type": "mandatory",
+        "origin": "synthetic_test_client",
+        "confirmation": "confirmed",
+        "priority": "high"
+      },
+      {
+        "id": "REQ-vertical_circulation",
+        "type": "mandatory",
+        "origin": "synthetic_test_client",
+        "confirmation": "confirmed",
+        "priority": "high"
+      }
+    ],
+    "site": {
+      "dimensions": {
+        "requirement_id": "REQ-LOT",
+        "value": {
+          "shape": "rectangle",
+          "width": 4,
+          "length": 20,
+          "unit": "m"
+        }
+      },
+      "north_degrees": {
+        "requirement_id": "Q-NORTH",
+        "value": 0
+      },
+      "frontage": {
+        "requirement_id": "Q-FRONTAGE",
+        "value": "test frontage"
+      },
+      "road_access": {
+        "requirement_id": "Q-ROAD",
+        "value": "test road access"
+      },
+      "constraints": {
+        "requirement_id": "Q-SITE-LIMITS",
+        "value": [
+          "Synthetic site limits provided by test client"
+        ]
+      }
+    },
+    "building": {
+      "storeys": {
+        "requirement_id": "REQ-STOREYS",
+        "value": 3
+      },
+      "rooms": [
+        {
+          "id": "BED",
+          "type": "bedroom",
+          "quantity": 3,
+          "requirement_id": "REQ-BED",
+          "floor_id": "F1",
+          "area": {
+            "target": 10,
+            "unit": "m2"
+          }
+        },
+        {
+          "id": "LIVING",
+          "type": "living",
+          "quantity": 1,
+          "requirement_id": "REQ-LIVING",
+          "floor_id": "F1",
+          "area": {
+            "target": 10,
+            "unit": "m2"
+          }
+        },
+        {
+          "id": "KITCHEN",
+          "type": "kitchen_dining",
+          "quantity": 1,
+          "requirement_id": "REQ-KITCHEN",
+          "floor_id": "F1",
+          "area": {
+            "target": 10,
+            "unit": "m2"
+          }
+        },
+        {
+          "id": "PRAYER",
+          "type": "prayer",
+          "quantity": 1,
+          "requirement_id": "REQ-PRAYER",
+          "floor_id": "F1",
+          "area": {
+            "target": 10,
+            "unit": "m2"
+          }
+        },
+        {
+          "id": "LAUNDRY",
+          "type": "laundry",
+          "quantity": 1,
+          "requirement_id": "REQ-LAUNDRY",
+          "floor_id": "F1",
+          "area": {
+            "target": 10,
+            "unit": "m2"
+          }
+        }
+      ],
+      "skylight": {
+        "requirement_id": "REQ-SKYLIGHT",
+        "value": "Skylight requested; position and size unresolved"
+      },
+      "lighting": {
+        "requirement_id": "REQ-LIGHT",
+        "value": "Prioritize natural daylight"
+      },
+      "ventilation": {
+        "requirement_id": "REQ-AIR",
+        "value": "Prioritize natural ventilation"
+      },
+      "stairs": {
+        "requirement_id": "Q-STAIR",
+        "value": "Test client requests stairs, detailed design pending"
+      },
+      "footprint": {
+        "requirement_id": "Q-FOOTPRINT",
+        "value": {
+          "target": 60,
+          "unit": "m2"
+        }
+      },
+      "floors": [
+        {
+          "id": "F1",
+          "label": "Test floor 1"
+        },
+        {
+          "id": "F2",
+          "label": "Test floor 2"
+        },
+        {
+          "id": "F3",
+          "label": "Test floor 3"
+        }
+      ],
+      "internal_circulation": {
+        "requirement_id": "REQ-internal_circulation",
+        "value": "Test circulation request"
+      },
+      "vertical_circulation": {
+        "requirement_id": "REQ-vertical_circulation",
+        "value": "Test circulation request"
+      }
+    },
+    "client": {
+      "style": {
+        "requirement_id": "REQ-STYLE",
+        "value": "Modern minimalist"
+      },
+      "occupants": {
+        "requirement_id": "Q-OCCUPANTS",
+        "value": 4
+      }
+    }
+  },
+  "floors": [
+    {
+      "id": "F1"
+    },
+    {
+      "id": "F2"
+    },
+    {
+      "id": "F3"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "ASSIGN-1",
+      "room_id": "BED:1",
+      "requirement_id": "REQ-BED",
+      "floor_id": "F1",
+      "zone": "private",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-2",
+      "room_id": "BED:2",
+      "requirement_id": "REQ-BED",
+      "floor_id": "F1",
+      "zone": "private",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-3",
+      "room_id": "BED:3",
+      "requirement_id": "REQ-BED",
+      "floor_id": "F1",
+      "zone": "private",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-4",
+      "room_id": "LIVING:1",
+      "requirement_id": "REQ-LIVING",
+      "floor_id": "F1",
+      "zone": "public",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-5",
+      "room_id": "KITCHEN:1",
+      "requirement_id": "REQ-KITCHEN",
+      "floor_id": "F1",
+      "zone": "service",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-6",
+      "room_id": "PRAYER:1",
+      "requirement_id": "REQ-PRAYER",
+      "floor_id": "F1",
+      "zone": "private",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-7",
+      "room_id": "LAUNDRY:1",
+      "requirement_id": "REQ-LAUNDRY",
+      "floor_id": "F1",
+      "zone": "service",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "ASSIGN-1-reviewed",
+      "decision_id": "ASSIGN-1",
+      "action": "reviewed",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:00:00Z",
+        "digest": "f1e1071a61cdc1666147265d2e400efbea3fd5ccc21886a1ea68fa5446fe6057"
+      }
+    },
+    {
+      "id": "ASSIGN-1-approved",
+      "decision_id": "ASSIGN-1",
+      "action": "approved",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:01:00Z",
+        "digest": "f1e1071a61cdc1666147265d2e400efbea3fd5ccc21886a1ea68fa5446fe6057"
+      }
+    },
+    {
+      "id": "ASSIGN-2-reviewed",
+      "decision_id": "ASSIGN-2",
+      "action": "reviewed",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:00:00Z",
+        "digest": "932e960dfc9c889b61d36f8c4b646f09b7d91ab87d25447eead58aedef387768"
+      }
+    },
+    {
+      "id": "ASSIGN-2-approved",
+      "decision_id": "ASSIGN-2",
+      "action": "approved",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:01:00Z",
+        "digest": "932e960dfc9c889b61d36f8c4b646f09b7d91ab87d25447eead58aedef387768"
+      }
+    },
+    {
+      "id": "ASSIGN-3-reviewed",
+      "decision_id": "ASSIGN-3",
+      "action": "reviewed",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:00:00Z",
+        "digest": "a275bbacb1f9baeab55fb41b4cbe12978ebc4233ac76c9d7c4cb832ef33afd55"
+      }
+    },
+    {
+      "id": "ASSIGN-3-approved",
+      "decision_id": "ASSIGN-3",
+      "action": "approved",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:01:00Z",
+        "digest": "a275bbacb1f9baeab55fb41b4cbe12978ebc4233ac76c9d7c4cb832ef33afd55"
+      }
+    },
+    {
+      "id": "ASSIGN-4-reviewed",
+      "decision_id": "ASSIGN-4",
+      "action": "reviewed",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:00:00Z",
+        "digest": "1f9d4f19665861bb9c89b255bd4f5a6482b48c9227d46732e605264679e3536b"
+      }
+    },
+    {
+      "id": "ASSIGN-4-approved",
+      "decision_id": "ASSIGN-4",
+      "action": "approved",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:01:00Z",
+        "digest": "1f9d4f19665861bb9c89b255bd4f5a6482b48c9227d46732e605264679e3536b"
+      }
+    },
+    {
+      "id": "ASSIGN-5-reviewed",
+      "decision_id": "ASSIGN-5",
+      "action": "reviewed",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:00:00Z",
+        "digest": "140e3fb440dbe42669e025034b983d550f7c51b7ffbbd1a58976dd47dc97f043"
+      }
+    },
+    {
+      "id": "ASSIGN-5-approved",
+      "decision_id": "ASSIGN-5",
+      "action": "approved",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:01:00Z",
+        "digest": "140e3fb440dbe42669e025034b983d550f7c51b7ffbbd1a58976dd47dc97f043"
+      }
+    },
+    {
+      "id": "ASSIGN-6-reviewed",
+      "decision_id": "ASSIGN-6",
+      "action": "reviewed",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:00:00Z",
+        "digest": "1429d181b152800e3a3860122dd9a4626fbb83cab57a39c383b95fc94c112fba"
+      }
+    },
+    {
+      "id": "ASSIGN-6-approved",
+      "decision_id": "ASSIGN-6",
+      "action": "approved",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:01:00Z",
+        "digest": "1429d181b152800e3a3860122dd9a4626fbb83cab57a39c383b95fc94c112fba"
+      }
+    },
+    {
+      "id": "ASSIGN-7-reviewed",
+      "decision_id": "ASSIGN-7",
+      "action": "reviewed",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:00:00Z",
+        "digest": "484a2bb74d6b681288b72e27b001ef5741429258ed9e816c23c535b3e207e896"
+      }
+    },
+    {
+      "id": "ASSIGN-7-approved",
+      "decision_id": "ASSIGN-7",
+      "action": "approved",
+      "record": {
+        "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_A_REAL_APPROVAL",
+        "role": "architect",
+        "recorded_at": "2026-11-18T00:01:00Z",
+        "digest": "484a2bb74d6b681288b72e27b001ef5741429258ed9e816c23c535b3e207e896"
+      }
+    }
+  ],
+  "constraints": [],
+  "assumptions": []
+}

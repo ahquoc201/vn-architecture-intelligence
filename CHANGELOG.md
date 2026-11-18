@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.5] - R2/BATCH-005 Zoning and Geometry Contract (2026-11-18)
+
+- Reuse Design Brief/Space Program instances in versioned floor zoning with explicit provenance, unresolved decisions and digest-bound architect decision history.
+- Add a 2D polygon/point/segment contract with frames, units, holes, ownership and explicit tolerances; validate envelopes, floor-specific overlaps and area targets without repairing input.
+- Add read-only zoning/geometry CLI commands, synthetic approval examples, golden reports and regression/negative tests.
+- Bundle canonical authored runtime schemas/YAML in wheels and add a fresh-venv smoke test outside the checkout.
+- Keep CAD writing disabled and specialist rules unapproved; no optimizer or buildability certification.
+
+
 ## [0.1.4] - R2/BATCH-004 Design Brief & Space Program (2026-11-18)
 
 - Add shared JSON Schema v1/Python validation, requirement provenance and explicit planning-data gates.

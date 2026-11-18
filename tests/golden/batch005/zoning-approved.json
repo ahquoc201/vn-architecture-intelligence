@@ -1,0 +1,90 @@
+{
+  "report_schema_version": 1,
+  "engine_version": "0.1.5",
+  "contract": "zoning-v1",
+  "status": "VALID",
+  "errors": [],
+  "warnings": [],
+  "missing_information": [],
+  "diagnostics": [],
+  "cad_writes_permitted": false,
+  "standards_review": "NOT_EVALUATED",
+  "fengshui_review": "NOT_EVALUATED",
+  "assignments": [
+    {
+      "id": "ASSIGN-1",
+      "room_id": "BED:1",
+      "requirement_id": "REQ-BED",
+      "floor_id": "F1",
+      "zone": "private",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-2",
+      "room_id": "BED:2",
+      "requirement_id": "REQ-BED",
+      "floor_id": "F1",
+      "zone": "private",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-3",
+      "room_id": "BED:3",
+      "requirement_id": "REQ-BED",
+      "floor_id": "F1",
+      "zone": "private",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-4",
+      "room_id": "LIVING:1",
+      "requirement_id": "REQ-LIVING",
+      "floor_id": "F1",
+      "zone": "public",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-5",
+      "room_id": "KITCHEN:1",
+      "requirement_id": "REQ-KITCHEN",
+      "floor_id": "F1",
+      "zone": "service",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-6",
+      "room_id": "PRAYER:1",
+      "requirement_id": "REQ-PRAYER",
+      "floor_id": "F1",
+      "zone": "private",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    },
+    {
+      "id": "ASSIGN-7",
+      "room_id": "LAUNDRY:1",
+      "requirement_id": "REQ-LAUNDRY",
+      "floor_id": "F1",
+      "zone": "service",
+      "provenance": "Synthetic zoning fixture, not client-confirmed decisions",
+      "confirmation": "confirmed",
+      "status": "approved"
+    }
+  ],
+  "unassigned_room_ids": [],
+  "relationships": [],
+  "architect_approved": true,
+  "source_brief_status": "VALID",
+  "source_brief_missing_information": []
+}

@@ -45,3 +45,24 @@ For suggestions rooted in regional architecture or worship spaces, use only the 
 6. Keep Feng Shui and QCVN/TCVN reviews separate under the source review policy. VALID never
    grants specialist approval or authorization to change CAD. Any CAD write needs explicit approval.
 7. Maintain this skill in `skills/vn-house-design/`; do not create a duplicate installed copy here.
+
+
+## R2 Batch 005: zoning and spatial validation before layout work
+
+- Read `docs/ZONING_GEOMETRY_CONTRACT.md`. Use the validated source brief and
+  deterministic program room instance IDs, preserving their requirement IDs.
+- Record zoning using `vnai.zoning.create_zoning_proposal`; it only copies floors
+  explicitly present in the brief and leaves other assignments/functional zones unresolved.
+  Collect proposed decisions with provenance and rationale instead of inventing assignments.
+- Run `vnai design zoning validate <file>` and `vnai design zoning report <file>`.
+  Present unassigned_room_ids, missing decisions and source-brief questions to the architect.
+- A proposed or reviewed assignment is not approved. Approval requires ordered architect
+  decision records bound to the exact brief/revision/assignment digest. Only the human
+  reviewer may supply a real approval record. Fixture records are synthetic examples only.
+  If content changes, obtain a fresh revision/review; never regenerate approvals automatically.
+- Run `vnai geometry validate <file>` and `vnai geometry report <file>` for supplied
+  polygons. Keep frame/units/tolerances explicit; do not repair polygons or exempt overlaps
+  automatically. Explain errors versus tolerance warnings and declared intentional relationships.
+- VALID geometry means only the supported spatial checks passed; it is not evidence of
+  a buildable, structurally safe or legally compliant design. Keep code/Feng Shui review separate.
+  CAD modifications still need explicit authorization, even after architect-approved zoning.

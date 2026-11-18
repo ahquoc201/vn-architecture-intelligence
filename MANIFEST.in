@@ -1,0 +1,4 @@
+include sources/bibliography.yaml
+include knowledge/insights.yaml
+recursive-include knowledge/architecture *.json *.yaml
+recursive-include knowledge/fengshui *.json *.yaml

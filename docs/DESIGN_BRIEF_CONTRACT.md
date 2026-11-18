@@ -136,10 +136,12 @@ The example is synthetic, has no customer identity and intentionally returns exi
 
 ## Limits and Batch 005
 
-This checkout/editable-install workflow loads schemas/YAML from the repository,
-consistent with existing knowledge tools; standalone wheel data bundling is pending.
+As of 0.1.5, runtime schemas/YAML are bundled from canonical repository data into
+wheels and verified by `python scripts/smoke_wheel.py` in a fresh venv outside the checkout.
 Geometry references, polygon sites, survey verification, per-instance floor allocation,
 wall/opening/stair geometry, circulation feasibility, climate, budget costing and
 code/Feng Shui reviews are outside this batch. Free-text constraints are preserved
 without asserting they were checked. Batch 005 should introduce architect-approved
 zoning decisions and tested geometry contracts before attempting any floorplan generator.
+
+Batch 005 zoning and spatial contracts are documented in `ZONING_GEOMETRY_CONTRACT.md`.
