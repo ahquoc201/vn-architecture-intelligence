@@ -1,0 +1,75 @@
+schema_version: 1
+purpose: research_working_glossary_not_doctrinal_definitions
+terms:
+  - id: facing
+    label_vi: 'Hướng nhà / hướng nhìn ra'
+    label_zh: '向 (hướng)'
+    school: shared
+    source_ids: [FENG-BAT-TRACH-MINH-KINH, FENG-DUONG-TRACH-TAM-YEU]
+    working_definition: 'Phương mà nhà hoặc thành phần đang xét hướng ra; phải nói rõ vật tham chiếu.'
+    ambiguity: 'Hướng mặt tiền, hướng cửa, hướng nhà theo mỗi trường phái có thể không trùng nhau.'
+    verified_from_primary_text: false
+    allowed_use: input_clarification_only
+  - id: sitting
+    label_vi: 'Tọa nhà / hướng lưng'
+    label_zh: '坐 (tọa)'
+    school: shared
+    source_ids: [FENG-BAT-TRACH-MINH-KINH]
+    working_definition: 'Phương sau lưng của vật thể có hướng nhìn được xác định.'
+    ambiguity: 'Không mặc định dùng pháp tuyến cạnh ranh đất làm tọa; phải xác định hướng đang xét.'
+    verified_from_primary_text: false
+    allowed_use: input_clarification_only
+  - id: mon
+    label_vi: 'Môn'
+    label_zh: '門'
+    school: duong_trach_tam_yeu
+    source_ids: [FENG-DUONG-TRACH-TAM-YEU]
+    working_definition: 'Yếu tố cửa/cổng trong bộ thuật ngữ Môn–Chủ–Táo.'
+    ambiguity: 'Chưa chốt dùng cổng rào, cửa chính hoặc lối vào thực tế trong nhà phố hiện đại.'
+    verified_from_primary_text: false
+    allowed_use: input_clarification_only
+  - id: chu
+    label_vi: 'Chủ'
+    label_zh: '主'
+    school: duong_trach_tam_yeu
+    source_ids: [FENG-DUONG-TRACH-TAM-YEU]
+    working_definition: 'Yếu tố không gian chủ trong bộ thuật ngữ Môn–Chủ–Táo.'
+    ambiguity: 'Chưa xác minh quy ước vị trí/phòng chủ cho nhà nhiều tầng và công năng hỗn hợp.'
+    verified_from_primary_text: false
+    allowed_use: input_clarification_only
+  - id: tao
+    label_vi: 'Táo'
+    label_zh: '灶'
+    school: duong_trach_tam_yeu
+    source_ids: [FENG-DUONG-TRACH-TAM-YEU]
+    working_definition: 'Yếu tố bếp trong bộ thuật ngữ Môn–Chủ–Táo.'
+    ambiguity: 'Vị trí bếp, hướng miệng bếp và hướng người nấu không thể coi là một.'
+    verified_from_primary_text: false
+    allowed_use: input_clarification_only
+  - id: cung-phi
+    label_vi: 'Cung phi / quẻ mệnh'
+    label_zh: null
+    school: bat_trach
+    source_ids: [FENG-BAT-TRACH-MINH-KINH]
+    working_definition: 'Khái niệm phân loại trong một số cách diễn giải Bát Trạch.'
+    ambiguity: 'Năm âm/dương lịch, tiết khí và biến thể theo các ấn bản chưa được kiểm chứng.'
+    verified_from_primary_text: false
+    allowed_use: input_clarification_only
+  - id: compass-eight
+    label_vi: 'Tám hướng địa lý'
+    label_zh: null
+    school: geometry_only
+    source_ids: [FENG-BAT-TRACH-MINH-KINH]
+    working_definition: 'Tám khoảng góc đều nhau, mỗi khoảng rộng 45 độ trong engine hình học hiện tại.'
+    ambiguity: 'Không được đồng nhất quy ước chia 8 hướng của engine với 24 sơn hoặc cách chia cụ thể trong cổ thư.'
+    verified_from_primary_text: false
+    allowed_use: input_clarification_only
+  - id: school
+    label_vi: 'Trường phái / hệ diễn giải'
+    label_zh: null
+    school: shared
+    source_ids: [FENG-BAT-TRACH-MINH-KINH, FENG-DUONG-TRACH-TAM-YEU]
+    working_definition: 'Nhãn dùng để giữ biệt lập các phương pháp và ấn bản trong báo cáo.'
+    ambiguity: 'Tên trường phái không đảm bảo hai ấn bản có cùng quy tắc.'
+    verified_from_primary_text: false
+    allowed_use: input_clarification_only

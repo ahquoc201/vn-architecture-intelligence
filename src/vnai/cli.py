@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 from vnai.dxf_adapter import export_schematic_dxf
+from vnai.fengshui_knowledge import report_repo_fengshui, validate_repo_fengshui
 from vnai.insights import validate_repo_insights
 from vnai.review import review_markdown, review_plan
 from vnai.site_orientation import review_site_orientation
@@ -13,6 +14,7 @@ from vnai.source_registry import load_registry, validate_registry
 
 DEFAULT_SOURCES = Path(__file__).resolve().parents[2] / "sources" / "bibliography.yaml"
 DEFAULT_INSIGHTS = Path(__file__).resolve().parents[2] / "knowledge" / "insights.yaml"
+DEFAULT_FENG_ROOT = Path(__file__).resolve().parents[2] / "knowledge" / "fengshui"
 
 
 def load_plan(file: str | Path) -> dict:
@@ -44,6 +46,17 @@ def main(argv: list[str] | None = None) -> int:
     orientation.add_argument("input", help="Orientation JSON with true north and outward frontage")
     orientation.add_argument("--out", help="Save JSON result to this file")
 
+    fknowledge = feng_sub.add_parser("knowledge", help="Research queue; no rules executable")
+    fk_sub = fknowledge.add_subparsers(dest="faction", required=True)
+    for action in ("validate", "report"):
+        command = fk_sub.add_parser(action)
+        command.add_argument("--editions", default=str(DEFAULT_FENG_ROOT / "edition-evidence.yaml"))
+        command.add_argument("--terms", default=str(DEFAULT_FENG_ROOT / "terminology.yaml"))
+        command.add_argument("--rules", default=str(DEFAULT_FENG_ROOT / "rule-candidates.yaml"))
+        command.add_argument("--sources", default=str(DEFAULT_SOURCES))
+        if action == "report":
+            command.add_argument("--out", help="Save research queue JSON")
+
     review = sub.add_parser("review", help="Review concept polygon geometry")
     review.add_argument("plan")
     review.add_argument("--out", help="Path for JSON report")
@@ -71,7 +84,26 @@ def main(argv: list[str] | None = None) -> int:
                 return 1
             print("Research insights structurally valid (NOT executable or expert-approved).")
             return 0
-        if args.command == "fengshui":
+        if args.command == "fengshui" and args.action == "knowledge":
+            paths = (args.editions, args.terms, args.rules, args.sources)
+            if args.faction == "validate":
+                issues = validate_repo_fengshui(*paths)
+                if issues:
+                    for issue in issues:
+                        print(f"ERROR: {issue}", file=sys.stderr)
+                    return 1
+                print("Feng shui research queue structurally valid (NO rules approved).")
+                return 0
+            payload = json.dumps(report_repo_fengshui(*paths), ensure_ascii=False, indent=2) + "\n"
+            if args.out:
+                target = Path(args.out)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(payload, encoding="utf-8")
+                print(f"Research-only report: {target}")
+            else:
+                print(payload, end="")
+            return 0
+        if args.command == "fengshui" and args.action == "orientation":
             report = review_site_orientation(load_plan(args.input))
             result = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
             if args.out:

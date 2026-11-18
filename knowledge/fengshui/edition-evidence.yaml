@@ -1,0 +1,117 @@
+schema_version: 1
+purpose: bibliographic_claim_comparison_not_text_verification
+reviewed_at: '2026-11-16'
+notes: >-
+  Each record describes a specific PUBLIC catalog or bookseller claim. Verified here means
+  that the catalog PAGE makes the claim, not that the printed edition, authorship,
+  translation or any Bát Trạch/Dương Trạch rule has been checked. Page counts and
+  ISBN/barcode identifiers can differ across records; do not silently reconcile them.
+records:
+  - id: BTMK-NLV-2009
+    source_id: FENG-BAT-TRACH-MINH-KINH
+    school: bat_trach
+    comparison_group: BTMK-2009-NXB-HA-NOI
+    edition_label: 'NXB Hà Nội, Vietnamese translation/catalog record, 2009'
+    catalog_kind: national_library_mirror
+    catalog_url: 'https://www.emiclib.com/Item/ItemDetail/1323273'
+    year_claimed: 2009
+    publisher_claimed: 'NXB Hà Nội'
+    translator_claimed: 'Gia Linh (dịch và chú giải)'
+    pages_claimed: 335
+    identifier_claimed: null
+    metadata_claim_status: catalog_page_checked
+    full_text_reviewed: false
+    page_level_rules_verified: false
+    expert_reviewed: false
+    rights_clearance: not_evaluated
+    notes: 'Biểu ghi thư viện dẫn nguồn Thư viện Quốc gia; không phải bằng chứng đã đọc nội dung.'
+  - id: BTMK-HONGDUC-2012
+    source_id: FENG-BAT-TRACH-MINH-KINH
+    school: bat_trach
+    comparison_group: BTMK-2012-HONG-DUC
+    edition_label: 'Retail listing: Hồng Đức, 2012, 384 pages'
+    catalog_kind: retailer_listing
+    catalog_url: 'https://xemsachhay.com/bat-trach-minh-kinh-bo-kinh-dien-day-du-nhat-ve-phong-thuy-duong-trach/'
+    year_claimed: 2012
+    publisher_claimed: 'NXB Hồng Đức'
+    translator_claimed: null
+    pages_claimed: 384
+    identifier_claimed: '8935095612093'
+    metadata_claim_status: catalog_page_checked
+    full_text_reviewed: false
+    page_level_rules_verified: false
+    expert_reviewed: false
+    rights_clearance: not_evaluated
+    notes: 'Khác bản 2009; không lấy số trang của bản này để trích dẫn bản kia.'
+  - id: DTT-HONGBANG-2013
+    source_id: FENG-DUONG-TRACH-TAM-YEU
+    school: duong_trach_tam_yeu
+    comparison_group: DTT-2013-HONG-BANG
+    edition_label: 'Retail listing: Hồng Bàng, 2013, 576 pages'
+    catalog_kind: retailer_listing
+    catalog_url: 'https://minhkhai.com.vn/store2/index.aspx?isbn=8935095615285&q=view'
+    year_claimed: 2013
+    publisher_claimed: 'NXB Hồng Bàng'
+    translator_claimed: null
+    pages_claimed: 576
+    identifier_claimed: '8935095615285'
+    metadata_claim_status: catalog_page_checked
+    full_text_reviewed: false
+    page_level_rules_verified: false
+    expert_reviewed: false
+    rights_clearance: not_evaluated
+    notes: 'Retail description of Môn–Chủ–Táo; không chứng thực công thức hay đồ hình.'
+  - id: DTT-HONGDUC-2016-670
+    source_id: FENG-DUONG-TRACH-TAM-YEU
+    school: duong_trach_tam_yeu
+    comparison_group: DTT-2016-HONG-DUC-8935088548224
+    edition_label: 'Retail listing: Hồng Đức, 2016, 670 pages'
+    catalog_kind: retailer_listing
+    catalog_url: 'https://newshop.vn/tu-kho-toan-thu-duong-trach-tam-yeu.html'
+    year_claimed: 2016
+    publisher_claimed: 'NXB Hồng Đức'
+    translator_claimed: null
+    pages_claimed: 670
+    identifier_claimed: '8935088548224'
+    metadata_claim_status: catalog_page_checked
+    full_text_reviewed: false
+    page_level_rules_verified: false
+    expert_reviewed: false
+    rights_clearance: not_evaluated
+    notes: 'Listing đồng thời có barcode 8935088548224; cần đối chiếu bìa/trang bản quyền.'
+  - id: DTT-HONGDUC-2016-696
+    source_id: FENG-DUONG-TRACH-TAM-YEU
+    school: duong_trach_tam_yeu
+    comparison_group: DTT-2016-HONG-DUC-8935088548224
+    edition_label: 'Retail listing: Hồng Đức, 2016, 696 pages'
+    catalog_kind: retailer_listing
+    catalog_url: 'https://minhkhai.com.vn/store2/index.aspx?isbn=8935088548224&q=view'
+    year_claimed: 2016
+    publisher_claimed: 'NXB Hồng Đức'
+    translator_claimed: null
+    pages_claimed: 696
+    identifier_claimed: '8935088548224'
+    metadata_claim_status: catalog_page_checked
+    full_text_reviewed: false
+    page_level_rules_verified: false
+    expert_reviewed: false
+    rights_clearance: not_evaluated
+    notes: 'Khác số trang so với listing Newshop cho cùng barcode; chưa kết luận lỗi thuộc bên nào.'
+  - id: DTT-HONGDUC-2016-692
+    source_id: FENG-DUONG-TRACH-TAM-YEU
+    school: duong_trach_tam_yeu
+    comparison_group: DTT-2016-HONG-DUC-UNMATCHED
+    edition_label: 'Retail listing: Hồng Đức, 2016, 692 pages; barcode not confirmed'
+    catalog_kind: retailer_listing
+    catalog_url: 'https://www.huyhoangbook.vn/products/duong-trach-tam-yeu'
+    year_claimed: 2016
+    publisher_claimed: 'NXB Hồng Đức'
+    translator_claimed: null
+    pages_claimed: 692
+    identifier_claimed: null
+    metadata_claim_status: catalog_page_checked
+    full_text_reviewed: false
+    page_level_rules_verified: false
+    expert_reviewed: false
+    rights_clearance: not_evaluated
+    notes: 'Không gộp với barcode 8935088548224 vì listing chưa cung cấp mã tương ứng.'

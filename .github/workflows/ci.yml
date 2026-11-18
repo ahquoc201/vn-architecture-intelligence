@@ -7,19 +7,25 @@ permissions:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.14']
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e '.[dev,cad]'
       - run: python -m pytest -q
       - run: ruff check src tests scripts
       - run: vnai sources validate
       - run: vnai knowledge validate
+      - run: vnai fengshui knowledge validate
+      - run: vnai fengshui knowledge report --out outputs/fengshui_research_queue.json
       - run: vnai review examples/townhouse_sample.json --out outputs/check.json --markdown outputs/check.md
       - run: vnai dxf examples/townhouse_sample.json --out outputs/schematic.dxf
       - uses: actions/upload-artifact@v4
         with:
-          name: demo-review
+          name: demo-review-py${{ matrix.python-version }}
           path: outputs/
