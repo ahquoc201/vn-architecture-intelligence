@@ -14,3 +14,13 @@ phương vị, engine trả hai hướng có thể, không phán tốt/xấu. C�
 **Bắc thực** và vector hướng **từ nhà ra đường**, không suy diễn từ cạnh mặt tiền.
 
 Bảng câu hỏi về ấn bản cổ thư nằm tại `research/editions/r1-batch002.yaml`.
+
+## R1 Batch 003 — nghiên cứu thư mục và câu hỏi quy tắc
+
+- `edition-evidence.yaml`: các claim từ trang thư mục/nhà sách, **không phải** nội dung sách đã đọc; những số trang không đồng nhất được báo riêng.
+- `terminology.yaml`: glossary làm rõ nghĩa **đầu vào**, chưa là định nghĩa kinh điển.
+- `rule-candidates.yaml`: câu hỏi nghiên cứu, không có predicate, formula hay oracle được duyệt.
+- `vnai fengshui knowledge validate`: đối chiếu nguồn và chặn đánh dấu approved/executable/CAD writes.
+- `vnai fengshui knowledge report`: xuất hàng đợi thẩm định và bất đồng metadata.
+
+Không dùng bất kỳ bản ghi nào ở đây để kết luận hợp/xung khắc, chọn hướng tốt/xấu hoặc tự sửa bản vẽ.

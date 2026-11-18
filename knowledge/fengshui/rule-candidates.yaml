@@ -1,0 +1,59 @@
+schema_version: 1
+purpose: unanswered_research_questions_only
+rules:
+  - id: BT-001
+    school: bat_trach
+    topic: 'Quy ước tính cung phi/quẻ mệnh'
+    source_ids: [FENG-BAT-TRACH-MINH-KINH]
+    evidence_record_ids: [BTMK-NLV-2009, BTMK-HONGDUC-2012]
+    source_locator: null
+    review_status: candidate
+    interpretation: null
+    unresolved_inputs: ['Mốc đổi năm', 'Biến thể theo niên đại và ấn bản', 'Chính sách dữ liệu gia chủ']
+    oracle_cases: []
+    full_text_reviewed: false
+    expert_approved: false
+    executable: false
+    cad_writes_permitted: false
+  - id: BT-002
+    school: bat_trach
+    topic: 'Quy tắc phân nhóm Đông/Tây tứ và phương vị tương ứng'
+    source_ids: [FENG-BAT-TRACH-MINH-KINH]
+    evidence_record_ids: [BTMK-NLV-2009]
+    source_locator: null
+    review_status: candidate
+    interpretation: null
+    unresolved_inputs: ['Quy ước tọa/hướng', 'Đối chiếu đồ hình trong bản in cụ thể']
+    oracle_cases: []
+    full_text_reviewed: false
+    expert_approved: false
+    executable: false
+    cad_writes_permitted: false
+  - id: DTT-001
+    school: duong_trach_tam_yeu
+    topic: 'Xác định Môn–Chủ–Táo trong nhà phố hiện đại'
+    source_ids: [FENG-DUONG-TRACH-TAM-YEU]
+    evidence_record_ids: [DTT-HONGBANG-2013, DTT-HONGDUC-2016-670]
+    source_locator: null
+    review_status: candidate
+    interpretation: null
+    unresolved_inputs: ['Môn là cổng hay cửa', 'Chủ với nhà nhiều tầng', 'Táo là vị trí hay hướng']
+    oracle_cases: []
+    full_text_reviewed: false
+    expert_approved: false
+    executable: false
+    cad_writes_permitted: false
+  - id: DTT-002
+    school: duong_trach_tam_yeu
+    topic: 'Quan hệ phương vị Môn–Chủ–Táo và các dị bản'
+    source_ids: [FENG-DUONG-TRACH-TAM-YEU]
+    evidence_record_ids: [DTT-HONGDUC-2016-670, DTT-HONGDUC-2016-696]
+    source_locator: null
+    review_status: candidate
+    interpretation: null
+    unresolved_inputs: ['Xác minh bản in và số trang', 'Đối chiếu đồ hình', 'Oracle các trường hợp thiếu dữ liệu']
+    oracle_cases: []
+    full_text_reviewed: false
+    expert_approved: false
+    executable: false
+    cad_writes_permitted: false

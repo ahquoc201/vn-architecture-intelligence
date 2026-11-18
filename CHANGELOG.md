@@ -1,11 +1,19 @@
+# Changelog
+
+## [0.1.3] — R1/BATCH-003 bibliographic research guards (2026-11-16)
+
+- Track six **catalog claims** (not full-book attestations) across Bát Trạch Minh Kính and Dương Trạch Tam Yếu.
+- Flag unresolved 2016 Dương Trạch edition page-count mismatch for the same published barcode.
+- Add eight input-clarification terms and four non-executable research rule questions.
+- Add `vnai fengshui knowledge validate` and `report`; fail closed if candidate rules claim approval, provenance or CAD write rights.
+- Expand source-linked tests and CI; no traditional numerical judgments or technical compliance claims.
+
 ## 0.1.2 — R1 Batch 002 (orientation engineering foundation)
 
 - Add true-north drawing-vector orientation calculator, uncertainty-aware octant boundary results and read-only CLI.
 - Add documented JSON input schema, demo, edition review queue and research evidence note.
 - Add tests for geometric edge cases, validation, CLI and non-executable feng shui guardrails.
 - Bát Trạch/Dương Trạch numerical rules **remain unapproved**; no CAD writes or technical compliance claims.
-
-# Changelog
 
 ## [0.1.1] — R1/BATCH-001 evidence corpus (2026-11-16)
 
@@ -14,8 +22,6 @@
 - Add `vnai knowledge validate`, provenance checks, nine protective tests and CI gate.
 - Record source audit and explicit blockers for paid full-text review/expert approval.
 - **No approved Bát Trạch/Dương Trạch computation or legal compliance rule was added.**
-
-# Changelog
 
 ## 0.1.0 — research foundation
 - Seeded 11 source references with provenance, priority and rights status.

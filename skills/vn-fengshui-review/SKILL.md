@@ -39,3 +39,12 @@ building to street**. Read `knowledge/fengshui/orientation-input.schema.json` an
 - `NEEDS_DATA` means direction convention, true north or uncertainty needs confirmation.
 - Do not derive Kua, Bát Trạch auspicious directions, Môn–Chủ–Táo or rule verdicts:
   `research/editions/r1-batch002.yaml` documents unreviewed editions.
+
+## R1 Batch 003: nguồn và thuật ngữ chưa duyệt
+
+1. Chạy `vnai fengshui knowledge validate` trước khi tham khảo dữ liệu. Nếu lỗi, dừng toàn bộ diễn giải từ corpus này.
+2. Đọc `knowledge/fengshui/edition-evidence.yaml` để xác định **claim thư mục** đúng từng bản; các mâu thuẫn số trang phải xuất hiện trong báo cáo, không tự giải quyết.
+3. Dùng `terminology.yaml` **chỉ để hỏi rõ dữ liệu đầu vào**, đặc biệt `Môn`, `Chủ`, `Táo`, tọa/hướng; không coi working_definition là lời trích nguyên tác.
+4. Chạy `vnai fengshui knowledge report` và tôn trọng `NEEDS_SOURCE_REVIEW`. Các item trong `rule-candidates.yaml` là câu hỏi, không phải rule hay phép xem tốt/xấu.
+5. Phân biệt rõ lựa chọn văn hóa (tùy gia chủ) với yêu cầu an toàn, QCVN/TCVN (kiểm tra/cảnh báo độc lập). Tuyệt đối không ghi CAD khi mới có metadata.
+6. Không lưu năm sinh/giới tính/chi tiết gia đình vào repo mặc định; chỉ dùng dữ liệu gia chủ tự nguyện cung cấp trong brief được quản lý quyền riêng tư.
