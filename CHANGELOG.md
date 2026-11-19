@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.11] - R3/BATCH-007-B2 wall-hosted opening drafting (2026-11-19)
+
+- Generate actual digest-bound rough wall cuts, frames/glazing, hinged leaf/arc geometry and explicit surface-sliding motion from existing B1 walls; preserve source candidates/walls.
+- Separate selected plan-cut geometry, floor wall obstructions, uncredited thresholds and vertical wall bands; windows never create circulation edges or usable floor area.
+- Reuse 006-B graph, supplied-width routes and stair interfaces over actual retained walls/frames/leaves; missing evidence stays unknown and known collisions remain visible.
+- Add typed drafting schemas, exclusive JSON/Markdown/SVG CLI, deterministic opening schedule/marks, conservative rational swing enclosures and independent numerical oracles.
+- Preserve original townhouse constraints/conflicts, historic contracts/goldens and schematic DXF; extend CI, wheel smoke and the existing house-design skill. Expert review/approval remains pending and CAD writes remain false.
+- Record durable cross-version numerical guidance; retain the B1 accurate-summation/empty-zero fix and Python 3.11/3.14 CI matrix.
+
 ## [0.1.10] - R3/BATCH-007-B1 architectural wall geometry (2026-11-19)
 
 - Fix Python 3.11/3.14 wall-area summary reproducibility with explicit accurate summation and an exact-rational regression oracle; preserve union geometry, tolerances and frozen goldens.

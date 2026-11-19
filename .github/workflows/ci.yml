@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e '.[dev,cad]'
-      - run: python -m pytest -q
+      - run: python -m pytest -q --durations=20
       - run: ruff check src tests scripts
       - run: vnai sources validate
       - run: vnai knowledge validate
@@ -54,6 +54,16 @@ jobs:
         run: |
           set +e
           vnai design walls preview examples/batch007b1/townhouse-benchmark.json --out outputs/townhouse-walls-v0.1.10.svg
+          result=$?
+          test "$result" -eq 4
+      - run: vnai design openings draft examples/batch007b2/oracle-entrance.json > outputs/opening-draft-v0.1.11.json
+      - run: vnai design openings drafting-validate outputs/opening-draft-v0.1.11.json
+      - run: vnai design openings schedule examples/batch007b2/fixed-window.json --markdown outputs/opening-schedule-v0.1.11.md
+      - run: vnai design openings preview examples/batch007b2/fixed-window.json --out outputs/openings-v0.1.11.svg
+      - name: Townhouse opening source conflicts remain visible
+        run: |
+          set +e
+          vnai design openings preview examples/batch007b2/townhouse-benchmark.json --out outputs/townhouse-openings-v0.1.11.svg
           result=$?
           test "$result" -eq 4
       - name: Fresh wheel outside checkout

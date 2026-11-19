@@ -1,0 +1,1269 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "report_schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "engine_version": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "contract": {
+      "const": "opening-drafting-v1"
+    },
+    "status": {
+      "enum": [
+        "VALID",
+        "INVALID",
+        "INCOMPLETE"
+      ]
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "cad_writes_permitted": {
+      "const": false
+    },
+    "standards_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "fengshui_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "source_candidate_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_wall_revision_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_wall_geometry_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "specification_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "opening_geometry_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "opening_revision_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "frame_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "units": {
+      "const": "m"
+    },
+    "drafting_status": {
+      "enum": [
+        "GENERATED",
+        "INVALID_INPUT",
+        "INCOMPLETE",
+        "CONFLICT",
+        "UNSUPPORTED"
+      ]
+    },
+    "geometry_status": {
+      "enum": [
+        "NOT_GENERATED",
+        "VALID",
+        "PARTIAL",
+        "INVALID"
+      ]
+    },
+    "approval_inherited": {
+      "const": false
+    },
+    "architect_approval": {
+      "const": "NOT_GRANTED"
+    },
+    "openings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "mark": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "hinged_door",
+              "sliding_door",
+              "fixed_window",
+              "operable_window"
+            ]
+          },
+          "kind": {
+            "type": "string"
+          },
+          "floor_id": {
+            "type": "string"
+          },
+          "space_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "host_wall_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "host_wall_digest": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "host_resolution": {
+            "type": "string"
+          },
+          "legacy_opening_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 256
+          },
+          "geometry_status": {
+            "type": "string"
+          },
+          "approval_status": {
+            "const": "PROPOSED"
+          },
+          "declared_review_state": {
+            "type": "string"
+          },
+          "provenance": {
+            "type": "string"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 32
+          },
+          "confirmation": {
+            "type": "string"
+          },
+          "rough_cut": {
+            "anyOf": [
+              {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "plan_cut_applied": {
+            "type": "boolean"
+          },
+          "floor_cut_applied": {
+            "type": "boolean"
+          },
+          "cut_accepted": {
+            "type": "boolean"
+          },
+          "plan_interpretation": {
+            "type": "string"
+          },
+          "primitives": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "jamb_references": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "maxItems": 2
+              },
+              "frame": {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              },
+              "frame_outline": {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              },
+              "glazing": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "start": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "end": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "representation": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "start",
+                  "end",
+                  "representation"
+                ]
+              },
+              "closed_leaf": {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              },
+              "hinge_point": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "closed_leaf_reference": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "start": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "end": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ]
+              },
+              "leaf_width_m": {
+                "type": "number"
+              },
+              "leaf_thickness_m": {
+                "type": "number"
+              },
+              "track": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "start": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "end": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ]
+              },
+              "travel_m": {
+                "type": "number"
+              },
+              "sliding_mode": {
+                "type": "string"
+              },
+              "swing_arc": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "center": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "radius_m": {
+                    "type": "number"
+                  },
+                  "start": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "end": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "rotation": {
+                    "enum": [
+                      "cw",
+                      "ccw"
+                    ]
+                  },
+                  "angle_degrees": {
+                    "const": 90
+                  }
+                },
+                "required": [
+                  "center",
+                  "radius_m",
+                  "start",
+                  "end",
+                  "rotation",
+                  "angle_degrees"
+                ]
+              },
+              "sweep_method": {
+                "type": "string"
+              },
+              "open_leaf": {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              },
+              "movement_envelope": {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              },
+              "movement_envelope_area_m2": {
+                "type": "number"
+              }
+            },
+            "required": []
+          },
+          "graph_eligible": {
+            "type": "boolean"
+          },
+          "physical_state": {
+            "type": "string"
+          },
+          "clearance_status": {
+            "type": "string"
+          },
+          "opening_digest": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reference": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "start": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "end": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            },
+            "required": [
+              "start",
+              "end"
+            ]
+          },
+          "offset_m": {
+            "type": "number"
+          },
+          "rough_width_m": {
+            "type": "number"
+          },
+          "thickness_m": {
+            "type": "number"
+          },
+          "normal_interval_m": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "wall_vertical_m": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "base": {
+                "type": "number"
+              },
+              "top": {
+                "type": "number"
+              },
+              "wall_below_opening": {
+                "type": "number"
+              },
+              "wall_above_opening": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "base",
+              "top",
+              "wall_below_opening",
+              "wall_above_opening"
+            ]
+          },
+          "rough_height_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "bottom_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "head_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "sill_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "clear_width_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "clear_height_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "frame_inner_width_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "rough_cut_area_m2": {
+            "type": "number"
+          },
+          "clear_reference": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "start": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "end": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            },
+            "required": [
+              "start",
+              "end"
+            ]
+          },
+          "operating_state": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "clear_mouth_reference": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "start": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "end": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            },
+            "required": [
+              "start",
+              "end"
+            ]
+          },
+          "movement_clearance_status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "mark",
+          "type",
+          "kind",
+          "floor_id",
+          "space_ids",
+          "host_wall_id",
+          "host_wall_digest",
+          "host_resolution",
+          "legacy_opening_id",
+          "issues",
+          "geometry_status",
+          "approval_status",
+          "declared_review_state",
+          "provenance",
+          "requirement_ids",
+          "confirmation",
+          "rough_cut",
+          "plan_cut_applied",
+          "floor_cut_applied",
+          "cut_accepted",
+          "plan_interpretation",
+          "primitives",
+          "graph_eligible",
+          "physical_state",
+          "clearance_status",
+          "opening_digest",
+          "movement_clearance_status"
+        ]
+      },
+      "maxItems": 64
+    },
+    "floors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "floor_id": {
+            "type": "string"
+          },
+          "source_wall_footprint": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "proposed_cut_union": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "accepted_rough_cut_union": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "plan_cut_geometry": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "wall_plan_at_cut": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "floor_wall_obstruction": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "door_threshold_geometry": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "frame_obstruction": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "leaf_obstruction_at_declared_state": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "floor_obstruction_with_door_assemblies": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "source_wall_area_m2": {
+            "type": "number"
+          },
+          "proposed_cut_union_area_m2": {
+            "type": "number"
+          },
+          "plan_cut_area_m2": {
+            "type": "number"
+          },
+          "remaining_wall_plan_area_m2": {
+            "type": "number"
+          },
+          "floor_wall_obstruction_area_m2": {
+            "type": "number"
+          },
+          "door_threshold_area_m2": {
+            "type": "number"
+          },
+          "plan_cut_complete": {
+            "type": "boolean"
+          },
+          "area_scope": {
+            "type": "string"
+          },
+          "walls": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "wall_id": {
+                  "type": "string"
+                },
+                "source_geometry_digest": {
+                  "type": "string"
+                },
+                "plan_geometry": {
+                  "$ref": "wall-result.schema.json#/$defs/geometry"
+                },
+                "floor_obstruction_geometry": {
+                  "$ref": "wall-result.schema.json#/$defs/geometry"
+                },
+                "plan_component_count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "floor_component_count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "component_policy": {
+                  "type": "string"
+                },
+                "vertical_bands": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "bottom_m": {
+                        "type": "number"
+                      },
+                      "head_m": {
+                        "type": "number"
+                      },
+                      "rough_void_opening_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "remaining_wall_geometry": {
+                        "$ref": "wall-result.schema.json#/$defs/geometry"
+                      },
+                      "remaining_wall_area_m2": {
+                        "type": "number"
+                      },
+                      "scope": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "bottom_m",
+                      "head_m",
+                      "rough_void_opening_ids",
+                      "remaining_wall_geometry",
+                      "remaining_wall_area_m2",
+                      "scope"
+                    ]
+                  },
+                  "maxItems": 130
+                },
+                "vertical_geometry_known": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "wall_id",
+                "source_geometry_digest",
+                "plan_geometry",
+                "floor_obstruction_geometry",
+                "plan_component_count",
+                "floor_component_count",
+                "component_policy",
+                "vertical_bands",
+                "vertical_geometry_known"
+              ]
+            },
+            "maxItems": 512
+          },
+          "wall_at_cut_before_openings": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "wall_area_at_cut_before_openings_m2": {
+            "type": "number"
+          },
+          "wall_area_outside_cut_elevation_m2": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "floor_id",
+          "source_wall_footprint",
+          "proposed_cut_union",
+          "accepted_rough_cut_union",
+          "plan_cut_geometry",
+          "wall_plan_at_cut",
+          "floor_wall_obstruction",
+          "door_threshold_geometry",
+          "frame_obstruction",
+          "leaf_obstruction_at_declared_state",
+          "floor_obstruction_with_door_assemblies",
+          "source_wall_area_m2",
+          "proposed_cut_union_area_m2",
+          "plan_cut_area_m2",
+          "remaining_wall_plan_area_m2",
+          "floor_wall_obstruction_area_m2",
+          "door_threshold_area_m2",
+          "plan_cut_complete",
+          "area_scope",
+          "walls",
+          "wall_at_cut_before_openings",
+          "wall_area_at_cut_before_openings_m2",
+          "wall_area_outside_cut_elevation_m2"
+        ]
+      },
+      "maxItems": 12
+    },
+    "rooms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "room_id": {
+            "type": "string"
+          },
+          "floor_id": {
+            "type": "string"
+          },
+          "allocation_area_m2": {
+            "type": "number"
+          },
+          "clear_floor_area_m2": {
+            "type": "number"
+          },
+          "clear_floor_geometry": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "door_threshold_contribution_m2": {
+            "type": "number"
+          },
+          "room_area_policy": {
+            "const": "exclude_thresholds"
+          },
+          "window_cut_added_to_room_area": {
+            "const": false
+          },
+          "source_wall_conflicts_resolved": {
+            "const": false
+          }
+        },
+        "required": [
+          "room_id",
+          "floor_id",
+          "allocation_area_m2",
+          "clear_floor_area_m2",
+          "clear_floor_geometry",
+          "door_threshold_contribution_m2",
+          "room_area_policy",
+          "window_cut_added_to_room_area",
+          "source_wall_conflicts_resolved"
+        ]
+      },
+      "maxItems": 12
+    },
+    "schedule": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "mark": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "floor_id": {
+            "type": "string"
+          },
+          "host_wall_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "material_reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "declared_specification": {
+            "type": "object"
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "opening_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 64
+          },
+          "provenance": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 64
+          },
+          "review_state": {
+            "const": "PROPOSED"
+          },
+          "unresolved_specifications": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 256
+          },
+          "specification_digest": {
+            "type": "string"
+          },
+          "rough_width_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "rough_height_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "frame_inner_width_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "leaf_width_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "clear_width_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "clear_height_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "sill_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "head_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "declared_units": {
+            "enum": [
+              "m",
+              "mm"
+            ]
+          }
+        },
+        "required": [
+          "mark",
+          "type",
+          "floor_id",
+          "host_wall_id",
+          "material_reference",
+          "declared_specification",
+          "quantity",
+          "opening_ids",
+          "provenance",
+          "review_state",
+          "unresolved_specifications",
+          "specification_digest",
+          "rough_width_m",
+          "rough_height_m",
+          "frame_inner_width_m",
+          "leaf_width_m",
+          "clear_width_m",
+          "clear_height_m",
+          "sill_m",
+          "head_m",
+          "declared_units"
+        ]
+      },
+      "maxItems": 64
+    },
+    "source_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 512
+    },
+    "circulation": {
+      "type": "object"
+    },
+    "evidence_impact": {
+      "type": "object"
+    },
+    "drafting_readiness": {
+      "type": "object"
+    },
+    "sources": {
+      "type": "object"
+    },
+    "unresolved_opening_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      },
+      "maxItems": 64
+    }
+  },
+  "required": [
+    "report_schema_version",
+    "engine_version",
+    "contract",
+    "status",
+    "errors",
+    "warnings",
+    "missing_information",
+    "diagnostics",
+    "cad_writes_permitted",
+    "standards_review",
+    "fengshui_review",
+    "source_candidate_digest",
+    "source_wall_revision_id",
+    "source_wall_geometry_digest",
+    "specification_digest",
+    "opening_geometry_digest",
+    "opening_revision_id",
+    "frame_id",
+    "units",
+    "drafting_status",
+    "geometry_status",
+    "approval_inherited",
+    "architect_approval",
+    "openings",
+    "floors",
+    "rooms",
+    "schedule",
+    "source_conflicts",
+    "circulation",
+    "evidence_impact",
+    "drafting_readiness",
+    "sources",
+    "unresolved_opening_ids"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "PolygonSet"
+        },
+        "units": {
+          "const": "m"
+        },
+        "polygons": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "exterior": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 4,
+                "maxItems": 20000
+              },
+              "holes": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "minItems": 4,
+                  "maxItems": 20000
+                },
+                "maxItems": 512
+              }
+            },
+            "required": [
+              "exterior",
+              "holes"
+            ]
+          },
+          "maxItems": 2048
+        }
+      },
+      "required": [
+        "type",
+        "units",
+        "polygons"
+      ]
+    }
+  }
+}

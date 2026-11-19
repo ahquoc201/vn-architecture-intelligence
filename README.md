@@ -196,3 +196,25 @@ Townhouse preview intentionally exits 4 (CONFLICT): benchmark requirements are u
 See [wall contract](docs/WALL_GEOMETRY_CONTRACT.md) and [generated previews](examples/batch007b1/previews).
 Geometry generation does not grant architect approval or CAD permission. Opening cuts,
 updated clearance and fresh architect review belong to 007-B2; existing DXF remains schematic.
+
+
+## Wall-hosted opening drafting (v0.1.11)
+
+Explicit door/window specifications now create real host cuts, finite leaf/frame/glazing
+geometry, 90-degree swing arcs, surface sliding tracks, schedules and source-bound proposed
+revisions. Full wall, selected plan cut and floor obstruction geometry are separate.
+Windows never create walking edges or increase room clear floor area. Source conflicts
+remain visible; no approval or CAD-write permission follows from successful geometry.
+
+```powershell
+vnai design openings draft examples/batch007b2/oracle-entrance.json
+vnai design openings drafting-validate examples/batch007b2/fixed-window.json
+vnai design openings schedule examples/batch007b2/interior-hinged.json --markdown outputs/opening-schedule-v0.1.11.md
+vnai design openings preview examples/batch007b2/townhouse-benchmark.json --out outputs/townhouse-openings-v0.1.11.svg
+```
+
+Townhouse retains the exact B1 source and reports CONFLICT (exit 4). The independent
+4m x .2m wall / .9m rough door oracle gives .8m2 source, .18m2 cut, .62m2 remaining.
+See [opening drafting contract](docs/OPENING_DRAFTING_CONTRACT.md),
+[fixtures](examples/batch007b2) and [actual generated previews](examples/batch007b2/previews).
+Existing `design openings validate` and schematic DXF behavior remain compatible.

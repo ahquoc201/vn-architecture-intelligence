@@ -1,0 +1,435 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "type": "integer"
+    },
+    "source": {
+      "$ref": "wall-input.schema.json"
+    },
+    "source_candidate_digest": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "source_wall_revision_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "specification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "units": {
+          "enum": [
+            "m",
+            "mm"
+          ]
+        },
+        "frame_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "vertical_datum": {
+          "enum": [
+            "above_finished_floor"
+          ]
+        },
+        "plan_cut_height": {
+          "type": "number",
+          "minimum": 0
+        },
+        "wall_verticals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "wall_id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "base": {
+                "type": "number",
+                "minimum": 0
+              },
+              "height": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "provenance": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "confirmation": {
+                "enum": [
+                  "confirmed",
+                  "proposed"
+                ]
+              }
+            },
+            "required": [
+              "wall_id",
+              "base",
+              "height",
+              "provenance",
+              "confirmation"
+            ]
+          },
+          "maxItems": 512
+        },
+        "openings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/opening"
+          },
+          "maxItems": 64
+        },
+        "openings_complete": {
+          "type": "boolean"
+        },
+        "fixed_obstacles_complete": {
+          "type": "boolean"
+        },
+        "additional_obstacles": {
+          "$ref": "candidate-review.schema.json#/properties/fixed_obstacles"
+        },
+        "clearance_regions": {
+          "$ref": "candidate-review.schema.json#/properties/clearance_regions"
+        },
+        "passages": {
+          "$ref": "candidate-review.schema.json#/properties/passages"
+        },
+        "stairs": {
+          "$ref": "candidate-review.schema.json#/properties/stairs"
+        },
+        "stairs_complete": {
+          "type": "boolean"
+        },
+        "room_area_policy": {
+          "enum": [
+            "exclude_thresholds"
+          ]
+        },
+        "exteriors": {
+          "$ref": "candidate-review.schema.json#/properties/exteriors"
+        }
+      },
+      "required": [
+        "id",
+        "units",
+        "frame_id",
+        "vertical_datum",
+        "openings",
+        "openings_complete",
+        "room_area_policy"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "source",
+    "source_candidate_digest",
+    "source_wall_revision_id",
+    "specification"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "opening": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "mark": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "type": {
+          "enum": [
+            "hinged_door",
+            "sliding_door",
+            "fixed_window",
+            "operable_window"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "interior",
+            "entrance",
+            "window"
+          ]
+        },
+        "floor_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "host_wall_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "source_wall_digest": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "legacy_opening_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "offset": {
+          "type": "number"
+        },
+        "start": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "end": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "rough_width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "rough_height": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "bottom": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sill": {
+          "type": "number",
+          "minimum": 0
+        },
+        "head": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "clear_width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "clear_height": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "clear_start_offset": {
+          "type": "number",
+          "minimum": 0
+        },
+        "frame_inner_width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "frame": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "jamb_width": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "depth": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "alignment": {
+              "enum": [
+                "centered_in_wall"
+              ]
+            }
+          },
+          "required": [
+            "jamb_width",
+            "depth",
+            "alignment"
+          ]
+        },
+        "leaf": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "width": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "thickness": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "hinge_offset": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "width",
+            "thickness",
+            "hinge_offset"
+          ]
+        },
+        "mount_side": {
+          "enum": [
+            "left",
+            "right"
+          ]
+        },
+        "mount_offset": {
+          "type": "number",
+          "minimum": 0
+        },
+        "swing": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "hinge": {
+              "enum": [
+                "start",
+                "end"
+              ]
+            },
+            "rotation": {
+              "enum": [
+                "cw",
+                "ccw"
+              ]
+            },
+            "angle_degrees": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "opens_into": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "hinge",
+            "rotation",
+            "angle_degrees",
+            "opens_into"
+          ]
+        },
+        "slide": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "direction": {
+              "enum": [
+                "start",
+                "end"
+              ]
+            },
+            "travel": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "mode": {
+              "enum": [
+                "surface",
+                "pocket"
+              ]
+            },
+            "opens_into": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "direction",
+            "travel",
+            "mode",
+            "opens_into"
+          ]
+        },
+        "operating_state": {
+          "enum": [
+            "open",
+            "closed",
+            "fixed"
+          ]
+        },
+        "operation": {
+          "enum": [
+            "side_hung"
+          ]
+        },
+        "space_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "clearance_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "material_reference": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "requirement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 32
+        },
+        "provenance": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "confirmation": {
+          "enum": [
+            "confirmed",
+            "proposed"
+          ]
+        },
+        "review_state": {
+          "enum": [
+            "proposed",
+            "reviewed",
+            "approved"
+          ]
+        },
+        "approval": {
+          "$ref": "zoning.schema.json#/$defs/approval"
+        }
+      },
+      "required": [
+        "id",
+        "mark",
+        "type",
+        "kind",
+        "floor_id",
+        "space_ids",
+        "requirement_ids",
+        "provenance",
+        "confirmation",
+        "review_state"
+      ]
+    }
+  }
+}

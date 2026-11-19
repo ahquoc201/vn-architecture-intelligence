@@ -75,6 +75,8 @@ def run() -> None:
             shutil.copyfile(source, work / ("workflow-" + source.parent.name + "-" + source.name))
         for source in (root / "examples/batch007b1").glob("*.json"):
             shutil.copyfile(source, work / ("wall-" + source.name))
+        for source in (root / "examples/batch007b2").glob("*.json"):
+            shutil.copyfile(source, work / ("openingdraft-" + source.name))
         shutil.copyfile(root / "examples/townhouse_4x20_brief.json", work / "brief.json")
         shutil.copyfile(root / "examples/townhouse_sample.json", work / "legacy.json")
         commands = [
@@ -215,6 +217,49 @@ def run() -> None:
                 ),
             ]
         )
+        commands.extend(
+            [
+                (["design", "openings", "draft", "openingdraft-oracle-entrance.json"], 0),
+                (["design", "openings", "drafting-validate", "openingdraft-stored.json"], 0),
+                (
+                    [
+                        "design",
+                        "openings",
+                        "schedule",
+                        "openingdraft-fixed-window.json",
+                        "--markdown",
+                        "opening-schedule.md",
+                    ],
+                    0,
+                ),
+                (
+                    [
+                        "design",
+                        "openings",
+                        "preview",
+                        "openingdraft-fixed-window.json",
+                        "--out",
+                        "openings.svg",
+                    ],
+                    0,
+                ),
+                (["design", "openings", "draft", "openingdraft-missing-dimensions.json"], 3),
+                (["design", "openings", "draft", "openingdraft-swing-fixed-collision.json"], 4),
+                (["design", "openings", "draft", "openingdraft-unsupported-angle.json"], 5),
+                (["design", "openings", "draft", "openingdraft-stale-wall-digest.json"], 1),
+                (
+                    [
+                        "design",
+                        "openings",
+                        "preview",
+                        "openingdraft-townhouse-benchmark.json",
+                        "--out",
+                        "townhouse-openings.svg",
+                    ],
+                    4,
+                ),
+            ]
+        )
         for args, expected in commands:
             result = subprocess.run(
                 [str(python), "-I", "-X", "utf8", "-m", "vnai", *args],
@@ -308,6 +353,45 @@ def run() -> None:
                     and workflow["replay_status"] != "VERIFIED"
                 ):
                     raise RuntimeError("Installed replay failed its original-constraint oracle")
+            if args[:2] == ["design", "openings"] and args[2] != "validate":
+                opening = json.loads(result.stdout)
+                if (
+                    opening["cad_writes_permitted"]
+                    or opening["approval_inherited"]
+                    or opening["architect_approval"] != "NOT_GRANTED"
+                ):
+                    raise RuntimeError("Installed drafting inferred approval or CAD authorization")
+                if args[2:] == ["draft", "openingdraft-oracle-entrance.json"]:
+                    floor = opening["floors"][0]
+                    for key, expected_area in (
+                        ("source_wall_area_m2", 0.8),
+                        ("plan_cut_area_m2", 0.18),
+                        ("remaining_wall_plan_area_m2", 0.62),
+                    ):
+                        if abs(floor[key] - expected_area) > 1e-12:
+                            raise RuntimeError(
+                                "Installed door cut failed independent area oracle: " + key
+                            )
+                    (work / "openingdraft-stored.json").write_text(result.stdout, encoding="utf-8")
+                if args[2] == "schedule":
+                    windows = [r for r in opening["openings"] if r["type"].endswith("window")]
+                    if (
+                        len(windows) != 1
+                        or windows[0]["graph_eligible"]
+                        or windows[0]["floor_cut_applied"]
+                    ):
+                        raise RuntimeError("Installed window became a floor-level passage")
+                    if "W01" not in (work / "opening-schedule.md").read_text(encoding="utf-8"):
+                        raise RuntimeError("Installed opening schedule lost explicit window mark")
+                if args[2] == "preview":
+                    svg = (work / args[-1]).read_text(encoding="utf-8")
+                    if (
+                        opening["opening_revision_id"] not in svg
+                        or 'preserveAspectRatio="xMidYMid meet"' not in svg
+                    ):
+                        raise RuntimeError(
+                            "Installed opening preview lost revision binding/uniform scale"
+                        )
             if args[:2] == ["design", "walls"]:
                 walls = json.loads(result.stdout)
                 if walls["cad_writes_permitted"] or walls["approval_inherited"]:
