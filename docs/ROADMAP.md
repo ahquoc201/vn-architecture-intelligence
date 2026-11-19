@@ -45,3 +45,15 @@
 - [ ] Đối chiếu hiệu lực pháp lý theo ngày và cập nhật sau PR review
 
 Không auto-merge từ nguồn web vào tri thức sản xuất.
+
+
+## R3 Batch 007-B1 (v0.1.10): wall geometry
+
+- [x] Explicit wall intent and semantics, deterministic topology, constructive orthogonal wall/junction geometry.
+- [x] Union wall accounting, complete clear-room subtraction, original/clear requirement impact and stale-evidence reporting.
+- [x] Actual SVG previews and unchanged townhouse benchmark input; CLI, schemas, independent oracles and wheel integration.
+- [ ] Human architectural review of these proposed walls and expert test-oracle sign-off.
+- [ ] Batch 007-B2: explicit opening hosts/cuts, remapping review and renewed physical circulation/clearance evidence.
+
+See WALL_GEOMETRY_CONTRACT.md. No door/window cuts, detailed stairs, structural inference,
+production CAD output or automatic approval is included. Source/expert gates remain unchanged.

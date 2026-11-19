@@ -39,6 +39,8 @@ SCHEMA_NAMES = (
     "design-revision.schema.json",
     "cad-readiness.schema.json",
     "architectural-benchmark.schema.json",
+    "wall-input.schema.json",
+    "wall-result.schema.json",
 
 )
 BASE = "https://vnai.invalid/contracts/"

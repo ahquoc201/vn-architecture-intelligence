@@ -1,0 +1,703 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "report_schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "engine_version": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "contract": {
+      "const": "architectural-walls-v1"
+    },
+    "status": {
+      "enum": [
+        "VALID",
+        "INVALID",
+        "INCOMPLETE"
+      ]
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "cad_writes_permitted": {
+      "const": false
+    },
+    "standards_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "fengshui_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "wall_status": {
+      "enum": [
+        "GENERATED",
+        "INCOMPLETE",
+        "INVALID_INPUT",
+        "UNSUPPORTED",
+        "CONFLICT"
+      ]
+    },
+    "source_candidate_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_candidate_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_design_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "wall_specification_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "derived_geometry_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "wall_revision_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "method": {
+      "const": "orthogonal-wall-bands-v1"
+    },
+    "output_units": {
+      "const": "m"
+    },
+    "frame_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_units": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "boundary_topology": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 512
+    },
+    "walls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "boundary_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "specification_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "maxItems": 128
+          },
+          "floor_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "source_candidate_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "source_candidate_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "related_room_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "maxItems": 12
+          },
+          "affected_room_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "maxItems": 12
+          },
+          "classification": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "reference": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "start": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "end": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            },
+            "required": [
+              "start",
+              "end"
+            ]
+          },
+          "centerline": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "start": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "end": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            },
+            "required": [
+              "start",
+              "end"
+            ]
+          },
+          "thickness_m": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "measured_thickness_m": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "alignment": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "offset_m": {
+            "type": "number"
+          },
+          "reference_semantics": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "normal": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "normal_interval_m": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "geometry": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "const": "PolygonSet"
+              },
+              "units": {
+                "const": "m"
+              },
+              "polygons": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "exterior": {
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        },
+                        "minItems": 2,
+                        "maxItems": 2
+                      },
+                      "minItems": 4,
+                      "maxItems": 20000
+                    },
+                    "holes": {
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          },
+                          "minItems": 2,
+                          "maxItems": 2
+                        },
+                        "minItems": 4,
+                        "maxItems": 20000
+                      },
+                      "maxItems": 512
+                    }
+                  },
+                  "required": [
+                    "exterior",
+                    "holes"
+                  ]
+                },
+                "maxItems": 2048
+              }
+            },
+            "required": [
+              "type",
+              "units",
+              "polygons"
+            ]
+          },
+          "faces": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "maxItems": 4
+          },
+          "junction_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "maxItems": 2
+          },
+          "fixed": {
+            "type": "boolean"
+          },
+          "assembly_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "maxItems": 32
+          },
+          "provenance": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "maxItems": 128
+          },
+          "confirmation": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "declared_approval_status": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "approval_status": {
+            "const": "PROPOSED"
+          },
+          "area_m2": {
+            "type": "number",
+            "minimum": 0
+          },
+          "geometry_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "id",
+          "boundary_id",
+          "specification_ids",
+          "floor_id",
+          "source_candidate_id",
+          "source_candidate_digest",
+          "related_room_ids",
+          "affected_room_ids",
+          "classification",
+          "reference",
+          "centerline",
+          "thickness_m",
+          "measured_thickness_m",
+          "alignment",
+          "offset_m",
+          "reference_semantics",
+          "normal",
+          "normal_interval_m",
+          "geometry",
+          "faces",
+          "junction_ids",
+          "fixed",
+          "assembly_id",
+          "requirement_ids",
+          "provenance",
+          "confirmation",
+          "declared_approval_status",
+          "approval_status",
+          "area_m2",
+          "geometry_digest"
+        ]
+      },
+      "maxItems": 512
+    },
+    "junctions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 1024
+    },
+    "floors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 12
+    },
+    "rooms": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 12
+    },
+    "opening_mappings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 128
+    },
+    "constraint_impact": {
+      "type": "object"
+    },
+    "evidence_impact": {
+      "type": "object"
+    },
+    "specification_status": {
+      "enum": [
+        "CONFIRMED",
+        "PROPOSED",
+        "INCOMPLETE"
+      ]
+    },
+    "geometry_status": {
+      "enum": [
+        "VALID",
+        "INVALID",
+        "PARTIAL",
+        "NOT_GENERATED"
+      ]
+    },
+    "drafting_readiness": {
+      "type": "object"
+    },
+    "approval_inherited": {
+      "const": false
+    },
+    "architect_approval": {
+      "const": "NOT_GRANTED"
+    },
+    "sources": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "report_schema_version",
+    "engine_version",
+    "contract",
+    "status",
+    "errors",
+    "warnings",
+    "missing_information",
+    "diagnostics",
+    "cad_writes_permitted",
+    "standards_review",
+    "fengshui_review",
+    "wall_status",
+    "source_candidate_id",
+    "source_candidate_digest",
+    "source_design_digest",
+    "wall_specification_digest",
+    "derived_geometry_digest",
+    "wall_revision_id",
+    "method",
+    "output_units",
+    "frame_id",
+    "source_units",
+    "boundary_topology",
+    "walls",
+    "junctions",
+    "floors",
+    "rooms",
+    "opening_mappings",
+    "constraint_impact",
+    "evidence_impact",
+    "specification_status",
+    "geometry_status",
+    "drafting_readiness",
+    "approval_inherited",
+    "architect_approval",
+    "sources"
+  ],
+  "$defs": {
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "PolygonSet"
+        },
+        "units": {
+          "const": "m"
+        },
+        "polygons": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "exterior": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "minItems": 4,
+                "maxItems": 20000
+              },
+              "holes": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "minItems": 4,
+                  "maxItems": 20000
+                },
+                "maxItems": 512
+              }
+            },
+            "required": [
+              "exterior",
+              "holes"
+            ]
+          },
+          "maxItems": 2048
+        }
+      },
+      "required": [
+        "type",
+        "units",
+        "polygons"
+      ]
+    }
+  }
+}

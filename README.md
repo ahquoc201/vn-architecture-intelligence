@@ -175,3 +175,24 @@ vnai design benchmark run examples/batch007a/benchmark/benchmark-a.json
 ```
 
 See [replay/revision/readiness contracts](docs/DESIGN_REPLAY_CAD_READINESS_CONTRACT.md), [benchmark protocol](docs/ARCHITECTURAL_BENCHMARK_PROTOCOL.md) and [human review template](docs/ARCHITECTURAL_BENCHMARK_REVIEW_TEMPLATE.md). All scenarios are synthetic; actual expert review remains pending. The 8x15 case reports unsupported qualitative hard separation. Legacy candidates without original provenance remain incomplete. Existing schematic DXF stays compatible; no new CAD writer is added.
+
+
+## R3 Batch 007-B1: wall geometry (v0.1.10)
+
+Selected allocations now derive explicit wall polygons, centerlines, exposed faces,
+L/T/X junctions, union footprints and clear rooms without changing the source layout.
+Confirm boundary semantics, thickness, alignment, no-wall intent and allocation/clear
+requirement bases. New conflicts and stale opening/clearance evidence remain visible.
+
+```powershell
+vnai design walls generate examples/batch007b1/rectangle-inward.json
+vnai design walls validate examples/batch007b1/shared-wall.json
+vnai design walls report examples/batch007b1/t-junction.json --markdown outputs/walls-v0.1.10.md
+vnai design walls preview examples/batch007b1/townhouse-benchmark.json --out outputs/townhouse-walls-v0.1.10.svg
+```
+
+The synthetic 4x5 m inward-wall oracle yields 16.56 m2 clear and 3.44 m2 wall union.
+Townhouse preview intentionally exits 4 (CONFLICT): benchmark requirements are unchanged.
+See [wall contract](docs/WALL_GEOMETRY_CONTRACT.md) and [generated previews](examples/batch007b1/previews).
+Geometry generation does not grant architect approval or CAD permission. Opening cuts,
+updated clearance and fresh architect review belong to 007-B2; existing DXF remains schematic.

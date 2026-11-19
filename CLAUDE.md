@@ -54,3 +54,10 @@ Batch 007-A: read `docs/DESIGN_REPLAY_CAD_READINESS_CONTRACT.md` and the benchma
 protocol. Request actual provenance, replay original constraints independently, preserve
 parent/child revisions and record real feedback separately from approval. Scoped drafting
 readiness never grants CAD writes or construction readiness. Synthetic oracles are not expert reviews.
+
+
+Batch 007-B1: read `docs/WALL_GEOMETRY_CONTRACT.md`. Collect explicit wall intent,
+boundary semantics, thickness/alignment and allocation/clear requirement bases before
+`vnai design walls generate`. Inspect actual `walls preview` SVG and clear-area conflicts.
+Preserve the source allocation; obtain fresh wall/opening/circulation review. Derived
+geometry never inherits approval or CAD permission; no opening cuts are implemented.
