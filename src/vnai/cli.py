@@ -123,6 +123,22 @@ def main(argv: list[str] | None = None) -> int:
             command.add_argument("input", help="Versioned design workflow JSON")
             command.add_argument("--markdown", help="Create a new Markdown report; never overwrite")
 
+    wall_group = design_sub.add_parser(
+        "walls", help="Construct proposed wall polygons; no CAD writes"
+    )
+    wall_actions = wall_group.add_subparsers(dest="design_action", required=True)
+    for action in ("generate", "validate", "report", "preview"):
+        command = wall_actions.add_parser(action)
+        command.add_argument("input", help="Wall specification/source or stored wall report JSON")
+        if action == "preview":
+            command.add_argument(
+                "--out", required=True, help="Create a new SVG preview exclusively"
+            )
+        if action == "report":
+            command.add_argument(
+                "--markdown", help="Create a new human-readable report exclusively"
+            )
+
     architecture = design_sub.add_parser(
         "architectural-review", help="Separate geometry, graph, clearance and approval results"
     )
@@ -148,6 +164,31 @@ def main(argv: list[str] | None = None) -> int:
         if args.command in {"design", "geometry"}:
             try:
                 brief = load_json(args.input)
+                if args.command == "design" and args.design_kind == "walls":
+                    from vnai.walls import (
+                        generate_walls,
+                        validate_walls,
+                        EXIT_CODES as WALL_EXIT_CODES,
+                    )
+                    from vnai.wall_preview import wall_svg, wall_markdown
+
+                    report = (
+                        validate_walls(brief)
+                        if args.design_action == "validate"
+                        else generate_walls(brief)
+                    )
+                    target = None
+                    content = None
+                    if args.design_action == "preview" and report["floors"]:
+                        target, content = Path(args.out), wall_svg(report)
+                    elif args.design_action == "report" and args.markdown:
+                        target, content = Path(args.markdown), wall_markdown(report)
+                    if target is not None:
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        with target.open("x", encoding="utf-8", newline="\n") as stream:
+                            stream.write(content)
+                    print(json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False))
+                    return WALL_EXIT_CODES[report["wall_status"]]
                 if args.command == "design" and args.design_kind in {
                     "replay",
                     "revision",

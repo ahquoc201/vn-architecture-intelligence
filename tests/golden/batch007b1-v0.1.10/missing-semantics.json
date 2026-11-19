@@ -1,0 +1,194 @@
+{
+  "full_report_sha256": "da0db8831bb38dd59038a1a1992ae13503f80d075249d6ec78af5a5469e1b569",
+  "wall_status": "INCOMPLETE",
+  "geometry_status": "PARTIAL",
+  "source_candidate_digest": "2bc5b0498ed8667194939b37191326998b6791cb9badd18ea966ce93606d5b0b",
+  "wall_specification_digest": "d35375049fde11e606346c57c5978e111c67fe6a7f99b47d8fda965af9547402",
+  "derived_geometry_digest": "584843fd41973f84572fa3d1bb81965d4ac2a4f313c53c7b95cc72899d200e2d",
+  "wall_revision_id": "WR-b18969731b3fbd1c455d82dc3ec332d8bba7b84c0505a9cf0a70404a9b26adf8",
+  "floors": [
+    {
+      "floor_id": "F1",
+      "permitted_envelope": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                5.0
+              ],
+              [
+                0.0,
+                5.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "envelope_area_m2": 20.0,
+      "wall_footprint": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": []
+      },
+      "wall_union_area_m2": 0.0,
+      "individual_wall_area_sum_m2": 0,
+      "wall_overlap_not_double_counted_m2": 0.0,
+      "wall_area_within_envelope_m2": 0.0,
+      "wall_area_outside_envelope_m2": 0.0,
+      "non_wall_envelope_area_m2": 20.0,
+      "allocated_room_union_area_m2": 20.0,
+      "reservation_impacts": [],
+      "area_scope": "POLYGON_ACCOUNTING_NOT_GFA_OR_NET_USABLE_AREA"
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "BED:1",
+      "geometry_id": "GENERATED-ROOM-1",
+      "floor_id": "F1",
+      "allocation_geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                5.0
+              ],
+              [
+                0.0,
+                5.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "allocation_area_m2": 20.0,
+      "wall_occupied_area_m2": 0.0,
+      "clear_area_m2": 20.0,
+      "area_difference_m2": 0.0,
+      "area_difference_percent": 0.0,
+      "clear_geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                5.0
+              ],
+              [
+                0.0,
+                5.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "component_count": 1,
+      "non_area_components": [],
+      "remaining_components": [
+        {
+          "area_m2": 20.0,
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    5.0
+                  ],
+                  [
+                    0.0,
+                    5.0
+                  ],
+                  [
+                    0.0,
+                    0.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          }
+        }
+      ],
+      "source_area_requirements_m2": {
+        "target": 20.0,
+        "min": 1.0,
+        "max": 20.0
+      },
+      "area_requirement_basis": "clear",
+      "clear_area_constraint_status": "UNKNOWN_INCOMPLETE_OR_UNCONFIRMED_WALLS",
+      "dimension_requirement_basis": "allocation",
+      "clear_dimension_constraint_status": "UNKNOWN_INCOMPLETE_OR_UNCONFIRMED_WALLS",
+      "clear_dimensions_m": null,
+      "measurement_scope": "PROPOSED_WALL_REVISION_ONLY_NOT_VERIFIED_USABLE_AREA",
+      "wall_information_verified": false
+    }
+  ],
+  "junctions": [],
+  "opening_mappings": [],
+  "error_codes": [],
+  "missing_codes": [
+    "WALL_PARAMETERS_REQUIRED",
+    "WALL_PARAMETERS_REQUIRED",
+    "WALL_PARAMETERS_REQUIRED",
+    "WALL_PARAMETERS_REQUIRED"
+  ],
+  "svg_sha256": "5c45d56598cc3c82c7f6bf87ef5acf61159d19b8bed5169b972f5696de09ed99"
+}

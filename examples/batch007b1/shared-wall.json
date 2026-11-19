@@ -1,0 +1,4434 @@
+{
+  "schema_version": 1,
+  "source": {
+    "schema_version": 1,
+    "replay": {
+      "schema_version": 1,
+      "review": {
+        "schema_version": 1,
+        "fixture_notice": "All candidate decisions, geometry and actors are synthetic test data.",
+        "candidate": {
+          "schema_version": 1,
+          "candidate_id": "SYNTHETIC-WALL-REV-54973cc4e3514615f6969e2b85da4aae496356f0b47cef644d49d5e624da9b6d",
+          "input_digest": "4d3437d55bdeb24d6a01eae7e3852fb0f34b52f5dc3f5e71db85a0c78c8fb315",
+          "algorithm": "bounded-grid-rect-v1",
+          "parameters": {
+            "candidate_count": 1,
+            "max_steps": 20000,
+            "solution_limit": 1,
+            "grid_step": 1
+          },
+          "floor_id": "F1",
+          "floor_ids": [
+            "F1"
+          ],
+          "geometry": {
+            "schema_version": 1,
+            "project_id": "SYNTHETIC-FLOORPLAN",
+            "fixture_notice": "Synthetic coordinates and approval records only; not client-confirmed architecture.",
+            "units": "m",
+            "frame": {
+              "id": "LOCAL",
+              "kind": "local_site",
+              "axes": "x_east_y_north"
+            },
+            "tolerances": {
+              "boundary_m": 0,
+              "overlap_m2": 0,
+              "min_area_m2": 1e-06,
+              "target_area_m2": 0.01
+            },
+            "floors": [
+              {
+                "id": "F1"
+              }
+            ],
+            "polygons": [
+              {
+                "id": "SITE",
+                "role": "site",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    20
+                  ],
+                  [
+                    0,
+                    20
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "FOOTPRINT",
+                "role": "footprint",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    5
+                  ],
+                  [
+                    0,
+                    5
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "GENERATED-ROOM-1",
+                "role": "room",
+                "owner_id": "F1",
+                "floor_id": "F1",
+                "room_id": "BED:1",
+                "requirement_id": "REQ-BED",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    4,
+                    0
+                  ],
+                  [
+                    4,
+                    5
+                  ],
+                  [
+                    0,
+                    5
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "GENERATED-ROOM-2",
+                "role": "room",
+                "owner_id": "F1",
+                "floor_id": "F1",
+                "room_id": "LIVING:1",
+                "requirement_id": "REQ-LIVING",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    4,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    5
+                  ],
+                  [
+                    4,
+                    5
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              }
+            ],
+            "points": [],
+            "segments": [],
+            "relationships": [],
+            "zoning": {
+              "schema_version": 1,
+              "proposal_id": "SYNTHETIC-WALL-ZONING",
+              "revision": 1,
+              "brief": {
+                "schema_version": 1,
+                "project": {
+                  "id": "SYNTHETIC-FLOORPLAN",
+                  "name": "Synthetic solver fixture; not a client layout",
+                  "type": "townhouse",
+                  "phase": "brief"
+                },
+                "requirements": [
+                  {
+                    "id": "REQ-BED",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LIVING",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-KITCHEN",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-PRAYER",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LAUNDRY",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LOT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "Q-NORTH",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FRONTAGE",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-ROAD",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-SITE-LIMITS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STOREYS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-SKYLIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-LIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-AIR",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-STAIR",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FOOTPRINT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STYLE",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-OCCUPANTS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-internal_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-vertical_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "SYN-WALL-DIMENSIONS",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high",
+                    "notes": "Synthetic architectural wall specification supplies dimensions; no structural/regulatory inference."
+                  }
+                ],
+                "site": {
+                  "dimensions": {
+                    "requirement_id": "REQ-LOT",
+                    "value": {
+                      "shape": "rectangle",
+                      "width": 8,
+                      "length": 20,
+                      "unit": "m"
+                    }
+                  },
+                  "north_degrees": {
+                    "requirement_id": "Q-NORTH",
+                    "value": 0
+                  },
+                  "frontage": {
+                    "requirement_id": "Q-FRONTAGE",
+                    "value": "test frontage"
+                  },
+                  "road_access": {
+                    "requirement_id": "Q-ROAD",
+                    "value": "test road access"
+                  },
+                  "constraints": {
+                    "requirement_id": "Q-SITE-LIMITS",
+                    "value": [
+                      "Synthetic site limits provided by test client"
+                    ]
+                  }
+                },
+                "building": {
+                  "storeys": {
+                    "requirement_id": "REQ-STOREYS",
+                    "value": 1
+                  },
+                  "rooms": [
+                    {
+                      "id": "BED",
+                      "type": "bedroom",
+                      "quantity": 1,
+                      "requirement_id": "REQ-BED",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    },
+                    {
+                      "id": "LIVING",
+                      "type": "living",
+                      "quantity": 1,
+                      "requirement_id": "REQ-LIVING",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    }
+                  ],
+                  "skylight": {
+                    "requirement_id": "REQ-SKYLIGHT",
+                    "value": "Skylight requested; position and size unresolved"
+                  },
+                  "lighting": {
+                    "requirement_id": "REQ-LIGHT",
+                    "value": "Prioritize natural daylight"
+                  },
+                  "ventilation": {
+                    "requirement_id": "REQ-AIR",
+                    "value": "Prioritize natural ventilation"
+                  },
+                  "stairs": {
+                    "requirement_id": "Q-STAIR",
+                    "value": "Test client requests stairs, detailed design pending"
+                  },
+                  "footprint": {
+                    "requirement_id": "Q-FOOTPRINT",
+                    "value": {
+                      "target": 40,
+                      "unit": "m2"
+                    }
+                  },
+                  "floors": [
+                    {
+                      "id": "F1",
+                      "label": "Synthetic wall floor 1"
+                    }
+                  ],
+                  "internal_circulation": {
+                    "requirement_id": "REQ-internal_circulation",
+                    "value": "Test circulation request"
+                  },
+                  "vertical_circulation": {
+                    "requirement_id": "REQ-vertical_circulation",
+                    "value": "Test circulation request"
+                  }
+                },
+                "client": {
+                  "style": {
+                    "requirement_id": "REQ-STYLE",
+                    "value": "Modern minimalist"
+                  },
+                  "occupants": {
+                    "requirement_id": "Q-OCCUPANTS",
+                    "value": 4
+                  }
+                }
+              },
+              "floors": [
+                {
+                  "id": "F1"
+                }
+              ],
+              "assignments": [
+                {
+                  "id": "ASSIGN-1",
+                  "room_id": "BED:1",
+                  "requirement_id": "REQ-BED",
+                  "floor_id": "F1",
+                  "zone": "private",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                },
+                {
+                  "id": "ASSIGN-2",
+                  "room_id": "LIVING:1",
+                  "requirement_id": "REQ-LIVING",
+                  "floor_id": "F1",
+                  "zone": "public",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                }
+              ],
+              "decisions": [
+                {
+                  "id": "ASSIGN-1-reviewed",
+                  "decision_id": "ASSIGN-1",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-1-approved",
+                  "decision_id": "ASSIGN-1",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-reviewed",
+                  "decision_id": "ASSIGN-2",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-approved",
+                  "decision_id": "ASSIGN-2",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                }
+              ],
+              "constraints": [],
+              "assumptions": []
+            }
+          },
+          "room_areas_m2": {
+            "BED:1": 20.0,
+            "LIVING:1": 20.0
+          },
+          "hard_validation": {
+            "passed": true,
+            "checks": [
+              "SOURCE_INVENTORY_TRACEABILITY",
+              "AREA_BOUNDS",
+              "DIMENSION_BOUNDS",
+              "ENVELOPE_CONTAINMENT",
+              "NO_UNINTENDED_OVERLAP",
+              "RESERVATIONS_RESPECTED",
+              "MANDATORY_ADJACENCY",
+              "SPATIAL_VALIDATOR_VALID"
+            ],
+            "spatial_report": {
+              "report_schema_version": 1,
+              "engine_version": "0.1.10",
+              "contract": "geometry-v1",
+              "status": "VALID",
+              "errors": [],
+              "warnings": [],
+              "missing_information": [],
+              "diagnostics": [],
+              "cad_writes_permitted": false,
+              "standards_review": "NOT_EVALUATED",
+              "fengshui_review": "NOT_EVALUATED",
+              "polygon_areas_m2": {
+                "SITE": 160.0,
+                "FOOTPRINT": 40.0,
+                "GENERATED-ROOM-1": 20.0,
+                "GENERATED-ROOM-2": 20.0
+              },
+              "floor_areas": [
+                {
+                  "floor_id": "F1",
+                  "envelope_id": "FOOTPRINT",
+                  "envelope_area_m2": 40.0,
+                  "envelope_approved": false,
+                  "net_room_polygon_sum_m2": 40.0,
+                  "net_room_polygon_union_m2": 40.0,
+                  "geometric_residual_m2": 0.0,
+                  "note": "Polygon accounting only; residual is not verified usable area or GFA."
+                }
+              ],
+              "site_area_m2": 160.0,
+              "footprint_area_m2": 40.0,
+              "gross_floor_area_m2": null,
+              "envelope_approval": {
+                "SITE": false,
+                "FOOTPRINT": false,
+                "GENERATED-ROOM-1": false,
+                "GENERATED-ROOM-2": false
+              },
+              "architectural_approval": "APPROVED",
+              "buildability": "NOT_EVALUATED",
+              "zoning_validation": {
+                "report_schema_version": 1,
+                "engine_version": "0.1.10",
+                "contract": "zoning-v1",
+                "status": "VALID",
+                "errors": [],
+                "warnings": [],
+                "missing_information": [],
+                "diagnostics": [],
+                "cad_writes_permitted": false,
+                "standards_review": "NOT_EVALUATED",
+                "fengshui_review": "NOT_EVALUATED",
+                "assignments": [
+                  {
+                    "id": "ASSIGN-1",
+                    "room_id": "BED:1",
+                    "requirement_id": "REQ-BED",
+                    "floor_id": "F1",
+                    "zone": "private",
+                    "provenance": "source_design_brief",
+                    "confirmation": "confirmed",
+                    "status": "approved"
+                  },
+                  {
+                    "id": "ASSIGN-2",
+                    "room_id": "LIVING:1",
+                    "requirement_id": "REQ-LIVING",
+                    "floor_id": "F1",
+                    "zone": "public",
+                    "provenance": "source_design_brief",
+                    "confirmation": "confirmed",
+                    "status": "approved"
+                  }
+                ],
+                "unassigned_room_ids": [],
+                "relationships": [],
+                "architect_approved": true,
+                "source_brief_status": "VALID",
+                "source_brief_missing_information": []
+              }
+            }
+          },
+          "soft_scores": {
+            "preferred_adjacency": 1.0,
+            "preferred_area": 1.0,
+            "total": 1.0,
+            "weights": {
+              "preferred_adjacency": 0.5,
+              "preferred_area": 0.5
+            }
+          },
+          "unresolved_checks": [
+            "CIRCULATION_CONNECTIVITY_NOT_VERIFIED",
+            "DOORS_WINDOWS_NOT_GENERATED",
+            "STAIR_GEOMETRY_NOT_GENERATED",
+            "STRUCTURE_MEP_NOT_EVALUATED",
+            "DAYLIGHT_VENTILATION_NOT_SIMULATED",
+            "ACCESSIBILITY_EGRESS_NOT_VERIFIED",
+            "ARCHITECT_REVIEW_REQUIRED"
+          ],
+          "generation_status": "GENERATED",
+          "approval_status": "PROPOSED",
+          "cad_writes_permitted": false
+        },
+        "decisions": [],
+        "exteriors": [],
+        "openings": [],
+        "openings_complete": false,
+        "stairs": [],
+        "stairs_complete": true,
+        "fixed_obstacles": [],
+        "fixed_obstacles_complete": true,
+        "clearance_regions": [],
+        "passages": [],
+        "selection": {
+          "candidate_id": "SYNTHETIC-WALL-REV-54973cc4e3514615f6969e2b85da4aae496356f0b47cef644d49d5e624da9b6d",
+          "candidate_digest": "a2392ed2bb2350ec7dcbea42f74be9eaa05b761107cde72770181ca2975195f3"
+        }
+      },
+      "mode": "revision",
+      "provenance": {
+        "schema_version": 1,
+        "method": "generation-provenance-v1",
+        "generation_engine_version": "0.1.10",
+        "generation_specification": {
+          "schema_version": 1,
+          "geometry": {
+            "schema_version": 1,
+            "project_id": "SYNTHETIC-FLOORPLAN",
+            "fixture_notice": "Synthetic coordinates and approval records only; not client-confirmed architecture.",
+            "units": "m",
+            "frame": {
+              "id": "LOCAL",
+              "kind": "local_site",
+              "axes": "x_east_y_north"
+            },
+            "tolerances": {
+              "boundary_m": 0,
+              "overlap_m2": 0,
+              "min_area_m2": 1e-06,
+              "target_area_m2": 0.01
+            },
+            "floors": [
+              {
+                "id": "F1"
+              }
+            ],
+            "polygons": [
+              {
+                "id": "SITE",
+                "role": "site",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    20
+                  ],
+                  [
+                    0,
+                    20
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "FOOTPRINT",
+                "role": "footprint",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    5
+                  ],
+                  [
+                    0,
+                    5
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              }
+            ],
+            "points": [],
+            "segments": [],
+            "relationships": [],
+            "zoning": {
+              "schema_version": 1,
+              "proposal_id": "SYNTHETIC-WALL-ZONING",
+              "revision": 1,
+              "brief": {
+                "schema_version": 1,
+                "project": {
+                  "id": "SYNTHETIC-FLOORPLAN",
+                  "name": "Synthetic solver fixture; not a client layout",
+                  "type": "townhouse",
+                  "phase": "brief"
+                },
+                "requirements": [
+                  {
+                    "id": "REQ-BED",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LIVING",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-KITCHEN",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-PRAYER",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LAUNDRY",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LOT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "Q-NORTH",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FRONTAGE",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-ROAD",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-SITE-LIMITS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STOREYS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-SKYLIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-LIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-AIR",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-STAIR",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FOOTPRINT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STYLE",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-OCCUPANTS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-internal_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-vertical_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "SYN-WALL-DIMENSIONS",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high",
+                    "notes": "Synthetic architectural wall specification supplies dimensions; no structural/regulatory inference."
+                  }
+                ],
+                "site": {
+                  "dimensions": {
+                    "requirement_id": "REQ-LOT",
+                    "value": {
+                      "shape": "rectangle",
+                      "width": 8,
+                      "length": 20,
+                      "unit": "m"
+                    }
+                  },
+                  "north_degrees": {
+                    "requirement_id": "Q-NORTH",
+                    "value": 0
+                  },
+                  "frontage": {
+                    "requirement_id": "Q-FRONTAGE",
+                    "value": "test frontage"
+                  },
+                  "road_access": {
+                    "requirement_id": "Q-ROAD",
+                    "value": "test road access"
+                  },
+                  "constraints": {
+                    "requirement_id": "Q-SITE-LIMITS",
+                    "value": [
+                      "Synthetic site limits provided by test client"
+                    ]
+                  }
+                },
+                "building": {
+                  "storeys": {
+                    "requirement_id": "REQ-STOREYS",
+                    "value": 1
+                  },
+                  "rooms": [
+                    {
+                      "id": "BED",
+                      "type": "bedroom",
+                      "quantity": 1,
+                      "requirement_id": "REQ-BED",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    },
+                    {
+                      "id": "LIVING",
+                      "type": "living",
+                      "quantity": 1,
+                      "requirement_id": "REQ-LIVING",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    }
+                  ],
+                  "skylight": {
+                    "requirement_id": "REQ-SKYLIGHT",
+                    "value": "Skylight requested; position and size unresolved"
+                  },
+                  "lighting": {
+                    "requirement_id": "REQ-LIGHT",
+                    "value": "Prioritize natural daylight"
+                  },
+                  "ventilation": {
+                    "requirement_id": "REQ-AIR",
+                    "value": "Prioritize natural ventilation"
+                  },
+                  "stairs": {
+                    "requirement_id": "Q-STAIR",
+                    "value": "Test client requests stairs, detailed design pending"
+                  },
+                  "footprint": {
+                    "requirement_id": "Q-FOOTPRINT",
+                    "value": {
+                      "target": 40,
+                      "unit": "m2"
+                    }
+                  },
+                  "floors": [
+                    {
+                      "id": "F1",
+                      "label": "Synthetic wall floor 1"
+                    }
+                  ],
+                  "internal_circulation": {
+                    "requirement_id": "REQ-internal_circulation",
+                    "value": "Test circulation request"
+                  },
+                  "vertical_circulation": {
+                    "requirement_id": "REQ-vertical_circulation",
+                    "value": "Test circulation request"
+                  }
+                },
+                "client": {
+                  "style": {
+                    "requirement_id": "REQ-STYLE",
+                    "value": "Modern minimalist"
+                  },
+                  "occupants": {
+                    "requirement_id": "Q-OCCUPANTS",
+                    "value": 4
+                  }
+                }
+              },
+              "floors": [
+                {
+                  "id": "F1"
+                }
+              ],
+              "assignments": [
+                {
+                  "id": "ASSIGN-1",
+                  "room_id": "BED:1",
+                  "requirement_id": "REQ-BED",
+                  "floor_id": "F1",
+                  "zone": "private",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                },
+                {
+                  "id": "ASSIGN-2",
+                  "room_id": "LIVING:1",
+                  "requirement_id": "REQ-LIVING",
+                  "floor_id": "F1",
+                  "zone": "public",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                }
+              ],
+              "decisions": [
+                {
+                  "id": "ASSIGN-1-reviewed",
+                  "decision_id": "ASSIGN-1",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-1-approved",
+                  "decision_id": "ASSIGN-1",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-reviewed",
+                  "decision_id": "ASSIGN-2",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-approved",
+                  "decision_id": "ASSIGN-2",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                }
+              ],
+              "constraints": [],
+              "assumptions": []
+            }
+          },
+          "fixed_elements_status": "complete",
+          "room_dimensions": [
+            {
+              "room_id": "BED:1",
+              "requirement_id": "REQ-BED",
+              "width": {
+                "min": 4,
+                "max": 4
+              },
+              "depth": {
+                "min": 5,
+                "max": 5
+              }
+            },
+            {
+              "room_id": "LIVING:1",
+              "requirement_id": "REQ-LIVING",
+              "width": {
+                "min": 4,
+                "max": 4
+              },
+              "depth": {
+                "min": 5,
+                "max": 5
+              }
+            }
+          ],
+          "parameters": {
+            "grid_step": 1,
+            "candidate_count": 1,
+            "max_steps": 20000,
+            "solution_limit": 1
+          },
+          "authorization": {
+            "purpose": "preliminary_generation_only",
+            "record": {
+              "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+              "role": "architect",
+              "recorded_at": "2026-11-18T00:02:00Z",
+              "digest": "fbae64ec2d31047c1408cf6de04cb5fbc6fa1aba036203d4dd10d53fec2857b8"
+            }
+          }
+        },
+        "origin_candidate": {
+          "schema_version": 1,
+          "candidate_id": "FP-89abc5651744a27cd0a35782445bf45fdb617c53b2b3aa3185a21d401261253b",
+          "input_digest": "4d3437d55bdeb24d6a01eae7e3852fb0f34b52f5dc3f5e71db85a0c78c8fb315",
+          "algorithm": "bounded-grid-rect-v1",
+          "parameters": {
+            "candidate_count": 1,
+            "max_steps": 20000,
+            "solution_limit": 1,
+            "grid_step": 1
+          },
+          "floor_id": "F1",
+          "floor_ids": [
+            "F1"
+          ],
+          "geometry": {
+            "schema_version": 1,
+            "project_id": "SYNTHETIC-FLOORPLAN",
+            "fixture_notice": "Synthetic coordinates and approval records only; not client-confirmed architecture.",
+            "units": "m",
+            "frame": {
+              "id": "LOCAL",
+              "kind": "local_site",
+              "axes": "x_east_y_north"
+            },
+            "tolerances": {
+              "boundary_m": 0,
+              "overlap_m2": 0,
+              "min_area_m2": 1e-06,
+              "target_area_m2": 0.01
+            },
+            "floors": [
+              {
+                "id": "F1"
+              }
+            ],
+            "polygons": [
+              {
+                "id": "SITE",
+                "role": "site",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    20
+                  ],
+                  [
+                    0,
+                    20
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "FOOTPRINT",
+                "role": "footprint",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    5
+                  ],
+                  [
+                    0,
+                    5
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "GENERATED-ROOM-1",
+                "role": "room",
+                "owner_id": "F1",
+                "floor_id": "F1",
+                "room_id": "BED:1",
+                "requirement_id": "REQ-BED",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    5.0
+                  ],
+                  [
+                    0.0,
+                    5.0
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "GENERATED-ROOM-2",
+                "role": "room",
+                "owner_id": "F1",
+                "floor_id": "F1",
+                "room_id": "LIVING:1",
+                "requirement_id": "REQ-LIVING",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    4.0,
+                    0.0
+                  ],
+                  [
+                    8.0,
+                    0.0
+                  ],
+                  [
+                    8.0,
+                    5.0
+                  ],
+                  [
+                    4.0,
+                    5.0
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              }
+            ],
+            "points": [],
+            "segments": [],
+            "relationships": [],
+            "zoning": {
+              "schema_version": 1,
+              "proposal_id": "SYNTHETIC-WALL-ZONING",
+              "revision": 1,
+              "brief": {
+                "schema_version": 1,
+                "project": {
+                  "id": "SYNTHETIC-FLOORPLAN",
+                  "name": "Synthetic solver fixture; not a client layout",
+                  "type": "townhouse",
+                  "phase": "brief"
+                },
+                "requirements": [
+                  {
+                    "id": "REQ-BED",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LIVING",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-KITCHEN",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-PRAYER",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LAUNDRY",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LOT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "Q-NORTH",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FRONTAGE",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-ROAD",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-SITE-LIMITS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STOREYS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-SKYLIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-LIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-AIR",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-STAIR",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FOOTPRINT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STYLE",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-OCCUPANTS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-internal_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-vertical_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "SYN-WALL-DIMENSIONS",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high",
+                    "notes": "Synthetic architectural wall specification supplies dimensions; no structural/regulatory inference."
+                  }
+                ],
+                "site": {
+                  "dimensions": {
+                    "requirement_id": "REQ-LOT",
+                    "value": {
+                      "shape": "rectangle",
+                      "width": 8,
+                      "length": 20,
+                      "unit": "m"
+                    }
+                  },
+                  "north_degrees": {
+                    "requirement_id": "Q-NORTH",
+                    "value": 0
+                  },
+                  "frontage": {
+                    "requirement_id": "Q-FRONTAGE",
+                    "value": "test frontage"
+                  },
+                  "road_access": {
+                    "requirement_id": "Q-ROAD",
+                    "value": "test road access"
+                  },
+                  "constraints": {
+                    "requirement_id": "Q-SITE-LIMITS",
+                    "value": [
+                      "Synthetic site limits provided by test client"
+                    ]
+                  }
+                },
+                "building": {
+                  "storeys": {
+                    "requirement_id": "REQ-STOREYS",
+                    "value": 1
+                  },
+                  "rooms": [
+                    {
+                      "id": "BED",
+                      "type": "bedroom",
+                      "quantity": 1,
+                      "requirement_id": "REQ-BED",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    },
+                    {
+                      "id": "LIVING",
+                      "type": "living",
+                      "quantity": 1,
+                      "requirement_id": "REQ-LIVING",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    }
+                  ],
+                  "skylight": {
+                    "requirement_id": "REQ-SKYLIGHT",
+                    "value": "Skylight requested; position and size unresolved"
+                  },
+                  "lighting": {
+                    "requirement_id": "REQ-LIGHT",
+                    "value": "Prioritize natural daylight"
+                  },
+                  "ventilation": {
+                    "requirement_id": "REQ-AIR",
+                    "value": "Prioritize natural ventilation"
+                  },
+                  "stairs": {
+                    "requirement_id": "Q-STAIR",
+                    "value": "Test client requests stairs, detailed design pending"
+                  },
+                  "footprint": {
+                    "requirement_id": "Q-FOOTPRINT",
+                    "value": {
+                      "target": 40,
+                      "unit": "m2"
+                    }
+                  },
+                  "floors": [
+                    {
+                      "id": "F1",
+                      "label": "Synthetic wall floor 1"
+                    }
+                  ],
+                  "internal_circulation": {
+                    "requirement_id": "REQ-internal_circulation",
+                    "value": "Test circulation request"
+                  },
+                  "vertical_circulation": {
+                    "requirement_id": "REQ-vertical_circulation",
+                    "value": "Test circulation request"
+                  }
+                },
+                "client": {
+                  "style": {
+                    "requirement_id": "REQ-STYLE",
+                    "value": "Modern minimalist"
+                  },
+                  "occupants": {
+                    "requirement_id": "Q-OCCUPANTS",
+                    "value": 4
+                  }
+                }
+              },
+              "floors": [
+                {
+                  "id": "F1"
+                }
+              ],
+              "assignments": [
+                {
+                  "id": "ASSIGN-1",
+                  "room_id": "BED:1",
+                  "requirement_id": "REQ-BED",
+                  "floor_id": "F1",
+                  "zone": "private",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                },
+                {
+                  "id": "ASSIGN-2",
+                  "room_id": "LIVING:1",
+                  "requirement_id": "REQ-LIVING",
+                  "floor_id": "F1",
+                  "zone": "public",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                }
+              ],
+              "decisions": [
+                {
+                  "id": "ASSIGN-1-reviewed",
+                  "decision_id": "ASSIGN-1",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-1-approved",
+                  "decision_id": "ASSIGN-1",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-reviewed",
+                  "decision_id": "ASSIGN-2",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-approved",
+                  "decision_id": "ASSIGN-2",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                }
+              ],
+              "constraints": [],
+              "assumptions": []
+            }
+          },
+          "room_areas_m2": {
+            "BED:1": 20.0,
+            "LIVING:1": 20.0
+          },
+          "hard_validation": {
+            "passed": true,
+            "checks": [
+              "SOURCE_INVENTORY_TRACEABILITY",
+              "AREA_BOUNDS",
+              "DIMENSION_BOUNDS",
+              "ENVELOPE_CONTAINMENT",
+              "NO_UNINTENDED_OVERLAP",
+              "RESERVATIONS_RESPECTED",
+              "MANDATORY_ADJACENCY",
+              "SPATIAL_VALIDATOR_VALID"
+            ],
+            "spatial_report": {
+              "report_schema_version": 1,
+              "engine_version": "0.1.10",
+              "contract": "geometry-v1",
+              "status": "VALID",
+              "errors": [],
+              "warnings": [],
+              "missing_information": [],
+              "diagnostics": [],
+              "cad_writes_permitted": false,
+              "standards_review": "NOT_EVALUATED",
+              "fengshui_review": "NOT_EVALUATED",
+              "polygon_areas_m2": {
+                "SITE": 160.0,
+                "FOOTPRINT": 40.0,
+                "GENERATED-ROOM-1": 20.0,
+                "GENERATED-ROOM-2": 20.0
+              },
+              "floor_areas": [
+                {
+                  "floor_id": "F1",
+                  "envelope_id": "FOOTPRINT",
+                  "envelope_area_m2": 40.0,
+                  "envelope_approved": false,
+                  "net_room_polygon_sum_m2": 40.0,
+                  "net_room_polygon_union_m2": 40.0,
+                  "geometric_residual_m2": 0.0,
+                  "note": "Polygon accounting only; residual is not verified usable area or GFA."
+                }
+              ],
+              "site_area_m2": 160.0,
+              "footprint_area_m2": 40.0,
+              "gross_floor_area_m2": null,
+              "envelope_approval": {
+                "SITE": false,
+                "FOOTPRINT": false,
+                "GENERATED-ROOM-1": false,
+                "GENERATED-ROOM-2": false
+              },
+              "architectural_approval": "APPROVED",
+              "buildability": "NOT_EVALUATED",
+              "zoning_validation": {
+                "report_schema_version": 1,
+                "engine_version": "0.1.10",
+                "contract": "zoning-v1",
+                "status": "VALID",
+                "errors": [],
+                "warnings": [],
+                "missing_information": [],
+                "diagnostics": [],
+                "cad_writes_permitted": false,
+                "standards_review": "NOT_EVALUATED",
+                "fengshui_review": "NOT_EVALUATED",
+                "assignments": [
+                  {
+                    "id": "ASSIGN-1",
+                    "room_id": "BED:1",
+                    "requirement_id": "REQ-BED",
+                    "floor_id": "F1",
+                    "zone": "private",
+                    "provenance": "source_design_brief",
+                    "confirmation": "confirmed",
+                    "status": "approved"
+                  },
+                  {
+                    "id": "ASSIGN-2",
+                    "room_id": "LIVING:1",
+                    "requirement_id": "REQ-LIVING",
+                    "floor_id": "F1",
+                    "zone": "public",
+                    "provenance": "source_design_brief",
+                    "confirmation": "confirmed",
+                    "status": "approved"
+                  }
+                ],
+                "unassigned_room_ids": [],
+                "relationships": [],
+                "architect_approved": true,
+                "source_brief_status": "VALID",
+                "source_brief_missing_information": []
+              }
+            }
+          },
+          "soft_scores": {
+            "preferred_adjacency": 1.0,
+            "preferred_area": 1.0,
+            "total": 1.0,
+            "weights": {
+              "preferred_adjacency": 0.5,
+              "preferred_area": 0.5
+            }
+          },
+          "unresolved_checks": [
+            "CIRCULATION_CONNECTIVITY_NOT_VERIFIED",
+            "DOORS_WINDOWS_NOT_GENERATED",
+            "STAIR_GEOMETRY_NOT_GENERATED",
+            "STRUCTURE_MEP_NOT_EVALUATED",
+            "DAYLIGHT_VENTILATION_NOT_SIMULATED",
+            "ACCESSIBILITY_EGRESS_NOT_VERIFIED",
+            "ARCHITECT_REVIEW_REQUIRED"
+          ],
+          "generation_status": "GENERATED",
+          "approval_status": "PROPOSED",
+          "cad_writes_permitted": false
+        },
+        "dependency_digests": {
+          "brief": "c099cce4c7feb640fc1d87b44e80edc011a4009ff21aa55f1c63f5ff61eaa112",
+          "program": "941154d805e72f726ce4e2f60597584c5151c8aa5ac012a76151699267d4bfb3",
+          "zoning": "86e6a75aa9bb63e654205751c361e7ad69f4302ef8055013fa54b34892fc66b1",
+          "site_floor_geometry": "6de4673a836320d8601ccf5a5faa830eea173f1c97c8c3424d0a81c9b1e52a5a",
+          "specification": "fa5b0913a3c2219746fcc89ee23dcd63e44323cce480e20c928ab9eebc8c23d3",
+          "generation_input": "4d3437d55bdeb24d6a01eae7e3852fb0f34b52f5dc3f5e71db85a0c78c8fb315",
+          "origin_candidate": "50d22e02f3d4a41557425bb35c02da7a659ae7f1884ca0576283f695b26cf3c8"
+        },
+        "solver": {
+          "algorithm": "bounded-grid-rect-v1",
+          "parameters": {
+            "candidate_count": 1,
+            "max_steps": 20000,
+            "solution_limit": 1,
+            "grid_step": 1
+          },
+          "tolerances": {
+            "boundary_m": 0,
+            "overlap_m2": 0,
+            "min_area_m2": 1e-06,
+            "target_area_m2": 0.01
+          }
+        },
+        "constraint_register": {
+          "rooms": [
+            {
+              "id": "BED:1",
+              "room_group_id": "BED",
+              "type": "bedroom",
+              "requirement_id": "REQ-BED",
+              "governance": {
+                "id": "REQ-BED",
+                "type": "mandatory",
+                "origin": "synthetic_client_brief",
+                "confirmation": "confirmed",
+                "priority": "high"
+              },
+              "floor_id": "F1",
+              "requested_area_m2": {
+                "target": 20.0,
+                "min": 1.0,
+                "max": 20.0
+              },
+              "confirmed": true
+            },
+            {
+              "id": "LIVING:1",
+              "room_group_id": "LIVING",
+              "type": "living",
+              "requirement_id": "REQ-LIVING",
+              "governance": {
+                "id": "REQ-LIVING",
+                "type": "mandatory",
+                "origin": "synthetic_client_brief",
+                "confirmation": "confirmed",
+                "priority": "high"
+              },
+              "floor_id": "F1",
+              "requested_area_m2": {
+                "target": 20.0,
+                "min": 1.0,
+                "max": 20.0
+              },
+              "confirmed": true
+            }
+          ],
+          "dimensions": [
+            {
+              "room_id": "BED:1",
+              "requirement_id": "REQ-BED",
+              "width": {
+                "min": 4,
+                "max": 4
+              },
+              "depth": {
+                "min": 5,
+                "max": 5
+              }
+            },
+            {
+              "room_id": "LIVING:1",
+              "requirement_id": "REQ-LIVING",
+              "width": {
+                "min": 4,
+                "max": 4
+              },
+              "depth": {
+                "min": 5,
+                "max": 5
+              }
+            }
+          ],
+          "relationships": [],
+          "reservations": []
+        },
+        "provenance_digest": "d0c8c00bffbc6b3971e6cba3e876f395288faa29eed1f03d4714c9332d21a7e2"
+      }
+    },
+    "policy": {
+      "schema_version": 1,
+      "policy_id": "synthetic-room-polygons-v1",
+      "requested_stages": [
+        "room_geometry"
+      ],
+      "required_review_state": "SELECTED",
+      "require_openings": false,
+      "require_graph": false,
+      "require_clearance": false,
+      "require_evaluation": false,
+      "require_revision_review": false
+    },
+    "drafting_information": {},
+    "revision": {
+      "schema_version": 1,
+      "parent_revision_id": "SYNTHETIC-REV-1",
+      "child_revision_id": "SYNTHETIC-REV-2",
+      "parent_review": {
+        "schema_version": 1,
+        "fixture_notice": "All candidate decisions, geometry and actors are synthetic test data.",
+        "candidate": {
+          "schema_version": 1,
+          "candidate_id": "FP-89abc5651744a27cd0a35782445bf45fdb617c53b2b3aa3185a21d401261253b",
+          "input_digest": "4d3437d55bdeb24d6a01eae7e3852fb0f34b52f5dc3f5e71db85a0c78c8fb315",
+          "algorithm": "bounded-grid-rect-v1",
+          "parameters": {
+            "candidate_count": 1,
+            "max_steps": 20000,
+            "solution_limit": 1,
+            "grid_step": 1
+          },
+          "floor_id": "F1",
+          "floor_ids": [
+            "F1"
+          ],
+          "geometry": {
+            "schema_version": 1,
+            "project_id": "SYNTHETIC-FLOORPLAN",
+            "fixture_notice": "Synthetic coordinates and approval records only; not client-confirmed architecture.",
+            "units": "m",
+            "frame": {
+              "id": "LOCAL",
+              "kind": "local_site",
+              "axes": "x_east_y_north"
+            },
+            "tolerances": {
+              "boundary_m": 0,
+              "overlap_m2": 0,
+              "min_area_m2": 1e-06,
+              "target_area_m2": 0.01
+            },
+            "floors": [
+              {
+                "id": "F1"
+              }
+            ],
+            "polygons": [
+              {
+                "id": "SITE",
+                "role": "site",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    20
+                  ],
+                  [
+                    0,
+                    20
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "FOOTPRINT",
+                "role": "footprint",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    5
+                  ],
+                  [
+                    0,
+                    5
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "GENERATED-ROOM-1",
+                "role": "room",
+                "owner_id": "F1",
+                "floor_id": "F1",
+                "room_id": "BED:1",
+                "requirement_id": "REQ-BED",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    5.0
+                  ],
+                  [
+                    0.0,
+                    5.0
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "GENERATED-ROOM-2",
+                "role": "room",
+                "owner_id": "F1",
+                "floor_id": "F1",
+                "room_id": "LIVING:1",
+                "requirement_id": "REQ-LIVING",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    4.0,
+                    0.0
+                  ],
+                  [
+                    8.0,
+                    0.0
+                  ],
+                  [
+                    8.0,
+                    5.0
+                  ],
+                  [
+                    4.0,
+                    5.0
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              }
+            ],
+            "points": [],
+            "segments": [],
+            "relationships": [],
+            "zoning": {
+              "schema_version": 1,
+              "proposal_id": "SYNTHETIC-WALL-ZONING",
+              "revision": 1,
+              "brief": {
+                "schema_version": 1,
+                "project": {
+                  "id": "SYNTHETIC-FLOORPLAN",
+                  "name": "Synthetic solver fixture; not a client layout",
+                  "type": "townhouse",
+                  "phase": "brief"
+                },
+                "requirements": [
+                  {
+                    "id": "REQ-BED",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LIVING",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-KITCHEN",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-PRAYER",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LAUNDRY",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LOT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "Q-NORTH",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FRONTAGE",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-ROAD",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-SITE-LIMITS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STOREYS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-SKYLIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-LIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-AIR",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-STAIR",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FOOTPRINT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STYLE",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-OCCUPANTS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-internal_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-vertical_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "SYN-WALL-DIMENSIONS",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high",
+                    "notes": "Synthetic architectural wall specification supplies dimensions; no structural/regulatory inference."
+                  }
+                ],
+                "site": {
+                  "dimensions": {
+                    "requirement_id": "REQ-LOT",
+                    "value": {
+                      "shape": "rectangle",
+                      "width": 8,
+                      "length": 20,
+                      "unit": "m"
+                    }
+                  },
+                  "north_degrees": {
+                    "requirement_id": "Q-NORTH",
+                    "value": 0
+                  },
+                  "frontage": {
+                    "requirement_id": "Q-FRONTAGE",
+                    "value": "test frontage"
+                  },
+                  "road_access": {
+                    "requirement_id": "Q-ROAD",
+                    "value": "test road access"
+                  },
+                  "constraints": {
+                    "requirement_id": "Q-SITE-LIMITS",
+                    "value": [
+                      "Synthetic site limits provided by test client"
+                    ]
+                  }
+                },
+                "building": {
+                  "storeys": {
+                    "requirement_id": "REQ-STOREYS",
+                    "value": 1
+                  },
+                  "rooms": [
+                    {
+                      "id": "BED",
+                      "type": "bedroom",
+                      "quantity": 1,
+                      "requirement_id": "REQ-BED",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    },
+                    {
+                      "id": "LIVING",
+                      "type": "living",
+                      "quantity": 1,
+                      "requirement_id": "REQ-LIVING",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    }
+                  ],
+                  "skylight": {
+                    "requirement_id": "REQ-SKYLIGHT",
+                    "value": "Skylight requested; position and size unresolved"
+                  },
+                  "lighting": {
+                    "requirement_id": "REQ-LIGHT",
+                    "value": "Prioritize natural daylight"
+                  },
+                  "ventilation": {
+                    "requirement_id": "REQ-AIR",
+                    "value": "Prioritize natural ventilation"
+                  },
+                  "stairs": {
+                    "requirement_id": "Q-STAIR",
+                    "value": "Test client requests stairs, detailed design pending"
+                  },
+                  "footprint": {
+                    "requirement_id": "Q-FOOTPRINT",
+                    "value": {
+                      "target": 40,
+                      "unit": "m2"
+                    }
+                  },
+                  "floors": [
+                    {
+                      "id": "F1",
+                      "label": "Synthetic wall floor 1"
+                    }
+                  ],
+                  "internal_circulation": {
+                    "requirement_id": "REQ-internal_circulation",
+                    "value": "Test circulation request"
+                  },
+                  "vertical_circulation": {
+                    "requirement_id": "REQ-vertical_circulation",
+                    "value": "Test circulation request"
+                  }
+                },
+                "client": {
+                  "style": {
+                    "requirement_id": "REQ-STYLE",
+                    "value": "Modern minimalist"
+                  },
+                  "occupants": {
+                    "requirement_id": "Q-OCCUPANTS",
+                    "value": 4
+                  }
+                }
+              },
+              "floors": [
+                {
+                  "id": "F1"
+                }
+              ],
+              "assignments": [
+                {
+                  "id": "ASSIGN-1",
+                  "room_id": "BED:1",
+                  "requirement_id": "REQ-BED",
+                  "floor_id": "F1",
+                  "zone": "private",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                },
+                {
+                  "id": "ASSIGN-2",
+                  "room_id": "LIVING:1",
+                  "requirement_id": "REQ-LIVING",
+                  "floor_id": "F1",
+                  "zone": "public",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                }
+              ],
+              "decisions": [
+                {
+                  "id": "ASSIGN-1-reviewed",
+                  "decision_id": "ASSIGN-1",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-1-approved",
+                  "decision_id": "ASSIGN-1",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-reviewed",
+                  "decision_id": "ASSIGN-2",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-approved",
+                  "decision_id": "ASSIGN-2",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                }
+              ],
+              "constraints": [],
+              "assumptions": []
+            }
+          },
+          "room_areas_m2": {
+            "BED:1": 20.0,
+            "LIVING:1": 20.0
+          },
+          "hard_validation": {
+            "passed": true,
+            "checks": [
+              "SOURCE_INVENTORY_TRACEABILITY",
+              "AREA_BOUNDS",
+              "DIMENSION_BOUNDS",
+              "ENVELOPE_CONTAINMENT",
+              "NO_UNINTENDED_OVERLAP",
+              "RESERVATIONS_RESPECTED",
+              "MANDATORY_ADJACENCY",
+              "SPATIAL_VALIDATOR_VALID"
+            ],
+            "spatial_report": {
+              "report_schema_version": 1,
+              "engine_version": "0.1.10",
+              "contract": "geometry-v1",
+              "status": "VALID",
+              "errors": [],
+              "warnings": [],
+              "missing_information": [],
+              "diagnostics": [],
+              "cad_writes_permitted": false,
+              "standards_review": "NOT_EVALUATED",
+              "fengshui_review": "NOT_EVALUATED",
+              "polygon_areas_m2": {
+                "SITE": 160.0,
+                "FOOTPRINT": 40.0,
+                "GENERATED-ROOM-1": 20.0,
+                "GENERATED-ROOM-2": 20.0
+              },
+              "floor_areas": [
+                {
+                  "floor_id": "F1",
+                  "envelope_id": "FOOTPRINT",
+                  "envelope_area_m2": 40.0,
+                  "envelope_approved": false,
+                  "net_room_polygon_sum_m2": 40.0,
+                  "net_room_polygon_union_m2": 40.0,
+                  "geometric_residual_m2": 0.0,
+                  "note": "Polygon accounting only; residual is not verified usable area or GFA."
+                }
+              ],
+              "site_area_m2": 160.0,
+              "footprint_area_m2": 40.0,
+              "gross_floor_area_m2": null,
+              "envelope_approval": {
+                "SITE": false,
+                "FOOTPRINT": false,
+                "GENERATED-ROOM-1": false,
+                "GENERATED-ROOM-2": false
+              },
+              "architectural_approval": "APPROVED",
+              "buildability": "NOT_EVALUATED",
+              "zoning_validation": {
+                "report_schema_version": 1,
+                "engine_version": "0.1.10",
+                "contract": "zoning-v1",
+                "status": "VALID",
+                "errors": [],
+                "warnings": [],
+                "missing_information": [],
+                "diagnostics": [],
+                "cad_writes_permitted": false,
+                "standards_review": "NOT_EVALUATED",
+                "fengshui_review": "NOT_EVALUATED",
+                "assignments": [
+                  {
+                    "id": "ASSIGN-1",
+                    "room_id": "BED:1",
+                    "requirement_id": "REQ-BED",
+                    "floor_id": "F1",
+                    "zone": "private",
+                    "provenance": "source_design_brief",
+                    "confirmation": "confirmed",
+                    "status": "approved"
+                  },
+                  {
+                    "id": "ASSIGN-2",
+                    "room_id": "LIVING:1",
+                    "requirement_id": "REQ-LIVING",
+                    "floor_id": "F1",
+                    "zone": "public",
+                    "provenance": "source_design_brief",
+                    "confirmation": "confirmed",
+                    "status": "approved"
+                  }
+                ],
+                "unassigned_room_ids": [],
+                "relationships": [],
+                "architect_approved": true,
+                "source_brief_status": "VALID",
+                "source_brief_missing_information": []
+              }
+            }
+          },
+          "soft_scores": {
+            "preferred_adjacency": 1.0,
+            "preferred_area": 1.0,
+            "total": 1.0,
+            "weights": {
+              "preferred_adjacency": 0.5,
+              "preferred_area": 0.5
+            }
+          },
+          "unresolved_checks": [
+            "CIRCULATION_CONNECTIVITY_NOT_VERIFIED",
+            "DOORS_WINDOWS_NOT_GENERATED",
+            "STAIR_GEOMETRY_NOT_GENERATED",
+            "STRUCTURE_MEP_NOT_EVALUATED",
+            "DAYLIGHT_VENTILATION_NOT_SIMULATED",
+            "ACCESSIBILITY_EGRESS_NOT_VERIFIED",
+            "ARCHITECT_REVIEW_REQUIRED"
+          ],
+          "generation_status": "GENERATED",
+          "approval_status": "PROPOSED",
+          "cad_writes_permitted": false
+        },
+        "decisions": [],
+        "exteriors": [],
+        "openings": [],
+        "openings_complete": false,
+        "stairs": [],
+        "stairs_complete": true,
+        "fixed_obstacles": [],
+        "fixed_obstacles_complete": true,
+        "clearance_regions": [],
+        "passages": [],
+        "selection": {
+          "candidate_id": "FP-89abc5651744a27cd0a35782445bf45fdb617c53b2b3aa3185a21d401261253b",
+          "candidate_digest": "50d22e02f3d4a41557425bb35c02da7a659ae7f1884ca0576283f695b26cf3c8"
+        }
+      },
+      "child_review": {
+        "schema_version": 1,
+        "fixture_notice": "All candidate decisions, geometry and actors are synthetic test data.",
+        "candidate": {
+          "schema_version": 1,
+          "candidate_id": "SYNTHETIC-WALL-REV-54973cc4e3514615f6969e2b85da4aae496356f0b47cef644d49d5e624da9b6d",
+          "input_digest": "4d3437d55bdeb24d6a01eae7e3852fb0f34b52f5dc3f5e71db85a0c78c8fb315",
+          "algorithm": "bounded-grid-rect-v1",
+          "parameters": {
+            "candidate_count": 1,
+            "max_steps": 20000,
+            "solution_limit": 1,
+            "grid_step": 1
+          },
+          "floor_id": "F1",
+          "floor_ids": [
+            "F1"
+          ],
+          "geometry": {
+            "schema_version": 1,
+            "project_id": "SYNTHETIC-FLOORPLAN",
+            "fixture_notice": "Synthetic coordinates and approval records only; not client-confirmed architecture.",
+            "units": "m",
+            "frame": {
+              "id": "LOCAL",
+              "kind": "local_site",
+              "axes": "x_east_y_north"
+            },
+            "tolerances": {
+              "boundary_m": 0,
+              "overlap_m2": 0,
+              "min_area_m2": 1e-06,
+              "target_area_m2": 0.01
+            },
+            "floors": [
+              {
+                "id": "F1"
+              }
+            ],
+            "polygons": [
+              {
+                "id": "SITE",
+                "role": "site",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    20
+                  ],
+                  [
+                    0,
+                    20
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "FOOTPRINT",
+                "role": "footprint",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    5
+                  ],
+                  [
+                    0,
+                    5
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "GENERATED-ROOM-1",
+                "role": "room",
+                "owner_id": "F1",
+                "floor_id": "F1",
+                "room_id": "BED:1",
+                "requirement_id": "REQ-BED",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    4,
+                    0
+                  ],
+                  [
+                    4,
+                    5
+                  ],
+                  [
+                    0,
+                    5
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "GENERATED-ROOM-2",
+                "role": "room",
+                "owner_id": "F1",
+                "floor_id": "F1",
+                "room_id": "LIVING:1",
+                "requirement_id": "REQ-LIVING",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    4,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    5
+                  ],
+                  [
+                    4,
+                    5
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              }
+            ],
+            "points": [],
+            "segments": [],
+            "relationships": [],
+            "zoning": {
+              "schema_version": 1,
+              "proposal_id": "SYNTHETIC-WALL-ZONING",
+              "revision": 1,
+              "brief": {
+                "schema_version": 1,
+                "project": {
+                  "id": "SYNTHETIC-FLOORPLAN",
+                  "name": "Synthetic solver fixture; not a client layout",
+                  "type": "townhouse",
+                  "phase": "brief"
+                },
+                "requirements": [
+                  {
+                    "id": "REQ-BED",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LIVING",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-KITCHEN",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-PRAYER",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LAUNDRY",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LOT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "Q-NORTH",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FRONTAGE",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-ROAD",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-SITE-LIMITS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STOREYS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-SKYLIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-LIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-AIR",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-STAIR",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FOOTPRINT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STYLE",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-OCCUPANTS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-internal_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-vertical_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "SYN-WALL-DIMENSIONS",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high",
+                    "notes": "Synthetic architectural wall specification supplies dimensions; no structural/regulatory inference."
+                  }
+                ],
+                "site": {
+                  "dimensions": {
+                    "requirement_id": "REQ-LOT",
+                    "value": {
+                      "shape": "rectangle",
+                      "width": 8,
+                      "length": 20,
+                      "unit": "m"
+                    }
+                  },
+                  "north_degrees": {
+                    "requirement_id": "Q-NORTH",
+                    "value": 0
+                  },
+                  "frontage": {
+                    "requirement_id": "Q-FRONTAGE",
+                    "value": "test frontage"
+                  },
+                  "road_access": {
+                    "requirement_id": "Q-ROAD",
+                    "value": "test road access"
+                  },
+                  "constraints": {
+                    "requirement_id": "Q-SITE-LIMITS",
+                    "value": [
+                      "Synthetic site limits provided by test client"
+                    ]
+                  }
+                },
+                "building": {
+                  "storeys": {
+                    "requirement_id": "REQ-STOREYS",
+                    "value": 1
+                  },
+                  "rooms": [
+                    {
+                      "id": "BED",
+                      "type": "bedroom",
+                      "quantity": 1,
+                      "requirement_id": "REQ-BED",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    },
+                    {
+                      "id": "LIVING",
+                      "type": "living",
+                      "quantity": 1,
+                      "requirement_id": "REQ-LIVING",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    }
+                  ],
+                  "skylight": {
+                    "requirement_id": "REQ-SKYLIGHT",
+                    "value": "Skylight requested; position and size unresolved"
+                  },
+                  "lighting": {
+                    "requirement_id": "REQ-LIGHT",
+                    "value": "Prioritize natural daylight"
+                  },
+                  "ventilation": {
+                    "requirement_id": "REQ-AIR",
+                    "value": "Prioritize natural ventilation"
+                  },
+                  "stairs": {
+                    "requirement_id": "Q-STAIR",
+                    "value": "Test client requests stairs, detailed design pending"
+                  },
+                  "footprint": {
+                    "requirement_id": "Q-FOOTPRINT",
+                    "value": {
+                      "target": 40,
+                      "unit": "m2"
+                    }
+                  },
+                  "floors": [
+                    {
+                      "id": "F1",
+                      "label": "Synthetic wall floor 1"
+                    }
+                  ],
+                  "internal_circulation": {
+                    "requirement_id": "REQ-internal_circulation",
+                    "value": "Test circulation request"
+                  },
+                  "vertical_circulation": {
+                    "requirement_id": "REQ-vertical_circulation",
+                    "value": "Test circulation request"
+                  }
+                },
+                "client": {
+                  "style": {
+                    "requirement_id": "REQ-STYLE",
+                    "value": "Modern minimalist"
+                  },
+                  "occupants": {
+                    "requirement_id": "Q-OCCUPANTS",
+                    "value": 4
+                  }
+                }
+              },
+              "floors": [
+                {
+                  "id": "F1"
+                }
+              ],
+              "assignments": [
+                {
+                  "id": "ASSIGN-1",
+                  "room_id": "BED:1",
+                  "requirement_id": "REQ-BED",
+                  "floor_id": "F1",
+                  "zone": "private",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                },
+                {
+                  "id": "ASSIGN-2",
+                  "room_id": "LIVING:1",
+                  "requirement_id": "REQ-LIVING",
+                  "floor_id": "F1",
+                  "zone": "public",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                }
+              ],
+              "decisions": [
+                {
+                  "id": "ASSIGN-1-reviewed",
+                  "decision_id": "ASSIGN-1",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-1-approved",
+                  "decision_id": "ASSIGN-1",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-reviewed",
+                  "decision_id": "ASSIGN-2",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-approved",
+                  "decision_id": "ASSIGN-2",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                }
+              ],
+              "constraints": [],
+              "assumptions": []
+            }
+          },
+          "room_areas_m2": {
+            "BED:1": 20.0,
+            "LIVING:1": 20.0
+          },
+          "hard_validation": {
+            "passed": true,
+            "checks": [
+              "SOURCE_INVENTORY_TRACEABILITY",
+              "AREA_BOUNDS",
+              "DIMENSION_BOUNDS",
+              "ENVELOPE_CONTAINMENT",
+              "NO_UNINTENDED_OVERLAP",
+              "RESERVATIONS_RESPECTED",
+              "MANDATORY_ADJACENCY",
+              "SPATIAL_VALIDATOR_VALID"
+            ],
+            "spatial_report": {
+              "report_schema_version": 1,
+              "engine_version": "0.1.10",
+              "contract": "geometry-v1",
+              "status": "VALID",
+              "errors": [],
+              "warnings": [],
+              "missing_information": [],
+              "diagnostics": [],
+              "cad_writes_permitted": false,
+              "standards_review": "NOT_EVALUATED",
+              "fengshui_review": "NOT_EVALUATED",
+              "polygon_areas_m2": {
+                "SITE": 160.0,
+                "FOOTPRINT": 40.0,
+                "GENERATED-ROOM-1": 20.0,
+                "GENERATED-ROOM-2": 20.0
+              },
+              "floor_areas": [
+                {
+                  "floor_id": "F1",
+                  "envelope_id": "FOOTPRINT",
+                  "envelope_area_m2": 40.0,
+                  "envelope_approved": false,
+                  "net_room_polygon_sum_m2": 40.0,
+                  "net_room_polygon_union_m2": 40.0,
+                  "geometric_residual_m2": 0.0,
+                  "note": "Polygon accounting only; residual is not verified usable area or GFA."
+                }
+              ],
+              "site_area_m2": 160.0,
+              "footprint_area_m2": 40.0,
+              "gross_floor_area_m2": null,
+              "envelope_approval": {
+                "SITE": false,
+                "FOOTPRINT": false,
+                "GENERATED-ROOM-1": false,
+                "GENERATED-ROOM-2": false
+              },
+              "architectural_approval": "APPROVED",
+              "buildability": "NOT_EVALUATED",
+              "zoning_validation": {
+                "report_schema_version": 1,
+                "engine_version": "0.1.10",
+                "contract": "zoning-v1",
+                "status": "VALID",
+                "errors": [],
+                "warnings": [],
+                "missing_information": [],
+                "diagnostics": [],
+                "cad_writes_permitted": false,
+                "standards_review": "NOT_EVALUATED",
+                "fengshui_review": "NOT_EVALUATED",
+                "assignments": [
+                  {
+                    "id": "ASSIGN-1",
+                    "room_id": "BED:1",
+                    "requirement_id": "REQ-BED",
+                    "floor_id": "F1",
+                    "zone": "private",
+                    "provenance": "source_design_brief",
+                    "confirmation": "confirmed",
+                    "status": "approved"
+                  },
+                  {
+                    "id": "ASSIGN-2",
+                    "room_id": "LIVING:1",
+                    "requirement_id": "REQ-LIVING",
+                    "floor_id": "F1",
+                    "zone": "public",
+                    "provenance": "source_design_brief",
+                    "confirmation": "confirmed",
+                    "status": "approved"
+                  }
+                ],
+                "unassigned_room_ids": [],
+                "relationships": [],
+                "architect_approved": true,
+                "source_brief_status": "VALID",
+                "source_brief_missing_information": []
+              }
+            }
+          },
+          "soft_scores": {
+            "preferred_adjacency": 1.0,
+            "preferred_area": 1.0,
+            "total": 1.0,
+            "weights": {
+              "preferred_adjacency": 0.5,
+              "preferred_area": 0.5
+            }
+          },
+          "unresolved_checks": [
+            "CIRCULATION_CONNECTIVITY_NOT_VERIFIED",
+            "DOORS_WINDOWS_NOT_GENERATED",
+            "STAIR_GEOMETRY_NOT_GENERATED",
+            "STRUCTURE_MEP_NOT_EVALUATED",
+            "DAYLIGHT_VENTILATION_NOT_SIMULATED",
+            "ACCESSIBILITY_EGRESS_NOT_VERIFIED",
+            "ARCHITECT_REVIEW_REQUIRED"
+          ],
+          "generation_status": "GENERATED",
+          "approval_status": "PROPOSED",
+          "cad_writes_permitted": false
+        },
+        "decisions": [],
+        "exteriors": [],
+        "openings": [],
+        "openings_complete": false,
+        "stairs": [],
+        "stairs_complete": true,
+        "fixed_obstacles": [],
+        "fixed_obstacles_complete": true,
+        "clearance_regions": [],
+        "passages": [],
+        "selection": {
+          "candidate_id": "SYNTHETIC-WALL-REV-54973cc4e3514615f6969e2b85da4aae496356f0b47cef644d49d5e624da9b6d",
+          "candidate_digest": "a2392ed2bb2350ec7dcbea42f74be9eaa05b761107cde72770181ca2975195f3"
+        }
+      },
+      "parent_candidate_digest": "50d22e02f3d4a41557425bb35c02da7a659ae7f1884ca0576283f695b26cf3c8",
+      "child_candidate_digest": "a2392ed2bb2350ec7dcbea42f74be9eaa05b761107cde72770181ca2975195f3",
+      "parent_design_digest": "8682f44922be3326e59fba91adadd84f0f30a943adfb6f008767674b09df5cb8",
+      "child_design_digest": "26f7825ee74fd020344dc841e6d06d79eb8255150965de5785eda5bc8f219924",
+      "change_origin": "architect_requested",
+      "change_rationale": "Synthetic externally supplied revision; no AI redesign.",
+      "feedback": [],
+      "provenance": {
+        "schema_version": 1,
+        "method": "generation-provenance-v1",
+        "generation_engine_version": "0.1.10",
+        "generation_specification": {
+          "schema_version": 1,
+          "geometry": {
+            "schema_version": 1,
+            "project_id": "SYNTHETIC-FLOORPLAN",
+            "fixture_notice": "Synthetic coordinates and approval records only; not client-confirmed architecture.",
+            "units": "m",
+            "frame": {
+              "id": "LOCAL",
+              "kind": "local_site",
+              "axes": "x_east_y_north"
+            },
+            "tolerances": {
+              "boundary_m": 0,
+              "overlap_m2": 0,
+              "min_area_m2": 1e-06,
+              "target_area_m2": 0.01
+            },
+            "floors": [
+              {
+                "id": "F1"
+              }
+            ],
+            "polygons": [
+              {
+                "id": "SITE",
+                "role": "site",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    20
+                  ],
+                  [
+                    0,
+                    20
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "FOOTPRINT",
+                "role": "footprint",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    5
+                  ],
+                  [
+                    0,
+                    5
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              }
+            ],
+            "points": [],
+            "segments": [],
+            "relationships": [],
+            "zoning": {
+              "schema_version": 1,
+              "proposal_id": "SYNTHETIC-WALL-ZONING",
+              "revision": 1,
+              "brief": {
+                "schema_version": 1,
+                "project": {
+                  "id": "SYNTHETIC-FLOORPLAN",
+                  "name": "Synthetic solver fixture; not a client layout",
+                  "type": "townhouse",
+                  "phase": "brief"
+                },
+                "requirements": [
+                  {
+                    "id": "REQ-BED",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LIVING",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-KITCHEN",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-PRAYER",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LAUNDRY",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LOT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "Q-NORTH",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FRONTAGE",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-ROAD",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-SITE-LIMITS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STOREYS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-SKYLIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-LIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-AIR",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-STAIR",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FOOTPRINT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STYLE",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-OCCUPANTS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-internal_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-vertical_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "SYN-WALL-DIMENSIONS",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high",
+                    "notes": "Synthetic architectural wall specification supplies dimensions; no structural/regulatory inference."
+                  }
+                ],
+                "site": {
+                  "dimensions": {
+                    "requirement_id": "REQ-LOT",
+                    "value": {
+                      "shape": "rectangle",
+                      "width": 8,
+                      "length": 20,
+                      "unit": "m"
+                    }
+                  },
+                  "north_degrees": {
+                    "requirement_id": "Q-NORTH",
+                    "value": 0
+                  },
+                  "frontage": {
+                    "requirement_id": "Q-FRONTAGE",
+                    "value": "test frontage"
+                  },
+                  "road_access": {
+                    "requirement_id": "Q-ROAD",
+                    "value": "test road access"
+                  },
+                  "constraints": {
+                    "requirement_id": "Q-SITE-LIMITS",
+                    "value": [
+                      "Synthetic site limits provided by test client"
+                    ]
+                  }
+                },
+                "building": {
+                  "storeys": {
+                    "requirement_id": "REQ-STOREYS",
+                    "value": 1
+                  },
+                  "rooms": [
+                    {
+                      "id": "BED",
+                      "type": "bedroom",
+                      "quantity": 1,
+                      "requirement_id": "REQ-BED",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    },
+                    {
+                      "id": "LIVING",
+                      "type": "living",
+                      "quantity": 1,
+                      "requirement_id": "REQ-LIVING",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    }
+                  ],
+                  "skylight": {
+                    "requirement_id": "REQ-SKYLIGHT",
+                    "value": "Skylight requested; position and size unresolved"
+                  },
+                  "lighting": {
+                    "requirement_id": "REQ-LIGHT",
+                    "value": "Prioritize natural daylight"
+                  },
+                  "ventilation": {
+                    "requirement_id": "REQ-AIR",
+                    "value": "Prioritize natural ventilation"
+                  },
+                  "stairs": {
+                    "requirement_id": "Q-STAIR",
+                    "value": "Test client requests stairs, detailed design pending"
+                  },
+                  "footprint": {
+                    "requirement_id": "Q-FOOTPRINT",
+                    "value": {
+                      "target": 40,
+                      "unit": "m2"
+                    }
+                  },
+                  "floors": [
+                    {
+                      "id": "F1",
+                      "label": "Synthetic wall floor 1"
+                    }
+                  ],
+                  "internal_circulation": {
+                    "requirement_id": "REQ-internal_circulation",
+                    "value": "Test circulation request"
+                  },
+                  "vertical_circulation": {
+                    "requirement_id": "REQ-vertical_circulation",
+                    "value": "Test circulation request"
+                  }
+                },
+                "client": {
+                  "style": {
+                    "requirement_id": "REQ-STYLE",
+                    "value": "Modern minimalist"
+                  },
+                  "occupants": {
+                    "requirement_id": "Q-OCCUPANTS",
+                    "value": 4
+                  }
+                }
+              },
+              "floors": [
+                {
+                  "id": "F1"
+                }
+              ],
+              "assignments": [
+                {
+                  "id": "ASSIGN-1",
+                  "room_id": "BED:1",
+                  "requirement_id": "REQ-BED",
+                  "floor_id": "F1",
+                  "zone": "private",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                },
+                {
+                  "id": "ASSIGN-2",
+                  "room_id": "LIVING:1",
+                  "requirement_id": "REQ-LIVING",
+                  "floor_id": "F1",
+                  "zone": "public",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                }
+              ],
+              "decisions": [
+                {
+                  "id": "ASSIGN-1-reviewed",
+                  "decision_id": "ASSIGN-1",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-1-approved",
+                  "decision_id": "ASSIGN-1",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-reviewed",
+                  "decision_id": "ASSIGN-2",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-approved",
+                  "decision_id": "ASSIGN-2",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                }
+              ],
+              "constraints": [],
+              "assumptions": []
+            }
+          },
+          "fixed_elements_status": "complete",
+          "room_dimensions": [
+            {
+              "room_id": "BED:1",
+              "requirement_id": "REQ-BED",
+              "width": {
+                "min": 4,
+                "max": 4
+              },
+              "depth": {
+                "min": 5,
+                "max": 5
+              }
+            },
+            {
+              "room_id": "LIVING:1",
+              "requirement_id": "REQ-LIVING",
+              "width": {
+                "min": 4,
+                "max": 4
+              },
+              "depth": {
+                "min": 5,
+                "max": 5
+              }
+            }
+          ],
+          "parameters": {
+            "grid_step": 1,
+            "candidate_count": 1,
+            "max_steps": 20000,
+            "solution_limit": 1
+          },
+          "authorization": {
+            "purpose": "preliminary_generation_only",
+            "record": {
+              "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+              "role": "architect",
+              "recorded_at": "2026-11-18T00:02:00Z",
+              "digest": "fbae64ec2d31047c1408cf6de04cb5fbc6fa1aba036203d4dd10d53fec2857b8"
+            }
+          }
+        },
+        "origin_candidate": {
+          "schema_version": 1,
+          "candidate_id": "FP-89abc5651744a27cd0a35782445bf45fdb617c53b2b3aa3185a21d401261253b",
+          "input_digest": "4d3437d55bdeb24d6a01eae7e3852fb0f34b52f5dc3f5e71db85a0c78c8fb315",
+          "algorithm": "bounded-grid-rect-v1",
+          "parameters": {
+            "candidate_count": 1,
+            "max_steps": 20000,
+            "solution_limit": 1,
+            "grid_step": 1
+          },
+          "floor_id": "F1",
+          "floor_ids": [
+            "F1"
+          ],
+          "geometry": {
+            "schema_version": 1,
+            "project_id": "SYNTHETIC-FLOORPLAN",
+            "fixture_notice": "Synthetic coordinates and approval records only; not client-confirmed architecture.",
+            "units": "m",
+            "frame": {
+              "id": "LOCAL",
+              "kind": "local_site",
+              "axes": "x_east_y_north"
+            },
+            "tolerances": {
+              "boundary_m": 0,
+              "overlap_m2": 0,
+              "min_area_m2": 1e-06,
+              "target_area_m2": 0.01
+            },
+            "floors": [
+              {
+                "id": "F1"
+              }
+            ],
+            "polygons": [
+              {
+                "id": "SITE",
+                "role": "site",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    20
+                  ],
+                  [
+                    0,
+                    20
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "FOOTPRINT",
+                "role": "footprint",
+                "owner_id": "SYNTHETIC-FLOORPLAN",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    8,
+                    0
+                  ],
+                  [
+                    8,
+                    5
+                  ],
+                  [
+                    0,
+                    5
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "GENERATED-ROOM-1",
+                "role": "room",
+                "owner_id": "F1",
+                "floor_id": "F1",
+                "room_id": "BED:1",
+                "requirement_id": "REQ-BED",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    5.0
+                  ],
+                  [
+                    0.0,
+                    5.0
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              },
+              {
+                "id": "GENERATED-ROOM-2",
+                "role": "room",
+                "owner_id": "F1",
+                "floor_id": "F1",
+                "room_id": "LIVING:1",
+                "requirement_id": "REQ-LIVING",
+                "frame_id": "LOCAL",
+                "units": "m",
+                "exterior": [
+                  [
+                    4.0,
+                    0.0
+                  ],
+                  [
+                    8.0,
+                    0.0
+                  ],
+                  [
+                    8.0,
+                    5.0
+                  ],
+                  [
+                    4.0,
+                    5.0
+                  ]
+                ],
+                "holes": [],
+                "status": "proposed"
+              }
+            ],
+            "points": [],
+            "segments": [],
+            "relationships": [],
+            "zoning": {
+              "schema_version": 1,
+              "proposal_id": "SYNTHETIC-WALL-ZONING",
+              "revision": 1,
+              "brief": {
+                "schema_version": 1,
+                "project": {
+                  "id": "SYNTHETIC-FLOORPLAN",
+                  "name": "Synthetic solver fixture; not a client layout",
+                  "type": "townhouse",
+                  "phase": "brief"
+                },
+                "requirements": [
+                  {
+                    "id": "REQ-BED",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LIVING",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-KITCHEN",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-PRAYER",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LAUNDRY",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-LOT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "Q-NORTH",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FRONTAGE",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-ROAD",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-SITE-LIMITS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STOREYS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-SKYLIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-LIGHT",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-AIR",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-STAIR",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-FOOTPRINT",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-STYLE",
+                    "type": "preference",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "Q-OCCUPANTS",
+                    "type": "mandatory",
+                    "origin": "synthetic_client_brief",
+                    "confirmation": "confirmed",
+                    "priority": "medium"
+                  },
+                  {
+                    "id": "REQ-internal_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "REQ-vertical_circulation",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high"
+                  },
+                  {
+                    "id": "SYN-WALL-DIMENSIONS",
+                    "type": "mandatory",
+                    "origin": "synthetic_test_client",
+                    "confirmation": "confirmed",
+                    "priority": "high",
+                    "notes": "Synthetic architectural wall specification supplies dimensions; no structural/regulatory inference."
+                  }
+                ],
+                "site": {
+                  "dimensions": {
+                    "requirement_id": "REQ-LOT",
+                    "value": {
+                      "shape": "rectangle",
+                      "width": 8,
+                      "length": 20,
+                      "unit": "m"
+                    }
+                  },
+                  "north_degrees": {
+                    "requirement_id": "Q-NORTH",
+                    "value": 0
+                  },
+                  "frontage": {
+                    "requirement_id": "Q-FRONTAGE",
+                    "value": "test frontage"
+                  },
+                  "road_access": {
+                    "requirement_id": "Q-ROAD",
+                    "value": "test road access"
+                  },
+                  "constraints": {
+                    "requirement_id": "Q-SITE-LIMITS",
+                    "value": [
+                      "Synthetic site limits provided by test client"
+                    ]
+                  }
+                },
+                "building": {
+                  "storeys": {
+                    "requirement_id": "REQ-STOREYS",
+                    "value": 1
+                  },
+                  "rooms": [
+                    {
+                      "id": "BED",
+                      "type": "bedroom",
+                      "quantity": 1,
+                      "requirement_id": "REQ-BED",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    },
+                    {
+                      "id": "LIVING",
+                      "type": "living",
+                      "quantity": 1,
+                      "requirement_id": "REQ-LIVING",
+                      "floor_id": "F1",
+                      "area": {
+                        "min": 1,
+                        "max": 20,
+                        "target": 20,
+                        "unit": "m2"
+                      }
+                    }
+                  ],
+                  "skylight": {
+                    "requirement_id": "REQ-SKYLIGHT",
+                    "value": "Skylight requested; position and size unresolved"
+                  },
+                  "lighting": {
+                    "requirement_id": "REQ-LIGHT",
+                    "value": "Prioritize natural daylight"
+                  },
+                  "ventilation": {
+                    "requirement_id": "REQ-AIR",
+                    "value": "Prioritize natural ventilation"
+                  },
+                  "stairs": {
+                    "requirement_id": "Q-STAIR",
+                    "value": "Test client requests stairs, detailed design pending"
+                  },
+                  "footprint": {
+                    "requirement_id": "Q-FOOTPRINT",
+                    "value": {
+                      "target": 40,
+                      "unit": "m2"
+                    }
+                  },
+                  "floors": [
+                    {
+                      "id": "F1",
+                      "label": "Synthetic wall floor 1"
+                    }
+                  ],
+                  "internal_circulation": {
+                    "requirement_id": "REQ-internal_circulation",
+                    "value": "Test circulation request"
+                  },
+                  "vertical_circulation": {
+                    "requirement_id": "REQ-vertical_circulation",
+                    "value": "Test circulation request"
+                  }
+                },
+                "client": {
+                  "style": {
+                    "requirement_id": "REQ-STYLE",
+                    "value": "Modern minimalist"
+                  },
+                  "occupants": {
+                    "requirement_id": "Q-OCCUPANTS",
+                    "value": 4
+                  }
+                }
+              },
+              "floors": [
+                {
+                  "id": "F1"
+                }
+              ],
+              "assignments": [
+                {
+                  "id": "ASSIGN-1",
+                  "room_id": "BED:1",
+                  "requirement_id": "REQ-BED",
+                  "floor_id": "F1",
+                  "zone": "private",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                },
+                {
+                  "id": "ASSIGN-2",
+                  "room_id": "LIVING:1",
+                  "requirement_id": "REQ-LIVING",
+                  "floor_id": "F1",
+                  "zone": "public",
+                  "provenance": "source_design_brief",
+                  "confirmation": "confirmed",
+                  "status": "approved"
+                }
+              ],
+              "decisions": [
+                {
+                  "id": "ASSIGN-1-reviewed",
+                  "decision_id": "ASSIGN-1",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-1-approved",
+                  "decision_id": "ASSIGN-1",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "6f5d0240f6797f2b1364601ab760be20ff33a0beefb91d5abcb9e527fa87da56"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-reviewed",
+                  "decision_id": "ASSIGN-2",
+                  "action": "reviewed",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:00:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                },
+                {
+                  "id": "ASSIGN-2-approved",
+                  "decision_id": "ASSIGN-2",
+                  "action": "approved",
+                  "record": {
+                    "actor": "SYNTHETIC_TEST_ARCHITECT_NOT_REAL_APPROVAL",
+                    "role": "architect",
+                    "recorded_at": "2026-11-18T00:01:00Z",
+                    "digest": "00781dcec9084b13fa220291bf65b59b2dfd527235b21d4049abc4408f67434a"
+                  }
+                }
+              ],
+              "constraints": [],
+              "assumptions": []
+            }
+          },
+          "room_areas_m2": {
+            "BED:1": 20.0,
+            "LIVING:1": 20.0
+          },
+          "hard_validation": {
+            "passed": true,
+            "checks": [
+              "SOURCE_INVENTORY_TRACEABILITY",
+              "AREA_BOUNDS",
+              "DIMENSION_BOUNDS",
+              "ENVELOPE_CONTAINMENT",
+              "NO_UNINTENDED_OVERLAP",
+              "RESERVATIONS_RESPECTED",
+              "MANDATORY_ADJACENCY",
+              "SPATIAL_VALIDATOR_VALID"
+            ],
+            "spatial_report": {
+              "report_schema_version": 1,
+              "engine_version": "0.1.10",
+              "contract": "geometry-v1",
+              "status": "VALID",
+              "errors": [],
+              "warnings": [],
+              "missing_information": [],
+              "diagnostics": [],
+              "cad_writes_permitted": false,
+              "standards_review": "NOT_EVALUATED",
+              "fengshui_review": "NOT_EVALUATED",
+              "polygon_areas_m2": {
+                "SITE": 160.0,
+                "FOOTPRINT": 40.0,
+                "GENERATED-ROOM-1": 20.0,
+                "GENERATED-ROOM-2": 20.0
+              },
+              "floor_areas": [
+                {
+                  "floor_id": "F1",
+                  "envelope_id": "FOOTPRINT",
+                  "envelope_area_m2": 40.0,
+                  "envelope_approved": false,
+                  "net_room_polygon_sum_m2": 40.0,
+                  "net_room_polygon_union_m2": 40.0,
+                  "geometric_residual_m2": 0.0,
+                  "note": "Polygon accounting only; residual is not verified usable area or GFA."
+                }
+              ],
+              "site_area_m2": 160.0,
+              "footprint_area_m2": 40.0,
+              "gross_floor_area_m2": null,
+              "envelope_approval": {
+                "SITE": false,
+                "FOOTPRINT": false,
+                "GENERATED-ROOM-1": false,
+                "GENERATED-ROOM-2": false
+              },
+              "architectural_approval": "APPROVED",
+              "buildability": "NOT_EVALUATED",
+              "zoning_validation": {
+                "report_schema_version": 1,
+                "engine_version": "0.1.10",
+                "contract": "zoning-v1",
+                "status": "VALID",
+                "errors": [],
+                "warnings": [],
+                "missing_information": [],
+                "diagnostics": [],
+                "cad_writes_permitted": false,
+                "standards_review": "NOT_EVALUATED",
+                "fengshui_review": "NOT_EVALUATED",
+                "assignments": [
+                  {
+                    "id": "ASSIGN-1",
+                    "room_id": "BED:1",
+                    "requirement_id": "REQ-BED",
+                    "floor_id": "F1",
+                    "zone": "private",
+                    "provenance": "source_design_brief",
+                    "confirmation": "confirmed",
+                    "status": "approved"
+                  },
+                  {
+                    "id": "ASSIGN-2",
+                    "room_id": "LIVING:1",
+                    "requirement_id": "REQ-LIVING",
+                    "floor_id": "F1",
+                    "zone": "public",
+                    "provenance": "source_design_brief",
+                    "confirmation": "confirmed",
+                    "status": "approved"
+                  }
+                ],
+                "unassigned_room_ids": [],
+                "relationships": [],
+                "architect_approved": true,
+                "source_brief_status": "VALID",
+                "source_brief_missing_information": []
+              }
+            }
+          },
+          "soft_scores": {
+            "preferred_adjacency": 1.0,
+            "preferred_area": 1.0,
+            "total": 1.0,
+            "weights": {
+              "preferred_adjacency": 0.5,
+              "preferred_area": 0.5
+            }
+          },
+          "unresolved_checks": [
+            "CIRCULATION_CONNECTIVITY_NOT_VERIFIED",
+            "DOORS_WINDOWS_NOT_GENERATED",
+            "STAIR_GEOMETRY_NOT_GENERATED",
+            "STRUCTURE_MEP_NOT_EVALUATED",
+            "DAYLIGHT_VENTILATION_NOT_SIMULATED",
+            "ACCESSIBILITY_EGRESS_NOT_VERIFIED",
+            "ARCHITECT_REVIEW_REQUIRED"
+          ],
+          "generation_status": "GENERATED",
+          "approval_status": "PROPOSED",
+          "cad_writes_permitted": false
+        },
+        "dependency_digests": {
+          "brief": "c099cce4c7feb640fc1d87b44e80edc011a4009ff21aa55f1c63f5ff61eaa112",
+          "program": "941154d805e72f726ce4e2f60597584c5151c8aa5ac012a76151699267d4bfb3",
+          "zoning": "86e6a75aa9bb63e654205751c361e7ad69f4302ef8055013fa54b34892fc66b1",
+          "site_floor_geometry": "6de4673a836320d8601ccf5a5faa830eea173f1c97c8c3424d0a81c9b1e52a5a",
+          "specification": "fa5b0913a3c2219746fcc89ee23dcd63e44323cce480e20c928ab9eebc8c23d3",
+          "generation_input": "4d3437d55bdeb24d6a01eae7e3852fb0f34b52f5dc3f5e71db85a0c78c8fb315",
+          "origin_candidate": "50d22e02f3d4a41557425bb35c02da7a659ae7f1884ca0576283f695b26cf3c8"
+        },
+        "solver": {
+          "algorithm": "bounded-grid-rect-v1",
+          "parameters": {
+            "candidate_count": 1,
+            "max_steps": 20000,
+            "solution_limit": 1,
+            "grid_step": 1
+          },
+          "tolerances": {
+            "boundary_m": 0,
+            "overlap_m2": 0,
+            "min_area_m2": 1e-06,
+            "target_area_m2": 0.01
+          }
+        },
+        "constraint_register": {
+          "rooms": [
+            {
+              "id": "BED:1",
+              "room_group_id": "BED",
+              "type": "bedroom",
+              "requirement_id": "REQ-BED",
+              "governance": {
+                "id": "REQ-BED",
+                "type": "mandatory",
+                "origin": "synthetic_client_brief",
+                "confirmation": "confirmed",
+                "priority": "high"
+              },
+              "floor_id": "F1",
+              "requested_area_m2": {
+                "target": 20.0,
+                "min": 1.0,
+                "max": 20.0
+              },
+              "confirmed": true
+            },
+            {
+              "id": "LIVING:1",
+              "room_group_id": "LIVING",
+              "type": "living",
+              "requirement_id": "REQ-LIVING",
+              "governance": {
+                "id": "REQ-LIVING",
+                "type": "mandatory",
+                "origin": "synthetic_client_brief",
+                "confirmation": "confirmed",
+                "priority": "high"
+              },
+              "floor_id": "F1",
+              "requested_area_m2": {
+                "target": 20.0,
+                "min": 1.0,
+                "max": 20.0
+              },
+              "confirmed": true
+            }
+          ],
+          "dimensions": [
+            {
+              "room_id": "BED:1",
+              "requirement_id": "REQ-BED",
+              "width": {
+                "min": 4,
+                "max": 4
+              },
+              "depth": {
+                "min": 5,
+                "max": 5
+              }
+            },
+            {
+              "room_id": "LIVING:1",
+              "requirement_id": "REQ-LIVING",
+              "width": {
+                "min": 4,
+                "max": 4
+              },
+              "depth": {
+                "min": 5,
+                "max": 5
+              }
+            }
+          ],
+          "relationships": [],
+          "reservations": []
+        },
+        "provenance_digest": "d0c8c00bffbc6b3971e6cba3e876f395288faa29eed1f03d4714c9332d21a7e2"
+      }
+    }
+  },
+  "wall_specification": {
+    "id": "SYNTHETIC-WALL-SPEC",
+    "source_candidate_digest": "a2392ed2bb2350ec7dcbea42f74be9eaa05b761107cde72770181ca2975195f3",
+    "source_design_digest": "26f7825ee74fd020344dc841e6d06d79eb8255150965de5785eda5bc8f219924",
+    "boundary_semantics": "allocation_boundary",
+    "default_treatment": "no_wall",
+    "constraint_basis": {
+      "area": "clear",
+      "dimensions": "allocation"
+    },
+    "treatments": [
+      {
+        "id": "EXTERIOR",
+        "selector": {
+          "kind": "exterior"
+        },
+        "action": "wall",
+        "wall": {
+          "classification": "exterior",
+          "thickness": {
+            "value": 0.2,
+            "unit": "m"
+          },
+          "alignment": "inward",
+          "fixed": false,
+          "requirement_ids": [
+            "SYN-WALL-DIMENSIONS"
+          ],
+          "provenance": "Explicit synthetic wall dimensions; not a Vietnamese standard or expert-approved prescription.",
+          "confirmation": "confirmed",
+          "approval_status": "proposed"
+        },
+        "rationale": "Explicit synthetic inward exterior walls."
+      },
+      {
+        "id": "SHARED",
+        "selector": {
+          "kind": "shared"
+        },
+        "action": "wall",
+        "wall": {
+          "classification": "shared_boundary",
+          "thickness": {
+            "value": 0.1,
+            "unit": "m"
+          },
+          "alignment": "centered",
+          "fixed": false,
+          "requirement_ids": [
+            "SYN-WALL-DIMENSIONS"
+          ],
+          "provenance": "Explicit synthetic wall dimensions; not a Vietnamese standard or expert-approved prescription.",
+          "confirmation": "confirmed",
+          "approval_status": "proposed"
+        },
+        "rationale": "One explicitly requested partition per shared boundary."
+      }
+    ],
+    "special_walls": []
+  }
+}

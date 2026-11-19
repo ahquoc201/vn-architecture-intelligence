@@ -1,0 +1,700 @@
+{
+  "full_report_sha256": "83dabafa401339278478b4f7e0d6e58d53561c2b86dd56551b8aa4c39c3499ec",
+  "wall_status": "GENERATED",
+  "geometry_status": "VALID",
+  "source_candidate_digest": "06d92a4e5f11977154227a0f59520825a0e915908c94a7eb73d32e1a8a6baa77",
+  "wall_specification_digest": "9ff78ad0555eef21db6375a7610dfaaab3442a21537ed721522f5ab08457c02b",
+  "derived_geometry_digest": "bff56ffcec4314061e87da21b52f63fffdc0291f6d12df7defd43b8a2c0d4106",
+  "wall_revision_id": "WR-8659ad42ef7521f78a0537ba7813326cbbfa83892bf6d0cce75cc6810c3d4378",
+  "floors": [
+    {
+      "floor_id": "F1",
+      "permitted_envelope": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                8.0,
+                0.0
+              ],
+              [
+                8.0,
+                6.0
+              ],
+              [
+                0.0,
+                6.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "envelope_area_m2": 48.0,
+      "wall_footprint": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                8.0,
+                0.0
+              ],
+              [
+                8.0,
+                6.0
+              ],
+              [
+                0.0,
+                6.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": [
+              [
+                [
+                  0.2,
+                  0.2
+                ],
+                [
+                  0.2,
+                  5.8
+                ],
+                [
+                  7.8,
+                  5.8
+                ],
+                [
+                  7.8,
+                  0.2
+                ],
+                [
+                  0.2,
+                  0.2
+                ]
+              ]
+            ]
+          },
+          {
+            "exterior": [
+              [
+                2.0,
+                2.2
+              ],
+              [
+                6.0,
+                2.2
+              ],
+              [
+                6.0,
+                2.4
+              ],
+              [
+                2.0,
+                2.4
+              ],
+              [
+                2.0,
+                2.2
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "wall_union_area_m2": 6.240000000000004,
+      "individual_wall_area_sum_m2": 6.400000000000001,
+      "wall_overlap_not_double_counted_m2": 0.15999999999999748,
+      "wall_area_within_envelope_m2": 6.240000000000004,
+      "wall_area_outside_envelope_m2": 0.0,
+      "non_wall_envelope_area_m2": 41.76,
+      "allocated_room_union_area_m2": 48.0,
+      "reservation_impacts": [],
+      "area_scope": "POLYGON_ACCOUNTING_NOT_GFA_OR_NET_USABLE_AREA"
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "BED:1",
+      "geometry_id": "GENERATED-ROOM-1",
+      "floor_id": "F1",
+      "allocation_geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                8.0,
+                0.0
+              ],
+              [
+                8.0,
+                6.0
+              ],
+              [
+                0.0,
+                6.0
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "allocation_area_m2": 48.0,
+      "wall_occupied_area_m2": 6.240000000000004,
+      "clear_area_m2": 41.76,
+      "area_difference_m2": -6.240000000000002,
+      "area_difference_percent": -13.000000000000005,
+      "clear_geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.2,
+                0.2
+              ],
+              [
+                7.8,
+                0.2
+              ],
+              [
+                7.8,
+                5.8
+              ],
+              [
+                0.2,
+                5.8
+              ],
+              [
+                0.2,
+                0.2
+              ]
+            ],
+            "holes": [
+              [
+                [
+                  2.0,
+                  2.2
+                ],
+                [
+                  2.0,
+                  2.4
+                ],
+                [
+                  6.0,
+                  2.4
+                ],
+                [
+                  6.0,
+                  2.2
+                ],
+                [
+                  2.0,
+                  2.2
+                ]
+              ]
+            ]
+          }
+        ]
+      },
+      "component_count": 1,
+      "non_area_components": [],
+      "remaining_components": [
+        {
+          "area_m2": 41.76,
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    0.2,
+                    0.2
+                  ],
+                  [
+                    7.8,
+                    0.2
+                  ],
+                  [
+                    7.8,
+                    5.8
+                  ],
+                  [
+                    0.2,
+                    5.8
+                  ],
+                  [
+                    0.2,
+                    0.2
+                  ]
+                ],
+                "holes": [
+                  [
+                    [
+                      2.0,
+                      2.2
+                    ],
+                    [
+                      2.0,
+                      2.4
+                    ],
+                    [
+                      6.0,
+                      2.4
+                    ],
+                    [
+                      6.0,
+                      2.2
+                    ],
+                    [
+                      2.0,
+                      2.2
+                    ]
+                  ]
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "source_area_requirements_m2": {
+        "target": 48.0,
+        "min": 1.0,
+        "max": 48.0
+      },
+      "area_requirement_basis": "clear",
+      "clear_area_constraint_status": "VERIFIED",
+      "dimension_requirement_basis": "allocation",
+      "clear_dimension_constraint_status": "NOT_EVALUATED_ALLOCATION_ONLY",
+      "clear_dimensions_m": null,
+      "measurement_scope": "PROPOSED_WALL_REVISION_ONLY_NOT_VERIFIED_USABLE_AREA",
+      "wall_information_verified": true
+    }
+  ],
+  "junctions": [
+    {
+      "id": "WJ-f6e7d154d169c2be16cbd178f163e7a0d5e295e561633ede78a1ebf833ca2400",
+      "floor_id": "F1",
+      "point": [
+        0.0,
+        0.0
+      ],
+      "kind": "L",
+      "wall_ids": [
+        "W-451a11e483b738ca529a9468854d916b386cb758a960a9c477b670030993601e",
+        "W-b3943a619ded534d7efa046016ec4caabf224ab4a36d6be2068fc77155312209"
+      ],
+      "geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                0.2,
+                0.0
+              ],
+              [
+                0.2,
+                0.2
+              ],
+              [
+                0.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "area_m2": 0.04000000000000001,
+      "pair_ownership": [
+        {
+          "wall_ids": [
+            "W-451a11e483b738ca529a9468854d916b386cb758a960a9c477b670030993601e",
+            "W-b3943a619ded534d7efa046016ec4caabf224ab4a36d6be2068fc77155312209"
+          ],
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.2,
+                    0.0
+                  ],
+                  [
+                    0.2,
+                    0.2
+                  ],
+                  [
+                    0.0,
+                    0.2
+                  ],
+                  [
+                    0.0,
+                    0.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "area_m2": 0.04000000000000001
+        }
+      ],
+      "status": "VERIFIED",
+      "method": "FINITE_BAND_CORE_UNION_NO_SNAPPING"
+    },
+    {
+      "id": "WJ-8edb0ef99ec950d06574fa3ef66ef32f975d4b64119507f2109695a3acd1f846",
+      "floor_id": "F1",
+      "point": [
+        0.0,
+        6.0
+      ],
+      "kind": "L",
+      "wall_ids": [
+        "W-b0070289e63f1e1fb7f314d3dc7417424381ca7dad8df2545f51a907bfed93c2",
+        "W-b3943a619ded534d7efa046016ec4caabf224ab4a36d6be2068fc77155312209"
+      ],
+      "geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                5.8
+              ],
+              [
+                0.2,
+                5.8
+              ],
+              [
+                0.2,
+                6.0
+              ],
+              [
+                0.0,
+                6.0
+              ],
+              [
+                0.0,
+                5.8
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "area_m2": 0.040000000000000036,
+      "pair_ownership": [
+        {
+          "wall_ids": [
+            "W-b0070289e63f1e1fb7f314d3dc7417424381ca7dad8df2545f51a907bfed93c2",
+            "W-b3943a619ded534d7efa046016ec4caabf224ab4a36d6be2068fc77155312209"
+          ],
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    0.0,
+                    5.8
+                  ],
+                  [
+                    0.2,
+                    5.8
+                  ],
+                  [
+                    0.2,
+                    6.0
+                  ],
+                  [
+                    0.0,
+                    6.0
+                  ],
+                  [
+                    0.0,
+                    5.8
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "area_m2": 0.040000000000000036
+        }
+      ],
+      "status": "VERIFIED",
+      "method": "FINITE_BAND_CORE_UNION_NO_SNAPPING"
+    },
+    {
+      "id": "WJ-055c6941ae3dd48a02de6306cf3228f0333c1740d94cb43a7bff126721f8cb9b",
+      "floor_id": "F1",
+      "point": [
+        2.0,
+        2.0
+      ],
+      "kind": "END",
+      "wall_ids": [
+        "W-4f6381d2ffbb17c84e3612fa1575c73107390c6bf8ebdeefacbb35827608be0e"
+      ],
+      "geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": []
+      },
+      "area_m2": 0.0,
+      "pair_ownership": [],
+      "status": "VERIFIED",
+      "method": "FINITE_BAND_CORE_UNION_NO_SNAPPING"
+    },
+    {
+      "id": "WJ-0e8ba85e7681078d9fa8ace4cf4687046cf3e9a8326c7c3c6f4b54194fd8acef",
+      "floor_id": "F1",
+      "point": [
+        6.0,
+        2.0
+      ],
+      "kind": "END",
+      "wall_ids": [
+        "W-4f6381d2ffbb17c84e3612fa1575c73107390c6bf8ebdeefacbb35827608be0e"
+      ],
+      "geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": []
+      },
+      "area_m2": 0.0,
+      "pair_ownership": [],
+      "status": "VERIFIED",
+      "method": "FINITE_BAND_CORE_UNION_NO_SNAPPING"
+    },
+    {
+      "id": "WJ-9b55e4d8c4433bcc12b47d6ff5e76396c56b8513110c7bc964a74dcf06d70787",
+      "floor_id": "F1",
+      "point": [
+        8.0,
+        0.0
+      ],
+      "kind": "L",
+      "wall_ids": [
+        "W-451a11e483b738ca529a9468854d916b386cb758a960a9c477b670030993601e",
+        "W-f552129c15fa45c581ecc38ecc32c7271126254b8b39e32c031118c6488dfbb8"
+      ],
+      "geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                7.8,
+                0.0
+              ],
+              [
+                8.0,
+                0.0
+              ],
+              [
+                8.0,
+                0.2
+              ],
+              [
+                7.8,
+                0.2
+              ],
+              [
+                7.8,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "area_m2": 0.040000000000000036,
+      "pair_ownership": [
+        {
+          "wall_ids": [
+            "W-451a11e483b738ca529a9468854d916b386cb758a960a9c477b670030993601e",
+            "W-f552129c15fa45c581ecc38ecc32c7271126254b8b39e32c031118c6488dfbb8"
+          ],
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    7.8,
+                    0.0
+                  ],
+                  [
+                    8.0,
+                    0.0
+                  ],
+                  [
+                    8.0,
+                    0.2
+                  ],
+                  [
+                    7.8,
+                    0.2
+                  ],
+                  [
+                    7.8,
+                    0.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "area_m2": 0.040000000000000036
+        }
+      ],
+      "status": "VERIFIED",
+      "method": "FINITE_BAND_CORE_UNION_NO_SNAPPING"
+    },
+    {
+      "id": "WJ-5c0d242701942e196484bd0b27f1d14e947a01ae310fb859afa6ed633d8cb5ef",
+      "floor_id": "F1",
+      "point": [
+        8.0,
+        6.0
+      ],
+      "kind": "L",
+      "wall_ids": [
+        "W-b0070289e63f1e1fb7f314d3dc7417424381ca7dad8df2545f51a907bfed93c2",
+        "W-f552129c15fa45c581ecc38ecc32c7271126254b8b39e32c031118c6488dfbb8"
+      ],
+      "geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                7.8,
+                5.8
+              ],
+              [
+                8.0,
+                5.8
+              ],
+              [
+                8.0,
+                6.0
+              ],
+              [
+                7.8,
+                6.0
+              ],
+              [
+                7.8,
+                5.8
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "area_m2": 0.04000000000000007,
+      "pair_ownership": [
+        {
+          "wall_ids": [
+            "W-b0070289e63f1e1fb7f314d3dc7417424381ca7dad8df2545f51a907bfed93c2",
+            "W-f552129c15fa45c581ecc38ecc32c7271126254b8b39e32c031118c6488dfbb8"
+          ],
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    7.8,
+                    5.8
+                  ],
+                  [
+                    8.0,
+                    5.8
+                  ],
+                  [
+                    8.0,
+                    6.0
+                  ],
+                  [
+                    7.8,
+                    6.0
+                  ],
+                  [
+                    7.8,
+                    5.8
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "area_m2": 0.04000000000000007
+        }
+      ],
+      "status": "VERIFIED",
+      "method": "FINITE_BAND_CORE_UNION_NO_SNAPPING"
+    }
+  ],
+  "opening_mappings": [],
+  "error_codes": [],
+  "missing_codes": [],
+  "svg_sha256": "552d5d3914e82206f00dbfc9baeabe46d067b25a57ce82727c6e6a82f52aedba"
+}

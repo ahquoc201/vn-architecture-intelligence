@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.10] - R3/BATCH-007-B1 architectural wall geometry (2026-11-19)
+
+- Derive real, source-bound orthogonal wall polygons, centerlines and exposed faces from explicit wall intent, semantics, thickness, alignment and offset; preserve original candidates.
+- Node/deduplicate shared boundaries and construct owned L/T/X/collinear junctions, including mixed thickness; account for wall area by union, retaining outside-envelope conflicts.
+- Calculate complete clear-room geometry/area, independently replay original allocation constraints and assess declared clear requirements, reservations and fixed obstacles without resizing rooms.
+- Mark wall-dependent opening/circulation/evaluation/approval evidence stale, provide conservative opening-host mappings and keep CAD writes disabled.
+- Add wall schemas, JSON/Markdown/SVG CLI, actual uniformly scaled previews, 27 versioned fixture oracles, analytical/negative/CLI tests, CI and isolated wheel checks; preserve earlier goldens and DXF.
+- Update the existing single-agent house-design skill and wall geometry contract. Synthetic dimensions/reviews are not professional standards or expert approval.
+
 ## [0.1.9] - R3/BATCH-007-A design replay and CAD readiness (2026-11-19)
 
 - Add opt-in original generation provenance with exact specification, solver parameters and candidate snapshots; preserve default generation and DXF behavior.

@@ -46,6 +46,16 @@ jobs:
       - run: vnai design revision compare examples/batch007a/revision/valid-manual-revision.json
       - run: vnai design readiness report examples/batch007a/readiness/room-geometry-ready.json --markdown outputs/readiness-v0.1.9.md
       - run: vnai design benchmark run examples/batch007a/benchmark/benchmark-a.json > outputs/benchmark-a-v0.1.9.json
+      - run: vnai design walls generate examples/batch007b1/rectangle-inward.json > outputs/walls-v0.1.10.json
+      - run: vnai design walls validate outputs/walls-v0.1.10.json
+      - run: vnai design walls report examples/batch007b1/rectangle-inward.json --markdown outputs/walls-v0.1.10.md
+      - run: vnai design walls preview examples/batch007b1/rectangle-inward.json --out outputs/walls-v0.1.10.svg
+      - name: Townhouse wall conflicts remain visible
+        run: |
+          set +e
+          vnai design walls preview examples/batch007b1/townhouse-benchmark.json --out outputs/townhouse-walls-v0.1.10.svg
+          result=$?
+          test "$result" -eq 4
       - name: Fresh wheel outside checkout
         run: python scripts/smoke_wheel.py
       - run: vnai fengshui knowledge validate

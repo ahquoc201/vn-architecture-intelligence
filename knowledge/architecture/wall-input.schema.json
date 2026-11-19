@@ -1,0 +1,572 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "source": {
+      "$ref": "cad-readiness.schema.json#/$defs/input"
+    },
+    "wall_specification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "source_candidate_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_design_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "boundary_semantics": {
+          "enum": [
+            "allocation_boundary",
+            "wall_centerline_reference",
+            "interior_finished_face_reference",
+            "exterior_finished_face_reference"
+          ]
+        },
+        "default_treatment": {
+          "enum": [
+            "unresolved",
+            "no_wall"
+          ]
+        },
+        "constraint_basis": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "area": {
+              "enum": [
+                "allocation",
+                "clear",
+                "both",
+                "unresolved"
+              ]
+            },
+            "dimensions": {
+              "enum": [
+                "allocation",
+                "clear",
+                "both",
+                "unresolved"
+              ]
+            }
+          },
+          "required": [
+            "area",
+            "dimensions"
+          ]
+        },
+        "treatments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "selector": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "exterior",
+                      "shared",
+                      "room_unallocated",
+                      "room_reserved",
+                      "reservation_only",
+                      "special",
+                      "all"
+                    ]
+                  },
+                  "floor_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    },
+                    "maxItems": 12
+                  },
+                  "room_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    },
+                    "maxItems": 12
+                  },
+                  "boundary_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    },
+                    "maxItems": 512
+                  }
+                },
+                "required": [
+                  "kind"
+                ]
+              },
+              "action": {
+                "enum": [
+                  "wall",
+                  "no_wall",
+                  "unresolved"
+                ]
+              },
+              "wall": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "classification": {
+                    "enum": [
+                      "exterior",
+                      "interior_partition",
+                      "shared_boundary",
+                      "special"
+                    ]
+                  },
+                  "thickness": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "value": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      },
+                      "unit": {
+                        "enum": [
+                          "m",
+                          "mm"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "value",
+                      "unit"
+                    ]
+                  },
+                  "alignment": {
+                    "enum": [
+                      "centered",
+                      "left",
+                      "right",
+                      "inward",
+                      "toward_room"
+                    ]
+                  },
+                  "offset": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "value": {
+                        "type": "number"
+                      },
+                      "unit": {
+                        "enum": [
+                          "m",
+                          "mm"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "value",
+                      "unit"
+                    ]
+                  },
+                  "reference_semantics": {
+                    "enum": [
+                      "allocation_boundary",
+                      "wall_centerline_reference",
+                      "interior_finished_face_reference",
+                      "exterior_finished_face_reference"
+                    ]
+                  },
+                  "reference_room_id": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "assembly_id": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "fixed": {
+                    "type": "boolean"
+                  },
+                  "requirement_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    },
+                    "maxItems": 32
+                  },
+                  "provenance": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "confirmation": {
+                    "enum": [
+                      "confirmed",
+                      "proposed"
+                    ]
+                  },
+                  "approval_status": {
+                    "enum": [
+                      "proposed",
+                      "reviewed",
+                      "approved"
+                    ]
+                  },
+                  "approval": {
+                    "$ref": "zoning.schema.json#/$defs/approval"
+                  }
+                },
+                "required": [
+                  "classification",
+                  "fixed",
+                  "requirement_ids",
+                  "provenance",
+                  "confirmation",
+                  "approval_status"
+                ]
+              },
+              "rationale": {
+                "type": "string",
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "selector",
+              "action",
+              "rationale"
+            ]
+          },
+          "maxItems": 128
+        },
+        "special_walls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "floor_id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "frame_id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "units": {
+                "enum": [
+                  "m",
+                  "mm"
+                ]
+              },
+              "reference": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "start": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "end": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "required": [
+                  "start",
+                  "end"
+                ]
+              },
+              "wall": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "classification": {
+                    "enum": [
+                      "exterior",
+                      "interior_partition",
+                      "shared_boundary",
+                      "special"
+                    ]
+                  },
+                  "thickness": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "value": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      },
+                      "unit": {
+                        "enum": [
+                          "m",
+                          "mm"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "value",
+                      "unit"
+                    ]
+                  },
+                  "alignment": {
+                    "enum": [
+                      "centered",
+                      "left",
+                      "right",
+                      "inward",
+                      "toward_room"
+                    ]
+                  },
+                  "offset": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "value": {
+                        "type": "number"
+                      },
+                      "unit": {
+                        "enum": [
+                          "m",
+                          "mm"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "value",
+                      "unit"
+                    ]
+                  },
+                  "reference_semantics": {
+                    "enum": [
+                      "allocation_boundary",
+                      "wall_centerline_reference",
+                      "interior_finished_face_reference",
+                      "exterior_finished_face_reference"
+                    ]
+                  },
+                  "reference_room_id": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "assembly_id": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "fixed": {
+                    "type": "boolean"
+                  },
+                  "requirement_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    },
+                    "maxItems": 32
+                  },
+                  "provenance": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "confirmation": {
+                    "enum": [
+                      "confirmed",
+                      "proposed"
+                    ]
+                  },
+                  "approval_status": {
+                    "enum": [
+                      "proposed",
+                      "reviewed",
+                      "approved"
+                    ]
+                  },
+                  "approval": {
+                    "$ref": "zoning.schema.json#/$defs/approval"
+                  }
+                },
+                "required": [
+                  "classification",
+                  "fixed",
+                  "requirement_ids",
+                  "provenance",
+                  "confirmation",
+                  "approval_status"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "floor_id",
+              "frame_id",
+              "units",
+              "reference",
+              "wall"
+            ]
+          },
+          "maxItems": 64
+        }
+      },
+      "required": [
+        "id",
+        "treatments",
+        "special_walls"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "source",
+    "wall_specification"
+  ],
+  "$defs": {
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "classification": {
+          "enum": [
+            "exterior",
+            "interior_partition",
+            "shared_boundary",
+            "special"
+          ]
+        },
+        "thickness": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "unit": {
+              "enum": [
+                "m",
+                "mm"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit"
+          ]
+        },
+        "alignment": {
+          "enum": [
+            "centered",
+            "left",
+            "right",
+            "inward",
+            "toward_room"
+          ]
+        },
+        "offset": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "enum": [
+                "m",
+                "mm"
+              ]
+            }
+          },
+          "required": [
+            "value",
+            "unit"
+          ]
+        },
+        "reference_semantics": {
+          "enum": [
+            "allocation_boundary",
+            "wall_centerline_reference",
+            "interior_finished_face_reference",
+            "exterior_finished_face_reference"
+          ]
+        },
+        "reference_room_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "assembly_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "fixed": {
+          "type": "boolean"
+        },
+        "requirement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 32
+        },
+        "provenance": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "confirmation": {
+          "enum": [
+            "confirmed",
+            "proposed"
+          ]
+        },
+        "approval_status": {
+          "enum": [
+            "proposed",
+            "reviewed",
+            "approved"
+          ]
+        },
+        "approval": {
+          "$ref": "zoning.schema.json#/$defs/approval"
+        }
+      },
+      "required": [
+        "classification",
+        "fixed",
+        "requirement_ids",
+        "provenance",
+        "confirmation",
+        "approval_status"
+      ]
+    }
+  }
+}

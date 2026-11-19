@@ -1,0 +1,17 @@
+{
+  "full_report_sha256": "f75965f77ce17521c5e529bbf67f31981b8779d2a5186f5ac978493ad2d05d27",
+  "wall_status": "UNSUPPORTED",
+  "geometry_status": "NOT_GENERATED",
+  "source_candidate_digest": "2bc5b0498ed8667194939b37191326998b6791cb9badd18ea966ce93606d5b0b",
+  "wall_specification_digest": "2a7c57243ae91a9a7ed8653fcf648df5652dae8318ce9990c6f5e99eb277def2",
+  "derived_geometry_digest": null,
+  "wall_revision_id": null,
+  "floors": [],
+  "rooms": [],
+  "junctions": [],
+  "opening_mappings": [],
+  "error_codes": [],
+  "missing_codes": [
+    "WALL_GEOMETRY_SCOPE"
+  ]
+}

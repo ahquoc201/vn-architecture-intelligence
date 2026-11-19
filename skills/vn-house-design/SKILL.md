@@ -144,3 +144,18 @@ Read `docs/DESIGN_REPLAY_CAD_READINESS_CONTRACT.md` and use `docs/ARCHITECTURAL_
 8. Run `vnai design readiness report <file>` under explicit stages/review/circulation/evaluation policy. Room-geometry readiness does not prove full wall/opening/stair/annotation readiness. Explain missing prerequisites and retain cad_writes_permitted=false even for READY_FOR_DRAFTING.
 9. Obtain separate explicit authorization before future CAD operations. This batch adds no AutoCAD MCP, DWG edits, complete wall/stair drafting or annotation generation; existing DXF is schematic only.
 10. Keep optional source-grounded Feng Shui and QCVN/TCVN review separate/advisory under source/expert/test gates. Report mandatory safety/legal issues visibly; never automatically change geometry to hide or resolve a regulatory warning.
+
+
+## R3 Batch 007-B1: proposed wall geometry
+
+Read `docs/WALL_GEOMETRY_CONTRACT.md` for detailed geometry and status conventions.
+Select the exact candidate/design digest with original replay provenance; keep its allocations immutable.
+Confirm boundary semantics, explicit wall/no_wall intent, thickness/unit, alignment/offset,
+requirement IDs and allocation/clear constraint bases with the architect. Never invent wall materials or structure.
+Run `vnai design walls generate <input>`, `validate`, `report --markdown <new-path>` and
+`preview --out <new.svg>`. Inspect actual polygons, junctions, clear components/dimensions/areas,
+outside-envelope and reservation conflicts; report newly violated requirements without relaxing them.
+Explain stale opening/clearance/circulation/evaluation evidence and request actual architect feedback
+bound to the proposed wall revision. Preserve source evidence only for unchanged dependencies.
+Prepare stable wall IDs/face geometry for future door/window hosting; this batch creates no openings/cuts.
+Keep one user-facing agent, standards/Feng Shui separate, approval ungranted and CAD writes false.

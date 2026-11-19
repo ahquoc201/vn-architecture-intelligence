@@ -73,6 +73,8 @@ def run() -> None:
             shutil.copyfile(source, work / ("evaluation-" + source.name))
         for source in (root / "examples/batch007a").glob("*/*.json"):
             shutil.copyfile(source, work / ("workflow-" + source.parent.name + "-" + source.name))
+        for source in (root / "examples/batch007b1").glob("*.json"):
+            shutil.copyfile(source, work / ("wall-" + source.name))
         shutil.copyfile(root / "examples/townhouse_4x20_brief.json", work / "brief.json")
         shutil.copyfile(root / "examples/townhouse_sample.json", work / "legacy.json")
         commands = [
@@ -170,6 +172,49 @@ def run() -> None:
                 (["dxf", "legacy.json", "--out", "legacy-smoke.dxf"], 0),
             ]
         )
+        commands.extend(
+            [
+                (["design", "walls", "generate", "wall-rectangle-inward.json"], 0),
+                (["design", "walls", "validate", "wall-stored.json"], 0),
+                (
+                    [
+                        "design",
+                        "walls",
+                        "report",
+                        "wall-rectangle-inward.json",
+                        "--markdown",
+                        "walls.md",
+                    ],
+                    0,
+                ),
+                (
+                    [
+                        "design",
+                        "walls",
+                        "preview",
+                        "wall-rectangle-inward.json",
+                        "--out",
+                        "walls.svg",
+                    ],
+                    0,
+                ),
+                (["design", "walls", "generate", "wall-x-junction.json"], 0),
+                (["design", "walls", "generate", "wall-missing-thickness.json"], 3),
+                (["design", "walls", "generate", "wall-clear-area-violation.json"], 4),
+                (["design", "walls", "generate", "wall-nonorthogonal-special.json"], 5),
+                (
+                    [
+                        "design",
+                        "walls",
+                        "preview",
+                        "wall-townhouse-benchmark.json",
+                        "--out",
+                        "townhouse.svg",
+                    ],
+                    4,
+                ),
+            ]
+        )
         for args, expected in commands:
             result = subprocess.run(
                 [str(python), "-I", "-X", "utf8", "-m", "vnai", *args],
@@ -263,6 +308,28 @@ def run() -> None:
                     and workflow["replay_status"] != "VERIFIED"
                 ):
                     raise RuntimeError("Installed replay failed its original-constraint oracle")
+            if args[:2] == ["design", "walls"]:
+                walls = json.loads(result.stdout)
+                if walls["cad_writes_permitted"] or walls["approval_inherited"]:
+                    raise RuntimeError("Installed walls inferred approval/CAD permission")
+                if args[2:] == ["generate", "wall-rectangle-inward.json"]:
+                    if abs(walls["rooms"][0]["clear_area_m2"] - 16.56) > 1e-10:
+                        raise RuntimeError("Installed wall clear-area oracle failed")
+                    if abs(walls["floors"][0]["wall_union_area_m2"] - 3.44) > 1e-10:
+                        raise RuntimeError("Installed wall union-area oracle failed")
+                    (work / "wall-stored.json").write_text(result.stdout, encoding="utf-8")
+                if args[3] == "wall-x-junction.json":
+                    if abs(walls["floors"][0]["wall_union_area_m2"] - 6.75) > 1e-10:
+                        raise RuntimeError("Installed X junction oracle failed")
+                if args[2] == "preview":
+                    svg = (work / args[-1]).read_text(encoding="utf-8")
+                    if (
+                        walls["wall_revision_id"] not in svg
+                        or 'preserveAspectRatio="xMidYMid meet"' not in svg
+                    ):
+                        raise RuntimeError("Installed wall SVG lost its binding/scale")
+                if args[2] == "report" and not (work / "walls.md").is_file():
+                    raise RuntimeError("Installed wall Markdown missing")
             if args[0] == "dxf" and not (work / "legacy-smoke.dxf").is_file():
                 raise RuntimeError("Existing schematic DXF behavior no longer works from wheel")
             results.append({"command": args, "exit_code": result.returncode})
