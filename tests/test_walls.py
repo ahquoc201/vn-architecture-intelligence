@@ -364,3 +364,27 @@ def test_explicit_mm_source_coordinates_are_converted_once():
         r["derived_geometry_digest"]
         == generate_walls(load("rectangle-inward"))["derived_geometry_digest"]
     )
+
+
+def test_wall_area_total_is_correctly_rounded_from_exact_binary_operands():
+    from fractions import Fraction
+
+    report = generate_walls(load("historical-candidate"))
+    areas = [w["area_m2"] for w in report["walls"]]
+    # Independent exact-rational oracle; conversion rounds once to binary64.
+    expected = float(sum((Fraction.from_float(a) for a in areas), Fraction(0)))
+    legacy_total = 0.0
+    for area in areas:
+        legacy_total += area
+    assert legacy_total != expected  # This fixture exposes Python <=3.11 sum drift.
+    floor = report["floors"][0]
+    assert floor["individual_wall_area_sum_m2"] == expected
+    assert floor["wall_overlap_not_double_counted_m2"] == expected - floor["wall_union_area_m2"]
+
+
+@pytest.mark.parametrize("name", ["missing-thickness", "missing-semantics"])
+def test_empty_wall_total_preserves_integer_zero_serialization(name):
+    report = generate_walls(load(name))
+    assert not report["walls"]
+    total = report["floors"][0]["individual_wall_area_sum_m2"]
+    assert type(total) is int and total == 0

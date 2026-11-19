@@ -268,6 +268,9 @@ def assess(
                 )
         allocated = unary_union([shapes[r["id"]] for r in rooms.values() if r["floor_id"] == floor])
         inside = union.intersection(envelope)
+        # Explicit accurate accumulation is stable across Python sum() versions.
+        # Preserve the established integer-zero serialization for an empty inventory.
+        individual_area_sum = math.fsum(w["area_m2"] for w in floor_walls) if floor_walls else 0
         result["floors"].append(
             {
                 "floor_id": floor,
@@ -275,9 +278,8 @@ def assess(
                 "envelope_area_m2": envelope.area,
                 "wall_footprint": encode(union),
                 "wall_union_area_m2": union.area,
-                "individual_wall_area_sum_m2": sum(w["area_m2"] for w in floor_walls),
-                "wall_overlap_not_double_counted_m2": sum(w["area_m2"] for w in floor_walls)
-                - union.area,
+                "individual_wall_area_sum_m2": individual_area_sum,
+                "wall_overlap_not_double_counted_m2": individual_area_sum - union.area,
                 "wall_area_within_envelope_m2": inside.area,
                 "wall_area_outside_envelope_m2": outside,
                 "non_wall_envelope_area_m2": envelope.difference(union).area,

@@ -2,6 +2,8 @@
 
 ## [0.1.10] - R3/BATCH-007-B1 architectural wall geometry (2026-11-19)
 
+- Fix Python 3.11/3.14 wall-area summary reproducibility with explicit accurate summation and an exact-rational regression oracle; preserve union geometry, tolerances and frozen goldens.
+
 - Derive real, source-bound orthogonal wall polygons, centerlines and exposed faces from explicit wall intent, semantics, thickness, alignment and offset; preserve original candidates.
 - Node/deduplicate shared boundaries and construct owned L/T/X/collinear junctions, including mixed thickness; account for wall area by union, retaining outside-envelope conflicts.
 - Calculate complete clear-room geometry/area, independently replay original allocation constraints and assess declared clear requirements, reservations and fixed obstacles without resizing rooms.
