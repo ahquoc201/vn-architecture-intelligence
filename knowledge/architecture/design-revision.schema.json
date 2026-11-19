@@ -1,0 +1,560 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/input",
+  "$defs": {
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1,
+          "type": "integer"
+        },
+        "parent_revision_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "child_revision_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "parent_review": {
+          "$ref": "candidate-review.schema.json"
+        },
+        "child_review": {
+          "$ref": "candidate-review.schema.json"
+        },
+        "parent_candidate_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "child_candidate_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "parent_design_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "child_design_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "change_origin": {
+          "enum": [
+            "user_confirmed_requirement_change",
+            "architect_requested",
+            "ai_proposed",
+            "unresolved_assumption"
+          ]
+        },
+        "change_rationale": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "feedback": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/feedback"
+          },
+          "maxItems": 64
+        },
+        "provenance": {
+          "$ref": "generation-provenance.schema.json"
+        },
+        "baseline_revision": {
+          "$ref": "design-replay.schema.json#/$defs/baseline_revision"
+        },
+        "parent_replay_context": {
+          "$ref": "design-replay.schema.json#/$defs/input"
+        }
+      },
+      "required": [
+        "schema_version",
+        "parent_revision_id",
+        "child_revision_id",
+        "parent_review",
+        "child_review",
+        "parent_candidate_digest",
+        "child_candidate_digest",
+        "parent_design_digest",
+        "child_design_digest",
+        "change_origin",
+        "change_rationale",
+        "feedback"
+      ]
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "report_schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "engine_version": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "contract": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "status": {
+          "enum": [
+            "VALID",
+            "INVALID",
+            "INCOMPLETE"
+          ]
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "missing_information": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "cad_writes_permitted": {
+          "const": false
+        },
+        "standards_review": {
+          "const": "NOT_EVALUATED"
+        },
+        "fengshui_review": {
+          "const": "NOT_EVALUATED"
+        },
+        "revision_status": {
+          "enum": [
+            "VERIFIED",
+            "INCOMPLETE",
+            "STALE",
+            "FAILED",
+            "INVALID_INPUT"
+          ]
+        },
+        "revision_digest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "diff": {
+          "type": "object"
+        },
+        "changed_rooms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 128
+        },
+        "affected_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 128
+        },
+        "stale_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 128
+        },
+        "unresolved_feedback": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 128
+        },
+        "feedback_results": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "maxItems": 64
+        },
+        "approval_inherited": {
+          "const": false
+        },
+        "approval_invalidated": {
+          "type": "boolean"
+        },
+        "child_approval_record_valid": {
+          "type": "boolean"
+        },
+        "parent_review": {
+          "type": "object"
+        },
+        "child_review": {
+          "type": "object"
+        },
+        "replay": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "unchanged_evidence_dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 128
+        },
+        "sources": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "report_schema_version",
+        "engine_version",
+        "contract",
+        "status",
+        "errors",
+        "warnings",
+        "missing_information",
+        "diagnostics",
+        "cad_writes_permitted",
+        "standards_review",
+        "fengshui_review",
+        "revision_status",
+        "revision_digest",
+        "diff",
+        "changed_rooms",
+        "affected_constraints",
+        "stale_evidence",
+        "unresolved_feedback",
+        "feedback_results",
+        "approval_inherited",
+        "approval_invalidated",
+        "child_approval_record_valid",
+        "parent_review",
+        "child_review",
+        "replay",
+        "unchanged_evidence_dependencies",
+        "sources"
+      ]
+    },
+    "feedback": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "candidate_id": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "candidate_digest": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "design_digest": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "candidate_id",
+            "candidate_digest",
+            "design_digest"
+          ]
+        },
+        "reviewer": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "identity": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "role": {
+              "enum": [
+                "user",
+                "architect"
+              ]
+            },
+            "recorded_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "identity",
+            "role"
+          ]
+        },
+        "category": {
+          "enum": [
+            "requirement_clarification",
+            "functional_layout",
+            "room_dimensions",
+            "circulation",
+            "privacy",
+            "openings",
+            "stair_positioning",
+            "architectural_style",
+            "technical_review",
+            "other"
+          ]
+        },
+        "affected_room_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 128
+        },
+        "affected_geometry_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 128
+        },
+        "requirement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 128
+        },
+        "requested_modification": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "rationale": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "blocking": {
+          "type": "boolean"
+        },
+        "resolution": {
+          "enum": [
+            "OPEN",
+            "ADDRESSED",
+            "VERIFIED",
+            "SUPERSEDED",
+            "WITHDRAWN"
+          ]
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 128
+        },
+        "resolution_record": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "reviewer": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "identity": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "role": {
+                  "enum": [
+                    "user",
+                    "architect"
+                  ]
+                },
+                "recorded_at": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "required": [
+                "identity",
+                "role"
+              ]
+            },
+            "child_design_digest": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "rationale": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "reviewer",
+            "child_design_digest",
+            "rationale"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "target",
+        "reviewer",
+        "category",
+        "affected_room_ids",
+        "affected_geometry_ids",
+        "requirement_ids",
+        "requested_modification",
+        "rationale",
+        "blocking",
+        "resolution",
+        "supersedes"
+      ]
+    }
+  }
+}

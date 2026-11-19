@@ -23,13 +23,16 @@
 - [x] Batch-006-A: bounded deterministic rectangle candidates, hard constraints, explicit reservations, distinct proposals and spatial validation
 - [x] Batch-006-B: exact candidate review records, explicit openings, circulation/portal graphs, bounded width checks and stair connectivity
 - [x] Batch-006-C: evidence-bound candidate metrics, explicit preference policy, scoped comparisons and conditional rankings; no automatic approval or CAD writes
-- [ ] Batch-007: digest-bound architect feedback and revised briefs, original solver-constraint replay and expert-reviewed evaluation oracles
+- [x] Batch-007-A: original constraint replay, revision/feedback review, scoped CAD readiness and synthetic benchmarks
+- [ ] Actual architect review and expert-reviewed architectural benchmark oracles
 - [ ] Chuẩn hóa brief multi-floor, room type, walls/openings/doors, heights
 - [ ] Kiểm tra giao thông, cửa, cầu thang, công năng, nội thất, bảng diện tích
 - [ ] 2–3 phương án mặt bằng với quyết định thiết kế và thay đổi có thể tái tạo
 - [ ] Đánh giá khí hậu vùng có mô hình/nguồn dữ liệu, không tự gán kết quả mô phỏng
 
 ## R3 — AutoCAD MCP & 3D
+- [x] Batch-007-A: verification/review foundation before drafting; no new CAD writes
+- [ ] Batch-007-B: wall/hosted-opening and detailed stair information contracts with reviewed fixtures before drafting exporters
 - [ ] Import/export DWG qua AutoCAD MCP trên máy Windows, đọc được bản vẽ gốc
 - [ ] Xuất bản vẽ V1 đầy đủ mặt bằng có dim, layer, cửa, cầu thang, nội thất
 - [ ] Kiểm tra mở lại CAD, phép đo, diff, backup, human approval

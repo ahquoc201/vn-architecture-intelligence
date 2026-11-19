@@ -41,6 +41,11 @@ jobs:
       - run: vnai design circulation analyze examples/batch006b/corridor-graph-only.json
       - run: vnai design stairs validate examples/batch006b/stairs-connected.json
       - run: vnai design architectural-review examples/batch006b/corridor-clearance.json
+      - run: vnai design replay validate examples/batch007a/replay/valid-provenance.json
+      - run: vnai design replay report examples/batch007a/replay/valid-provenance.json --markdown outputs/replay-v0.1.9.md
+      - run: vnai design revision compare examples/batch007a/revision/valid-manual-revision.json
+      - run: vnai design readiness report examples/batch007a/readiness/room-geometry-ready.json --markdown outputs/readiness-v0.1.9.md
+      - run: vnai design benchmark run examples/batch007a/benchmark/benchmark-a.json > outputs/benchmark-a-v0.1.9.json
       - name: Fresh wheel outside checkout
         run: python scripts/smoke_wheel.py
       - run: vnai fengshui knowledge validate

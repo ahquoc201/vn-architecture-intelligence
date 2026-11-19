@@ -1,0 +1,136 @@
+{
+  "full_report_sha256": "f03004887ccfd0e95a34c479407c07e76733c222f9f4e902a3ded645fba0b711",
+  "status": "VALID",
+  "states": {
+    "benchmark_status": "COMPLETED"
+  },
+  "candidate_digest": null,
+  "specification_digest": "679fa8b9cd238d711a64c851b258958cb3e879fc95ea1f21e4be6da612ed7c59",
+  "checks": null,
+  "stages": null,
+  "coverage": null,
+  "unresolved_feedback": null,
+  "approval_invalidated": null,
+  "child_approval_record_valid": null,
+  "generation_status": "GENERATED",
+  "metrics": {
+    "generation_status": "GENERATED",
+    "distinct_candidates": 3,
+    "search_effort": {
+      "steps": 233,
+      "termination": "SOLUTION_LIMIT",
+      "optimality_proven": false,
+      "distinct_solutions_evaluated": 8,
+      "equivalent_layouts_deduplicated": true
+    },
+    "replay": [
+      {
+        "candidate_id": "FP-a59794ce59379c923925454df4631666ff591fbd0f9f139ef2c9cebec5ee9ffa",
+        "coverage": {
+          "applicable": 86,
+          "evaluated": 86,
+          "verified": 86,
+          "failed": 0,
+          "evaluation_fraction": 1.0
+        },
+        "verified_hard_violations": 0,
+        "missing_required_evidence": [
+          "multi_floor_stair_information",
+          "selection_review"
+        ],
+        "spatial_status": "VALID",
+        "circulation_coverage": {
+          "scope": "SUPPLIED_PLANAR_ROUTE_VERIFICATION_ONLY",
+          "verified_rooms": 0,
+          "applicable_rooms": 6,
+          "unknown_rooms": 6,
+          "verified_fraction": 0.0,
+          "physical_state": "NOT_VERIFIED",
+          "room_statuses": {
+            "BED:1": "NOT_VERIFIED",
+            "BED:2": "NOT_VERIFIED",
+            "KITCHEN:1": "NOT_VERIFIED",
+            "LAUNDRY:1": "NOT_VERIFIED",
+            "LIVING:1": "NOT_VERIFIED",
+            "PRAYER:1": "NOT_VERIFIED"
+          },
+          "quality_score": null
+        },
+        "feedback_resolution_status": "NOT_COLLECTED",
+        "readiness_status": "INCOMPLETE"
+      },
+      {
+        "candidate_id": "FP-d9b5b1aa086f1420b72b8a7d0c37bae84cdc07da3b7525b222ccd27d0b6a6e05",
+        "coverage": {
+          "applicable": 86,
+          "evaluated": 86,
+          "verified": 86,
+          "failed": 0,
+          "evaluation_fraction": 1.0
+        },
+        "verified_hard_violations": 0,
+        "missing_required_evidence": [
+          "multi_floor_stair_information",
+          "selection_review"
+        ],
+        "spatial_status": "VALID",
+        "circulation_coverage": {
+          "scope": "SUPPLIED_PLANAR_ROUTE_VERIFICATION_ONLY",
+          "verified_rooms": 0,
+          "applicable_rooms": 6,
+          "unknown_rooms": 6,
+          "verified_fraction": 0.0,
+          "physical_state": "NOT_VERIFIED",
+          "room_statuses": {
+            "BED:1": "NOT_VERIFIED",
+            "BED:2": "NOT_VERIFIED",
+            "KITCHEN:1": "NOT_VERIFIED",
+            "LAUNDRY:1": "NOT_VERIFIED",
+            "LIVING:1": "NOT_VERIFIED",
+            "PRAYER:1": "NOT_VERIFIED"
+          },
+          "quality_score": null
+        },
+        "feedback_resolution_status": "NOT_COLLECTED",
+        "readiness_status": "INCOMPLETE"
+      },
+      {
+        "candidate_id": "FP-0b9d580df2bee9bf7e5aa7b4dac2318fffb56779a71375e2c6d4293f94f64b9b",
+        "coverage": {
+          "applicable": 86,
+          "evaluated": 86,
+          "verified": 86,
+          "failed": 0,
+          "evaluation_fraction": 1.0
+        },
+        "verified_hard_violations": 0,
+        "missing_required_evidence": [
+          "multi_floor_stair_information",
+          "selection_review"
+        ],
+        "spatial_status": "VALID",
+        "circulation_coverage": {
+          "scope": "SUPPLIED_PLANAR_ROUTE_VERIFICATION_ONLY",
+          "verified_rooms": 0,
+          "applicable_rooms": 6,
+          "unknown_rooms": 6,
+          "verified_fraction": 0.0,
+          "physical_state": "NOT_VERIFIED",
+          "room_statuses": {
+            "BED:1": "NOT_VERIFIED",
+            "BED:2": "NOT_VERIFIED",
+            "KITCHEN:1": "NOT_VERIFIED",
+            "LAUNDRY:1": "NOT_VERIFIED",
+            "LIVING:1": "NOT_VERIFIED",
+            "PRAYER:1": "NOT_VERIFIED"
+          },
+          "quality_score": null
+        },
+        "feedback_resolution_status": "NOT_COLLECTED",
+        "readiness_status": "INCOMPLETE"
+      }
+    ],
+    "architectural_quality_assessed": false
+  },
+  "expert_oracle_status": "NOT_ESTABLISHED"
+}

@@ -557,7 +557,11 @@ def _candidate(
 
 
 def generate_floorplans(
-    value: Any, *, candidate_count: int | None = None, max_steps: int | None = None
+    value: Any,
+    *,
+    candidate_count: int | None = None,
+    max_steps: int | None = None,
+    include_provenance: bool = False,
 ) -> dict:
     report = new_report("floorplan-generation-v1")
     report.update(
@@ -664,4 +668,10 @@ def generate_floorplans(
             "search",
             "No validated candidate found in this grid/budget; continuous infeasibility is not proven.",
         )
+    if include_provenance:
+        from vnai.design_provenance import create_generation_provenance
+
+        report["generation_provenance"] = [
+            create_generation_provenance(spec, candidate) for candidate in report["candidates"]
+        ]
     return report

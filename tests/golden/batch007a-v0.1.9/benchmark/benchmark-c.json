@@ -1,0 +1,28 @@
+{
+  "full_report_sha256": "e3f49a8742a48418add401b970c4757bf0377be42977bbd2bd7ca69c19b305e9",
+  "status": "VALID",
+  "states": {
+    "benchmark_status": "COMPLETED"
+  },
+  "candidate_digest": null,
+  "specification_digest": "19294f250d84c4c3ba0eb0445aee4acf317c5a32e4cffb0ab493bee288c3e84f",
+  "checks": null,
+  "stages": null,
+  "coverage": null,
+  "unresolved_feedback": null,
+  "approval_invalidated": null,
+  "child_approval_record_valid": null,
+  "generation_status": "UNSUPPORTED",
+  "metrics": {
+    "generation_status": "UNSUPPORTED",
+    "distinct_candidates": 0,
+    "search_effort": {
+      "steps": 0,
+      "termination": "NOT_STARTED",
+      "optimality_proven": false
+    },
+    "replay": [],
+    "architectural_quality_assessed": false
+  },
+  "expert_oracle_status": "NOT_ESTABLISHED"
+}

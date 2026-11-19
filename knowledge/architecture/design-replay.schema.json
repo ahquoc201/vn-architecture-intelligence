@@ -1,0 +1,444 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/input",
+  "$defs": {
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1,
+          "type": "integer"
+        },
+        "review": {
+          "$ref": "candidate-review.schema.json"
+        },
+        "mode": {
+          "enum": [
+            "original",
+            "revision"
+          ]
+        },
+        "provenance": {
+          "$ref": "generation-provenance.schema.json"
+        },
+        "baseline_revision": {
+          "$ref": "#/$defs/baseline_revision"
+        }
+      },
+      "required": [
+        "schema_version",
+        "review",
+        "mode"
+      ]
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "report_schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "engine_version": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "contract": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "status": {
+          "enum": [
+            "VALID",
+            "INVALID",
+            "INCOMPLETE"
+          ]
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "missing_information": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "cad_writes_permitted": {
+          "const": false
+        },
+        "standards_review": {
+          "const": "NOT_EVALUATED"
+        },
+        "fengshui_review": {
+          "const": "NOT_EVALUATED"
+        },
+        "replay_status": {
+          "enum": [
+            "VERIFIED",
+            "FAILED",
+            "INCOMPLETE",
+            "STALE",
+            "UNSUPPORTED",
+            "INVALID_INPUT"
+          ]
+        },
+        "candidate_digest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "design_digest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "specification_digest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provenance_digest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method": {
+          "const": "independent-rect-replay-v1"
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "status": {
+                "enum": [
+                  "VERIFIED",
+                  "FAILED",
+                  "UNKNOWN",
+                  "NOT_APPLICABLE",
+                  "UNSUPPORTED",
+                  "STALE"
+                ]
+              },
+              "method": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "maxItems": 128
+              },
+              "observed": {},
+              "expected": {},
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "pointer": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    },
+                    "digest": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "pointer",
+                    "digest"
+                  ]
+                },
+                "maxItems": 4
+              }
+            },
+            "required": [
+              "id",
+              "status",
+              "method",
+              "requirement_ids",
+              "observed",
+              "expected",
+              "evidence_refs"
+            ]
+          },
+          "maxItems": 8192
+        },
+        "coverage": {
+          "type": "object"
+        },
+        "blocking_issues": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 8192
+        },
+        "unsupported_checks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 8192
+        },
+        "missing_dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 8192
+        },
+        "sources": {
+          "type": "object"
+        },
+        "baseline_status": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "original_generation_evidence": {
+          "type": "object"
+        },
+        "grid_search_reexecuted": {
+          "const": false
+        }
+      },
+      "required": [
+        "report_schema_version",
+        "engine_version",
+        "contract",
+        "status",
+        "errors",
+        "warnings",
+        "missing_information",
+        "diagnostics",
+        "cad_writes_permitted",
+        "standards_review",
+        "fengshui_review",
+        "replay_status",
+        "candidate_digest",
+        "design_digest",
+        "specification_digest",
+        "provenance_digest",
+        "method",
+        "checks",
+        "coverage",
+        "blocking_issues",
+        "unsupported_checks",
+        "missing_dependencies",
+        "sources",
+        "baseline_status",
+        "original_generation_evidence",
+        "grid_search_reexecuted"
+      ]
+    },
+    "baseline_revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "specification": {
+          "$ref": "floorplan-input.schema.json"
+        },
+        "confirmation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "reviewer": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "identity": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "role": {
+                  "enum": [
+                    "user",
+                    "architect"
+                  ]
+                },
+                "recorded_at": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "required": [
+                "identity",
+                "role"
+              ]
+            },
+            "specification_digest": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "confirmed": {
+              "const": true
+            },
+            "rationale": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "reviewer",
+            "specification_digest",
+            "confirmed",
+            "rationale"
+          ]
+        }
+      },
+      "required": [
+        "specification",
+        "confirmation"
+      ]
+    }
+  }
+}

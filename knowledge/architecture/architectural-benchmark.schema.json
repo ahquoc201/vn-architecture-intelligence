@@ -1,0 +1,297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/input",
+  "$defs": {
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1,
+          "type": "integer"
+        },
+        "benchmark_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "fixture_notice": {
+          "const": "SYNTHETIC benchmark; not a real project or expert-approved oracle."
+        },
+        "generation_specification": {
+          "$ref": "floorplan-input.schema.json"
+        },
+        "evaluation_config": {
+          "$ref": "evaluation-config.schema.json"
+        },
+        "readiness_policy": {
+          "$ref": "cad-readiness.schema.json#/$defs/policy"
+        },
+        "architectural_requests": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 32
+        }
+      },
+      "required": [
+        "schema_version",
+        "benchmark_id",
+        "fixture_notice",
+        "generation_specification",
+        "evaluation_config",
+        "readiness_policy",
+        "architectural_requests"
+      ]
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "report_schema_version": {
+          "type": "integer",
+          "const": 1
+        },
+        "engine_version": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "contract": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "status": {
+          "enum": [
+            "VALID",
+            "INVALID",
+            "INCOMPLETE"
+          ]
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "missing_information": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "code",
+              "path",
+              "message",
+              "requirement_ids"
+            ]
+          },
+          "minItems": 0
+        },
+        "cad_writes_permitted": {
+          "const": false
+        },
+        "standards_review": {
+          "const": "NOT_EVALUATED"
+        },
+        "fengshui_review": {
+          "const": "NOT_EVALUATED"
+        },
+        "benchmark_status": {
+          "enum": [
+            "COMPLETED",
+            "INVALID_INPUT"
+          ]
+        },
+        "benchmark_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "specification_digest": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "generation": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "maxItems": 3
+        },
+        "metrics": {
+          "type": "object"
+        },
+        "architectural_requests": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "maxItems": 32
+        },
+        "human_review_status": {
+          "const": "PENDING"
+        },
+        "expert_oracle_status": {
+          "const": "NOT_ESTABLISHED"
+        },
+        "timing_included": {
+          "const": false
+        }
+      },
+      "required": [
+        "report_schema_version",
+        "engine_version",
+        "contract",
+        "status",
+        "errors",
+        "warnings",
+        "missing_information",
+        "diagnostics",
+        "cad_writes_permitted",
+        "standards_review",
+        "fengshui_review",
+        "benchmark_status",
+        "benchmark_id",
+        "specification_digest",
+        "generation",
+        "candidates",
+        "metrics",
+        "architectural_requests",
+        "human_review_status",
+        "expert_oracle_status",
+        "timing_included"
+      ]
+    }
+  }
+}
