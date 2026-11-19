@@ -1,0 +1,486 @@
+{
+  "full_report_sha256": "69c880bbd3588355e08c862740f44f8169ab65121c435af52f417057eccd6c84",
+  "drafting_status": "INVALID_INPUT",
+  "geometry_status": "PARTIAL",
+  "source_candidate_digest": "2bc5b0498ed8667194939b37191326998b6791cb9badd18ea966ce93606d5b0b",
+  "source_wall_revision_id": "WR-59538c7581fc5695132bc647d8c8a11ce96a6918b0fc36e3a1ae73a5abacd7cf",
+  "opening_geometry_digest": "bba8d3524ec660ffe936a6be0baa344000ec62a62dc9cd50fad67d4bdcb7fa80",
+  "opening_revision_id": "OR-50670f6b0736cfa540804137cbb26fe7bc0da9be40bbc11185afa17279a02db9",
+  "openings": [
+    {
+      "id": "DOOR-1",
+      "mark": "D01",
+      "type": "hinged_door",
+      "kind": "entrance",
+      "floor_id": "F1",
+      "space_ids": [
+        "BED:1",
+        "OUT"
+      ],
+      "host_wall_id": "W-9de2a7b6f9a2a016155a13e4061f61956650a3f93919dd7c480c43ce22a240c4",
+      "host_wall_digest": "ca667bc3a50133a710a796ab767291a052edc4bda2ff93a421b9115f31f379d0",
+      "host_resolution": "EXPLICIT",
+      "legacy_opening_id": null,
+      "issues": [
+        "STALE_OPENING_WALL_DIGEST"
+      ],
+      "geometry_status": "NOT_GENERATED",
+      "approval_status": "PROPOSED",
+      "declared_review_state": "proposed",
+      "provenance": "Explicit synthetic drafting dimensions, not Vietnamese standards or expert-reviewed oracles.",
+      "requirement_ids": [],
+      "confirmation": "confirmed",
+      "rough_cut": null,
+      "plan_cut_applied": false,
+      "floor_cut_applied": false,
+      "cut_accepted": false,
+      "plan_interpretation": "INCOMPLETE_VERTICAL",
+      "primitives": {},
+      "graph_eligible": false,
+      "physical_state": "NOT_VERIFIED",
+      "clearance_status": "UNKNOWN",
+      "movement_clearance_status": "NOT_VERIFIED",
+      "opening_digest": "3efa8ccaa9d58ffb01f93e478a93c5589c639981b73012729d56efd8fb7f0e19",
+      "rough_width_m": 0.9,
+      "rough_height_m": 2.1,
+      "bottom_m": 0.0,
+      "clear_width_m": 0.74,
+      "clear_height_m": 2.0,
+      "frame_inner_width_m": 0.82,
+      "sill_m": null
+    }
+  ],
+  "floors": [
+    {
+      "floor_id": "F1",
+      "source_wall_footprint": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "source_wall_area_m2": 0.8,
+      "wall_at_cut_before_openings": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "wall_area_at_cut_before_openings_m2": 0.8,
+      "wall_area_outside_cut_elevation_m2": 0.0,
+      "proposed_cut_union": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": []
+      },
+      "proposed_cut_union_area_m2": 0.0,
+      "accepted_rough_cut_union": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": []
+      },
+      "plan_cut_geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": []
+      },
+      "plan_cut_area_m2": 0.0,
+      "wall_plan_at_cut": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "remaining_wall_plan_area_m2": 0.8,
+      "floor_wall_obstruction": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "floor_wall_obstruction_area_m2": 0.8,
+      "door_threshold_geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": []
+      },
+      "door_threshold_area_m2": 0.0,
+      "frame_obstruction": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": []
+      },
+      "leaf_obstruction_at_declared_state": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": []
+      },
+      "floor_obstruction_with_door_assemblies": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "plan_cut_complete": false,
+      "walls": [
+        {
+          "wall_id": "W-9de2a7b6f9a2a016155a13e4061f61956650a3f93919dd7c480c43ce22a240c4",
+          "source_geometry_digest": "ca667bc3a50133a710a796ab767291a052edc4bda2ff93a421b9115f31f379d0",
+          "plan_geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.2
+                  ],
+                  [
+                    0.0,
+                    0.2
+                  ],
+                  [
+                    0.0,
+                    0.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "floor_obstruction_geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.2
+                  ],
+                  [
+                    0.0,
+                    0.2
+                  ],
+                  [
+                    0.0,
+                    0.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "plan_component_count": 1,
+          "floor_component_count": 1,
+          "vertical_bands": [
+            {
+              "bottom_m": 0.0,
+              "head_m": 3.0,
+              "rough_void_opening_ids": [],
+              "remaining_wall_geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        0.0,
+                        0.0
+                      ],
+                      [
+                        4.0,
+                        0.0
+                      ],
+                      [
+                        4.0,
+                        0.2
+                      ],
+                      [
+                        0.0,
+                        0.2
+                      ],
+                      [
+                        0.0,
+                        0.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "remaining_wall_area_m2": 0.8,
+              "scope": "OPEN_VERTICAL_INTERVAL_ROUGH_VOIDS_ONLY_NOT_STRUCTURAL_ASSEMBLY"
+            }
+          ],
+          "vertical_geometry_known": true,
+          "component_policy": "ALL_COMPONENTS_RETAINED; split straight walls are expected after full-width cuts"
+        }
+      ],
+      "area_scope": "WALL_PLAN_AND_UNCREDITED_THRESHOLDS_NOT_GFA_OR_CERTIFIED_USABLE_AREA"
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "BED:1",
+      "floor_id": "F1",
+      "allocation_area_m2": 20.0,
+      "clear_floor_area_m2": 19.2,
+      "clear_floor_geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.2
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                4.0,
+                5.0
+              ],
+              [
+                0.0,
+                5.0
+              ],
+              [
+                0.0,
+                0.2
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "door_threshold_contribution_m2": 0.0,
+      "room_area_policy": "exclude_thresholds",
+      "window_cut_added_to_room_area": false,
+      "source_wall_conflicts_resolved": false
+    }
+  ],
+  "schedule": [
+    {
+      "mark": "D01",
+      "type": "hinged_door",
+      "floor_id": "F1",
+      "host_wall_id": "W-9de2a7b6f9a2a016155a13e4061f61956650a3f93919dd7c480c43ce22a240c4",
+      "rough_width_m": 0.9,
+      "rough_height_m": 2.1,
+      "frame_inner_width_m": 0.82,
+      "leaf_width_m": 0.78,
+      "clear_width_m": 0.74,
+      "clear_height_m": 2.0,
+      "sill_m": null,
+      "head_m": null,
+      "material_reference": null,
+      "declared_specification": {
+        "type": "hinged_door",
+        "kind": "entrance",
+        "rough_width": 0.9,
+        "rough_height": 2.1,
+        "bottom": 0,
+        "sill": null,
+        "head": null,
+        "clear_width": 0.74,
+        "clear_height": 2.0,
+        "clear_start_offset": 0.1,
+        "frame_inner_width": 0.82,
+        "frame": {
+          "jamb_width": 0.04,
+          "depth": 0.2,
+          "alignment": "centered_in_wall"
+        },
+        "leaf": {
+          "width": 0.78,
+          "thickness": 0.035,
+          "hinge_offset": 0.06
+        },
+        "mount_side": "left",
+        "mount_offset": null,
+        "swing": {
+          "hinge": "start",
+          "rotation": "ccw",
+          "angle_degrees": 90
+        },
+        "slide": null,
+        "operation": null,
+        "operating_state": "open",
+        "material_reference": null
+      },
+      "declared_units": "m",
+      "quantity": 1,
+      "opening_ids": [
+        "DOOR-1"
+      ],
+      "provenance": [
+        "Explicit synthetic drafting dimensions, not Vietnamese standards or expert-reviewed oracles."
+      ],
+      "review_state": "PROPOSED",
+      "unresolved_specifications": [
+        "STALE_OPENING_WALL_DIGEST"
+      ],
+      "specification_digest": "cb9ca0b448713f1f498aaabeb937b441b07ebd2b4c21dea7da8f4853460e0456"
+    }
+  ],
+  "graph_status": "NOT_VERIFIED",
+  "clearance_status": "NOT_VERIFIED",
+  "graph_edges": [],
+  "error_codes": [
+    "STALE_OPENING_WALL_DIGEST"
+  ],
+  "missing_codes": [
+    "DRAFTED_ROUTE_DEPENDENCY_UNRESOLVED",
+    "DRAFTED_ROUTE_DEPENDENCY_UNRESOLVED",
+    "ENTRANCE_NOT_DEMONSTRATED",
+    "ROOM_ACCESS_UNKNOWN",
+    "WALKING_ROUTE_NOT_VERIFIED"
+  ],
+  "svg_sha256": "419fa5c9d6bb4c0d5bf2a576446d27fe1c99b51ad8cf9bf011bac2d8cf4fa3d9"
+}

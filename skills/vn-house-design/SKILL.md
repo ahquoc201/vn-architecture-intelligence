@@ -159,3 +159,17 @@ Explain stale opening/clearance/circulation/evaluation evidence and request actu
 bound to the proposed wall revision. Preserve source evidence only for unchanged dependencies.
 Prepare stable wall IDs/face geometry for future door/window hosting; this batch creates no openings/cuts.
 Keep one user-facing agent, standards/Feng Shui separate, approval ungranted and CAD writes false.
+
+
+## Wall-hosted door/window drafting
+
+Read `docs/OPENING_DRAFTING_CONTRACT.md` for supported geometry, plan-cut semantics and exits.
+Bind the exact proposed B1 wall revision/host digests. Collect explicit rough/frame/leaf/clear
+widths, sill/head, hinge/slide/state and cut-plane data; unknowns remain unknown.
+Run `design openings draft`, `drafting-validate`, `schedule --markdown <new-path>` and
+`preview --out <new.svg>`. Inspect actual cuts, leaf movement, window projections and marks.
+Windows retain floor obstructions and never become walking edges. Explain threshold/area
+accounting, fresh supplied-path/stair-interface replay, missing evidence and retained conflicts.
+Request real architect feedback bound to this proposed opening revision. Preserve source
+walls/candidates and stale approval history; prepare stable interfaces for future stairs/annotation.
+Keep one user-facing agent, no automatic placement/approval, standards/Feng Shui separate and CAD false.

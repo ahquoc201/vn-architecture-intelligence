@@ -57,3 +57,16 @@ Không auto-merge từ nguồn web vào tri thức sản xuất.
 
 See WALL_GEOMETRY_CONTRACT.md. No door/window cuts, detailed stairs, structural inference,
 production CAD output or automatic approval is included. Source/expert gates remain unchanged.
+
+
+## Wall-hosted opening drafting (v0.1.11)
+
+- [x] Explicit source-bound host resolution, protected rough cuts, hinged/sliding leaf and window primitives.
+- [x] Selected plan-cut versus floor obstruction/vertical wall bands; no window circulation edges or credited usable area.
+- [x] Deterministic schedule, actual SVG previews and fresh 006-B graph/path/stair-interface replay.
+- [x] Synthetic fixture/oracle coverage, preserved townhouse requirements and cross-version numerical checks.
+- [ ] Actual architect review, expert oracle sign-off and resolution of retained source conflicts.
+- [ ] Next: explicit staircase geometry and its physical interfaces, followed by annotation/export preparation.
+
+See OPENING_DRAFTING_CONTRACT.md. Production CAD writes, structural/regulatory certification,
+automatic placement/redesign and unverified normative dimensions remain excluded.

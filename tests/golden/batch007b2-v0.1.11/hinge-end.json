@@ -1,0 +1,1317 @@
+{
+  "full_report_sha256": "8644367579c1dcdcda310d87b2d3231e2478076becf52a18a2f4f3fbc9b52b37",
+  "drafting_status": "GENERATED",
+  "geometry_status": "VALID",
+  "source_candidate_digest": "2bc5b0498ed8667194939b37191326998b6791cb9badd18ea966ce93606d5b0b",
+  "source_wall_revision_id": "WR-59538c7581fc5695132bc647d8c8a11ce96a6918b0fc36e3a1ae73a5abacd7cf",
+  "opening_geometry_digest": "767a5295a56eacd43f5c2a4915f88d408994e068f4c1e68ce9a444813dc9c185",
+  "opening_revision_id": "OR-559a6ff8d76329fcbd5b20ded86b49aa73438dd02fd039a7ef62a131e6844117",
+  "openings": [
+    {
+      "id": "DOOR-1",
+      "mark": "D01",
+      "type": "hinged_door",
+      "kind": "entrance",
+      "floor_id": "F1",
+      "space_ids": [
+        "BED:1",
+        "OUT"
+      ],
+      "host_wall_id": "W-9de2a7b6f9a2a016155a13e4061f61956650a3f93919dd7c480c43ce22a240c4",
+      "host_wall_digest": "ca667bc3a50133a710a796ab767291a052edc4bda2ff93a421b9115f31f379d0",
+      "host_resolution": "EXPLICIT",
+      "legacy_opening_id": null,
+      "issues": [],
+      "geometry_status": "VALID",
+      "approval_status": "PROPOSED",
+      "declared_review_state": "proposed",
+      "provenance": "Explicit synthetic drafting dimensions, not Vietnamese standards or expert-reviewed oracles.",
+      "requirement_ids": [],
+      "confirmation": "confirmed",
+      "rough_cut": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                1.5,
+                0.0
+              ],
+              [
+                2.4,
+                0.0
+              ],
+              [
+                2.4,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "plan_cut_applied": true,
+      "floor_cut_applied": true,
+      "cut_accepted": true,
+      "plan_interpretation": "INTERSECTS_OPENING",
+      "primitives": {
+        "jamb_references": [
+          [
+            [
+              1.5,
+              0.0
+            ],
+            [
+              1.5,
+              0.2
+            ]
+          ],
+          [
+            [
+              2.4,
+              0.0
+            ],
+            [
+              2.4,
+              0.2
+            ]
+          ]
+        ],
+        "frame": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  1.5,
+                  0.0
+                ],
+                [
+                  1.54,
+                  0.0
+                ],
+                [
+                  1.54,
+                  0.2
+                ],
+                [
+                  1.5,
+                  0.2
+                ],
+                [
+                  1.5,
+                  0.0
+                ]
+              ],
+              "holes": []
+            },
+            {
+              "exterior": [
+                [
+                  2.36,
+                  0.0
+                ],
+                [
+                  2.4,
+                  0.0
+                ],
+                [
+                  2.4,
+                  0.2
+                ],
+                [
+                  2.36,
+                  0.2
+                ],
+                [
+                  2.36,
+                  0.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "frame_outline": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  1.5,
+                  0.0
+                ],
+                [
+                  2.4,
+                  0.0
+                ],
+                [
+                  2.4,
+                  0.2
+                ],
+                [
+                  1.5,
+                  0.2
+                ],
+                [
+                  1.5,
+                  0.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "closed_leaf": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  1.5599999999999998,
+                  0.1825
+                ],
+                [
+                  2.34,
+                  0.1825
+                ],
+                [
+                  2.34,
+                  0.21750000000000003
+                ],
+                [
+                  1.5599999999999998,
+                  0.21750000000000003
+                ],
+                [
+                  1.5599999999999998,
+                  0.1825
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "hinge_point": [
+          2.34,
+          0.2
+        ],
+        "closed_leaf_reference": {
+          "start": [
+            2.34,
+            0.2
+          ],
+          "end": [
+            1.5599999999999998,
+            0.2
+          ]
+        },
+        "leaf_width_m": 0.78,
+        "leaf_thickness_m": 0.035,
+        "swing_arc": {
+          "center": [
+            2.34,
+            0.2
+          ],
+          "radius_m": 0.78,
+          "start": [
+            1.5599999999999998,
+            0.2
+          ],
+          "end": [
+            2.34,
+            0.98
+          ],
+          "rotation": "cw",
+          "angle_degrees": 90
+        },
+        "sweep_method": "RATIONAL_CIRCUMSCRIBED_90_SECTOR_PLUS_SQUARE_LEAF_THICKNESS_BOUND",
+        "open_leaf": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  2.3225,
+                  0.2
+                ],
+                [
+                  2.3575,
+                  0.2
+                ],
+                [
+                  2.3575,
+                  0.98
+                ],
+                [
+                  2.3225,
+                  0.98
+                ],
+                [
+                  2.3225,
+                  0.2
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "movement_envelope": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  1.5424999999999998,
+                  0.1825
+                ],
+                [
+                  2.3575,
+                  0.1825
+                ],
+                [
+                  2.3575,
+                  0.9974999999999999
+                ],
+                [
+                  2.3101190476190476,
+                  0.9974999999999999
+                ],
+                [
+                  2.2849769703172975,
+                  0.9967016376663255
+                ],
+                [
+                  2.259078669482576,
+                  0.9950290390707498
+                ],
+                [
+                  2.2324346405228757,
+                  0.9924019607843136
+                ],
+                [
+                  2.205061797752809,
+                  0.9887359550561797
+                ],
+                [
+                  2.1769843568945535,
+                  0.9839426419466976
+                ],
+                [
+                  2.148234767025089,
+                  0.9779301075268817
+                ],
+                [
+                  2.1188546798029555,
+                  0.9706034482758622
+                ],
+                [
+                  2.088895939086294,
+                  0.9618654822335025
+                ],
+                [
+                  2.058421568627451,
+                  0.9516176470588235
+                ],
+                [
+                  2.0275067294751006,
+                  0.9397611036339165
+                ],
+                [
+                  1.9962396121883654,
+                  0.9261980609418282
+                ],
+                [
+                  1.964722222222222,
+                  0.9108333333333333
+                ],
+                [
+                  1.9330710102489017,
+                  0.8935761346998535
+                ],
+                [
+                  1.9014172932330826,
+                  0.8743421052631578
+                ],
+                [
+                  1.8699074074074071,
+                  0.8530555555555556
+                ],
+                [
+                  1.8387025316455694,
+                  0.8296518987341771
+                ],
+                [
+                  1.8079781199351699,
+                  0.804080226904376
+                ],
+                [
+                  1.777922885572139,
+                  0.7763059701492537
+                ],
+                [
+                  1.748737288135593,
+                  0.7463135593220339
+                ],
+                [
+                  1.720631487889273,
+                  0.7141089965397923
+                ],
+                [
+                  1.693822751322751,
+                  0.6797222222222222
+                ],
+                [
+                  1.6685323159784557,
+                  0.6432091561938958
+                ],
+                [
+                  1.644981751824817,
+                  0.6046532846715328
+                ],
+                [
+                  1.6233888888888885,
+                  0.5641666666666666
+                ],
+                [
+                  1.6039634146341462,
+                  0.521890243902439
+                ],
+                [
+                  1.5869022770398478,
+                  0.4779933586337761
+                ],
+                [
+                  1.5723850574712641,
+                  0.43267241379310345
+                ],
+                [
+                  1.5605694980694977,
+                  0.3861486486486487
+                ],
+                [
+                  1.5515873786407766,
+                  0.33866504854368934
+                ],
+                [
+                  1.5455409356725145,
+                  0.2904824561403509
+                ],
+                [
+                  1.5424999999999998,
+                  0.241875
+                ],
+                [
+                  1.5424999999999998,
+                  0.1825
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "movement_envelope_area_m2": 0.5337691067217367
+      },
+      "graph_eligible": true,
+      "physical_state": "GEOMETRICALLY_TRAVERSABLE",
+      "clearance_status": "VERIFIED_SUPPLIED_2D_SCOPE",
+      "movement_clearance_status": "VERIFIED_KNOWN_2D_PROJECTION",
+      "opening_digest": "b31e6fc51c2561940b744fdc84215febf6b2bf7a51a9984f35b1e88b2e5adb37",
+      "rough_width_m": 0.9,
+      "rough_height_m": 2.1,
+      "bottom_m": 0.0,
+      "clear_width_m": 0.74,
+      "clear_height_m": 2.0,
+      "frame_inner_width_m": 0.8200000000000001,
+      "sill_m": null,
+      "reference": {
+        "start": [
+          1.5,
+          0.0
+        ],
+        "end": [
+          2.4,
+          0.0
+        ]
+      },
+      "offset_m": 1.5,
+      "thickness_m": 0.2,
+      "normal_interval_m": [
+        0,
+        0.2
+      ],
+      "wall_vertical_m": {
+        "base": 0.0,
+        "top": 3.0,
+        "wall_below_opening": 0.0,
+        "wall_above_opening": 0.8999999999999999
+      },
+      "head_m": 2.1,
+      "rough_cut_area_m2": 0.18,
+      "clear_reference": {
+        "start": [
+          1.56,
+          0.0
+        ],
+        "end": [
+          2.3,
+          0.0
+        ]
+      },
+      "clear_mouth_reference": {
+        "start": [
+          1.56,
+          0.2
+        ],
+        "end": [
+          2.3,
+          0.2
+        ]
+      },
+      "operating_state": "open"
+    }
+  ],
+  "floors": [
+    {
+      "floor_id": "F1",
+      "source_wall_footprint": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "source_wall_area_m2": 0.8,
+      "wall_at_cut_before_openings": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "wall_area_at_cut_before_openings_m2": 0.8,
+      "wall_area_outside_cut_elevation_m2": 0.0,
+      "proposed_cut_union": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                1.5,
+                0.0
+              ],
+              [
+                2.4,
+                0.0
+              ],
+              [
+                2.4,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "proposed_cut_union_area_m2": 0.18,
+      "accepted_rough_cut_union": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                1.5,
+                0.0
+              ],
+              [
+                2.4,
+                0.0
+              ],
+              [
+                2.4,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "plan_cut_geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                1.5,
+                0.0
+              ],
+              [
+                2.4,
+                0.0
+              ],
+              [
+                2.4,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "plan_cut_area_m2": 0.18,
+      "wall_plan_at_cut": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                1.5,
+                0.0
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                0.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          },
+          {
+            "exterior": [
+              [
+                2.4,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                2.4,
+                0.2
+              ],
+              [
+                2.4,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "remaining_wall_plan_area_m2": 0.6200000000000001,
+      "floor_wall_obstruction": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                1.5,
+                0.0
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                0.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          },
+          {
+            "exterior": [
+              [
+                2.4,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                2.4,
+                0.2
+              ],
+              [
+                2.4,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "floor_wall_obstruction_area_m2": 0.6200000000000001,
+      "door_threshold_geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                1.5,
+                0.0
+              ],
+              [
+                2.4,
+                0.0
+              ],
+              [
+                2.4,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "door_threshold_area_m2": 0.18,
+      "frame_obstruction": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                1.5,
+                0.0
+              ],
+              [
+                1.54,
+                0.0
+              ],
+              [
+                1.54,
+                0.2
+              ],
+              [
+                1.5,
+                0.2
+              ],
+              [
+                1.5,
+                0.0
+              ]
+            ],
+            "holes": []
+          },
+          {
+            "exterior": [
+              [
+                2.36,
+                0.0
+              ],
+              [
+                2.4,
+                0.0
+              ],
+              [
+                2.4,
+                0.2
+              ],
+              [
+                2.36,
+                0.2
+              ],
+              [
+                2.36,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "leaf_obstruction_at_declared_state": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                2.3225,
+                0.2
+              ],
+              [
+                2.3575,
+                0.2
+              ],
+              [
+                2.3575,
+                0.98
+              ],
+              [
+                2.3225,
+                0.98
+              ],
+              [
+                2.3225,
+                0.2
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "floor_obstruction_with_door_assemblies": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.0
+              ],
+              [
+                1.54,
+                0.0
+              ],
+              [
+                1.54,
+                0.2
+              ],
+              [
+                0.0,
+                0.2
+              ],
+              [
+                0.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          },
+          {
+            "exterior": [
+              [
+                2.3225,
+                0.2
+              ],
+              [
+                2.3575,
+                0.2
+              ],
+              [
+                2.3575,
+                0.98
+              ],
+              [
+                2.3225,
+                0.98
+              ],
+              [
+                2.3225,
+                0.2
+              ]
+            ],
+            "holes": []
+          },
+          {
+            "exterior": [
+              [
+                2.36,
+                0.0
+              ],
+              [
+                4.0,
+                0.0
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                2.36,
+                0.2
+              ],
+              [
+                2.36,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "plan_cut_complete": true,
+      "walls": [
+        {
+          "wall_id": "W-9de2a7b6f9a2a016155a13e4061f61956650a3f93919dd7c480c43ce22a240c4",
+          "source_geometry_digest": "ca667bc3a50133a710a796ab767291a052edc4bda2ff93a421b9115f31f379d0",
+          "plan_geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    1.5,
+                    0.0
+                  ],
+                  [
+                    1.5,
+                    0.2
+                  ],
+                  [
+                    0.0,
+                    0.2
+                  ],
+                  [
+                    0.0,
+                    0.0
+                  ]
+                ],
+                "holes": []
+              },
+              {
+                "exterior": [
+                  [
+                    2.4,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.2
+                  ],
+                  [
+                    2.4,
+                    0.2
+                  ],
+                  [
+                    2.4,
+                    0.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "floor_obstruction_geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    1.5,
+                    0.0
+                  ],
+                  [
+                    1.5,
+                    0.2
+                  ],
+                  [
+                    0.0,
+                    0.2
+                  ],
+                  [
+                    0.0,
+                    0.0
+                  ]
+                ],
+                "holes": []
+              },
+              {
+                "exterior": [
+                  [
+                    2.4,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.0
+                  ],
+                  [
+                    4.0,
+                    0.2
+                  ],
+                  [
+                    2.4,
+                    0.2
+                  ],
+                  [
+                    2.4,
+                    0.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "plan_component_count": 2,
+          "floor_component_count": 2,
+          "vertical_bands": [
+            {
+              "bottom_m": 0.0,
+              "head_m": 2.1,
+              "rough_void_opening_ids": [
+                "DOOR-1"
+              ],
+              "remaining_wall_geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        0.0,
+                        0.0
+                      ],
+                      [
+                        1.5,
+                        0.0
+                      ],
+                      [
+                        1.5,
+                        0.2
+                      ],
+                      [
+                        0.0,
+                        0.2
+                      ],
+                      [
+                        0.0,
+                        0.0
+                      ]
+                    ],
+                    "holes": []
+                  },
+                  {
+                    "exterior": [
+                      [
+                        2.4,
+                        0.0
+                      ],
+                      [
+                        4.0,
+                        0.0
+                      ],
+                      [
+                        4.0,
+                        0.2
+                      ],
+                      [
+                        2.4,
+                        0.2
+                      ],
+                      [
+                        2.4,
+                        0.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "remaining_wall_area_m2": 0.6200000000000001,
+              "scope": "OPEN_VERTICAL_INTERVAL_ROUGH_VOIDS_ONLY_NOT_STRUCTURAL_ASSEMBLY"
+            },
+            {
+              "bottom_m": 2.1,
+              "head_m": 3.0,
+              "rough_void_opening_ids": [],
+              "remaining_wall_geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        0.0,
+                        0.0
+                      ],
+                      [
+                        4.0,
+                        0.0
+                      ],
+                      [
+                        4.0,
+                        0.2
+                      ],
+                      [
+                        0.0,
+                        0.2
+                      ],
+                      [
+                        0.0,
+                        0.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "remaining_wall_area_m2": 0.8,
+              "scope": "OPEN_VERTICAL_INTERVAL_ROUGH_VOIDS_ONLY_NOT_STRUCTURAL_ASSEMBLY"
+            }
+          ],
+          "vertical_geometry_known": true,
+          "component_policy": "ALL_COMPONENTS_RETAINED; split straight walls are expected after full-width cuts"
+        }
+      ],
+      "area_scope": "WALL_PLAN_AND_UNCREDITED_THRESHOLDS_NOT_GFA_OR_CERTIFIED_USABLE_AREA"
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "BED:1",
+      "floor_id": "F1",
+      "allocation_area_m2": 20.0,
+      "clear_floor_area_m2": 19.2,
+      "clear_floor_geometry": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                0.0,
+                0.2
+              ],
+              [
+                4.0,
+                0.2
+              ],
+              [
+                4.0,
+                5.0
+              ],
+              [
+                0.0,
+                5.0
+              ],
+              [
+                0.0,
+                0.2
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "door_threshold_contribution_m2": 0.18,
+      "room_area_policy": "exclude_thresholds",
+      "window_cut_added_to_room_area": false,
+      "source_wall_conflicts_resolved": false
+    }
+  ],
+  "schedule": [
+    {
+      "mark": "D01",
+      "type": "hinged_door",
+      "floor_id": "F1",
+      "host_wall_id": "W-9de2a7b6f9a2a016155a13e4061f61956650a3f93919dd7c480c43ce22a240c4",
+      "rough_width_m": 0.9,
+      "rough_height_m": 2.1,
+      "frame_inner_width_m": 0.8200000000000001,
+      "leaf_width_m": 0.78,
+      "clear_width_m": 0.74,
+      "clear_height_m": 2.0,
+      "sill_m": null,
+      "head_m": 2.1,
+      "material_reference": null,
+      "declared_specification": {
+        "type": "hinged_door",
+        "kind": "entrance",
+        "rough_width": 0.9,
+        "rough_height": 2.1,
+        "bottom": 0,
+        "sill": null,
+        "head": null,
+        "clear_width": 0.74,
+        "clear_height": 2.0,
+        "clear_start_offset": 0.06,
+        "frame_inner_width": 0.82,
+        "frame": {
+          "jamb_width": 0.04,
+          "depth": 0.2,
+          "alignment": "centered_in_wall"
+        },
+        "leaf": {
+          "width": 0.78,
+          "thickness": 0.035,
+          "hinge_offset": 0.06
+        },
+        "mount_side": "left",
+        "mount_offset": null,
+        "swing": {
+          "hinge": "end",
+          "rotation": "cw",
+          "angle_degrees": 90
+        },
+        "slide": null,
+        "operation": null,
+        "operating_state": "open",
+        "material_reference": null
+      },
+      "declared_units": "m",
+      "quantity": 1,
+      "opening_ids": [
+        "DOOR-1"
+      ],
+      "provenance": [
+        "Explicit synthetic drafting dimensions, not Vietnamese standards or expert-reviewed oracles."
+      ],
+      "review_state": "PROPOSED",
+      "unresolved_specifications": [],
+      "specification_digest": "f9fdfb646de034726ffe82e25be06e1b6bf7a62f4c4e76f0842d654256f23e03"
+    }
+  ],
+  "graph_status": "GRAPH_CONNECTED",
+  "clearance_status": "GEOMETRICALLY_TRAVERSABLE",
+  "graph_edges": [
+    {
+      "id": "DOOR-1",
+      "kind": "opening",
+      "space_ids": [
+        "BED:1",
+        "OUT"
+      ],
+      "physical_state": "GEOMETRICALLY_TRAVERSABLE"
+    }
+  ],
+  "error_codes": [],
+  "missing_codes": [],
+  "svg_sha256": "ce9fee8992a54e82e98253dc9d8d789cee2f96e4247b86956f76af727eb9945e"
+}

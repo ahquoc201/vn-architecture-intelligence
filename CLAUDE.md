@@ -60,4 +60,13 @@ Batch 007-B1: read `docs/WALL_GEOMETRY_CONTRACT.md`. Collect explicit wall inten
 boundary semantics, thickness/alignment and allocation/clear requirement bases before
 `vnai design walls generate`. Inspect actual `walls preview` SVG and clear-area conflicts.
 Preserve the source allocation; obtain fresh wall/opening/circulation review. Derived
-geometry never inherits approval or CAD permission; no opening cuts are implemented.
+geometry never inherits approval or CAD permission. Hosted openings use a separate proposed revision under `docs/OPENING_DRAFTING_CONTRACT.md`.
+
+
+Numerical reproducibility: use math.fsum for precision-sensitive float aggregation and Decimal where contracts require it. Built-in float sum differs across Python versions. Preserve canonical ordering, serialization (including empty identities), documented tolerances and historical goldens; verify numerical changes on supported Python versions with independent oracles.
+
+
+For hosted door/window drafting, read `docs/OPENING_DRAFTING_CONTRACT.md`. Confirm exact
+wall bindings, rough/frame/leaf/clear dimensions and plan-cut elevation before generation.
+Inspect actual previews/schedules and replay fresh wall-aware clearance; retain window
+floor obstructions and source conflicts. No geometry success grants approval or CAD writes.

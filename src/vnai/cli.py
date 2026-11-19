@@ -77,7 +77,7 @@ def main(argv: list[str] | None = None) -> int:
         ("zoning", ("validate", "report")),
         ("floorplan", ("generate",)),
         ("candidate", ("review",)),
-        ("openings", ("validate",)),
+        ("openings", ("validate", "draft", "drafting-validate", "schedule", "preview")),
         ("circulation", ("analyze",)),
         ("stairs", ("validate",)),
     ):
@@ -86,6 +86,12 @@ def main(argv: list[str] | None = None) -> int:
         for action in actions:
             command = action_sub.add_parser(action)
             command.add_argument("input", help="Design contract JSON")
+            if kind == "openings" and action == "preview":
+                command.add_argument(
+                    "--out", required=True, help="Create a new actual opening SVG exclusively"
+                )
+            if kind == "openings" and action == "schedule":
+                command.add_argument("--markdown", help="Create a new opening schedule exclusively")
             if kind == "floorplan":
                 command.add_argument(
                     "--provenance",
@@ -164,6 +170,34 @@ def main(argv: list[str] | None = None) -> int:
         if args.command in {"design", "geometry"}:
             try:
                 brief = load_json(args.input)
+                if (
+                    args.command == "design"
+                    and args.design_kind == "openings"
+                    and args.design_action != "validate"
+                ):
+                    from vnai.opening_drafting import (
+                        draft_openings,
+                        validate_drafting,
+                        EXIT_CODES as OPENING_DRAFT_EXIT_CODES,
+                    )
+                    from vnai.opening_preview import opening_svg, opening_markdown
+
+                    report = (
+                        validate_drafting(brief)
+                        if args.design_action == "drafting-validate"
+                        else draft_openings(brief)
+                    )
+                    target = None
+                    if args.design_action == "preview" and report["floors"]:
+                        target, content = Path(args.out), opening_svg(report)
+                    elif args.design_action == "schedule" and args.markdown:
+                        target, content = Path(args.markdown), opening_markdown(report)
+                    if target is not None:
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        with target.open("x", encoding="utf-8", newline="\n") as stream:
+                            stream.write(content)
+                    print(json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False))
+                    return OPENING_DRAFT_EXIT_CODES[report["drafting_status"]]
                 if args.command == "design" and args.design_kind == "walls":
                     from vnai.walls import (
                         generate_walls,

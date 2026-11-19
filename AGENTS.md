@@ -9,3 +9,6 @@
 - Deterministic geometry first. Never rely on LLM arithmetic where geometric code can calculate.
 - Never commit copyrighted full books, commercial standard PDFs, customer drawings, personally identifying house/owner information or secrets.
 - Every change to algorithm or source selection must include tests and a changelog entry; preserve past reports with version stamps.
+
+
+Numerical reproducibility: use math.fsum for precision-sensitive float aggregation and Decimal where contracts require it. Built-in float sum differs across Python versions. Preserve canonical ordering, serialization (including empty identities), documented tolerances and historical goldens; verify numerical changes on supported Python versions with independent oracles.
