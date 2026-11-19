@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "candidate_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "candidate_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "design_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "policy_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "evaluation_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "metric_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "metric_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "status": {
+      "enum": [
+        "VERIFIED",
+        "FAILED",
+        "UNKNOWN",
+        "NOT_EVALUATED",
+        "NOT_APPLICABLE",
+        "UNSUPPORTED"
+      ]
+    },
+    "value": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "unit": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "method": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "numerator": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "pointer": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "kind",
+          "pointer",
+          "digest"
+        ]
+      },
+      "minItems": 1
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "candidate_id",
+    "candidate_digest",
+    "design_digest",
+    "policy_digest",
+    "evaluation_digest",
+    "metric_id",
+    "metric_version",
+    "status",
+    "value",
+    "unit",
+    "method",
+    "coverage",
+    "evidence_refs",
+    "limitations"
+  ]
+}

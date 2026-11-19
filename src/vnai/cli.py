@@ -93,6 +93,18 @@ def main(argv: list[str] | None = None) -> int:
                     "--out", help="Write JSON report to a new file; never overwrite"
                 )
 
+    candidates = design_sub.add_parser(
+        "candidates", help="Evidence-based evaluation; no auto approval"
+    )
+    candidates_sub = candidates.add_subparsers(dest="design_action", required=True)
+    for action in ("evaluate", "compare", "rank"):
+        command = candidates_sub.add_parser(action)
+        command.add_argument("input", help="Versioned evaluation request JSON")
+        if action != "evaluate":
+            command.add_argument(
+                "--markdown", help="Create a new human-readable report; never overwrite"
+            )
+
     architecture = design_sub.add_parser(
         "architectural-review", help="Separate geometry, graph, clearance and approval results"
     )
@@ -118,6 +130,33 @@ def main(argv: list[str] | None = None) -> int:
         if args.command in {"design", "geometry"}:
             try:
                 brief = load_json(args.input)
+                if args.command == "design" and args.design_kind == "candidates":
+                    from vnai.candidate_evaluation import evaluate_candidates
+                    from vnai.candidate_comparison import compare_candidates
+                    from vnai.candidate_ranking import rank_candidates
+
+                    report = {
+                        "evaluate": evaluate_candidates,
+                        "compare": compare_candidates,
+                        "rank": rank_candidates,
+                    }[args.design_action](brief)
+                    if getattr(args, "markdown", None):
+                        target = Path(args.markdown)
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        with target.open("x", encoding="utf-8", newline="\n") as stream:
+                            stream.write(report["markdown"])
+                    print(json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False))
+                    if report["errors"]:
+                        return 1
+                    if args.design_action == "rank":
+                        return {
+                            "RANKED": 0,
+                            "TIED": 0,
+                            "NO_ELIGIBLE_CANDIDATES": 4,
+                            "PARTIALLY_COMPARABLE": 3,
+                            "RANKING_WITHHELD": 3,
+                        }[report["ranking_status"]]
+                    return {"VALID": 0, "INVALID": 1, "INCOMPLETE": 3}[report["status"]]
                 if args.command == "geometry":
                     report = validate_geometry(brief)
                     validation = report

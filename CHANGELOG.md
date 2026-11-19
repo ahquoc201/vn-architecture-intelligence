@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.8] - R2/BATCH-006-C evidence-based candidate evaluation (2026-11-19)
+
+- Recompute deterministic, digest-bound geometry, room inventory, adjacency, opening, graph, planar-clearance and stair metrics using established review contracts.
+- Separate evidence coverage/input declarations, hard eligibility and explicit Decimal preference scoring; missing values are never imputed, known failures cannot be compensated.
+- Add scoped pairwise trade-offs and conditional ranking with explicit normalization, optional/N/A denominator policies, precision, tolerance, ties and withholding.
+- Add versioned input/metric/evidence/report schemas, JSON/Markdown CLI, 18 synthetic scenario oracles, negative/contract/permutation/regression tests and isolated wheel command coverage.
+- Preserve historical versioned reports and tests. Keep architect decisions, standards/Feng Shui review and CAD permissions separate; update house-design guidance and contracts.
+
+
 ## [0.1.7] - R2/BATCH-006-B circulation, openings and stairs (2026-11-18)
 
 - Add immutable candidate selection and content-bound review/approval history; stale IDs/digests and invalid promotions are rejected.

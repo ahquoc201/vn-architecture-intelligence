@@ -27,6 +27,13 @@ SCHEMA_NAMES = (
     "opening-result.schema.json",
     "stair-result.schema.json",
     "architectural-review.schema.json",
+    "evaluation-config.schema.json",
+    "metric-result.schema.json",
+    "evidence-coverage.schema.json",
+    "candidate-evaluation-input.schema.json",
+    "candidate-evaluation.schema.json",
+    "candidate-comparison.schema.json",
+    "candidate-ranking.schema.json",
 )
 BASE = "https://vnai.invalid/contracts/"
 

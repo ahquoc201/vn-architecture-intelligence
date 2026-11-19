@@ -19,7 +19,7 @@ def test_schema_is_valid(name):
 
 def test_current_engine_stamp_is_not_historical_golden_metadata():
     report = generate_floorplans(synthetic_spec())
-    assert report["engine_version"] == __version__ == "0.1.7"
+    assert report["engine_version"] == __version__ == "0.1.8"
     assert all(
         c["hard_validation"]["spatial_report"]["engine_version"] == __version__
         for c in report["candidates"]

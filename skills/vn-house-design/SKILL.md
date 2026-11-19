@@ -115,3 +115,16 @@ For suggestions rooted in regional architecture or worship spaces, use only the 
   establishes complete accessibility/egress certification or construction readiness.
 - Keep QCVN/TCVN and Feng Shui review separate. cad_writes_permitted stays false, including for
   APPROVED review records. CAD modifications require explicit authorization in a future workflow.
+
+
+## R2 Batch 006-C: compare alternatives before an architect decision
+
+Read `docs/CANDIDATE_EVALUATION_CONTRACT.md` for input, metric units, evidence statuses, scope and exit codes. Keep one user-facing agent; these engines are tools.
+
+1. Request 2-3 distinct proposals through `vnai design floorplan generate <input> --candidates 3`. Preserve original immutable candidates; attach explicit Batch 006-B opening/stair/obstacle/path sidecars for each. Collect and confirm inventories; never invent doors, stairs, directions or dimensions to improve a score.
+2. Construct a versioned evaluation request with explicit criterion IDs, weights, directions, normalization bounds, required checks, optional/N/A policy, precision and tie tolerance. Agree trade-offs with the architect; example weights are synthetic, not defaults. Include entrance_reachability/circulation_clearance as required checks when the decision depends on circulation. Geometry-only evidence cannot establish physical traversal.
+3. Run `vnai design candidates evaluate <request>` and explain observed values, evidence status, input declarations and hard eligibility separately. UNKNOWN is not zero or FAILED. N/A leaves the applicable denominator. Known hard failure prevents scoring; unsupported required work blocks an eligible claim. Recollect evidence when candidate/design/policy digests change; never reuse a favorable stale report.
+4. Run `vnai design candidates compare <request> --markdown <new-versioned-path>`. Check exact source requirement/site/floor/inventory baselines. Different baselines require a documented explicit metric scope. Report verified pairwise trade-offs and remaining unknowns even when global scores are unavailable. Optional exclusions and effective weights must be disclosed; differently weighted active subsets cannot rank together.
+5. Run `vnai design candidates rank <request>` only under the explicit policy. Explain why the leader changes with weights and why a tie has no unique winner. Withhold definitive ranking for missing critical evidence, unavailable required criteria or incompatible baselines. Partial ordering is conditional and requires allow_partial_ranking; no automatic selection follows from a policy leader.
+6. Ask the architect to review trade-offs and supply unresolved requirements, then record feedback as a separate design decision/revised brief. Selection, REVIEWED and APPROVED remain separate Batch 006-B content-bound states. Never promote feedback or engine rank into approval. Preserve prior reports and version stamps.
+7. Keep standards/QCVN/TCVN and optional source-grounded Feng Shui as separate advisory layers, subject to source-clause/edition/page and expert/test gates. No unverified aesthetic, safety or Feng Shui score; no CAD modifications or new authority is granted by evaluation.

@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "policy_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "required_hard_checks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      },
+      "minItems": 0,
+      "maxItems": 32
+    },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "metric_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "direction": {
+            "enum": [
+              "maximize",
+              "minimize",
+              "target"
+            ]
+          },
+          "weight": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "lower": {
+            "type": "number"
+          },
+          "upper": {
+            "type": "number"
+          },
+          "target": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "metric_id",
+          "direction",
+          "weight",
+          "required",
+          "lower",
+          "upper"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 24
+    },
+    "optional_criteria": {
+      "enum": [
+        "withhold",
+        "exclude_unavailable"
+      ]
+    },
+    "not_applicable_criteria": {
+      "enum": [
+        "exclude",
+        "withhold"
+      ]
+    },
+    "score_precision": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+    },
+    "tie_tolerance": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "allow_partial_ranking": {
+      "type": "boolean"
+    },
+    "comparison_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "mode": {
+          "enum": [
+            "strict_baseline",
+            "explicit_metric_basis"
+          ]
+        },
+        "baseline_digests": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "minItems": 0,
+          "maxItems": 16
+        },
+        "metric_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "maxItems": 32
+        },
+        "rationale": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "id",
+        "mode"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "policy_id",
+    "required_hard_checks",
+    "criteria",
+    "optional_criteria",
+    "not_applicable_criteria",
+    "score_precision",
+    "tie_tolerance",
+    "allow_partial_ranking",
+    "comparison_scope"
+  ]
+}

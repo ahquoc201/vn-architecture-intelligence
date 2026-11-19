@@ -66,6 +66,8 @@ def run() -> None:
             shutil.copyfile(source, work / ("floorplan-" + source.name))
         for source in (root / "examples/batch006b").glob("*.json"):
             shutil.copyfile(source, work / ("review-" + source.name))
+        for source in (root / "examples/batch006c").glob("*.json"):
+            shutil.copyfile(source, work / ("evaluation-" + source.name))
         shutil.copyfile(root / "examples/townhouse_4x20_brief.json", work / "brief.json")
         shutil.copyfile(root / "examples/townhouse_sample.json", work / "legacy.json")
         commands = [
@@ -102,6 +104,25 @@ def run() -> None:
             (["design", "architectural-review", "review-missing-openings.json"], 3),
             (["design", "architectural-review", "review-swing-obstacle.json"], 1),
         ]
+        commands.extend(
+            [
+                (["design", "candidates", "evaluate", "evaluation-verified-circulation.json"], 0),
+                (["design", "candidates", "compare", "evaluation-three-candidates.json"], 0),
+                (
+                    [
+                        "design",
+                        "candidates",
+                        "rank",
+                        "evaluation-three-candidates.json",
+                        "--markdown",
+                        "ranking.md",
+                    ],
+                    0,
+                ),
+                (["design", "candidates", "rank", "evaluation-ranking-withheld.json"], 3),
+                (["design", "candidates", "rank", "evaluation-all-ineligible.json"], 4),
+            ]
+        )
         for args, expected in commands:
             result = subprocess.run(
                 [str(python), "-I", "-X", "utf8", "-m", "vnai", *args],
@@ -136,6 +157,35 @@ def run() -> None:
                     or reviewed["cad_writes_permitted"]
                 ):
                     raise RuntimeError("Wheel architectural review violated its bounded scope")
+            if args[:2] == ["design", "candidates"]:
+                evaluation = json.loads(result.stdout)
+                if (
+                    evaluation["cad_writes_permitted"]
+                    or evaluation["architect_approval"] != "NOT_GRANTED_BY_EVALUATION"
+                ):
+                    raise RuntimeError("Wheel evaluation inferred CAD permission/approval")
+                if args[2] == "rank" and expected == 0:
+                    if (
+                        evaluation["ranking_status"] != "RANKED"
+                        or evaluation["winner_id"] != "A"
+                        or (work / "ranking.md").read_text() != evaluation["markdown"]
+                    ):
+                        raise RuntimeError(
+                            "Wheel ranking/Markdown differs from the tested policy oracle"
+                        )
+                elif args[2] == "rank" and evaluation["winner_id"] is not None:
+                    raise RuntimeError("Wheel produced a winner without evidence")
+                replay = subprocess.run(
+                    [str(python), "-I", "-X", "utf8", "-m", "vnai", *args[:4]],
+                    cwd=work,
+                    env=env,
+                    capture_output=True,
+                    text=True,
+                    encoding="utf-8",
+                    timeout=60,
+                )
+                if replay.returncode != expected or json.loads(replay.stdout) != evaluation:
+                    raise RuntimeError("Installed evaluation is not deterministic")
             results.append({"command": args, "exit_code": result.returncode})
         location = subprocess.check_output(
             [str(python), "-I", "-c", "import vnai; print(vnai.__file__)"],
