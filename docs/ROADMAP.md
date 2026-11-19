@@ -22,7 +22,8 @@
 - [x] Batch-005: versioned floor zoning, explicit architect decision records, 2D spatial diagnostics and wheel data verification
 - [x] Batch-006-A: bounded deterministic rectangle candidates, hard constraints, explicit reservations, distinct proposals and spatial validation
 - [x] Batch-006-B: exact candidate review records, explicit openings, circulation/portal graphs, bounded width checks and stair connectivity
-- [ ] Batch-006-C: scoped candidate comparison, reviewed design decisions and validation coverage gaps; no automatic approval/ranking claims
+- [x] Batch-006-C: evidence-bound candidate metrics, explicit preference policy, scoped comparisons and conditional rankings; no automatic approval or CAD writes
+- [ ] Batch-007: digest-bound architect feedback and revised briefs, original solver-constraint replay and expert-reviewed evaluation oracles
 - [ ] Chuẩn hóa brief multi-floor, room type, walls/openings/doors, heights
 - [ ] Kiểm tra giao thông, cửa, cầu thang, công năng, nội thất, bảng diện tích
 - [ ] 2–3 phương án mặt bằng với quyết định thiết kế và thay đổi có thể tái tạo

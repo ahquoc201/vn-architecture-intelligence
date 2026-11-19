@@ -29,7 +29,12 @@ def fixture(name):
 
 
 @pytest.mark.parametrize("name", NAMES)
-def test_full_golden_output(name):
+def test_full_golden_output(name, monkeypatch):
+    # Preserve the complete 0.1.7 oracle, including historical metadata, under current validators.
+    import vnai.contracts
+    import vnai.design_brief
+    monkeypatch.setattr(vnai.contracts, "__version__", "0.1.7")
+    monkeypatch.setattr(vnai.design_brief, "__version__", "0.1.7")
     expected = json.loads((ROOT / "tests/golden/batch006b-v0.1.7" / (name + ".json")).read_text())
     assert architectural_review(fixture(name)) == expected
 

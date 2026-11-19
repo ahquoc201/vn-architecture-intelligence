@@ -1,6 +1,6 @@
 # Vietnam Architecture Intelligence (VNAI)
 
-**Phiên bản 0.1.7 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
+**Phiên bản 0.1.8 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
 
 Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, với ba nhiệm vụ tách biệt:
 
@@ -146,3 +146,17 @@ Khi ghép AutoCAD MCP: nhập bản sao DWG/DXF → chuẩn hóa lớp phòng/kh
 ## Bản quyền
 
 `LICENSE` (MIT) áp dụng **mã và tài liệu do dự án tự sáng tạo**. Không tự động cấp phép lại tác phẩm của tác giả/NXB, QCVN/TCVN, bản vẽ khách hàng hoặc nội dung trích dẫn bên ngoài. Xem `docs/RIGHTS.md`.
+
+
+## R2 Batch 006-C: evidence-based comparison (v0.1.8)
+
+Candidate metrics, evidence coverage, hard eligibility and explicit preference scoring are separate layers. Missing evidence stays unknown, known hard failures cannot win, and incompatible baselines block ranking. No architect selection/approval or CAD permission is inferred.
+
+```powershell
+vnai design candidates evaluate examples/batch006c/verified-circulation.json
+vnai design candidates compare examples/batch006c/three-candidates.json --markdown outputs/comparison-v0.1.8.md
+vnai design candidates rank examples/batch006c/three-candidates.json
+vnai design candidates rank examples/batch006c/ranking-withheld.json
+```
+
+The synthetic area policy ranks A (0.916667), B (0.25), C (0.083333); changed-weights.json makes B the policy leader. These geometry-only preferences leave circulation proof unresolved. The strict circulation fixture blocks a definitive ranking when clearance is unknown, despite graph connectivity. See [evaluation contracts](docs/CANDIDATE_EVALUATION_CONTRACT.md) for units, denominators, normalization, applicability, digest dependencies, explicit scope, tie handling and exit codes. Markdown files use exclusive creation; preserve prior reports.

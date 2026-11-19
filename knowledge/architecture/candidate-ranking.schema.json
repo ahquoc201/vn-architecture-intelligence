@@ -1,0 +1,445 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "report_schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "engine_version": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "contract": {
+      "const": "candidate-ranking-v1"
+    },
+    "status": {
+      "enum": [
+        "VALID",
+        "INVALID",
+        "INCOMPLETE"
+      ]
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "cad_writes_permitted": {
+      "const": false
+    },
+    "standards_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "fengshui_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "policy_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scope": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "evaluations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "candidate_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "candidate_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "design_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "policy_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "evaluation_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "baseline": {
+            "type": "object"
+          },
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "metric-result.schema.json"
+            },
+            "minItems": 1
+          },
+          "sources": {
+            "type": "object",
+            "required": [
+              "review",
+              "spatial",
+              "architectural"
+            ]
+          },
+          "evidence": {
+            "$ref": "evidence-coverage.schema.json"
+          },
+          "scoring": {
+            "type": "object",
+            "required": [
+              "status",
+              "aggregate",
+              "active_weight_denominator",
+              "active_criteria",
+              "criteria",
+              "reasons",
+              "precision",
+              "rounding",
+              "limitations"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "SCORED",
+                  "WITHHELD"
+                ]
+              },
+              "aggregate": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "criteria": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "metric_id",
+                    "direction",
+                    "weight",
+                    "required",
+                    "lower",
+                    "upper",
+                    "metric_status",
+                    "value",
+                    "normalized_score",
+                    "effective_weight",
+                    "contribution",
+                    "status",
+                    "explanation"
+                  ]
+                }
+              },
+              "active_weight_denominator": {
+                "type": "number",
+                "minimum": 0
+              },
+              "active_criteria": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "selection_state": {
+            "enum": [
+              "UNSELECTED",
+              "SELECTED",
+              "REVIEWED",
+              "APPROVED",
+              "REJECTED",
+              "SUPERSEDED"
+            ]
+          },
+          "approval_record_valid": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "candidate_id",
+          "candidate_digest",
+          "design_digest",
+          "policy_digest",
+          "evaluation_digest",
+          "baseline",
+          "metrics",
+          "sources",
+          "evidence",
+          "scoring",
+          "selection_state",
+          "approval_record_valid"
+        ]
+      },
+      "minItems": 0
+    },
+    "architect_selection": {
+      "const": "NOT_PERFORMED"
+    },
+    "architect_approval": {
+      "const": "NOT_GRANTED_BY_EVALUATION"
+    },
+    "pairs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "left_id",
+          "right_id",
+          "same_baseline",
+          "baseline_compatible",
+          "comparable_metrics",
+          "non_comparable_metrics",
+          "verified_strengths_and_weaknesses",
+          "missing_evidence",
+          "constraint_violations",
+          "evidence_coverage",
+          "aggregate_comparable",
+          "limitations"
+        ]
+      },
+      "minItems": 0
+    },
+    "comparison_status": {
+      "enum": [
+        "COMPARABLE",
+        "PARTIALLY_COMPARABLE",
+        "INCOMPARABLE",
+        "INVALID_INPUT"
+      ]
+    },
+    "ranking_status": {
+      "enum": [
+        "RANKED",
+        "TIED",
+        "PARTIALLY_COMPARABLE",
+        "RANKING_WITHHELD",
+        "NO_ELIGIBLE_CANDIDATES"
+      ]
+    },
+    "ranking": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "minItems": 0
+    },
+    "conditional_order": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "minItems": 0
+    },
+    "winner_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "leaders": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      },
+      "minItems": 0
+    },
+    "definitive": {
+      "type": "boolean"
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      },
+      "minItems": 0
+    },
+    "markdown": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "report_schema_version",
+    "engine_version",
+    "contract",
+    "status",
+    "errors",
+    "warnings",
+    "missing_information",
+    "diagnostics",
+    "cad_writes_permitted",
+    "standards_review",
+    "fengshui_review",
+    "policy_digest",
+    "scope",
+    "evaluations",
+    "architect_selection",
+    "architect_approval",
+    "pairs",
+    "comparison_status",
+    "ranking_status",
+    "ranking",
+    "conditional_order",
+    "winner_id",
+    "leaders",
+    "definitive",
+    "reasons",
+    "markdown"
+  ]
+}

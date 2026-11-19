@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "config": {
+      "$ref": "evaluation-config.schema.json"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "review": {
+            "$ref": "candidate-review.schema.json"
+          }
+        },
+        "required": [
+          "id",
+          "review"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 8
+    },
+    "prior_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "evidence-coverage.schema.json"
+      },
+      "minItems": 0,
+      "maxItems": 16
+    }
+  },
+  "required": [
+    "schema_version",
+    "config",
+    "candidates"
+  ]
+}

@@ -1,0 +1,468 @@
+{
+  "full_report_sha256": "495b6a91a4341598ab02cc81cc1357b7dcd1e97057e678203bda6670728d1de6",
+  "status": "INCOMPLETE",
+  "ranking_status": null,
+  "winner_id": null,
+  "ranking": null,
+  "evaluations": [
+    {
+      "id": "A",
+      "candidate_digest": "2bf876370f03566f51f791c6e620cb3d32ebe249b31d30036fc984f86d4bd35b",
+      "design_digest": "8df6aee382a0bdfef64acda3fb46fb96ea49880c01739c49df2297686df991bb",
+      "evaluation_digest": "4e825ff25e8e958dcf6dcd48f7af1df5892778f37aad1eef18b6c59baeb9692e",
+      "eligibility": "PENDING_VERIFICATION",
+      "counts": {
+        "total": 10,
+        "applicable": 8,
+        "not_applicable": 2,
+        "evaluated": 5,
+        "verified": 5,
+        "failed": 0,
+        "unknown": 3,
+        "not_evaluated": 0,
+        "unsupported": 0
+      },
+      "checks": {
+        "candidate_integrity": "VERIFIED",
+        "circulation_clearance": "UNKNOWN",
+        "entrance_reachability": "UNKNOWN",
+        "floor_assignments": "VERIFIED",
+        "opening_validity": "UNKNOWN",
+        "required_relationships": "NOT_APPLICABLE",
+        "room_area_bounds": "VERIFIED",
+        "room_inventory": "VERIFIED",
+        "spatial_geometry": "VERIFIED",
+        "stair_connectivity": "NOT_APPLICABLE"
+      },
+      "aggregate": null,
+      "metrics": {
+        "allocated_room_area_m2": {
+          "value": 16.0,
+          "status": "VERIFIED",
+          "coverage": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "area_target_deviation_m2": {
+          "value": 0.0,
+          "status": "VERIFIED",
+          "coverage": {
+            "numerator": 2,
+            "denominator": 2
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "circulation_clearance_coverage": {
+          "value": null,
+          "status": "UNKNOWN",
+          "coverage": {
+            "numerator": 0,
+            "denominator": 2
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "entrance_reachability": {
+          "value": null,
+          "status": "UNKNOWN",
+          "coverage": {
+            "numerator": 0,
+            "denominator": 2
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "floor_assignment_coverage": {
+          "value": 1.0,
+          "status": "VERIFIED",
+          "coverage": {
+            "numerator": 2,
+            "denominator": 2
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "floor_envelope_area_m2": {
+          "value": 16.0,
+          "status": "VERIFIED",
+          "coverage": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "geometric_residual_area_m2": {
+          "value": 0.0,
+          "status": "VERIFIED",
+          "coverage": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "known_geometric_conflicts": {
+          "value": 0,
+          "status": "VERIFIED",
+          "coverage": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "known_inaccessible_rooms": {
+          "value": null,
+          "status": "UNKNOWN",
+          "coverage": {
+            "numerator": 0,
+            "denominator": 2
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "opening_validation": {
+          "value": null,
+          "status": "UNKNOWN",
+          "coverage": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "preferred_adjacency_satisfaction": {
+          "value": null,
+          "status": "NOT_APPLICABLE",
+          "coverage": {
+            "numerator": 0,
+            "denominator": 0
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "required_adjacency_satisfaction": {
+          "value": null,
+          "status": "NOT_APPLICABLE",
+          "coverage": {
+            "numerator": 0,
+            "denominator": 0
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "reserved_circulation_area_m2": {
+          "value": 0.0,
+          "status": "VERIFIED",
+          "coverage": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "room_connectivity_coverage": {
+          "value": null,
+          "status": "UNKNOWN",
+          "coverage": {
+            "numerator": 0,
+            "denominator": 2
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "room_inventory_coverage": {
+          "value": 1.0,
+          "status": "VERIFIED",
+          "coverage": {
+            "numerator": 2,
+            "denominator": 2
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "stair_connectivity": {
+          "value": null,
+          "status": "NOT_APPLICABLE",
+          "coverage": {
+            "numerator": 0,
+            "denominator": 0
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        },
+        "unresolved_checks": {
+          "value": 7,
+          "status": "VERIFIED",
+          "coverage": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "evidence_refs": [
+            {
+              "kind": "spatial",
+              "pointer": "/sources/spatial",
+              "digest": "7c9726750ea495979d27d92100fa75b50b218d7cfae5a9d62ac67e6a46ab935e"
+            },
+            {
+              "kind": "architectural",
+              "pointer": "/sources/architectural",
+              "digest": "0bd9a46379901c498502dc852e7fcd97ccdf6eb06741c8e502536b6766d5a1a6"
+            },
+            {
+              "kind": "review",
+              "pointer": "/sources/review",
+              "digest": "e69a328fa7b70745784a2bf1bd5d0352022e944c1b4e79c14b59ee86de71001a"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "pairs": []
+}

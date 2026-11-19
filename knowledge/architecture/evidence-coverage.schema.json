@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "candidate_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "candidate_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "design_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "policy_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "evaluation_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "candidate_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "design_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "policy_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "evaluation_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "check_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "check_version": {
+            "type": "integer",
+            "const": 1
+          },
+          "status": {
+            "enum": [
+              "VERIFIED",
+              "FAILED",
+              "UNKNOWN",
+              "NOT_EVALUATED",
+              "NOT_APPLICABLE",
+              "UNSUPPORTED"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "coverage": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "numerator": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "denominator": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "numerator",
+              "denominator"
+            ]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "pointer": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "digest": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "kind",
+                "pointer",
+                "digest"
+              ]
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "candidate_id",
+          "candidate_digest",
+          "design_digest",
+          "policy_digest",
+          "evaluation_digest",
+          "check_id",
+          "check_version",
+          "status",
+          "reason",
+          "coverage",
+          "evidence_refs"
+        ]
+      },
+      "minItems": 0
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "applicable": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "not_applicable": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evaluated": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "verified": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unknown": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "not_evaluated": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unsupported": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "total",
+        "applicable",
+        "not_applicable",
+        "evaluated",
+        "verified",
+        "failed",
+        "unknown",
+        "not_evaluated",
+        "unsupported"
+      ]
+    },
+    "evaluation_coverage": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "verified_coverage": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "input_completeness": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "complete_sections": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "applicable_sections": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "declared": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "complete_sections",
+        "applicable_sections",
+        "declared"
+      ]
+    },
+    "eligibility": {
+      "enum": [
+        "ELIGIBLE",
+        "INELIGIBLE",
+        "PENDING_VERIFICATION",
+        "UNSUPPORTED"
+      ]
+    },
+    "failed_checks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      },
+      "minItems": 0
+    },
+    "pending_checks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      },
+      "minItems": 0
+    },
+    "unsupported_checks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      },
+      "minItems": 0
+    },
+    "required_checks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "\\S"
+      },
+      "minItems": 0
+    },
+    "confidence_estimated": {
+      "const": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "candidate_digest",
+    "design_digest",
+    "policy_digest",
+    "evaluation_digest",
+    "checks",
+    "counts",
+    "evaluation_coverage",
+    "verified_coverage",
+    "input_completeness",
+    "eligibility",
+    "failed_checks",
+    "pending_checks",
+    "unsupported_checks",
+    "required_checks",
+    "confidence_estimated"
+  ]
+}
