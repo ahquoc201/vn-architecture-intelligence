@@ -1,0 +1,822 @@
+{
+  "full_report_sha256": "bccb68ad315765866016d1f0f6790e4c4e307b4f973fea6eabf1ffd7a54d2b56",
+  "status": "INVALID",
+  "states": {
+    "replay_status": "FAILED"
+  },
+  "candidate_digest": "c59c6932147c839054147cb31a5e3d8f111b9ae96ba2f3b7f605be2afcb85eee",
+  "specification_digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8",
+  "checks": [
+    {
+      "id": "provenance_integrity",
+      "status": "VERIFIED",
+      "method": "Recompute every provenance digest/constraint register against immutable source and origin.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "origin_binding",
+      "status": "VERIFIED",
+      "method": "Externally supplied revision; constraint validation does not assert it was regenerated or approved.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "source_validity",
+      "status": "VERIFIED",
+      "method": "Source geometry/zoning must independently validate; source authorization is not candidate approval.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "fixed_inventory",
+      "status": "VERIFIED",
+      "method": "All supplied fixed/reserved geometry must be explicitly declared complete.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "source_authorization",
+      "status": "VERIFIED",
+      "method": "Original preliminary-generation authorization is content bound, not permission to write CAD.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "candidate_floor_metadata",
+      "status": "VERIFIED",
+      "method": "Stored floor IDs must match current explicit geometry floors.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "spatial_geometry",
+      "status": "FAILED",
+      "method": "Existing spatial validator is rerun, including declared boundary/overlap tolerances.",
+      "observed": [
+        "ROOM_IN_RESERVED_REGION"
+      ],
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "coordinate_context",
+      "status": "VERIFIED",
+      "method": "Original frames, units, floors and tolerances must match exactly; no implicit transforms.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "fixed_context",
+      "status": "VERIFIED",
+      "method": "Original non-room site, envelopes, points, segments, reservations and overlap declarations cannot disappear/change silently.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "requirement_baseline",
+      "status": "VERIFIED",
+      "method": "Changed source brief/zoning needs an explicitly confirmed revised baseline.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room_inventory",
+      "status": "VERIFIED",
+      "method": "Exact source room-instance inventory; duplicates/extras cannot replace missing instances.",
+      "observed": [
+        "BED:1",
+        "LIVING:1"
+      ],
+      "expected": [
+        "BED:1",
+        "LIVING:1"
+      ],
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "dimension_inventory",
+      "status": "VERIFIED",
+      "method": "Original width/depth records must cover every source instance exactly once.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:BED:1:traceability",
+      "status": "VERIFIED",
+      "method": "Source requirement identifier must be preserved.",
+      "observed": "REQ-BED",
+      "expected": "REQ-BED",
+      "requirement_ids": [
+        "REQ-BED"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:BED:1:floor",
+      "status": "VERIFIED",
+      "method": "Original active source floor assignment.",
+      "observed": "F1",
+      "expected": "F1",
+      "requirement_ids": [
+        "REQ-BED"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:BED:1:frame",
+      "status": "VERIFIED",
+      "method": "Per-polygon coordinate metadata must match the declared frame/units.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:BED:1:validity",
+      "status": "VERIFIED",
+      "method": "Current valid positive-area polygon, with no repair.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:BED:1:containment",
+      "status": "VERIFIED",
+      "method": "Exact original solver envelope containment; boundary tolerance never expands an original hard envelope.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:BED:1:rectangle",
+      "status": "VERIFIED",
+      "method": "Explicit width along X/depth along Y replay supports axis-aligned rectangles; bounding boxes never prove arbitrary room proportions.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:BED:1:area",
+      "status": "VERIFIED",
+      "method": "Recomputed m2 against original hard min/max; targets are soft.",
+      "observed": 8.0,
+      "expected": {
+        "target": 8.0,
+        "min": 8.0,
+        "max": 8.0
+      },
+      "requirement_ids": [
+        "REQ-BED"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:BED:1:width",
+      "status": "VERIFIED",
+      "method": "Original axis-specific dimensional bounds; no rotation or arithmetic resizing inferred.",
+      "observed": 2.0,
+      "expected": {
+        "min": 2,
+        "max": 2
+      },
+      "requirement_ids": [
+        "REQ-BED"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:BED:1:depth",
+      "status": "VERIFIED",
+      "method": "Original axis-specific dimensional bounds; no rotation or arithmetic resizing inferred.",
+      "observed": 4.0,
+      "expected": {
+        "min": 4,
+        "max": 4
+      },
+      "requirement_ids": [
+        "REQ-BED"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:BED:1:reservation:SYNTHETIC-SHAFT",
+      "status": "FAILED",
+      "method": "Exact original reservation exclusion; boundary contact allowed, positive overlap forbidden.",
+      "observed": 4.0,
+      "expected": 0,
+      "requirement_ids": [
+        "REQ-internal_circulation"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:LIVING:1:traceability",
+      "status": "VERIFIED",
+      "method": "Source requirement identifier must be preserved.",
+      "observed": "REQ-LIVING",
+      "expected": "REQ-LIVING",
+      "requirement_ids": [
+        "REQ-LIVING"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:LIVING:1:floor",
+      "status": "VERIFIED",
+      "method": "Original active source floor assignment.",
+      "observed": "F1",
+      "expected": "F1",
+      "requirement_ids": [
+        "REQ-LIVING"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:LIVING:1:frame",
+      "status": "VERIFIED",
+      "method": "Per-polygon coordinate metadata must match the declared frame/units.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:LIVING:1:validity",
+      "status": "VERIFIED",
+      "method": "Current valid positive-area polygon, with no repair.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:LIVING:1:containment",
+      "status": "VERIFIED",
+      "method": "Exact original solver envelope containment; boundary tolerance never expands an original hard envelope.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:LIVING:1:rectangle",
+      "status": "VERIFIED",
+      "method": "Explicit width along X/depth along Y replay supports axis-aligned rectangles; bounding boxes never prove arbitrary room proportions.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:LIVING:1:area",
+      "status": "VERIFIED",
+      "method": "Recomputed m2 against original hard min/max; targets are soft.",
+      "observed": 8.0,
+      "expected": {
+        "target": 8.0,
+        "min": 8.0,
+        "max": 8.0
+      },
+      "requirement_ids": [
+        "REQ-LIVING"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:LIVING:1:width",
+      "status": "VERIFIED",
+      "method": "Original axis-specific dimensional bounds; no rotation or arithmetic resizing inferred.",
+      "observed": 2.0,
+      "expected": {
+        "min": 2,
+        "max": 2
+      },
+      "requirement_ids": [
+        "REQ-LIVING"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:LIVING:1:depth",
+      "status": "VERIFIED",
+      "method": "Original axis-specific dimensional bounds; no rotation or arithmetic resizing inferred.",
+      "observed": 4.0,
+      "expected": {
+        "min": 4,
+        "max": 4
+      },
+      "requirement_ids": [
+        "REQ-LIVING"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:LIVING:1:reservation:SYNTHETIC-SHAFT",
+      "status": "VERIFIED",
+      "method": "Exact original reservation exclusion; boundary contact allowed, positive overlap forbidden.",
+      "observed": 0.0,
+      "expected": 0,
+      "requirement_ids": [
+        "REQ-internal_circulation"
+      ],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "room:LIVING:1:overlap:BED:1",
+      "status": "VERIFIED",
+      "method": "Exact original solver same-floor nonoverlap, independently of relaxed spatial tolerances.",
+      "observed": 0.0,
+      "expected": 0,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    },
+    {
+      "id": "stored_measurements",
+      "status": "VERIFIED",
+      "method": "Stored room areas are compared to fresh measurements, never trusted.",
+      "observed": null,
+      "expected": null,
+      "requirement_ids": [],
+      "evidence_refs": [
+        {
+          "pointer": "/sources/review",
+          "digest": "588f5949af7a328755da82b7a8076a0ddcbde4fbe8fd1a2b7c32e966b61b2cfd"
+        },
+        {
+          "pointer": "/sources/specification",
+          "digest": "199f59a8ce4d81eda658dfaa997617c53ce93492ad90325b26ef6947ef2da0f8"
+        },
+        {
+          "pointer": "/sources/provenance",
+          "digest": "f911589fc1290d500a9bbbb2c74d208b4c88b58c979f54d6e0a689966265ad7c"
+        }
+      ]
+    }
+  ],
+  "stages": null,
+  "coverage": {
+    "applicable": 34,
+    "evaluated": 34,
+    "verified": 32,
+    "failed": 2,
+    "evaluation_fraction": 1.0
+  },
+  "unresolved_feedback": null,
+  "approval_invalidated": null,
+  "child_approval_record_valid": null
+}

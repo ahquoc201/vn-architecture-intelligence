@@ -87,6 +87,11 @@ def main(argv: list[str] | None = None) -> int:
             command = action_sub.add_parser(action)
             command.add_argument("input", help="Design contract JSON")
             if kind == "floorplan":
+                command.add_argument(
+                    "--provenance",
+                    action="store_true",
+                    help="Include explicit source/candidate provenance sidecars",
+                )
                 command.add_argument("--candidates", type=int, choices=(1, 2, 3))
                 command.add_argument("--max-steps", type=int)
                 command.add_argument(
@@ -104,6 +109,19 @@ def main(argv: list[str] | None = None) -> int:
             command.add_argument(
                 "--markdown", help="Create a new human-readable report; never overwrite"
             )
+
+    for kind, actions in (
+        ("replay", ("validate", "report")),
+        ("revision", ("compare",)),
+        ("readiness", ("report",)),
+        ("benchmark", ("run",)),
+    ):
+        group = design_sub.add_parser(kind)
+        action_sub = group.add_subparsers(dest="design_action", required=True)
+        for action in actions:
+            command = action_sub.add_parser(action)
+            command.add_argument("input", help="Versioned design workflow JSON")
+            command.add_argument("--markdown", help="Create a new Markdown report; never overwrite")
 
     architecture = design_sub.add_parser(
         "architectural-review", help="Separate geometry, graph, clearance and approval results"
@@ -130,6 +148,31 @@ def main(argv: list[str] | None = None) -> int:
         if args.command in {"design", "geometry"}:
             try:
                 brief = load_json(args.input)
+                if args.command == "design" and args.design_kind in {
+                    "replay",
+                    "revision",
+                    "readiness",
+                    "benchmark",
+                }:
+                    from vnai.design_replay import validate_replay
+                    from vnai.design_revision import compare_revision
+                    from vnai.cad_readiness import readiness_report
+                    from vnai.architectural_benchmark import run_benchmark
+                    from vnai.design_reports import workflow_exit, workflow_markdown
+
+                    report = {
+                        "replay": validate_replay,
+                        "revision": compare_revision,
+                        "readiness": readiness_report,
+                        "benchmark": run_benchmark,
+                    }[args.design_kind](brief)
+                    if args.markdown:
+                        target = Path(args.markdown)
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        with target.open("x", encoding="utf-8", newline="\n") as stream:
+                            stream.write(workflow_markdown(report))
+                    print(json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False))
+                    return workflow_exit(report)
                 if args.command == "design" and args.design_kind == "candidates":
                     from vnai.candidate_evaluation import evaluate_candidates
                     from vnai.candidate_comparison import compare_candidates
@@ -178,7 +221,10 @@ def main(argv: list[str] | None = None) -> int:
                     validation = report
                 elif args.design_kind == "floorplan":
                     report = generate_floorplans(
-                        brief, candidate_count=args.candidates, max_steps=args.max_steps
+                        brief,
+                        candidate_count=args.candidates,
+                        max_steps=args.max_steps,
+                        include_provenance=args.provenance,
                     )
                     payload = (
                         json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False) + "\n"

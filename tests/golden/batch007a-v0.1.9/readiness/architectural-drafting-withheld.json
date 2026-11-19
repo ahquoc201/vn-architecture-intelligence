@@ -1,0 +1,76 @@
+{
+  "full_report_sha256": "78570183c4019e9c0c3bc1fc934a293f9d30970cb0198ab2b5d40d08afd806e3",
+  "status": "INCOMPLETE",
+  "states": {
+    "readiness_status": "INCOMPLETE"
+  },
+  "candidate_digest": null,
+  "specification_digest": null,
+  "checks": [
+    {
+      "id": "brief_program",
+      "status": "VERIFIED",
+      "reason": "Actual brief/program completeness, not inferred from generated status."
+    },
+    {
+      "id": "zoning",
+      "status": "VERIFIED",
+      "reason": "Current source zoning must be complete, consistent and content-bound."
+    },
+    {
+      "id": "original_hard_replay",
+      "status": "VERIFIED",
+      "reason": "Independent replay: VERIFIED"
+    },
+    {
+      "id": "geometry",
+      "status": "VERIFIED",
+      "reason": "Current spatial validation; source/reference errors do not prove physical failure."
+    },
+    {
+      "id": "selection_review",
+      "status": "VERIFIED",
+      "reason": "Required SELECTED; current SELECTED. Declared identities are not authenticated."
+    },
+    {
+      "id": "known_circulation_conflicts",
+      "status": "VERIFIED",
+      "reason": "No positive claim about missing routes: only observed BLOCKED conflicts disqualify."
+    },
+    {
+      "id": "multi_floor_stair_information",
+      "status": "NOT_APPLICABLE",
+      "reason": "Single-floor design needs no inter-floor stair connection."
+    }
+  ],
+  "stages": {
+    "room_geometry": {
+      "status": "READY_FOR_DRAFTING",
+      "scope": "SUPPLIED_ROOM_POLYGONS_ONLY",
+      "prerequisites": []
+    },
+    "architectural_walls_openings": {
+      "status": "INCOMPLETE",
+      "scope": "EXTERNAL_INFORMATION_NOT_VALIDATED_FOR_DRAFTING",
+      "prerequisites": [
+        "Future validated wall thicknesses/assemblies and hosted opening schedules"
+      ]
+    },
+    "stairs": {
+      "status": "NOT_APPLICABLE",
+      "scope": "NO_INTER_FLOOR_STAIR",
+      "prerequisites": []
+    },
+    "annotations": {
+      "status": "INCOMPLETE",
+      "scope": "DECLARED_LABEL_AND_SHEET_INFORMATION_ONLY",
+      "prerequisites": [
+        "Explicit sheet title/scale and exact frame, units, floor IDs and room labels"
+      ]
+    }
+  },
+  "coverage": null,
+  "unresolved_feedback": null,
+  "approval_invalidated": null,
+  "child_approval_record_valid": null
+}

@@ -48,3 +48,9 @@ Batch 006-B: `docs/CIRCULATION_CONTRACT.md` separates candidate selection, expli
 geometry, graph connectivity, bounded walking clearance and architect decision records.
 Never infer a door from adjacency, or approval from selection/VALID/GRAPH_CONNECTED.
 Missing opening, obstacle or stair data remains unresolved. Technical compliance is a separate review.
+
+
+Batch 007-A: read `docs/DESIGN_REPLAY_CAD_READINESS_CONTRACT.md` and the benchmark
+protocol. Request actual provenance, replay original constraints independently, preserve
+parent/child revisions and record real feedback separately from approval. Scoped drafting
+readiness never grants CAD writes or construction readiness. Synthetic oracles are not expert reviews.

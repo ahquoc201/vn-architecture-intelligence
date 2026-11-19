@@ -58,7 +58,10 @@ def run() -> None:
         python = env_dir / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
         env = {k: v for k, v in os.environ.items() if k not in {"PYTHONPATH", "PYTHONHOME"}}
         subprocess.run(
-            [str(python), "-m", "pip", "install", str(wheel)], check=True, cwd=work, env=env
+            [str(python), "-m", "pip", "install", str(wheel) + "[cad]"],
+            check=True,
+            cwd=work,
+            env=env,
         )
         for source in (root / "examples" / "batch005").glob("*.json"):
             shutil.copyfile(source, work / source.name)
@@ -68,6 +71,8 @@ def run() -> None:
             shutil.copyfile(source, work / ("review-" + source.name))
         for source in (root / "examples/batch006c").glob("*.json"):
             shutil.copyfile(source, work / ("evaluation-" + source.name))
+        for source in (root / "examples/batch007a").glob("*/*.json"):
+            shutil.copyfile(source, work / ("workflow-" + source.parent.name + "-" + source.name))
         shutil.copyfile(root / "examples/townhouse_4x20_brief.json", work / "brief.json")
         shutil.copyfile(root / "examples/townhouse_sample.json", work / "legacy.json")
         commands = [
@@ -121,6 +126,48 @@ def run() -> None:
                 ),
                 (["design", "candidates", "rank", "evaluation-ranking-withheld.json"], 3),
                 (["design", "candidates", "rank", "evaluation-all-ineligible.json"], 4),
+            ]
+        )
+        commands.extend(
+            [
+                (["design", "replay", "validate", "workflow-replay-valid-provenance.json"], 0),
+                (
+                    ["design", "replay", "report", "workflow-replay-modified-room-dimensions.json"],
+                    1,
+                ),
+                (
+                    [
+                        "design",
+                        "revision",
+                        "compare",
+                        "workflow-revision-valid-manual-revision.json",
+                    ],
+                    0,
+                ),
+                (
+                    [
+                        "design",
+                        "readiness",
+                        "report",
+                        "workflow-readiness-room-geometry-ready.json",
+                        "--markdown",
+                        "readiness.md",
+                    ],
+                    0,
+                ),
+                (
+                    [
+                        "design",
+                        "readiness",
+                        "report",
+                        "workflow-readiness-selected-without-approval.json",
+                    ],
+                    3,
+                ),
+                (["design", "benchmark", "run", "workflow-benchmark-benchmark-a.json"], 0),
+                (["design", "benchmark", "run", "workflow-benchmark-benchmark-c.json"], 5),
+                (["design", "benchmark", "run", "workflow-benchmark-search-exhausted.json"], 6),
+                (["dxf", "legacy.json", "--out", "legacy-smoke.dxf"], 0),
             ]
         )
         for args, expected in commands:
@@ -186,6 +233,38 @@ def run() -> None:
                 )
                 if replay.returncode != expected or json.loads(replay.stdout) != evaluation:
                     raise RuntimeError("Installed evaluation is not deterministic")
+            if args[:2] in (
+                ["design", "replay"],
+                ["design", "revision"],
+                ["design", "readiness"],
+                ["design", "benchmark"],
+            ):
+                workflow = json.loads(result.stdout)
+                if (
+                    workflow["cad_writes_permitted"]
+                    or workflow["standards_review"] != "NOT_EVALUATED"
+                    or workflow["fengshui_review"] != "NOT_EVALUATED"
+                ):
+                    raise RuntimeError(
+                        "Installed workflow crossed CAD/source governance boundaries"
+                    )
+                if args[1] == "readiness" and expected == 0:
+                    if (
+                        workflow["readiness_status"] != "READY_FOR_DRAFTING"
+                        or workflow["scope"] != ["room_geometry"]
+                        or workflow["approval_granted"]
+                    ):
+                        raise RuntimeError(
+                            "Installed readiness inferred complete drafting approval"
+                        )
+                if (
+                    args[1] == "replay"
+                    and expected == 0
+                    and workflow["replay_status"] != "VERIFIED"
+                ):
+                    raise RuntimeError("Installed replay failed its original-constraint oracle")
+            if args[0] == "dxf" and not (work / "legacy-smoke.dxf").is_file():
+                raise RuntimeError("Existing schematic DXF behavior no longer works from wheel")
             results.append({"command": args, "exit_code": result.returncode})
         location = subprocess.check_output(
             [str(python), "-I", "-c", "import vnai; print(vnai.__file__)"],

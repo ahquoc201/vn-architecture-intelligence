@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.9] - R3/BATCH-007-A design replay and CAD readiness (2026-11-19)
+
+- Add opt-in original generation provenance with exact specification, solver parameters and candidate snapshots; preserve default generation and DXF behavior.
+- Independently replay inventory, dimensions/area/floor bounds, topology, exact reservations and hard adjacency without search or stored pass flags.
+- Add digest-bound external revisions, feedback/supersession/resolution, confirmed baselines and fresh child review; no approval inheritance or identity authentication.
+- Add explicit scoped readiness for room polygons, wall/opening information, stairs and annotation availability; missing/unsupported stages remain visible and CAD writes stay disabled.
+- Add three synthetic residential benchmarks, honest unsupported/exhausted outcomes, separate timing observations, human review protocol/template, schemas/oracles, CLI and fresh-wheel/DXF checks.
+- Update single-agent house-design guidance and preserve historical contracts/goldens. Actual expert architectural review and oracles remain pending.
+
+
 ## [0.1.8] - R2/BATCH-006-C evidence-based candidate evaluation (2026-11-19)
 
 - Recompute deterministic, digest-bound geometry, room inventory, adjacency, opening, graph, planar-clearance and stair metrics using established review contracts.

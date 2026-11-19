@@ -128,3 +128,19 @@ Read `docs/CANDIDATE_EVALUATION_CONTRACT.md` for input, metric units, evidence s
 5. Run `vnai design candidates rank <request>` only under the explicit policy. Explain why the leader changes with weights and why a tie has no unique winner. Withhold definitive ranking for missing critical evidence, unavailable required criteria or incompatible baselines. Partial ordering is conditional and requires allow_partial_ranking; no automatic selection follows from a policy leader.
 6. Ask the architect to review trade-offs and supply unresolved requirements, then record feedback as a separate design decision/revised brief. Selection, REVIEWED and APPROVED remain separate Batch 006-B content-bound states. Never promote feedback or engine rank into approval. Preserve prior reports and version stamps.
 7. Keep standards/QCVN/TCVN and optional source-grounded Feng Shui as separate advisory layers, subject to source-clause/edition/page and expert/test gates. No unverified aesthetic, safety or Feng Shui score; no CAD modifications or new authority is granted by evaluation.
+
+
+## R3 Batch 007-A: replay and review before drafting
+
+Read `docs/DESIGN_REPLAY_CAD_READINESS_CONTRACT.md` and use `docs/ARCHITECTURAL_BENCHMARK_PROTOCOL.md` when collecting human review. Keep one user-facing agent and deterministic Python tools.
+
+1. Collect confirmed requirements and visible assumptions, validate the brief, build the existing program and establish governed zoning.
+2. Generate alternatives with `vnai design floorplan generate <spec> --provenance`. Preserve actual original specifications/overrides, sidecars and candidates; never infer missing historical constraints from geometry.
+3. Validate geometry, openings, graph, clearance and applicable stairs; compare alternatives under explicit compatible policies. Scores never prove approval or technical compliance.
+4. Record actual architect feedback with exact candidate/design digests, affected IDs, requested changes, rationale and blocking state. Never invent reviewer names, dates, expert comments or resolutions. Use the unfilled template and distinguish software expectations from expert oracles.
+5. Preserve the parent and compare an externally supplied child with `vnai design revision compare <file>`. Distinguish confirmed requirement changes, architect requests, AI proposals and unresolved assumptions. Changed requirements need an explicit confirmed revised baseline; approval is not inherited.
+6. Run `vnai design replay validate <file>` / `report`. Current geometry must satisfy original dimensions, areas, floors, adjacency and reservations regardless of stored passed flags. Missing/stale/unsupported evidence is not a pass. Manual revisions need not reproduce the solver grid layout.
+7. Obtain explicit child-bound architect resolution of blocking feedback and fresh review/approval when required. Preserve evidence only where exact dependencies remain unchanged; never copy whole parent approval/evaluation as proof of a child.
+8. Run `vnai design readiness report <file>` under explicit stages/review/circulation/evaluation policy. Room-geometry readiness does not prove full wall/opening/stair/annotation readiness. Explain missing prerequisites and retain cad_writes_permitted=false even for READY_FOR_DRAFTING.
+9. Obtain separate explicit authorization before future CAD operations. This batch adds no AutoCAD MCP, DWG edits, complete wall/stair drafting or annotation generation; existing DXF is schematic only.
+10. Keep optional source-grounded Feng Shui and QCVN/TCVN review separate/advisory under source/expert/test gates. Report mandatory safety/legal issues visibly; never automatically change geometry to hide or resolve a regulatory warning.

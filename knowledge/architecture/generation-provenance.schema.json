@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "type": "integer"
+    },
+    "method": {
+      "const": "generation-provenance-v1"
+    },
+    "generation_engine_version": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "generation_specification": {
+      "$ref": "floorplan-input.schema.json"
+    },
+    "origin_candidate": {
+      "$ref": "floorplan-candidate.schema.json"
+    },
+    "dependency_digests": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "brief": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "program": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "zoning": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "site_floor_geometry": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "specification": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "generation_input": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "origin_candidate": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "brief",
+        "program",
+        "zoning",
+        "site_floor_geometry",
+        "specification",
+        "generation_input",
+        "origin_candidate"
+      ]
+    },
+    "solver": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "parameters": {
+          "type": "object"
+        },
+        "tolerances": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "algorithm",
+        "parameters",
+        "tolerances"
+      ]
+    },
+    "constraint_register": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rooms": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "maxItems": 12
+        },
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "maxItems": 12
+        },
+        "relationships": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "maxItems": 128
+        },
+        "reservations": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "maxItems": 500
+        }
+      },
+      "required": [
+        "rooms",
+        "dimensions",
+        "relationships",
+        "reservations"
+      ]
+    },
+    "provenance_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "required": [
+    "schema_version",
+    "method",
+    "generation_engine_version",
+    "generation_specification",
+    "origin_candidate",
+    "dependency_digests",
+    "solver",
+    "constraint_register",
+    "provenance_digest"
+  ]
+}

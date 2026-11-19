@@ -1,0 +1,15 @@
+{
+  "full_report_sha256": "658f24b060f38f48f1cd1ba6a9f1718a934924e67a9de1e22ca93014f91265f1",
+  "status": "INCOMPLETE",
+  "states": {
+    "replay_status": "INCOMPLETE"
+  },
+  "candidate_digest": "f28f103c391405470bf445417087ac2699a5879f25b28c866edb9e4f2c9861a1",
+  "specification_digest": null,
+  "checks": [],
+  "stages": null,
+  "coverage": {},
+  "unresolved_feedback": null,
+  "approval_invalidated": null,
+  "child_approval_record_valid": null
+}

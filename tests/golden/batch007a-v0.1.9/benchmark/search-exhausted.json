@@ -1,0 +1,30 @@
+{
+  "full_report_sha256": "6a339a163de2ca854c9317e8257c92c92e4ae938539cbaf11fb003d2da75ccb6",
+  "status": "VALID",
+  "states": {
+    "benchmark_status": "COMPLETED"
+  },
+  "candidate_digest": null,
+  "specification_digest": "52f7f7080c1da26ecd29fc9237555b7a1b8d918a8c4e3ff84dc346826e327646",
+  "checks": null,
+  "stages": null,
+  "coverage": null,
+  "unresolved_feedback": null,
+  "approval_invalidated": null,
+  "child_approval_record_valid": null,
+  "generation_status": "SEARCH_EXHAUSTED",
+  "metrics": {
+    "generation_status": "SEARCH_EXHAUSTED",
+    "distinct_candidates": 0,
+    "search_effort": {
+      "steps": 1,
+      "termination": "STEP_LIMIT",
+      "optimality_proven": false,
+      "distinct_solutions_evaluated": 0,
+      "equivalent_layouts_deduplicated": true
+    },
+    "replay": [],
+    "architectural_quality_assessed": false
+  },
+  "expert_oracle_status": "NOT_ESTABLISHED"
+}

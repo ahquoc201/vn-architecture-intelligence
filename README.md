@@ -1,6 +1,6 @@
 # Vietnam Architecture Intelligence (VNAI)
 
-**Phiên bản 0.1.8 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
+**Phiên bản 0.1.9 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
 
 Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, với ba nhiệm vụ tách biệt:
 
@@ -160,3 +160,18 @@ vnai design candidates rank examples/batch006c/ranking-withheld.json
 ```
 
 The synthetic area policy ranks A (0.916667), B (0.25), C (0.083333); changed-weights.json makes B the policy leader. These geometry-only preferences leave circulation proof unresolved. The strict circulation fixture blocks a definitive ranking when clearance is unknown, despite graph connectivity. See [evaluation contracts](docs/CANDIDATE_EVALUATION_CONTRACT.md) for units, denominators, normalization, applicability, digest dependencies, explicit scope, tie handling and exit codes. Markdown files use exclusive creation; preserve prior reports.
+
+
+## R3 Batch 007-A: design replay and CAD readiness (v0.1.9)
+
+Explicit generation provenance enables independent replay of original dimensions, areas, floors, adjacency and reservations. External revisions retain parent/child bindings; stale evidence and parent approval do not silently survive. Room-polygon readiness is separate from complete architectural drafting and CAD-write authorization.
+
+```powershell
+vnai design floorplan generate examples/batch006a/two-room.json --provenance
+vnai design replay validate examples/batch007a/replay/valid-provenance.json
+vnai design revision compare examples/batch007a/revision/valid-manual-revision.json
+vnai design readiness report examples/batch007a/readiness/room-geometry-ready.json
+vnai design benchmark run examples/batch007a/benchmark/benchmark-a.json
+```
+
+See [replay/revision/readiness contracts](docs/DESIGN_REPLAY_CAD_READINESS_CONTRACT.md), [benchmark protocol](docs/ARCHITECTURAL_BENCHMARK_PROTOCOL.md) and [human review template](docs/ARCHITECTURAL_BENCHMARK_REVIEW_TEMPLATE.md). All scenarios are synthetic; actual expert review remains pending. The 8x15 case reports unsupported qualitative hard separation. Legacy candidates without original provenance remain incomplete. Existing schematic DXF stays compatible; no new CAD writer is added.
