@@ -70,3 +70,10 @@ For hosted door/window drafting, read `docs/OPENING_DRAFTING_CONTRACT.md`. Confi
 wall bindings, rough/frame/leaf/clear dimensions and plan-cut elevation before generation.
 Inspect actual previews/schedules and replay fresh wall-aware clearance; retain window
 floor obstructions and source conflicts. No geometry success grants approval or CAD writes.
+
+For staircase drafting, read `docs/STAIR_GEOMETRY_CONTRACT.md`. Bind exact B2 revisions,
+confirm floor datum/elevations, riser allocations, flights/landings, floor openings and
+known overheads before `design stairs draft`. Distinguish n risers from n-1 ordinary
+treads and true sections from developed paths. Inspect actual plan/section/schedule,
+known collisions and uncovered headroom; request real architect feedback. Source geometry
+stays immutable, approval ungranted, standards separate and CAD false.

@@ -1,0 +1,3843 @@
+{
+  "drafting_status": "INCOMPLETE",
+  "geometry_status": "VALID",
+  "full_report_sha256": "205d2c6c0454d7f80c7f4845a1f5682479343922af4d9452af4828524d560a22",
+  "stair_revision_id": "SR-238616dc5664154798f95bcb8eb9a752784df914f9d82c47706b9c34abd69139",
+  "stairs": [
+    {
+      "id": "S1",
+      "mark": "ST01",
+      "type": "U",
+      "source_floor": "F1",
+      "destination_floor": "F2",
+      "stairwell_ids": [
+        "SW-F1",
+        "SW-F2"
+      ],
+      "envelope": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                4.0,
+                0.0
+              ],
+              [
+                9.0,
+                0.0
+              ],
+              [
+                9.0,
+                8.0
+              ],
+              [
+                4.0,
+                8.0
+              ],
+              [
+                4.0,
+                0.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "flights": [
+        {
+          "id": "FL1",
+          "direction": [
+            1,
+            0
+          ],
+          "width_m": 1.0,
+          "risers": 10,
+          "ordinary_treads": 9,
+          "riser_height_m": 0.165,
+          "last_riser_height_m": 0.165,
+          "riser_height_origin": "derived_exact_total_rise_over_total_risers",
+          "tread_depth_m": 0.25,
+          "run_m": 2.25,
+          "pitch_degrees": 33.424811182603804,
+          "start_elevation_m": 0.0,
+          "arrival_elevation_m": 1.65,
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    4.0,
+                    1.0
+                  ],
+                  [
+                    6.25,
+                    1.0
+                  ],
+                  [
+                    6.25,
+                    2.0
+                  ],
+                  [
+                    4.0,
+                    2.0
+                  ],
+                  [
+                    4.0,
+                    1.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "entry_edge": [
+            [
+              4.0,
+              1.0
+            ],
+            [
+              4.0,
+              2.0
+            ]
+          ],
+          "exit_edge": [
+            [
+              6.25,
+              1.0
+            ],
+            [
+              6.25,
+              2.0
+            ]
+          ],
+          "risers_geometry": [
+            {
+              "id": "FL1-R1",
+              "line": [
+                [
+                  4.0,
+                  1.0
+                ],
+                [
+                  4.0,
+                  2.0
+                ]
+              ],
+              "bottom_m": 0.0,
+              "top_m": 0.165
+            },
+            {
+              "id": "FL1-R2",
+              "line": [
+                [
+                  4.25,
+                  1.0
+                ],
+                [
+                  4.25,
+                  2.0
+                ]
+              ],
+              "bottom_m": 0.165,
+              "top_m": 0.33
+            },
+            {
+              "id": "FL1-R3",
+              "line": [
+                [
+                  4.5,
+                  1.0
+                ],
+                [
+                  4.5,
+                  2.0
+                ]
+              ],
+              "bottom_m": 0.33,
+              "top_m": 0.495
+            },
+            {
+              "id": "FL1-R4",
+              "line": [
+                [
+                  4.75,
+                  1.0
+                ],
+                [
+                  4.75,
+                  2.0
+                ]
+              ],
+              "bottom_m": 0.495,
+              "top_m": 0.66
+            },
+            {
+              "id": "FL1-R5",
+              "line": [
+                [
+                  5.0,
+                  1.0
+                ],
+                [
+                  5.0,
+                  2.0
+                ]
+              ],
+              "bottom_m": 0.66,
+              "top_m": 0.825
+            },
+            {
+              "id": "FL1-R6",
+              "line": [
+                [
+                  5.25,
+                  1.0
+                ],
+                [
+                  5.25,
+                  2.0
+                ]
+              ],
+              "bottom_m": 0.825,
+              "top_m": 0.99
+            },
+            {
+              "id": "FL1-R7",
+              "line": [
+                [
+                  5.5,
+                  1.0
+                ],
+                [
+                  5.5,
+                  2.0
+                ]
+              ],
+              "bottom_m": 0.99,
+              "top_m": 1.155
+            },
+            {
+              "id": "FL1-R8",
+              "line": [
+                [
+                  5.75,
+                  1.0
+                ],
+                [
+                  5.75,
+                  2.0
+                ]
+              ],
+              "bottom_m": 1.155,
+              "top_m": 1.32
+            },
+            {
+              "id": "FL1-R9",
+              "line": [
+                [
+                  6.0,
+                  1.0
+                ],
+                [
+                  6.0,
+                  2.0
+                ]
+              ],
+              "bottom_m": 1.32,
+              "top_m": 1.485
+            },
+            {
+              "id": "FL1-R10",
+              "line": [
+                [
+                  6.25,
+                  1.0
+                ],
+                [
+                  6.25,
+                  2.0
+                ]
+              ],
+              "bottom_m": 1.485,
+              "top_m": 1.65
+            }
+          ],
+          "treads": [
+            {
+              "id": "FL1-T1",
+              "kind": "tread",
+              "flight_id": "FL1",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        4.0,
+                        1.0
+                      ],
+                      [
+                        4.25,
+                        1.0
+                      ],
+                      [
+                        4.25,
+                        2.0
+                      ],
+                      [
+                        4.0,
+                        2.0
+                      ],
+                      [
+                        4.0,
+                        1.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 0.165,
+              "nosing_line": null
+            },
+            {
+              "id": "FL1-T2",
+              "kind": "tread",
+              "flight_id": "FL1",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        4.25,
+                        1.0
+                      ],
+                      [
+                        4.5,
+                        1.0
+                      ],
+                      [
+                        4.5,
+                        2.0
+                      ],
+                      [
+                        4.25,
+                        2.0
+                      ],
+                      [
+                        4.25,
+                        1.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 0.33,
+              "nosing_line": null
+            },
+            {
+              "id": "FL1-T3",
+              "kind": "tread",
+              "flight_id": "FL1",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        4.5,
+                        1.0
+                      ],
+                      [
+                        4.75,
+                        1.0
+                      ],
+                      [
+                        4.75,
+                        2.0
+                      ],
+                      [
+                        4.5,
+                        2.0
+                      ],
+                      [
+                        4.5,
+                        1.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 0.495,
+              "nosing_line": null
+            },
+            {
+              "id": "FL1-T4",
+              "kind": "tread",
+              "flight_id": "FL1",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        4.75,
+                        1.0
+                      ],
+                      [
+                        5.0,
+                        1.0
+                      ],
+                      [
+                        5.0,
+                        2.0
+                      ],
+                      [
+                        4.75,
+                        2.0
+                      ],
+                      [
+                        4.75,
+                        1.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 0.66,
+              "nosing_line": null
+            },
+            {
+              "id": "FL1-T5",
+              "kind": "tread",
+              "flight_id": "FL1",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        5.0,
+                        1.0
+                      ],
+                      [
+                        5.25,
+                        1.0
+                      ],
+                      [
+                        5.25,
+                        2.0
+                      ],
+                      [
+                        5.0,
+                        2.0
+                      ],
+                      [
+                        5.0,
+                        1.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 0.825,
+              "nosing_line": null
+            },
+            {
+              "id": "FL1-T6",
+              "kind": "tread",
+              "flight_id": "FL1",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        5.25,
+                        1.0
+                      ],
+                      [
+                        5.5,
+                        1.0
+                      ],
+                      [
+                        5.5,
+                        2.0
+                      ],
+                      [
+                        5.25,
+                        2.0
+                      ],
+                      [
+                        5.25,
+                        1.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 0.99,
+              "nosing_line": null
+            },
+            {
+              "id": "FL1-T7",
+              "kind": "tread",
+              "flight_id": "FL1",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        5.5,
+                        1.0
+                      ],
+                      [
+                        5.75,
+                        1.0
+                      ],
+                      [
+                        5.75,
+                        2.0
+                      ],
+                      [
+                        5.5,
+                        2.0
+                      ],
+                      [
+                        5.5,
+                        1.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 1.155,
+              "nosing_line": null
+            },
+            {
+              "id": "FL1-T8",
+              "kind": "tread",
+              "flight_id": "FL1",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        5.75,
+                        1.0
+                      ],
+                      [
+                        6.0,
+                        1.0
+                      ],
+                      [
+                        6.0,
+                        2.0
+                      ],
+                      [
+                        5.75,
+                        2.0
+                      ],
+                      [
+                        5.75,
+                        1.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 1.32,
+              "nosing_line": null
+            },
+            {
+              "id": "FL1-T9",
+              "kind": "tread",
+              "flight_id": "FL1",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        6.0,
+                        1.0
+                      ],
+                      [
+                        6.25,
+                        1.0
+                      ],
+                      [
+                        6.25,
+                        2.0
+                      ],
+                      [
+                        6.0,
+                        2.0
+                      ],
+                      [
+                        6.0,
+                        1.0
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 1.485,
+              "nosing_line": null
+            }
+          ],
+          "walking_line": [
+            [
+              4.0,
+              1.5
+            ],
+            [
+              6.25,
+              1.5
+            ]
+          ],
+          "section_profile": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.165
+            ],
+            [
+              0.25,
+              0.165
+            ],
+            [
+              0.25,
+              0.33
+            ],
+            [
+              0.5,
+              0.33
+            ],
+            [
+              0.5,
+              0.495
+            ],
+            [
+              0.75,
+              0.495
+            ],
+            [
+              0.75,
+              0.66
+            ],
+            [
+              1.0,
+              0.66
+            ],
+            [
+              1.0,
+              0.825
+            ],
+            [
+              1.25,
+              0.825
+            ],
+            [
+              1.25,
+              0.99
+            ],
+            [
+              1.5,
+              0.99
+            ],
+            [
+              1.5,
+              1.155
+            ],
+            [
+              1.75,
+              1.155
+            ],
+            [
+              1.75,
+              1.32
+            ],
+            [
+              2.0,
+              1.32
+            ],
+            [
+              2.0,
+              1.485
+            ],
+            [
+              2.25,
+              1.485
+            ],
+            [
+              2.25,
+              1.65
+            ]
+          ]
+        },
+        {
+          "id": "FL2",
+          "direction": [
+            -1,
+            0
+          ],
+          "width_m": 1.0,
+          "risers": 10,
+          "ordinary_treads": 9,
+          "riser_height_m": 0.165,
+          "last_riser_height_m": 0.165,
+          "riser_height_origin": "derived_exact_total_rise_over_total_risers",
+          "tread_depth_m": 0.25,
+          "run_m": 2.25,
+          "pitch_degrees": 33.424811182603804,
+          "start_elevation_m": 1.65,
+          "arrival_elevation_m": 3.3,
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    4.0,
+                    2.2
+                  ],
+                  [
+                    6.25,
+                    2.2
+                  ],
+                  [
+                    6.25,
+                    3.2
+                  ],
+                  [
+                    4.0,
+                    3.2
+                  ],
+                  [
+                    4.0,
+                    2.2
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "entry_edge": [
+            [
+              6.25,
+              3.2
+            ],
+            [
+              6.25,
+              2.2
+            ]
+          ],
+          "exit_edge": [
+            [
+              4.0,
+              3.2
+            ],
+            [
+              4.0,
+              2.2
+            ]
+          ],
+          "risers_geometry": [
+            {
+              "id": "FL2-R1",
+              "line": [
+                [
+                  6.25,
+                  3.2
+                ],
+                [
+                  6.25,
+                  2.2
+                ]
+              ],
+              "bottom_m": 1.65,
+              "top_m": 1.815
+            },
+            {
+              "id": "FL2-R2",
+              "line": [
+                [
+                  6.0,
+                  3.2
+                ],
+                [
+                  6.0,
+                  2.2
+                ]
+              ],
+              "bottom_m": 1.815,
+              "top_m": 1.98
+            },
+            {
+              "id": "FL2-R3",
+              "line": [
+                [
+                  5.75,
+                  3.2
+                ],
+                [
+                  5.75,
+                  2.2
+                ]
+              ],
+              "bottom_m": 1.98,
+              "top_m": 2.145
+            },
+            {
+              "id": "FL2-R4",
+              "line": [
+                [
+                  5.5,
+                  3.2
+                ],
+                [
+                  5.5,
+                  2.2
+                ]
+              ],
+              "bottom_m": 2.145,
+              "top_m": 2.31
+            },
+            {
+              "id": "FL2-R5",
+              "line": [
+                [
+                  5.25,
+                  3.2
+                ],
+                [
+                  5.25,
+                  2.2
+                ]
+              ],
+              "bottom_m": 2.31,
+              "top_m": 2.475
+            },
+            {
+              "id": "FL2-R6",
+              "line": [
+                [
+                  5.0,
+                  3.2
+                ],
+                [
+                  5.0,
+                  2.2
+                ]
+              ],
+              "bottom_m": 2.475,
+              "top_m": 2.64
+            },
+            {
+              "id": "FL2-R7",
+              "line": [
+                [
+                  4.75,
+                  3.2
+                ],
+                [
+                  4.75,
+                  2.2
+                ]
+              ],
+              "bottom_m": 2.64,
+              "top_m": 2.805
+            },
+            {
+              "id": "FL2-R8",
+              "line": [
+                [
+                  4.5,
+                  3.2
+                ],
+                [
+                  4.5,
+                  2.2
+                ]
+              ],
+              "bottom_m": 2.805,
+              "top_m": 2.97
+            },
+            {
+              "id": "FL2-R9",
+              "line": [
+                [
+                  4.25,
+                  3.2
+                ],
+                [
+                  4.25,
+                  2.2
+                ]
+              ],
+              "bottom_m": 2.97,
+              "top_m": 3.135
+            },
+            {
+              "id": "FL2-R10",
+              "line": [
+                [
+                  4.0,
+                  3.2
+                ],
+                [
+                  4.0,
+                  2.2
+                ]
+              ],
+              "bottom_m": 3.135,
+              "top_m": 3.3
+            }
+          ],
+          "treads": [
+            {
+              "id": "FL2-T1",
+              "kind": "tread",
+              "flight_id": "FL2",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        6.0,
+                        2.2
+                      ],
+                      [
+                        6.25,
+                        2.2
+                      ],
+                      [
+                        6.25,
+                        3.2
+                      ],
+                      [
+                        6.0,
+                        3.2
+                      ],
+                      [
+                        6.0,
+                        2.2
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 1.815,
+              "nosing_line": null
+            },
+            {
+              "id": "FL2-T2",
+              "kind": "tread",
+              "flight_id": "FL2",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        5.75,
+                        2.2
+                      ],
+                      [
+                        6.0,
+                        2.2
+                      ],
+                      [
+                        6.0,
+                        3.2
+                      ],
+                      [
+                        5.75,
+                        3.2
+                      ],
+                      [
+                        5.75,
+                        2.2
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 1.98,
+              "nosing_line": null
+            },
+            {
+              "id": "FL2-T3",
+              "kind": "tread",
+              "flight_id": "FL2",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        5.5,
+                        2.2
+                      ],
+                      [
+                        5.75,
+                        2.2
+                      ],
+                      [
+                        5.75,
+                        3.2
+                      ],
+                      [
+                        5.5,
+                        3.2
+                      ],
+                      [
+                        5.5,
+                        2.2
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 2.145,
+              "nosing_line": null
+            },
+            {
+              "id": "FL2-T4",
+              "kind": "tread",
+              "flight_id": "FL2",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        5.25,
+                        2.2
+                      ],
+                      [
+                        5.5,
+                        2.2
+                      ],
+                      [
+                        5.5,
+                        3.2
+                      ],
+                      [
+                        5.25,
+                        3.2
+                      ],
+                      [
+                        5.25,
+                        2.2
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 2.31,
+              "nosing_line": null
+            },
+            {
+              "id": "FL2-T5",
+              "kind": "tread",
+              "flight_id": "FL2",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        5.0,
+                        2.2
+                      ],
+                      [
+                        5.25,
+                        2.2
+                      ],
+                      [
+                        5.25,
+                        3.2
+                      ],
+                      [
+                        5.0,
+                        3.2
+                      ],
+                      [
+                        5.0,
+                        2.2
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 2.475,
+              "nosing_line": null
+            },
+            {
+              "id": "FL2-T6",
+              "kind": "tread",
+              "flight_id": "FL2",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        4.75,
+                        2.2
+                      ],
+                      [
+                        5.0,
+                        2.2
+                      ],
+                      [
+                        5.0,
+                        3.2
+                      ],
+                      [
+                        4.75,
+                        3.2
+                      ],
+                      [
+                        4.75,
+                        2.2
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 2.64,
+              "nosing_line": null
+            },
+            {
+              "id": "FL2-T7",
+              "kind": "tread",
+              "flight_id": "FL2",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        4.5,
+                        2.2
+                      ],
+                      [
+                        4.75,
+                        2.2
+                      ],
+                      [
+                        4.75,
+                        3.2
+                      ],
+                      [
+                        4.5,
+                        3.2
+                      ],
+                      [
+                        4.5,
+                        2.2
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 2.805,
+              "nosing_line": null
+            },
+            {
+              "id": "FL2-T8",
+              "kind": "tread",
+              "flight_id": "FL2",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        4.25,
+                        2.2
+                      ],
+                      [
+                        4.5,
+                        2.2
+                      ],
+                      [
+                        4.5,
+                        3.2
+                      ],
+                      [
+                        4.25,
+                        3.2
+                      ],
+                      [
+                        4.25,
+                        2.2
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 2.97,
+              "nosing_line": null
+            },
+            {
+              "id": "FL2-T9",
+              "kind": "tread",
+              "flight_id": "FL2",
+              "geometry": {
+                "type": "PolygonSet",
+                "units": "m",
+                "polygons": [
+                  {
+                    "exterior": [
+                      [
+                        4.0,
+                        2.2
+                      ],
+                      [
+                        4.25,
+                        2.2
+                      ],
+                      [
+                        4.25,
+                        3.2
+                      ],
+                      [
+                        4.0,
+                        3.2
+                      ],
+                      [
+                        4.0,
+                        2.2
+                      ]
+                    ],
+                    "holes": []
+                  }
+                ]
+              },
+              "elevation_m": 3.135,
+              "nosing_line": null
+            }
+          ],
+          "walking_line": [
+            [
+              6.25,
+              2.7
+            ],
+            [
+              4.0,
+              2.7
+            ]
+          ],
+          "section_profile": [
+            [
+              4.45,
+              1.65
+            ],
+            [
+              4.45,
+              1.815
+            ],
+            [
+              4.7,
+              1.815
+            ],
+            [
+              4.7,
+              1.98
+            ],
+            [
+              4.95,
+              1.98
+            ],
+            [
+              4.95,
+              2.145
+            ],
+            [
+              5.2,
+              2.145
+            ],
+            [
+              5.2,
+              2.31
+            ],
+            [
+              5.45,
+              2.31
+            ],
+            [
+              5.45,
+              2.475
+            ],
+            [
+              5.7,
+              2.475
+            ],
+            [
+              5.7,
+              2.64
+            ],
+            [
+              5.95,
+              2.64
+            ],
+            [
+              5.95,
+              2.805
+            ],
+            [
+              6.2,
+              2.805
+            ],
+            [
+              6.2,
+              2.97
+            ],
+            [
+              6.45,
+              2.97
+            ],
+            [
+              6.45,
+              3.135
+            ],
+            [
+              6.7,
+              3.135
+            ],
+            [
+              6.7,
+              3.3
+            ]
+          ]
+        }
+      ],
+      "surfaces": [
+        {
+          "id": "FL1-T1",
+          "kind": "tread",
+          "flight_id": "FL1",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    4.0,
+                    1.0
+                  ],
+                  [
+                    4.25,
+                    1.0
+                  ],
+                  [
+                    4.25,
+                    2.0
+                  ],
+                  [
+                    4.0,
+                    2.0
+                  ],
+                  [
+                    4.0,
+                    1.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 0.165,
+          "nosing_line": null
+        },
+        {
+          "id": "FL1-T2",
+          "kind": "tread",
+          "flight_id": "FL1",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    4.25,
+                    1.0
+                  ],
+                  [
+                    4.5,
+                    1.0
+                  ],
+                  [
+                    4.5,
+                    2.0
+                  ],
+                  [
+                    4.25,
+                    2.0
+                  ],
+                  [
+                    4.25,
+                    1.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 0.33,
+          "nosing_line": null
+        },
+        {
+          "id": "FL1-T3",
+          "kind": "tread",
+          "flight_id": "FL1",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    4.5,
+                    1.0
+                  ],
+                  [
+                    4.75,
+                    1.0
+                  ],
+                  [
+                    4.75,
+                    2.0
+                  ],
+                  [
+                    4.5,
+                    2.0
+                  ],
+                  [
+                    4.5,
+                    1.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 0.495,
+          "nosing_line": null
+        },
+        {
+          "id": "FL1-T4",
+          "kind": "tread",
+          "flight_id": "FL1",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    4.75,
+                    1.0
+                  ],
+                  [
+                    5.0,
+                    1.0
+                  ],
+                  [
+                    5.0,
+                    2.0
+                  ],
+                  [
+                    4.75,
+                    2.0
+                  ],
+                  [
+                    4.75,
+                    1.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 0.66,
+          "nosing_line": null
+        },
+        {
+          "id": "FL1-T5",
+          "kind": "tread",
+          "flight_id": "FL1",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    5.0,
+                    1.0
+                  ],
+                  [
+                    5.25,
+                    1.0
+                  ],
+                  [
+                    5.25,
+                    2.0
+                  ],
+                  [
+                    5.0,
+                    2.0
+                  ],
+                  [
+                    5.0,
+                    1.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 0.825,
+          "nosing_line": null
+        },
+        {
+          "id": "FL1-T6",
+          "kind": "tread",
+          "flight_id": "FL1",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    5.25,
+                    1.0
+                  ],
+                  [
+                    5.5,
+                    1.0
+                  ],
+                  [
+                    5.5,
+                    2.0
+                  ],
+                  [
+                    5.25,
+                    2.0
+                  ],
+                  [
+                    5.25,
+                    1.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 0.99,
+          "nosing_line": null
+        },
+        {
+          "id": "FL1-T7",
+          "kind": "tread",
+          "flight_id": "FL1",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    5.5,
+                    1.0
+                  ],
+                  [
+                    5.75,
+                    1.0
+                  ],
+                  [
+                    5.75,
+                    2.0
+                  ],
+                  [
+                    5.5,
+                    2.0
+                  ],
+                  [
+                    5.5,
+                    1.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 1.155,
+          "nosing_line": null
+        },
+        {
+          "id": "FL1-T8",
+          "kind": "tread",
+          "flight_id": "FL1",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    5.75,
+                    1.0
+                  ],
+                  [
+                    6.0,
+                    1.0
+                  ],
+                  [
+                    6.0,
+                    2.0
+                  ],
+                  [
+                    5.75,
+                    2.0
+                  ],
+                  [
+                    5.75,
+                    1.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 1.32,
+          "nosing_line": null
+        },
+        {
+          "id": "FL1-T9",
+          "kind": "tread",
+          "flight_id": "FL1",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    6.0,
+                    1.0
+                  ],
+                  [
+                    6.25,
+                    1.0
+                  ],
+                  [
+                    6.25,
+                    2.0
+                  ],
+                  [
+                    6.0,
+                    2.0
+                  ],
+                  [
+                    6.0,
+                    1.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 1.485,
+          "nosing_line": null
+        },
+        {
+          "id": "LAND1",
+          "kind": "landing",
+          "flight_id": "FL1",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    6.25,
+                    1.0
+                  ],
+                  [
+                    7.25,
+                    1.0
+                  ],
+                  [
+                    7.25,
+                    3.2
+                  ],
+                  [
+                    6.25,
+                    3.2
+                  ],
+                  [
+                    6.25,
+                    1.0
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 1.65,
+          "walking_line": [
+            [
+              6.25,
+              1.5
+            ],
+            [
+              6.75,
+              1.5
+            ],
+            [
+              6.75,
+              2.7
+            ],
+            [
+              6.25,
+              2.7
+            ]
+          ],
+          "developed_length_m": 2.2,
+          "dimensions_m": [
+            1.0,
+            2.2
+          ],
+          "elevation_origin": "supplied"
+        },
+        {
+          "id": "FL2-T1",
+          "kind": "tread",
+          "flight_id": "FL2",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    6.0,
+                    2.2
+                  ],
+                  [
+                    6.25,
+                    2.2
+                  ],
+                  [
+                    6.25,
+                    3.2
+                  ],
+                  [
+                    6.0,
+                    3.2
+                  ],
+                  [
+                    6.0,
+                    2.2
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 1.815,
+          "nosing_line": null
+        },
+        {
+          "id": "FL2-T2",
+          "kind": "tread",
+          "flight_id": "FL2",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    5.75,
+                    2.2
+                  ],
+                  [
+                    6.0,
+                    2.2
+                  ],
+                  [
+                    6.0,
+                    3.2
+                  ],
+                  [
+                    5.75,
+                    3.2
+                  ],
+                  [
+                    5.75,
+                    2.2
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 1.98,
+          "nosing_line": null
+        },
+        {
+          "id": "FL2-T3",
+          "kind": "tread",
+          "flight_id": "FL2",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    5.5,
+                    2.2
+                  ],
+                  [
+                    5.75,
+                    2.2
+                  ],
+                  [
+                    5.75,
+                    3.2
+                  ],
+                  [
+                    5.5,
+                    3.2
+                  ],
+                  [
+                    5.5,
+                    2.2
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 2.145,
+          "nosing_line": null
+        },
+        {
+          "id": "FL2-T4",
+          "kind": "tread",
+          "flight_id": "FL2",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    5.25,
+                    2.2
+                  ],
+                  [
+                    5.5,
+                    2.2
+                  ],
+                  [
+                    5.5,
+                    3.2
+                  ],
+                  [
+                    5.25,
+                    3.2
+                  ],
+                  [
+                    5.25,
+                    2.2
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 2.31,
+          "nosing_line": null
+        },
+        {
+          "id": "FL2-T5",
+          "kind": "tread",
+          "flight_id": "FL2",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    5.0,
+                    2.2
+                  ],
+                  [
+                    5.25,
+                    2.2
+                  ],
+                  [
+                    5.25,
+                    3.2
+                  ],
+                  [
+                    5.0,
+                    3.2
+                  ],
+                  [
+                    5.0,
+                    2.2
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 2.475,
+          "nosing_line": null
+        },
+        {
+          "id": "FL2-T6",
+          "kind": "tread",
+          "flight_id": "FL2",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    4.75,
+                    2.2
+                  ],
+                  [
+                    5.0,
+                    2.2
+                  ],
+                  [
+                    5.0,
+                    3.2
+                  ],
+                  [
+                    4.75,
+                    3.2
+                  ],
+                  [
+                    4.75,
+                    2.2
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 2.64,
+          "nosing_line": null
+        },
+        {
+          "id": "FL2-T7",
+          "kind": "tread",
+          "flight_id": "FL2",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    4.5,
+                    2.2
+                  ],
+                  [
+                    4.75,
+                    2.2
+                  ],
+                  [
+                    4.75,
+                    3.2
+                  ],
+                  [
+                    4.5,
+                    3.2
+                  ],
+                  [
+                    4.5,
+                    2.2
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 2.805,
+          "nosing_line": null
+        },
+        {
+          "id": "FL2-T8",
+          "kind": "tread",
+          "flight_id": "FL2",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    4.25,
+                    2.2
+                  ],
+                  [
+                    4.5,
+                    2.2
+                  ],
+                  [
+                    4.5,
+                    3.2
+                  ],
+                  [
+                    4.25,
+                    3.2
+                  ],
+                  [
+                    4.25,
+                    2.2
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 2.97,
+          "nosing_line": null
+        },
+        {
+          "id": "FL2-T9",
+          "kind": "tread",
+          "flight_id": "FL2",
+          "geometry": {
+            "type": "PolygonSet",
+            "units": "m",
+            "polygons": [
+              {
+                "exterior": [
+                  [
+                    4.0,
+                    2.2
+                  ],
+                  [
+                    4.25,
+                    2.2
+                  ],
+                  [
+                    4.25,
+                    3.2
+                  ],
+                  [
+                    4.0,
+                    3.2
+                  ],
+                  [
+                    4.0,
+                    2.2
+                  ]
+                ],
+                "holes": []
+              }
+            ]
+          },
+          "elevation_m": 3.135,
+          "nosing_line": null
+        }
+      ],
+      "rise_m": 3.3,
+      "source_elevation_m": 0.0,
+      "destination_elevation_m": 3.3,
+      "final_elevation_m": 3.3,
+      "closure_residual_m": 0.0,
+      "entry_edge": [
+        [
+          4.0,
+          1.0
+        ],
+        [
+          4.0,
+          2.0
+        ]
+      ],
+      "exit_edge": [
+        [
+          4.0,
+          3.2
+        ],
+        [
+          4.0,
+          2.2
+        ]
+      ],
+      "entry_point": [
+        4.0,
+        1.5
+      ],
+      "exit_point": [
+        4.0,
+        2.7
+      ],
+      "section_kind": "DEVELOPED_EXPLICIT_WALKING_LINE",
+      "sections": [
+        {
+          "kind": "flight",
+          "id": "FL1",
+          "profile": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.165
+            ],
+            [
+              0.25,
+              0.165
+            ],
+            [
+              0.25,
+              0.33
+            ],
+            [
+              0.5,
+              0.33
+            ],
+            [
+              0.5,
+              0.495
+            ],
+            [
+              0.75,
+              0.495
+            ],
+            [
+              0.75,
+              0.66
+            ],
+            [
+              1.0,
+              0.66
+            ],
+            [
+              1.0,
+              0.825
+            ],
+            [
+              1.25,
+              0.825
+            ],
+            [
+              1.25,
+              0.99
+            ],
+            [
+              1.5,
+              0.99
+            ],
+            [
+              1.5,
+              1.155
+            ],
+            [
+              1.75,
+              1.155
+            ],
+            [
+              1.75,
+              1.32
+            ],
+            [
+              2.0,
+              1.32
+            ],
+            [
+              2.0,
+              1.485
+            ],
+            [
+              2.25,
+              1.485
+            ],
+            [
+              2.25,
+              1.65
+            ]
+          ]
+        },
+        {
+          "kind": "landing",
+          "id": "LAND1",
+          "profile": [
+            [
+              2.25,
+              1.65
+            ],
+            [
+              4.45,
+              1.65
+            ]
+          ]
+        },
+        {
+          "kind": "flight",
+          "id": "FL2",
+          "profile": [
+            [
+              4.45,
+              1.65
+            ],
+            [
+              4.45,
+              1.815
+            ],
+            [
+              4.7,
+              1.815
+            ],
+            [
+              4.7,
+              1.98
+            ],
+            [
+              4.95,
+              1.98
+            ],
+            [
+              4.95,
+              2.145
+            ],
+            [
+              5.2,
+              2.145
+            ],
+            [
+              5.2,
+              2.31
+            ],
+            [
+              5.45,
+              2.31
+            ],
+            [
+              5.45,
+              2.475
+            ],
+            [
+              5.7,
+              2.475
+            ],
+            [
+              5.7,
+              2.64
+            ],
+            [
+              5.95,
+              2.64
+            ],
+            [
+              5.95,
+              2.805
+            ],
+            [
+              6.2,
+              2.805
+            ],
+            [
+              6.2,
+              2.97
+            ],
+            [
+              6.45,
+              2.97
+            ],
+            [
+              6.45,
+              3.135
+            ],
+            [
+              6.7,
+              3.135
+            ],
+            [
+              6.7,
+              3.3
+            ]
+          ]
+        }
+      ],
+      "footprint": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                4.0,
+                1.0
+              ],
+              [
+                7.25,
+                1.0
+              ],
+              [
+                7.25,
+                3.2
+              ],
+              [
+                4.0,
+                3.2
+              ],
+              [
+                4.0,
+                2.2
+              ],
+              [
+                6.25,
+                2.2
+              ],
+              [
+                6.25,
+                2.0
+              ],
+              [
+                4.0,
+                2.0
+              ],
+              [
+                4.0,
+                1.0
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "risers_geometry": [
+        {
+          "id": "FL1-R1",
+          "line": [
+            [
+              4.0,
+              1.0
+            ],
+            [
+              4.0,
+              2.0
+            ]
+          ],
+          "bottom_m": 0.0,
+          "top_m": 0.165
+        },
+        {
+          "id": "FL1-R2",
+          "line": [
+            [
+              4.25,
+              1.0
+            ],
+            [
+              4.25,
+              2.0
+            ]
+          ],
+          "bottom_m": 0.165,
+          "top_m": 0.33
+        },
+        {
+          "id": "FL1-R3",
+          "line": [
+            [
+              4.5,
+              1.0
+            ],
+            [
+              4.5,
+              2.0
+            ]
+          ],
+          "bottom_m": 0.33,
+          "top_m": 0.495
+        },
+        {
+          "id": "FL1-R4",
+          "line": [
+            [
+              4.75,
+              1.0
+            ],
+            [
+              4.75,
+              2.0
+            ]
+          ],
+          "bottom_m": 0.495,
+          "top_m": 0.66
+        },
+        {
+          "id": "FL1-R5",
+          "line": [
+            [
+              5.0,
+              1.0
+            ],
+            [
+              5.0,
+              2.0
+            ]
+          ],
+          "bottom_m": 0.66,
+          "top_m": 0.825
+        },
+        {
+          "id": "FL1-R6",
+          "line": [
+            [
+              5.25,
+              1.0
+            ],
+            [
+              5.25,
+              2.0
+            ]
+          ],
+          "bottom_m": 0.825,
+          "top_m": 0.99
+        },
+        {
+          "id": "FL1-R7",
+          "line": [
+            [
+              5.5,
+              1.0
+            ],
+            [
+              5.5,
+              2.0
+            ]
+          ],
+          "bottom_m": 0.99,
+          "top_m": 1.155
+        },
+        {
+          "id": "FL1-R8",
+          "line": [
+            [
+              5.75,
+              1.0
+            ],
+            [
+              5.75,
+              2.0
+            ]
+          ],
+          "bottom_m": 1.155,
+          "top_m": 1.32
+        },
+        {
+          "id": "FL1-R9",
+          "line": [
+            [
+              6.0,
+              1.0
+            ],
+            [
+              6.0,
+              2.0
+            ]
+          ],
+          "bottom_m": 1.32,
+          "top_m": 1.485
+        },
+        {
+          "id": "FL1-R10",
+          "line": [
+            [
+              6.25,
+              1.0
+            ],
+            [
+              6.25,
+              2.0
+            ]
+          ],
+          "bottom_m": 1.485,
+          "top_m": 1.65
+        },
+        {
+          "id": "FL2-R1",
+          "line": [
+            [
+              6.25,
+              3.2
+            ],
+            [
+              6.25,
+              2.2
+            ]
+          ],
+          "bottom_m": 1.65,
+          "top_m": 1.815
+        },
+        {
+          "id": "FL2-R2",
+          "line": [
+            [
+              6.0,
+              3.2
+            ],
+            [
+              6.0,
+              2.2
+            ]
+          ],
+          "bottom_m": 1.815,
+          "top_m": 1.98
+        },
+        {
+          "id": "FL2-R3",
+          "line": [
+            [
+              5.75,
+              3.2
+            ],
+            [
+              5.75,
+              2.2
+            ]
+          ],
+          "bottom_m": 1.98,
+          "top_m": 2.145
+        },
+        {
+          "id": "FL2-R4",
+          "line": [
+            [
+              5.5,
+              3.2
+            ],
+            [
+              5.5,
+              2.2
+            ]
+          ],
+          "bottom_m": 2.145,
+          "top_m": 2.31
+        },
+        {
+          "id": "FL2-R5",
+          "line": [
+            [
+              5.25,
+              3.2
+            ],
+            [
+              5.25,
+              2.2
+            ]
+          ],
+          "bottom_m": 2.31,
+          "top_m": 2.475
+        },
+        {
+          "id": "FL2-R6",
+          "line": [
+            [
+              5.0,
+              3.2
+            ],
+            [
+              5.0,
+              2.2
+            ]
+          ],
+          "bottom_m": 2.475,
+          "top_m": 2.64
+        },
+        {
+          "id": "FL2-R7",
+          "line": [
+            [
+              4.75,
+              3.2
+            ],
+            [
+              4.75,
+              2.2
+            ]
+          ],
+          "bottom_m": 2.64,
+          "top_m": 2.805
+        },
+        {
+          "id": "FL2-R8",
+          "line": [
+            [
+              4.5,
+              3.2
+            ],
+            [
+              4.5,
+              2.2
+            ]
+          ],
+          "bottom_m": 2.805,
+          "top_m": 2.97
+        },
+        {
+          "id": "FL2-R9",
+          "line": [
+            [
+              4.25,
+              3.2
+            ],
+            [
+              4.25,
+              2.2
+            ]
+          ],
+          "bottom_m": 2.97,
+          "top_m": 3.135
+        },
+        {
+          "id": "FL2-R10",
+          "line": [
+            [
+              4.0,
+              3.2
+            ],
+            [
+              4.0,
+              2.2
+            ]
+          ],
+          "bottom_m": 3.135,
+          "top_m": 3.3
+        }
+      ],
+      "review_status": "PROPOSED",
+      "provenance": "Synthetic staircase dimensions and software oracles; no real architect/expert approval or normative prescription.",
+      "requirement_ids": [],
+      "geometry_status": "VALID",
+      "plan_views": [
+        {
+          "floor_id": "F1",
+          "cut_elevation_m": 1.2,
+          "surface_classes": [
+            {
+              "surface_id": "FL1-T1",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T2",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T3",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T4",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T5",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T6",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T7",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T8",
+              "classification": "ABOVE_CUT"
+            },
+            {
+              "surface_id": "FL1-T9",
+              "classification": "ABOVE_CUT"
+            },
+            {
+              "surface_id": "LAND1",
+              "classification": "ABOVE_CUT"
+            },
+            {
+              "surface_id": "FL2-T1",
+              "classification": "ABOVE_CUT"
+            },
+            {
+              "surface_id": "FL2-T2",
+              "classification": "ABOVE_CUT"
+            },
+            {
+              "surface_id": "FL2-T3",
+              "classification": "ABOVE_CUT"
+            },
+            {
+              "surface_id": "FL2-T4",
+              "classification": "ABOVE_CUT"
+            },
+            {
+              "surface_id": "FL2-T5",
+              "classification": "ABOVE_CUT"
+            },
+            {
+              "surface_id": "FL2-T6",
+              "classification": "ABOVE_CUT"
+            },
+            {
+              "surface_id": "FL2-T7",
+              "classification": "ABOVE_CUT"
+            },
+            {
+              "surface_id": "FL2-T8",
+              "classification": "ABOVE_CUT"
+            },
+            {
+              "surface_id": "FL2-T9",
+              "classification": "ABOVE_CUT"
+            }
+          ]
+        },
+        {
+          "floor_id": "F2",
+          "cut_elevation_m": 4.5,
+          "surface_classes": [
+            {
+              "surface_id": "FL1-T1",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T2",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T3",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T4",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T5",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T6",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T7",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T8",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL1-T9",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "LAND1",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL2-T1",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL2-T2",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL2-T3",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL2-T4",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL2-T5",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL2-T6",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL2-T7",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL2-T8",
+              "classification": "BELOW_CUT"
+            },
+            {
+              "surface_id": "FL2-T9",
+              "classification": "BELOW_CUT"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "schedule": [
+    {
+      "id": "S1",
+      "mark": "ST01",
+      "type": "U",
+      "source_floor": "F1",
+      "destination_floor": "F2",
+      "source_elevation_m": 0.0,
+      "destination_elevation_m": 3.3,
+      "rise_m": 3.3,
+      "final_elevation_m": 3.3,
+      "closure_residual_m": 0.0,
+      "review_status": "PROPOSED",
+      "flights": [
+        {
+          "id": "FL1",
+          "risers": 10,
+          "ordinary_treads": 9,
+          "riser_height_m": 0.165,
+          "last_riser_height_m": 0.165,
+          "riser_height_origin": "derived_exact_total_rise_over_total_risers",
+          "tread_depth_m": 0.25,
+          "width_m": 1.0,
+          "run_m": 2.25,
+          "pitch_degrees": 33.424811182603804
+        },
+        {
+          "id": "FL2",
+          "risers": 10,
+          "ordinary_treads": 9,
+          "riser_height_m": 0.165,
+          "last_riser_height_m": 0.165,
+          "riser_height_origin": "derived_exact_total_rise_over_total_risers",
+          "tread_depth_m": 0.25,
+          "width_m": 1.0,
+          "run_m": 2.25,
+          "pitch_degrees": 33.424811182603804
+        }
+      ],
+      "landings": [
+        {
+          "id": "LAND1",
+          "elevation_m": 1.65,
+          "dimensions_m": [
+            1.0,
+            2.2
+          ],
+          "elevation_origin": "supplied"
+        }
+      ],
+      "opening_ids": [
+        "VOID-F2"
+      ],
+      "headroom_status": "VERIFIED_MODELED_SCOPE",
+      "minimum_verified_headroom_m": 2.865,
+      "provenance": "Synthetic staircase dimensions and software oracles; no real architect/expert approval or normative prescription.",
+      "unresolved_codes": [
+        "ENTRANCE_NOT_DEMONSTRATED",
+        "OPENING_INVENTORY_INCOMPLETE",
+        "ROOM_ACCESS_UNKNOWN",
+        "SOURCE_WALL_LIMITATIONS",
+        "STAIR_REVIEW_REQUIRED"
+      ]
+    }
+  ],
+  "headroom": {
+    "status": "VERIFIED_MODELED_SCOPE",
+    "scope": "CONTINUOUS_HORIZONTAL_WALKING_SURFACES_VS_HORIZONTAL_BOTTOM_PRISMS",
+    "inventory_complete": true,
+    "coverage_complete": true,
+    "floor_opening_evidence_complete": true,
+    "upper_stair_evidence_complete": true,
+    "unresolved_floor_ids": [],
+    "minimum_verified_clearance_m": 2.865,
+    "minimum_location": {
+      "stair_id": "S1",
+      "surface_id": "FL2-T9",
+      "obstruction_id": "CEILING",
+      "walking_elevation_m": 3.135,
+      "underside_m": 6.0,
+      "clearance_m": 2.865,
+      "location_m": [
+        4.125,
+        2.7
+      ],
+      "region": {
+        "type": "PolygonSet",
+        "units": "m",
+        "polygons": [
+          {
+            "exterior": [
+              [
+                4.0,
+                2.2
+              ],
+              [
+                4.25,
+                2.2
+              ],
+              [
+                4.25,
+                3.2
+              ],
+              [
+                4.0,
+                3.2
+              ],
+              [
+                4.0,
+                2.2
+              ]
+            ],
+            "holes": []
+          }
+        ]
+      },
+      "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+    },
+    "measurements": [
+      {
+        "stair_id": "S1",
+        "surface_id": "FL1-T1",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 0.165,
+        "underside_m": 6.0,
+        "clearance_m": 5.835,
+        "location_m": [
+          4.125,
+          1.5
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  4.0,
+                  1.0
+                ],
+                [
+                  4.25,
+                  1.0
+                ],
+                [
+                  4.25,
+                  2.0
+                ],
+                [
+                  4.0,
+                  2.0
+                ],
+                [
+                  4.0,
+                  1.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL1-T2",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 0.33,
+        "underside_m": 6.0,
+        "clearance_m": 5.67,
+        "location_m": [
+          4.375,
+          1.5
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  4.25,
+                  1.0
+                ],
+                [
+                  4.5,
+                  1.0
+                ],
+                [
+                  4.5,
+                  2.0
+                ],
+                [
+                  4.25,
+                  2.0
+                ],
+                [
+                  4.25,
+                  1.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL1-T3",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 0.495,
+        "underside_m": 6.0,
+        "clearance_m": 5.505,
+        "location_m": [
+          4.625,
+          1.5
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  4.5,
+                  1.0
+                ],
+                [
+                  4.75,
+                  1.0
+                ],
+                [
+                  4.75,
+                  2.0
+                ],
+                [
+                  4.5,
+                  2.0
+                ],
+                [
+                  4.5,
+                  1.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL1-T4",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 0.66,
+        "underside_m": 6.0,
+        "clearance_m": 5.34,
+        "location_m": [
+          4.875,
+          1.5
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  4.75,
+                  1.0
+                ],
+                [
+                  5.0,
+                  1.0
+                ],
+                [
+                  5.0,
+                  2.0
+                ],
+                [
+                  4.75,
+                  2.0
+                ],
+                [
+                  4.75,
+                  1.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL1-T5",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 0.825,
+        "underside_m": 6.0,
+        "clearance_m": 5.175,
+        "location_m": [
+          5.125,
+          1.5
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  5.0,
+                  1.0
+                ],
+                [
+                  5.25,
+                  1.0
+                ],
+                [
+                  5.25,
+                  2.0
+                ],
+                [
+                  5.0,
+                  2.0
+                ],
+                [
+                  5.0,
+                  1.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL1-T6",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 0.99,
+        "underside_m": 6.0,
+        "clearance_m": 5.01,
+        "location_m": [
+          5.375,
+          1.5
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  5.25,
+                  1.0
+                ],
+                [
+                  5.5,
+                  1.0
+                ],
+                [
+                  5.5,
+                  2.0
+                ],
+                [
+                  5.25,
+                  2.0
+                ],
+                [
+                  5.25,
+                  1.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL1-T7",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 1.155,
+        "underside_m": 6.0,
+        "clearance_m": 4.845,
+        "location_m": [
+          5.625,
+          1.5
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  5.5,
+                  1.0
+                ],
+                [
+                  5.75,
+                  1.0
+                ],
+                [
+                  5.75,
+                  2.0
+                ],
+                [
+                  5.5,
+                  2.0
+                ],
+                [
+                  5.5,
+                  1.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL1-T8",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 1.32,
+        "underside_m": 6.0,
+        "clearance_m": 4.68,
+        "location_m": [
+          5.875,
+          1.5
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  5.75,
+                  1.0
+                ],
+                [
+                  6.0,
+                  1.0
+                ],
+                [
+                  6.0,
+                  2.0
+                ],
+                [
+                  5.75,
+                  2.0
+                ],
+                [
+                  5.75,
+                  1.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL1-T9",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 1.485,
+        "underside_m": 6.0,
+        "clearance_m": 4.515,
+        "location_m": [
+          6.125,
+          1.5
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  6.0,
+                  1.0
+                ],
+                [
+                  6.25,
+                  1.0
+                ],
+                [
+                  6.25,
+                  2.0
+                ],
+                [
+                  6.0,
+                  2.0
+                ],
+                [
+                  6.0,
+                  1.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "LAND1",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 1.65,
+        "underside_m": 6.0,
+        "clearance_m": 4.35,
+        "location_m": [
+          6.75,
+          2.1
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  6.25,
+                  1.0
+                ],
+                [
+                  7.25,
+                  1.0
+                ],
+                [
+                  7.25,
+                  3.2
+                ],
+                [
+                  6.25,
+                  3.2
+                ],
+                [
+                  6.25,
+                  1.0
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL2-T1",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 1.815,
+        "underside_m": 6.0,
+        "clearance_m": 4.185,
+        "location_m": [
+          6.125,
+          2.7
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  6.0,
+                  2.2
+                ],
+                [
+                  6.25,
+                  2.2
+                ],
+                [
+                  6.25,
+                  3.2
+                ],
+                [
+                  6.0,
+                  3.2
+                ],
+                [
+                  6.0,
+                  2.2
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL2-T2",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 1.98,
+        "underside_m": 6.0,
+        "clearance_m": 4.02,
+        "location_m": [
+          5.875,
+          2.7
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  5.75,
+                  2.2
+                ],
+                [
+                  6.0,
+                  2.2
+                ],
+                [
+                  6.0,
+                  3.2
+                ],
+                [
+                  5.75,
+                  3.2
+                ],
+                [
+                  5.75,
+                  2.2
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL2-T3",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 2.145,
+        "underside_m": 6.0,
+        "clearance_m": 3.855,
+        "location_m": [
+          5.625,
+          2.7
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  5.5,
+                  2.2
+                ],
+                [
+                  5.75,
+                  2.2
+                ],
+                [
+                  5.75,
+                  3.2
+                ],
+                [
+                  5.5,
+                  3.2
+                ],
+                [
+                  5.5,
+                  2.2
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL2-T4",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 2.31,
+        "underside_m": 6.0,
+        "clearance_m": 3.69,
+        "location_m": [
+          5.375,
+          2.7
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  5.25,
+                  2.2
+                ],
+                [
+                  5.5,
+                  2.2
+                ],
+                [
+                  5.5,
+                  3.2
+                ],
+                [
+                  5.25,
+                  3.2
+                ],
+                [
+                  5.25,
+                  2.2
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL2-T5",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 2.475,
+        "underside_m": 6.0,
+        "clearance_m": 3.525,
+        "location_m": [
+          5.125,
+          2.7
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  5.0,
+                  2.2
+                ],
+                [
+                  5.25,
+                  2.2
+                ],
+                [
+                  5.25,
+                  3.2
+                ],
+                [
+                  5.0,
+                  3.2
+                ],
+                [
+                  5.0,
+                  2.2
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL2-T6",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 2.64,
+        "underside_m": 6.0,
+        "clearance_m": 3.36,
+        "location_m": [
+          4.875,
+          2.7
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  4.75,
+                  2.2
+                ],
+                [
+                  5.0,
+                  2.2
+                ],
+                [
+                  5.0,
+                  3.2
+                ],
+                [
+                  4.75,
+                  3.2
+                ],
+                [
+                  4.75,
+                  2.2
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL2-T7",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 2.805,
+        "underside_m": 6.0,
+        "clearance_m": 3.195,
+        "location_m": [
+          4.625,
+          2.7
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  4.5,
+                  2.2
+                ],
+                [
+                  4.75,
+                  2.2
+                ],
+                [
+                  4.75,
+                  3.2
+                ],
+                [
+                  4.5,
+                  3.2
+                ],
+                [
+                  4.5,
+                  2.2
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL2-T8",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 2.97,
+        "underside_m": 6.0,
+        "clearance_m": 3.03,
+        "location_m": [
+          4.375,
+          2.7
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  4.25,
+                  2.2
+                ],
+                [
+                  4.5,
+                  2.2
+                ],
+                [
+                  4.5,
+                  3.2
+                ],
+                [
+                  4.25,
+                  3.2
+                ],
+                [
+                  4.25,
+                  2.2
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      },
+      {
+        "stair_id": "S1",
+        "surface_id": "FL2-T9",
+        "obstruction_id": "CEILING",
+        "walking_elevation_m": 3.135,
+        "underside_m": 6.0,
+        "clearance_m": 2.865,
+        "location_m": [
+          4.125,
+          2.7
+        ],
+        "region": {
+          "type": "PolygonSet",
+          "units": "m",
+          "polygons": [
+            {
+              "exterior": [
+                [
+                  4.0,
+                  2.2
+                ],
+                [
+                  4.25,
+                  2.2
+                ],
+                [
+                  4.25,
+                  3.2
+                ],
+                [
+                  4.0,
+                  3.2
+                ],
+                [
+                  4.0,
+                  2.2
+                ]
+              ],
+              "holes": []
+            }
+          ]
+        },
+        "coverage": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+      }
+    ],
+    "uncovered_regions": [],
+    "walking_surface_area_m2": 6.7,
+    "requirement_m": 2.1,
+    "technical_compliance": "NOT_EVALUATED"
+  },
+  "floor_openings": [
+    {
+      "stair_id": "S1",
+      "destination_floor": "F2",
+      "opening_ids": [
+        "VOID-F2"
+      ],
+      "slab_ids": [
+        "SLAB-F2"
+      ],
+      "status": "MODELED"
+    }
+  ],
+  "codes": {
+    "errors": [],
+    "warnings": [
+      "PARENT_CIRCULATION_REPLAYED"
+    ],
+    "missing_information": [
+      "ENTRANCE_NOT_DEMONSTRATED",
+      "OPENING_INVENTORY_INCOMPLETE",
+      "ROOM_ACCESS_UNKNOWN",
+      "SOURCE_WALL_LIMITATIONS",
+      "STAIR_REVIEW_REQUIRED"
+    ]
+  },
+  "plan_svg_sha256": "0913ec22883b58267533a0a5e2ee4fbf7fa87287fa932b34cfbf0cae2ad71427",
+  "section_svg_sha256": "431e066031a9bbd5eb06c5f9b31f1e6df9f1e43934621d833d18c3dd5400937e"
+}

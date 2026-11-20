@@ -1,6 +1,6 @@
 # Vietnam Architecture Intelligence (VNAI)
 
-**Phiên bản 0.1.9 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
+**Phiên bản 0.1.12 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
 
 Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, với ba nhiệm vụ tách biệt:
 
@@ -218,3 +218,20 @@ Townhouse retains the exact B1 source and reports CONFLICT (exit 4). The indepen
 See [opening drafting contract](docs/OPENING_DRAFTING_CONTRACT.md),
 [fixtures](examples/batch007b2) and [actual generated previews](examples/batch007b2/previews).
 Existing `design openings validate` and schematic DXF behavior remain compatible.
+
+## R3 Batch 007-B3 - Stair geometry and sections (v0.1.12)
+
+Explicit straight/L/U flights generate real tread/riser/landing geometry, absolute elevations,
+true straight or explicitly developed multi-flight sections, floor-opening assessment,
+continuous horizontal-prism headroom and fresh 006-B interface replay. Source B2 inputs
+remain immutable; known conflicts and missing evidence stay visible. CAD writes remain false.
+
+```powershell
+vnai design stairs draft examples/batch007b3/straight.json
+vnai design stairs schedule examples/batch007b3/u-shaped.json --markdown outputs/stair-schedule-v0.1.12.md
+vnai design stairs preview examples/batch007b3/l-shaped.json --view section --out outputs/stair-section-v0.1.12.svg
+```
+
+These synthetic geometry examples may return INCOMPLETE (3); townhouse returns CONFLICT (4).
+See [the stair contract](docs/STAIR_GEOMETRY_CONTRACT.md) for counting, headroom coverage,
+limits, exit codes and the distinction between modeled geometry and architectural approval.

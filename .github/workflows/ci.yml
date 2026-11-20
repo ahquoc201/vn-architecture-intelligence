@@ -66,6 +66,24 @@ jobs:
           vnai design openings preview examples/batch007b2/townhouse-benchmark.json --out outputs/townhouse-openings-v0.1.11.svg
           result=$?
           test "$result" -eq 4
+      - name: Proposed stair geometry, sections and incomplete gates
+        run: |
+          expect_stair_exit() {
+            local expected="$1"
+            shift
+            set +e
+            "$@"
+            local result=$?
+            set -e
+            test "$result" -eq "$expected"
+          }
+          expect_stair_exit 3 vnai design stairs draft examples/batch007b3/straight.json > outputs/stair-draft-v0.1.12.json
+          expect_stair_exit 3 vnai design stairs drafting-validate outputs/stair-draft-v0.1.12.json
+          expect_stair_exit 3 vnai design stairs section examples/batch007b3/l-shaped.json
+          expect_stair_exit 3 vnai design stairs schedule examples/batch007b3/u-shaped.json --markdown outputs/stair-schedule-v0.1.12.md
+          expect_stair_exit 3 vnai design stairs preview examples/batch007b3/straight.json --view plan --out outputs/stair-plan-v0.1.12.svg
+          expect_stair_exit 3 vnai design stairs preview examples/batch007b3/u-shaped.json --view section --out outputs/stair-section-v0.1.12.svg
+          expect_stair_exit 4 vnai design stairs preview examples/batch007b3/townhouse-benchmark.json --view plan --out outputs/townhouse-stairs-v0.1.12.svg
       - name: Fresh wheel outside checkout
         run: python scripts/smoke_wheel.py
       - run: vnai fengshui knowledge validate

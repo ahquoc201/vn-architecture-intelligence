@@ -1,0 +1,40 @@
+{
+  "drafting_status": "UNSUPPORTED",
+  "geometry_status": "NOT_GENERATED",
+  "full_report_sha256": "fe9dbff6f41bde067c3fd8b32538e9c18e6ec7a39d85f525975596a73438d2ae",
+  "stair_revision_id": "SR-d362cd89a952afee5451215f94a58d794b3fa50844ac074683ee282276969281",
+  "stairs": [],
+  "schedule": [],
+  "headroom": {
+    "status": "INCOMPLETE",
+    "scope": "CONTINUOUS_HORIZONTAL_WALKING_SURFACES_VS_HORIZONTAL_BOTTOM_PRISMS",
+    "inventory_complete": true,
+    "coverage_complete": false,
+    "floor_opening_evidence_complete": false,
+    "upper_stair_evidence_complete": true,
+    "unresolved_floor_ids": [],
+    "minimum_verified_clearance_m": null,
+    "minimum_location": null,
+    "measurements": [],
+    "uncovered_regions": [],
+    "walking_surface_area_m2": 0.0,
+    "requirement_m": 2.1,
+    "technical_compliance": "NOT_EVALUATED"
+  },
+  "floor_openings": [],
+  "codes": {
+    "errors": [],
+    "warnings": [
+      "PARENT_CIRCULATION_REPLAYED"
+    ],
+    "missing_information": [
+      "ENTRANCE_NOT_DEMONSTRATED",
+      "OPENING_INVENTORY_INCOMPLETE",
+      "ROOM_ACCESS_UNKNOWN",
+      "SOURCE_WALL_LIMITATIONS",
+      "STAIR_TYPE_UNSUPPORTED"
+    ]
+  },
+  "plan_svg_sha256": "1228a69bd8f5d90cbdd30ce432890c087fc0ca3c589bb8c439bcbbf2f7544947",
+  "section_svg_sha256": "1228a69bd8f5d90cbdd30ce432890c087fc0ca3c589bb8c439bcbbf2f7544947"
+}

@@ -173,3 +173,16 @@ accounting, fresh supplied-path/stair-interface replay, missing evidence and ret
 Request real architect feedback bound to this proposed opening revision. Preserve source
 walls/candidates and stale approval history; prepare stable interfaces for future stairs/annotation.
 Keep one user-facing agent, no automatic placement/approval, standards/Feng Shui separate and CAD false.
+
+## Stair drafting and sections
+
+Use `docs/STAIR_GEOMETRY_CONTRACT.md` when stairs are requested. Collect the common datum,
+confirmed floor levels, explicit flight/riser allocations, landing/walking paths, slab openings,
+known overheads and project clearance requirements; bind the exact B2 source revision.
+Run `design stairs draft`, `section`, `schedule` and `preview --view plan|section`.
+Explain n risers versus n-1 ordinary treads; inspect true versus developed sections and
+source/destination closure. Review actual opening fit, wall/door collisions, known headroom
+failures and uncovered regions separately from graph links and technical compliance.
+Request child-bound architect feedback on unresolved risks; prepare read-only geometry for
+future annotation/export. Keep one user-facing agent, immutable sources, approval ungranted
+and CAD false. Synthetic fixture expectations are not expert validation.

@@ -1,0 +1,1257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "report_schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "engine_version": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "status": {
+      "enum": [
+        "VALID",
+        "INVALID",
+        "INCOMPLETE"
+      ]
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "cad_writes_permitted": {
+      "const": false
+    },
+    "standards_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "fengshui_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "contract": {
+      "const": "stair-drafting-v1"
+    },
+    "drafting_status": {
+      "enum": [
+        "GENERATED",
+        "INVALID_INPUT",
+        "INCOMPLETE",
+        "CONFLICT",
+        "UNSUPPORTED"
+      ]
+    },
+    "geometry_status": {
+      "enum": [
+        "VALID",
+        "INVALID",
+        "NOT_GENERATED"
+      ]
+    },
+    "source_opening_revision_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_candidate_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "specification_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stair_revision_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "frame_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "datum": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "units": {
+      "const": "m"
+    },
+    "stairs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/stair"
+      },
+      "maxItems": 16
+    },
+    "floor_openings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "stair_id": {
+            "type": "string"
+          },
+          "destination_floor": {
+            "type": "string"
+          },
+          "opening_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "slab_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "enum": [
+              "MODELED",
+              "INCOMPLETE"
+            ]
+          }
+        },
+        "required": [
+          "stair_id",
+          "destination_floor",
+          "opening_ids",
+          "slab_ids",
+          "status"
+        ]
+      }
+    },
+    "headroom": {
+      "anyOf": [
+        {
+          "type": "object",
+          "maxProperties": 0
+        },
+        {
+          "$ref": "#/$defs/headroom"
+        }
+      ]
+    },
+    "circulation": {
+      "anyOf": [
+        {
+          "type": "object",
+          "maxProperties": 0
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "stairs": {
+              "$ref": "stair-result.schema.json"
+            },
+            "graph": {
+              "$ref": "circulation-graph.schema.json"
+            },
+            "geometry_validity": {
+              "type": "string"
+            },
+            "clearance_status": {
+              "type": "string"
+            },
+            "physical_status": {
+              "enum": [
+                "NOT_VERIFIED",
+                "BLOCKED",
+                "GEOMETRICALLY_TRAVERSABLE"
+              ]
+            },
+            "technical_compliance": {
+              "const": "NOT_EVALUATED"
+            },
+            "architectural_approval": {
+              "const": "NOT_GRANTED"
+            },
+            "scope": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "stairs",
+            "graph",
+            "geometry_validity",
+            "clearance_status",
+            "physical_status",
+            "technical_compliance",
+            "architectural_approval",
+            "scope"
+          ]
+        }
+      ]
+    },
+    "schedule": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "mark": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "enum": [
+              "straight",
+              "L",
+              "U"
+            ]
+          },
+          "source_floor": {
+            "type": "string"
+          },
+          "destination_floor": {
+            "type": "string"
+          },
+          "source_elevation_m": {
+            "type": "number"
+          },
+          "destination_elevation_m": {
+            "type": "number"
+          },
+          "rise_m": {
+            "type": "number"
+          },
+          "final_elevation_m": {
+            "type": "number"
+          },
+          "closure_residual_m": {
+            "type": "number"
+          },
+          "review_status": {
+            "const": "PROPOSED"
+          },
+          "flights": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "risers": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "ordinary_treads": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "riser_height_m": {
+                  "type": "number"
+                },
+                "last_riser_height_m": {
+                  "type": "number"
+                },
+                "riser_height_origin": {
+                  "type": "string"
+                },
+                "tread_depth_m": {
+                  "type": "number"
+                },
+                "width_m": {
+                  "type": "number"
+                },
+                "run_m": {
+                  "type": "number"
+                },
+                "pitch_degrees": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "id",
+                "risers",
+                "ordinary_treads",
+                "riser_height_m",
+                "last_riser_height_m",
+                "riser_height_origin",
+                "tread_depth_m",
+                "width_m",
+                "run_m",
+                "pitch_degrees"
+              ]
+            }
+          },
+          "landings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "elevation_m": {
+                  "type": "number"
+                },
+                "dimensions_m": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "elevation_origin": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "elevation_m",
+                "dimensions_m",
+                "elevation_origin"
+              ]
+            }
+          },
+          "opening_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "headroom_status": {
+            "type": "string"
+          },
+          "minimum_verified_headroom_m": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "provenance": {
+            "type": "string"
+          },
+          "unresolved_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "mark",
+          "type",
+          "source_floor",
+          "destination_floor",
+          "source_elevation_m",
+          "destination_elevation_m",
+          "rise_m",
+          "final_elevation_m",
+          "closure_residual_m",
+          "review_status",
+          "flights",
+          "landings",
+          "opening_ids",
+          "headroom_status",
+          "minimum_verified_headroom_m",
+          "provenance",
+          "unresolved_codes"
+        ]
+      },
+      "maxItems": 16
+    },
+    "source_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "path": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "requirement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "requirement_ids"
+        ]
+      },
+      "minItems": 0
+    },
+    "evidence_impact": {
+      "type": "object"
+    },
+    "sources": {
+      "type": "object"
+    },
+    "approval_inherited": {
+      "const": false
+    },
+    "architect_approval": {
+      "const": "NOT_GRANTED"
+    }
+  },
+  "required": [
+    "report_schema_version",
+    "engine_version",
+    "status",
+    "errors",
+    "warnings",
+    "missing_information",
+    "diagnostics",
+    "cad_writes_permitted",
+    "standards_review",
+    "fengshui_review",
+    "contract",
+    "drafting_status",
+    "geometry_status",
+    "source_opening_revision_id",
+    "source_candidate_digest",
+    "specification_digest",
+    "stair_revision_id",
+    "frame_id",
+    "datum",
+    "units",
+    "stairs",
+    "floor_openings",
+    "headroom",
+    "circulation",
+    "schedule",
+    "source_conflicts",
+    "evidence_impact",
+    "sources",
+    "approval_inherited",
+    "architect_approval"
+  ],
+  "$defs": {
+    "surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "tread",
+            "landing",
+            "arrival"
+          ]
+        },
+        "flight_id": {
+          "type": "string"
+        },
+        "geometry": {
+          "$ref": "wall-result.schema.json#/$defs/geometry"
+        },
+        "elevation_m": {
+          "type": "number"
+        },
+        "nosing_line": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "minItems": 2
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "walking_line": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 2
+        },
+        "developed_length_m": {
+          "type": "number"
+        },
+        "dimensions_m": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "elevation_origin": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "flight_id",
+        "geometry",
+        "elevation_m"
+      ]
+    },
+    "riser": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "line": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 2
+        },
+        "bottom_m": {
+          "type": "number"
+        },
+        "top_m": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "line",
+        "bottom_m",
+        "top_m"
+      ]
+    },
+    "flight": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "width_m": {
+          "type": "number"
+        },
+        "risers": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ordinary_treads": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "riser_height_m": {
+          "type": "number"
+        },
+        "last_riser_height_m": {
+          "type": "number"
+        },
+        "riser_height_origin": {
+          "type": "string"
+        },
+        "tread_depth_m": {
+          "type": "number"
+        },
+        "run_m": {
+          "type": "number"
+        },
+        "pitch_degrees": {
+          "type": "number"
+        },
+        "start_elevation_m": {
+          "type": "number"
+        },
+        "arrival_elevation_m": {
+          "type": "number"
+        },
+        "geometry": {
+          "$ref": "wall-result.schema.json#/$defs/geometry"
+        },
+        "entry_edge": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 2
+        },
+        "exit_edge": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 2
+        },
+        "risers_geometry": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/riser"
+          }
+        },
+        "treads": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/surface"
+          }
+        },
+        "walking_line": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 2
+        },
+        "section_profile": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 2
+        }
+      },
+      "required": [
+        "id",
+        "direction",
+        "width_m",
+        "risers",
+        "ordinary_treads",
+        "riser_height_m",
+        "last_riser_height_m",
+        "riser_height_origin",
+        "tread_depth_m",
+        "run_m",
+        "pitch_degrees",
+        "start_elevation_m",
+        "arrival_elevation_m",
+        "geometry",
+        "entry_edge",
+        "exit_edge",
+        "risers_geometry",
+        "treads",
+        "walking_line",
+        "section_profile"
+      ]
+    },
+    "section": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "flight",
+            "landing",
+            "arrival"
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "profile": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 2
+        }
+      },
+      "required": [
+        "kind",
+        "id",
+        "profile"
+      ]
+    },
+    "view": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "floor_id": {
+          "type": "string"
+        },
+        "cut_elevation_m": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "surface_classes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "surface_id": {
+                "type": "string"
+              },
+              "classification": {
+                "enum": [
+                  "UNKNOWN",
+                  "ABOVE_CUT",
+                  "AT_CUT",
+                  "BELOW_CUT"
+                ]
+              }
+            },
+            "required": [
+              "surface_id",
+              "classification"
+            ]
+          }
+        }
+      },
+      "required": [
+        "floor_id",
+        "cut_elevation_m",
+        "surface_classes"
+      ]
+    },
+    "stair": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "mark": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "type": {
+          "enum": [
+            "straight",
+            "L",
+            "U"
+          ]
+        },
+        "source_floor": {
+          "type": "string"
+        },
+        "destination_floor": {
+          "type": "string"
+        },
+        "stairwell_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "envelope": {
+          "$ref": "wall-result.schema.json#/$defs/geometry"
+        },
+        "flights": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/flight"
+          }
+        },
+        "surfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/surface"
+          }
+        },
+        "rise_m": {
+          "type": "number"
+        },
+        "source_elevation_m": {
+          "type": "number"
+        },
+        "destination_elevation_m": {
+          "type": "number"
+        },
+        "final_elevation_m": {
+          "type": "number"
+        },
+        "closure_residual_m": {
+          "type": "number"
+        },
+        "entry_edge": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 2
+        },
+        "exit_edge": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 2
+        },
+        "entry_point": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "exit_point": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "section_kind": {
+          "enum": [
+            "TRUE_LONGITUDINAL",
+            "DEVELOPED_EXPLICIT_WALKING_LINE"
+          ]
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/section"
+          }
+        },
+        "footprint": {
+          "$ref": "wall-result.schema.json#/$defs/geometry"
+        },
+        "risers_geometry": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/riser"
+          }
+        },
+        "review_status": {
+          "const": "PROPOSED"
+        },
+        "provenance": {
+          "type": "string"
+        },
+        "requirement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "geometry_status": {
+          "enum": [
+            "VALID",
+            "INVALID"
+          ]
+        },
+        "plan_views": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/view"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "mark",
+        "type",
+        "source_floor",
+        "destination_floor",
+        "stairwell_ids",
+        "envelope",
+        "flights",
+        "surfaces",
+        "rise_m",
+        "source_elevation_m",
+        "destination_elevation_m",
+        "final_elevation_m",
+        "closure_residual_m",
+        "entry_edge",
+        "exit_edge",
+        "entry_point",
+        "exit_point",
+        "section_kind",
+        "sections",
+        "footprint",
+        "risers_geometry",
+        "review_status",
+        "provenance",
+        "requirement_ids",
+        "geometry_status",
+        "plan_views"
+      ]
+    },
+    "measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stair_id": {
+          "type": "string"
+        },
+        "surface_id": {
+          "type": "string"
+        },
+        "obstruction_id": {
+          "type": "string"
+        },
+        "walking_elevation_m": {
+          "type": "number"
+        },
+        "underside_m": {
+          "type": "number"
+        },
+        "clearance_m": {
+          "type": "number"
+        },
+        "location_m": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "region": {
+          "$ref": "wall-result.schema.json#/$defs/geometry"
+        },
+        "coverage": {
+          "const": "CONTINUOUS_CONSTANT_HORIZONTAL_SURFACE_AND_PRISM"
+        }
+      },
+      "required": [
+        "stair_id",
+        "surface_id",
+        "obstruction_id",
+        "walking_elevation_m",
+        "underside_m",
+        "clearance_m",
+        "location_m",
+        "region",
+        "coverage"
+      ]
+    },
+    "headroom": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "FAILED",
+            "VERIFIED_MODELED_SCOPE",
+            "INCOMPLETE"
+          ]
+        },
+        "scope": {
+          "type": "string"
+        },
+        "inventory_complete": {
+          "type": "boolean"
+        },
+        "coverage_complete": {
+          "type": "boolean"
+        },
+        "minimum_verified_clearance_m": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "minimum_location": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/measurement"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "measurements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/measurement"
+          }
+        },
+        "uncovered_regions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "stair_id": {
+                "type": "string"
+              },
+              "surface_id": {
+                "type": "string"
+              },
+              "region": {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              }
+            },
+            "required": [
+              "stair_id",
+              "surface_id",
+              "region"
+            ]
+          }
+        },
+        "walking_surface_area_m2": {
+          "type": "number"
+        },
+        "requirement_m": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "technical_compliance": {
+          "const": "NOT_EVALUATED"
+        },
+        "floor_opening_evidence_complete": {
+          "type": "boolean"
+        },
+        "unresolved_floor_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "upper_stair_evidence_complete": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status",
+        "scope",
+        "inventory_complete",
+        "coverage_complete",
+        "minimum_verified_clearance_m",
+        "minimum_location",
+        "measurements",
+        "uncovered_regions",
+        "walking_surface_area_m2",
+        "requirement_m",
+        "technical_compliance",
+        "floor_opening_evidence_complete",
+        "unresolved_floor_ids",
+        "upper_stair_evidence_complete"
+      ]
+    }
+  }
+}

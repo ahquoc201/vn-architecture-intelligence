@@ -1,0 +1,552 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "source": {
+      "$ref": "opening-drafting-input.schema.json"
+    },
+    "source_opening_revision_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "source_opening_geometry_digest": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "specification": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "units": {
+          "enum": [
+            "m",
+            "mm"
+          ]
+        },
+        "frame_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "datum": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "levels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "floor_id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "finished_elevation": {
+                "type": "number",
+                "minimum": -1000000000.0,
+                "maximum": 1000000000.0
+              },
+              "confirmation": {
+                "enum": [
+                  "confirmed",
+                  "proposed"
+                ]
+              },
+              "provenance": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "floor_id",
+              "confirmation",
+              "provenance"
+            ]
+          },
+          "maxItems": 64
+        },
+        "stairs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "mark": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "type": {
+                "enum": [
+                  "straight",
+                  "L",
+                  "U",
+                  "spiral",
+                  "winders"
+                ]
+              },
+              "source_floor": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "destination_floor": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "stairwell_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "maxItems": 16
+              },
+              "envelope": {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              },
+              "counting": {
+                "type": "string"
+              },
+              "flights": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "origin": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "minimum": -1000000000.0,
+                        "maximum": 1000000000.0
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "direction": {
+                      "enum": [
+                        "E",
+                        "N",
+                        "W",
+                        "S"
+                      ]
+                    },
+                    "width": {
+                      "type": "number",
+                      "exclusiveMinimum": 0,
+                      "maximum": 1000000.0
+                    },
+                    "risers": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 128
+                    },
+                    "tread_depth": {
+                      "type": "number",
+                      "exclusiveMinimum": 0,
+                      "maximum": 1000000.0
+                    },
+                    "tread_count": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 127
+                    },
+                    "riser_height": {
+                      "type": "number",
+                      "exclusiveMinimum": 0,
+                      "maximum": 1000000.0
+                    },
+                    "last_riser_height": {
+                      "type": "number",
+                      "exclusiveMinimum": 0,
+                      "maximum": 1000000.0
+                    },
+                    "nosing": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1000.0
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "origin",
+                    "direction",
+                    "width",
+                    "risers",
+                    "tread_depth"
+                  ]
+                },
+                "maxItems": 4
+              },
+              "landings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "geometry": {
+                      "$ref": "wall-result.schema.json#/$defs/geometry"
+                    },
+                    "elevation": {
+                      "type": "number",
+                      "minimum": -1000000000.0,
+                      "maximum": 1000000000.0
+                    },
+                    "walking_line": {
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "number",
+                          "minimum": -1000000000.0,
+                          "maximum": 1000000000.0
+                        },
+                        "minItems": 2,
+                        "maxItems": 2
+                      },
+                      "maxItems": 32
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "geometry",
+                    "walking_line"
+                  ]
+                },
+                "maxItems": 3
+              },
+              "arrival": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "geometry": {
+                    "$ref": "wall-result.schema.json#/$defs/geometry"
+                  },
+                  "exit_point": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "minimum": -1000000000.0,
+                      "maximum": 1000000000.0
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "required": [
+                  "geometry",
+                  "exit_point"
+                ]
+              },
+              "turn": {
+                "enum": [
+                  "left",
+                  "right"
+                ]
+              },
+              "flight_separation": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1000000.0
+              },
+              "requirement_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "maxItems": 128
+              },
+              "provenance": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "confirmation": {
+                "enum": [
+                  "confirmed",
+                  "proposed"
+                ]
+              },
+              "review_status": {
+                "enum": [
+                  "proposed",
+                  "reviewed",
+                  "approved"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "source_floor",
+              "destination_floor",
+              "stairwell_ids",
+              "envelope",
+              "counting",
+              "flights",
+              "landings",
+              "requirement_ids",
+              "provenance",
+              "confirmation",
+              "review_status"
+            ]
+          },
+          "maxItems": 16
+        },
+        "plan_cut_elevations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "floor_id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "elevation": {
+                "type": "number",
+                "minimum": -1000000000.0,
+                "maximum": 1000000000.0
+              }
+            },
+            "required": [
+              "floor_id",
+              "elevation"
+            ]
+          },
+          "maxItems": 64
+        },
+        "number_steps": {
+          "type": "boolean"
+        },
+        "floor_openings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "floor_id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "geometry": {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              },
+              "stair_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "maxItems": 16
+              }
+            },
+            "required": [
+              "id",
+              "floor_id",
+              "geometry",
+              "stair_ids"
+            ]
+          },
+          "maxItems": 128
+        },
+        "slabs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "floor_id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "geometry": {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              },
+              "underside": {
+                "type": "number",
+                "minimum": -1000000000.0,
+                "maximum": 1000000000.0
+              },
+              "top": {
+                "type": "number",
+                "minimum": -1000000000.0,
+                "maximum": 1000000000.0
+              },
+              "opening_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "maxItems": 32
+              }
+            },
+            "required": [
+              "id",
+              "floor_id",
+              "geometry",
+              "underside",
+              "top",
+              "opening_ids"
+            ]
+          },
+          "maxItems": 128
+        },
+        "obstacles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "kind": {
+                "enum": [
+                  "slab",
+                  "ceiling",
+                  "beam",
+                  "upper_stair",
+                  "fixed"
+                ]
+              },
+              "geometry": {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              },
+              "bottom": {
+                "type": "number",
+                "minimum": -1000000000.0,
+                "maximum": 1000000000.0
+              },
+              "top": {
+                "type": "number",
+                "minimum": -1000000000.0,
+                "maximum": 1000000000.0
+              },
+              "provenance": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "geometry",
+              "bottom",
+              "top",
+              "provenance"
+            ]
+          },
+          "maxItems": 128
+        },
+        "overhead_inventory_complete": {
+          "type": "boolean"
+        },
+        "open_to_sky": {
+          "type": "array",
+          "items": {
+            "$ref": "wall-result.schema.json#/$defs/geometry"
+          },
+          "maxItems": 32
+        },
+        "headroom_requirement": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1000000.0
+        },
+        "clear_width_requirement": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1000000.0
+        },
+        "connections": {
+          "type": "array",
+          "items": {
+            "$ref": "stair-connection.schema.json"
+          },
+          "maxItems": 16
+        },
+        "stairs_complete": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "units",
+        "frame_id",
+        "datum",
+        "levels",
+        "stairs",
+        "plan_cut_elevations",
+        "floor_openings",
+        "slabs",
+        "obstacles",
+        "overhead_inventory_complete",
+        "open_to_sky",
+        "connections",
+        "stairs_complete"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "source",
+    "source_opening_revision_id",
+    "source_opening_geometry_digest",
+    "specification"
+  ]
+}
