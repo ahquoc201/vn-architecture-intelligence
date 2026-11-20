@@ -81,3 +81,12 @@ automatic placement/redesign and unverified normative dimensions remain excluded
 
 Stair geometry success is not structural, egress/accessibility approval or CAD write permission.
 See `STAIR_GEOMETRY_CONTRACT.md` for supported model scope and limitations.
+
+
+## R3 Batch 007-B4 / v0.1.13
+
+- Compose wall-aware generation, hosted opening/stair replay and explicitly bounded refinements;
+  retain historical conflicts and separate geometric verification from expert approval.
+- Provide a separate synthetic two-storey end-to-end benchmark and actual before/after SVG.
+- Next 007-C: architect-reviewed annotations, dimension/layer contracts and controlled export
+  preparation. Full optimization, structures/MEP and automatic CAD writes remain out of scope.

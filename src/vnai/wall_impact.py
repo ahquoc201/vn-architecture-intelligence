@@ -52,6 +52,18 @@ def assess(
             value["source"]["replay"].get("provenance", {}).get("generation_specification", {})
         )
     dimensions = {d["room_id"]: d for d in source_spec.get("room_dimensions", [])}
+    contacts = spec.get("reservation_wall_contacts", [])
+    contact_ids = [(c["floor_id"], c["reservation_id"]) for c in contacts]
+    known = {
+        (p.get("floor_id"), p["id"]) for p in geometry["polygons"] if p["role"] == "reservation"
+    }
+    if len(contact_ids) != len(set(contact_ids)) or not set(contact_ids) <= known:
+        problem(
+            "invalid",
+            "WALL_CONTACT_REFERENCE",
+            "reservation_wall_contacts",
+            "Contact references must be unique existing floor/reservation pairs.",
+        )
     checks = []
     for key, row in sorted(rooms.items()):
         allocation = shapes[row["id"]]
@@ -251,7 +263,39 @@ def assess(
             region = shapes.get(row["id"])
             if region is None:
                 region = polygon(row, scale)
-            overlap = union.intersection(region).area
+            material = union.intersection(region)
+            contact = next(
+                (
+                    c
+                    for c in spec.get("reservation_wall_contacts", [])
+                    if c["reservation_id"] == row["id"] and c["floor_id"] == floor
+                ),
+                None,
+            )
+            if contact:
+                mask = unary_union([polygon(p, 1) for p in contact["geometry"]["polygons"]])
+                if (
+                    row.get("reservation_kind") != "circulation"
+                    or not mask.is_valid
+                    or not region.covers(mask)
+                ):
+                    problem(
+                        "invalid",
+                        "INVALID_INTENTIONAL_WALL_CONTACT",
+                        row["id"],
+                        "Only an explicit valid contact inside a circulation allocation is supported; fixed obstacles/stair/shaft protection cannot be exempted.",
+                    )
+                else:
+                    collisions.append(
+                        {
+                            "geometry_id": row["id"],
+                            "kind": "declared_circulation_wall_contact",
+                            "intentional_wall_overlap_m2": material.intersection(mask).area,
+                            "physical_obstruction_removed": False,
+                        }
+                    )
+                    material = material.difference(mask)
+            overlap = material.area
             if overlap > 0:
                 collisions.append(
                     {

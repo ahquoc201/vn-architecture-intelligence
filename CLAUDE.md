@@ -77,3 +77,10 @@ known overheads before `design stairs draft`. Distinguish n risers from n-1 ordi
 treads and true sections from developed paths. Inspect actual plan/section/schedule,
 known collisions and uncovered headroom; request real architect feedback. Source geometry
 stays immutable, approval ungranted, standards separate and CAD false.
+
+
+Batch 007-B4: read `docs/INTEGRATED_FLOORPLAN_CONTRACT.md`. Use `design integrated` to
+compose actual walls/openings/stairs and replay original allocation plus clear-space requirements.
+Refine only within explicit permissions; preserve fixed geometry and missing/unsupported evidence.
+Inspect actual per-floor before/after SVG and source findings. Geometric success is proposed;
+request architect review and separate specialist checks before any future CAD authorization.

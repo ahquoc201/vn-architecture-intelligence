@@ -1,0 +1,13 @@
+{
+  "integrated_status": "UNSUPPORTED",
+  "full_report_sha256": "bda9b33db6250c16e875ba89bcef209284a40aaf8e3b5ad4d2033fdb2f8d0202",
+  "search": {
+    "termination": "NOT_STARTED",
+    "evaluations": 0,
+    "steps": 0,
+    "duplicate_states_skipped": 0
+  },
+  "svg_sha256": {},
+  "proposals": [],
+  "original_findings": []
+}

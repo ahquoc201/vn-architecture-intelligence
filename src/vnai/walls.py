@@ -41,7 +41,13 @@ def _without_approval(value: Any) -> Any:
     return value
 
 
-def generate_walls(value: Any) -> dict:
+def generate_walls(value: Any, *, _cache=None) -> dict:
+    if _cache is not None:
+        return _cache.run("walls", value, lambda: _generate_walls(value, _cache))
+    return _generate_walls(value, None)
+
+
+def _generate_walls(value: Any, _cache) -> dict:
     result = new_report("architectural-walls-v1")
     result.update(
         wall_status="INVALID_INPUT",

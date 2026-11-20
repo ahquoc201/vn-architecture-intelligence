@@ -1,3 +1,3 @@
 """VN Architecture Intelligence: source-grounded research and advisory primitives."""
 
-__version__ = "0.1.12"
+__version__ = "0.1.13"

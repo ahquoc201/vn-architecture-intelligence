@@ -16,7 +16,13 @@ from vnai.stair_clearance import verify
 EXIT_CODES = {"GENERATED": 0, "INVALID_INPUT": 1, "INCOMPLETE": 3, "CONFLICT": 4, "UNSUPPORTED": 5}
 
 
-def draft_stairs(value: Any) -> dict:
+def draft_stairs(value: Any, *, _cache=None) -> dict:
+    if _cache is not None:
+        return _cache.run("stair_drafting", value, lambda: _draft_stairs(value, _cache))
+    return _draft_stairs(value, None)
+
+
+def _draft_stairs(value: Any, _cache) -> dict:
     result = new_report("stair-drafting-v1")
     result.update(
         drafting_status="INVALID_INPUT",
@@ -127,7 +133,7 @@ def draft_stairs(value: Any) -> dict:
         result["drafting_status"] = "INVALID_INPUT" if "invalid" in flags else "UNSUPPORTED"
         return finish(result)
     result["sources"]["input"] = value
-    source = draft_openings(value["source"])
+    source = draft_openings(value["source"], _cache=_cache)
     result["sources"]["opening_model"] = source
     result.update(
         source_opening_revision_id=source["opening_revision_id"],
