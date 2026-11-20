@@ -79,7 +79,7 @@ def main(argv: list[str] | None = None) -> int:
         ("candidate", ("review",)),
         ("openings", ("validate", "draft", "drafting-validate", "schedule", "preview")),
         ("circulation", ("analyze",)),
-        ("stairs", ("validate",)),
+        ("stairs", ("validate", "draft", "drafting-validate", "section", "schedule", "preview")),
     ):
         group = design_sub.add_parser(kind)
         action_sub = group.add_subparsers(dest="design_action", required=True)
@@ -92,6 +92,11 @@ def main(argv: list[str] | None = None) -> int:
                 )
             if kind == "openings" and action == "schedule":
                 command.add_argument("--markdown", help="Create a new opening schedule exclusively")
+            if kind == "stairs" and action == "preview":
+                command.add_argument("--view", choices=("plan", "section"), default="plan")
+                command.add_argument("--out", required=True)
+            if kind == "stairs" and action in {"section", "schedule"}:
+                command.add_argument("--markdown")
             if kind == "floorplan":
                 command.add_argument(
                     "--provenance",
@@ -170,6 +175,34 @@ def main(argv: list[str] | None = None) -> int:
         if args.command in {"design", "geometry"}:
             try:
                 brief = load_json(args.input)
+                if (
+                    args.command == "design"
+                    and args.design_kind == "stairs"
+                    and args.design_action != "validate"
+                ):
+                    from vnai.stair_drafting import (
+                        draft_stairs,
+                        validate_drafting as validate_stair_draft,
+                        EXIT_CODES as STAIR_DRAFT_CODES,
+                    )
+                    from vnai.stair_preview import stair_svg, stair_markdown
+
+                    report = (
+                        validate_stair_draft(brief)
+                        if args.design_action == "drafting-validate"
+                        else draft_stairs(brief)
+                    )
+                    target = None
+                    if args.design_action == "preview":
+                        target, content = Path(args.out), stair_svg(report, args.view)
+                    elif args.design_action in {"section", "schedule"} and args.markdown:
+                        target, content = Path(args.markdown), stair_markdown(report)
+                    if target is not None:
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        with target.open("x", encoding="utf-8", newline="\n") as stream:
+                            stream.write(content)
+                    print(json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False))
+                    return STAIR_DRAFT_CODES[report["drafting_status"]]
                 if (
                     args.command == "design"
                     and args.design_kind == "openings"

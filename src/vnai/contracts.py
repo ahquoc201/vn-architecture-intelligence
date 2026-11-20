@@ -43,6 +43,8 @@ SCHEMA_NAMES = (
     "wall-result.schema.json",
     "opening-drafting-input.schema.json",
     "opening-drafting-result.schema.json",
+    "stair-drafting-input.schema.json",
+    "stair-drafting-result.schema.json",
 
 )
 BASE = "https://vnai.invalid/contracts/"

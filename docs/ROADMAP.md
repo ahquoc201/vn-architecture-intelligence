@@ -70,3 +70,14 @@ production CAD output or automatic approval is included. Source/expert gates rem
 
 See OPENING_DRAFTING_CONTRACT.md. Production CAD writes, structural/regulatory certification,
 automatic placement/redesign and unverified normative dimensions remain excluded.
+
+## R3 Batch 007-B3 - Deterministic proposed stair geometry
+
+- [x] Straight/L/U flights, explicit riser allocations, rational level closure and landing/arrival geometry.
+- [x] Actual plan/true or developed section SVG, schedule, slab/opening and modeled headroom coverage.
+- [x] Known wall/door/fixed collisions, full portal interfaces and fresh 006-B replay; immutable B2 sources.
+- [ ] Architect/expert review of staircase fixtures, townhouse conflicts and actual technical requirements.
+- [ ] B4: governed annotation/layer/dimension contracts and exporter preparation after drawing review.
+
+Stair geometry success is not structural, egress/accessibility approval or CAD write permission.
+See `STAIR_GEOMETRY_CONTRACT.md` for supported model scope and limitations.

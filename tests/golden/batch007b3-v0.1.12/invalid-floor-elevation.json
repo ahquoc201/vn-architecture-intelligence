@@ -1,0 +1,24 @@
+{
+  "drafting_status": "INVALID_INPUT",
+  "geometry_status": "NOT_GENERATED",
+  "full_report_sha256": "38b61fbe0f93ef804624e2c8bf3832bb675af915f230b58dd13f81b5f4a3b8ff",
+  "stair_revision_id": null,
+  "stairs": [],
+  "schedule": [],
+  "headroom": {},
+  "floor_openings": [],
+  "codes": {
+    "errors": [
+      "SOURCE_FLOOR_ELEVATION_MISMATCH"
+    ],
+    "warnings": [
+      "PARENT_CIRCULATION_REPLAYED"
+    ],
+    "missing_information": [
+      "OPENING_INVENTORY_INCOMPLETE",
+      "SOURCE_WALL_LIMITATIONS"
+    ]
+  },
+  "plan_svg_sha256": "a76d1f8c66c35d34804a6aaeb7df9a64887f2f7e9d8f7e90d0683a78c540e12a",
+  "section_svg_sha256": "a76d1f8c66c35d34804a6aaeb7df9a64887f2f7e9d8f7e90d0683a78c540e12a"
+}

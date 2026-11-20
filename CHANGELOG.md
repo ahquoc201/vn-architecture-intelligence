@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.12 - 2026-11-19
+
+- Pin B2 CLI historical golden comparisons to their 0.1.11 engine metadata; preserve full hashes, geometric assertions and all historical fixtures.
+
+- Add deterministic wall/opening-bound straight, L and U stair geometry, exact riser/tread
+  counting and level closure, explicit landing/arrival surfaces and true/developed sections.
+- Add read-only slab/opening, known collision, full portal/landing-width and continuous
+  flat-surface headroom checks with uncovered regions and fresh 006-B interface replay.
+- Keep scoped physical traversal unverified without explicit project width/headroom criteria.
+- Add typed schemas, CLI, schedules, actual SVG plans/sections, synthetic independent
+  oracles/goldens, unchanged townhouse benchmark and clean wheel checks on Python 3.11/3.14.
+- Preserve historical geometry/contracts/goldens, source provenance, no inherited approval,
+  advisory standards/Feng Shui layers and cad_writes_permitted=false.
+
 ## [0.1.11] - R3/BATCH-007-B2 wall-hosted opening drafting (2026-11-19)
 
 - Generate actual digest-bound rough wall cuts, frames/glazing, hinged leaf/arc geometry and explicit surface-sliding motion from existing B1 walls; preserve source candidates/walls.

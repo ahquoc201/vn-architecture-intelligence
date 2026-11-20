@@ -77,9 +77,78 @@ def run() -> None:
             shutil.copyfile(source, work / ("wall-" + source.name))
         for source in (root / "examples/batch007b2").glob("*.json"):
             shutil.copyfile(source, work / ("openingdraft-" + source.name))
+        for source in (root / "examples/batch007b3").glob("*.json"):
+            shutil.copyfile(source, work / ("stairdraft-" + source.name))
         shutil.copyfile(root / "examples/townhouse_4x20_brief.json", work / "brief.json")
         shutil.copyfile(root / "examples/townhouse_sample.json", work / "legacy.json")
         commands = [
+            (["design", "stairs", "draft", "stairdraft-straight.json"], 3),
+            (["design", "stairs", "drafting-validate", "stairdraft-stored.json"], 3),
+            (
+                [
+                    "design",
+                    "stairs",
+                    "section",
+                    "stairdraft-l-shaped.json",
+                    "--markdown",
+                    "stair-section.md",
+                ],
+                3,
+            ),
+            (
+                [
+                    "design",
+                    "stairs",
+                    "schedule",
+                    "stairdraft-u-shaped.json",
+                    "--markdown",
+                    "stair-schedule.md",
+                ],
+                3,
+            ),
+            (
+                [
+                    "design",
+                    "stairs",
+                    "preview",
+                    "stairdraft-straight.json",
+                    "--view",
+                    "plan",
+                    "--out",
+                    "stair-plan.svg",
+                ],
+                3,
+            ),
+            (
+                [
+                    "design",
+                    "stairs",
+                    "preview",
+                    "stairdraft-u-shaped.json",
+                    "--view",
+                    "section",
+                    "--out",
+                    "stair-section.svg",
+                ],
+                3,
+            ),
+            (["design", "stairs", "draft", "stairdraft-missing-slab-opening.json"], 3),
+            (["design", "stairs", "draft", "stairdraft-headroom-failure.json"], 4),
+            (["design", "stairs", "draft", "stairdraft-unsupported-spiral.json"], 5),
+            (["design", "stairs", "draft", "stairdraft-stale-opening-digest.json"], 1),
+            (
+                [
+                    "design",
+                    "stairs",
+                    "preview",
+                    "stairdraft-townhouse-benchmark.json",
+                    "--view",
+                    "plan",
+                    "--out",
+                    "townhouse-stairs.svg",
+                ],
+                4,
+            ),
             (["sources", "validate"], 0),
             (["knowledge", "validate"], 0),
             (["fengshui", "knowledge", "validate"], 0),
@@ -272,6 +341,34 @@ def run() -> None:
             )
             if result.returncode != expected:
                 raise RuntimeError(f"{args}: {result.returncode}, {result.stdout}, {result.stderr}")
+            if args[:2] == ["design", "stairs"] and args[2] != "validate":
+                stair_report = json.loads(result.stdout)
+                if (
+                    stair_report["cad_writes_permitted"]
+                    or stair_report["approval_inherited"]
+                    or stair_report["architect_approval"] != "NOT_GRANTED"
+                ):
+                    raise RuntimeError("Installed stair engine inferred approval/CAD permission")
+                if args[2:] == ["draft", "stairdraft-straight.json"]:
+                    flight = stair_report["stairs"][0]["flights"][0]
+                    if (
+                        flight["risers"] != 20
+                        or flight["ordinary_treads"] != 19
+                        or abs(flight["riser_height_m"] - 0.165) > 1e-12
+                        or abs(flight["run_m"] - 4.75) > 1e-12
+                        or stair_report["stairs"][0]["final_elevation_m"] != 3.3
+                    ):
+                        raise RuntimeError("Installed stair arithmetic oracle failed")
+                    (work / "stairdraft-stored.json").write_text(result.stdout, encoding="utf-8")
+                if args[2] == "preview":
+                    svg = (work / args[-1]).read_text(encoding="utf-8")
+                    if (
+                        stair_report["stair_revision_id"] not in svg
+                        or 'preserveAspectRatio="xMidYMid meet"' not in svg
+                    ):
+                        raise RuntimeError("Installed stair SVG lost its revision/scale binding")
+                if args[2] in {"section", "schedule"} and not (work / args[-1]).is_file():
+                    raise RuntimeError("Installed stair Markdown output is missing")
             if args[:3] == ["design", "floorplan", "generate"] and expected == 0:
                 generated = json.loads(result.stdout)
                 if len(generated["candidates"]) != 3 or any(

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1080" viewBox="0 0 960 1080" preserveAspectRatio="xMidYMid meet" font-family="Arial, sans-serif">
+<metadata>{&quot;cad_writes_permitted&quot;: false, &quot;engine_version&quot;: &quot;0.1.12&quot;, &quot;revision&quot;: &quot;SR-224db834b1c47fe8f8da62d805bd729d1cac7a30c25ebd16a87f51a352a1f9d6&quot;, &quot;scale_px_per_m&quot;: 113.43283582089552, &quot;source_opening_revision&quot;: &quot;OR-781bc8d2086f578affb4c858d9de424132ba2167ae9e54eda062a4ae56b1318b&quot;, &quot;view&quot;: &quot;section&quot;}</metadata>
+<rect width="100%" height="100%" fill="white"/>
+<text x="25" y="30" font-size="19">S1 DEVELOPED_EXPLICIT_WALKING_LINE — CONFLICT</text>
+<text x="25" y="54" font-size="12">Proposed geometry / no CAD authorization / units m</text>
+<path d="M 365.597014925,559.701492537 L 376.940298507,559.701492537 L 376.940298507,219.402985075 L 365.597014925,219.402985075 L 365.597014925,559.701492537 Z" fill="#dadada" fill-rule="evenodd" stroke="#777" stroke-width="1"/>
+<path d="M 376.940298507,559.701492537 L 513.059701493,559.701492537 L 513.059701493,219.402985075 L 376.940298507,219.402985075 L 376.940298507,559.701492537 Z" fill="#dadada" fill-rule="evenodd" stroke="#777" stroke-width="1"/>
+<path d="M 513.059701493,559.701492537 L 524.402985075,559.701492537 L 524.402985075,219.402985075 L 513.059701493,219.402985075 L 513.059701493,559.701492537 Z" fill="#dadada" fill-rule="evenodd" stroke="#777" stroke-width="1"/>
+<polyline points="65,900 825,900" fill="none" stroke="#777" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="65" y="890" fill="#111" font-size="12" text-anchor="start">source FFL 0.0 m</text>
+<polyline points="65,559.701492537 825,559.701492537" fill="none" stroke="#777" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="65" y="549.701492537" fill="#111" font-size="12" text-anchor="start">destination FFL 3.0 m</text>
+<polyline points="65,900 65,882.985074627 93.3582089552,882.985074627 93.3582089552,865.970149254 121.71641791,865.970149254 121.71641791,848.955223881 150.074626866,848.955223881 150.074626866,831.940298507 178.432835821,831.940298507 178.432835821,814.925373134 206.791044776,814.925373134 206.791044776,797.910447761 235.149253731,797.910447761 235.149253731,780.895522388 263.507462687,780.895522388 263.507462687,763.880597015 291.865671642,763.880597015 291.865671642,746.865671642 320.223880597,746.865671642 320.223880597,729.850746269" fill="none" stroke="#214882" stroke-width="2"/>
+<polyline points="320.223880597,729.850746269 569.776119403,729.850746269" fill="none" stroke="#214882" stroke-width="2"/>
+<polyline points="569.776119403,729.850746269 569.776119403,712.835820896 598.134328358,712.835820896 598.134328358,695.820895522 626.492537313,695.820895522 626.492537313,678.805970149 654.850746269,678.805970149 654.850746269,661.791044776 683.208955224,661.791044776 683.208955224,644.776119403 711.567164179,644.776119403 711.567164179,627.76119403 739.925373134,627.76119403 739.925373134,610.746268657 768.28358209,610.746268657 768.28358209,593.731343284 796.641791045,593.731343284 796.641791045,576.71641791 825,576.71641791 825,559.701492537" fill="none" stroke="#214882" stroke-width="2"/>
+<text x="79.1791044776" y="878.985074627" fill="#214882" font-size="8" text-anchor="middle">1</text>
+<text x="107.537313433" y="861.970149254" fill="#214882" font-size="8" text-anchor="middle">2</text>
+<text x="135.895522388" y="844.955223881" fill="#214882" font-size="8" text-anchor="middle">3</text>
+<text x="164.253731343" y="827.940298507" fill="#214882" font-size="8" text-anchor="middle">4</text>
+<text x="192.611940299" y="810.925373134" fill="#214882" font-size="8" text-anchor="middle">5</text>
+<text x="220.970149254" y="793.910447761" fill="#214882" font-size="8" text-anchor="middle">6</text>
+<text x="249.328358209" y="776.895522388" fill="#214882" font-size="8" text-anchor="middle">7</text>
+<text x="277.686567164" y="759.880597015" fill="#214882" font-size="8" text-anchor="middle">8</text>
+<text x="306.044776119" y="742.865671642" fill="#214882" font-size="8" text-anchor="middle">9</text>
+<text x="583.955223881" y="708.835820896" fill="#214882" font-size="8" text-anchor="middle">1</text>
+<text x="612.313432836" y="691.820895522" fill="#214882" font-size="8" text-anchor="middle">2</text>
+<text x="640.671641791" y="674.805970149" fill="#214882" font-size="8" text-anchor="middle">3</text>
+<text x="669.029850746" y="657.791044776" fill="#214882" font-size="8" text-anchor="middle">4</text>
+<text x="697.388059701" y="640.776119403" fill="#214882" font-size="8" text-anchor="middle">5</text>
+<text x="725.746268657" y="623.76119403" fill="#214882" font-size="8" text-anchor="middle">6</text>
+<text x="754.104477612" y="606.746268657" fill="#214882" font-size="8" text-anchor="middle">7</text>
+<text x="782.462686567" y="589.731343284" fill="#214882" font-size="8" text-anchor="middle">8</text>
+<text x="810.820895522" y="572.71641791" fill="#214882" font-size="8" text-anchor="middle">9</text>
+<polyline points="810.820895522,576.71641791 810.820895522,900" fill="none" stroke="#b12323" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="802.820895522" y="892" fill="#b12323" font-size="10" text-anchor="end">-2.85 m known min</text>
+<text x="25" y="1055" font-size="11">Witness XY [1.05, 0.42500000000000004]; projected from lateral offset 0.25 m</text>
+<text x="25" y="97" font-size="12">Headroom: FAILED; continuous modeled area scope</text>
+<line x1="65" y1="950" x2="178.432835821" y2="950" stroke="black" stroke-width="2"/>
+<text x="65" y="970" font-size="12">1 m / uniform scale</text>
+<text x="25" y="1000" font-size="11">HEADROOM_BELOW_DECLARED_REQUIREMENT / SOURCE_DRAFTING_CONFLICTS_RETAINED / STAIR_RESERVATION_FIT /</text>
+<text x="25" y="1014" font-size="11">STAIR_RISER_PRISM_COLLISION / STAIR_WALL_COLLISION</text>
+</svg>

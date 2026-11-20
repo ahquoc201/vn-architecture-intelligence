@@ -1,0 +1,43 @@
+{
+  "drafting_status": "INCOMPLETE",
+  "geometry_status": "NOT_GENERATED",
+  "full_report_sha256": "9fc837c0c30cff68c4e39b52548eab7328c75fbf655a6e75aa0020eb0c04a94b",
+  "stair_revision_id": "SR-b502e243f0ef73cdfd2159e1a4b68bd17bd201c551260c8843d42492e7d3faa3",
+  "stairs": [],
+  "schedule": [],
+  "headroom": {
+    "status": "INCOMPLETE",
+    "scope": "CONTINUOUS_HORIZONTAL_WALKING_SURFACES_VS_HORIZONTAL_BOTTOM_PRISMS",
+    "inventory_complete": true,
+    "coverage_complete": false,
+    "floor_opening_evidence_complete": false,
+    "upper_stair_evidence_complete": true,
+    "unresolved_floor_ids": [
+      "F2"
+    ],
+    "minimum_verified_clearance_m": null,
+    "minimum_location": null,
+    "measurements": [],
+    "uncovered_regions": [],
+    "walking_surface_area_m2": 0.0,
+    "requirement_m": 2.1,
+    "technical_compliance": "NOT_EVALUATED"
+  },
+  "floor_openings": [],
+  "codes": {
+    "errors": [],
+    "warnings": [
+      "PARENT_CIRCULATION_REPLAYED"
+    ],
+    "missing_information": [
+      "ENTRANCE_NOT_DEMONSTRATED",
+      "FLOOR_ELEVATION_REQUIRED",
+      "OPENING_INVENTORY_INCOMPLETE",
+      "ROOM_ACCESS_UNKNOWN",
+      "SLAB_FLOOR_ELEVATION_REQUIRED",
+      "SOURCE_WALL_LIMITATIONS"
+    ]
+  },
+  "plan_svg_sha256": "4ae8c69337ce716b4b95104355a85d853b067837038f1e248f3ec7b9ef5cefd0",
+  "section_svg_sha256": "4ae8c69337ce716b4b95104355a85d853b067837038f1e248f3ec7b9ef5cefd0"
+}

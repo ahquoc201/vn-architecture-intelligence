@@ -37,7 +37,10 @@ def test_versioned_opening_drafting_golden(path, monkeypatch):
 
 
 @pytest.mark.parametrize("path", CASES, ids=lambda p: p.stem)
-def test_draft_cli_all_fixtures(path, capsys):
+def test_draft_cli_all_fixtures(path, capsys, monkeypatch):
+    # Full hashes include the historical engine stamp; preserve the entire B2 oracle.
+    monkeypatch.setattr("vnai.contracts.__version__", "0.1.11")
+    monkeypatch.setattr("vnai.design_brief.__version__", "0.1.11")
     before = path.read_bytes()
     expected = frozen(path)
     code = main(["design", "openings", "draft", str(path)])
@@ -61,7 +64,10 @@ def test_draft_cli_all_fixtures(path, capsys):
     ],
 )
 @pytest.mark.parametrize("action", ["drafting-validate", "schedule", "preview"])
-def test_remaining_drafting_commands(name, action, tmp_path, capsys):
+def test_remaining_drafting_commands(name, action, tmp_path, capsys, monkeypatch):
+    # Pin only historical golden comparisons; current-engine commands stay unpatched.
+    monkeypatch.setattr("vnai.contracts.__version__", "0.1.11")
+    monkeypatch.setattr("vnai.design_brief.__version__", "0.1.11")
     path = ROOT / "examples/batch007b2" / (name + ".json")
     expected = frozen(path)
     args = ["design", "openings", action, str(path)]

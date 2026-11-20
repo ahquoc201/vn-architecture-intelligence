@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1080" viewBox="0 0 960 1080" preserveAspectRatio="xMidYMid meet" font-family="Arial, sans-serif">
+<metadata>{&quot;cad_writes_permitted&quot;: false, &quot;engine_version&quot;: &quot;0.1.12&quot;, &quot;revision&quot;: &quot;SR-238616dc5664154798f95bcb8eb9a752784df914f9d82c47706b9c34abd69139&quot;, &quot;scale_px_per_m&quot;: 113.43283582089552, &quot;source_opening_revision&quot;: &quot;OR-81b21a7b3957f8a00e84a5ab1cd9aa5dbcc5ae1847bf0f3d03a8db0f52de2401&quot;, &quot;view&quot;: &quot;section&quot;}</metadata>
+<rect width="100%" height="100%" fill="white"/>
+<text x="25" y="30" font-size="19">S1 DEVELOPED_EXPLICIT_WALKING_LINE — INCOMPLETE</text>
+<text x="25" y="54" font-size="12">Proposed geometry / no CAD authorization / units m</text>
+<path d="M 65,219.402985075 L 320.223880597,219.402985075 L 320.223880597,196.71641791 L 65,196.71641791 L 65,219.402985075 Z" fill="#dadada" fill-rule="evenodd" stroke="#777" stroke-width="1"/>
+<path d="M 569.776119403,219.402985075 L 825,219.402985075 L 825,196.71641791 L 569.776119403,196.71641791 L 569.776119403,219.402985075 Z" fill="#dadada" fill-rule="evenodd" stroke="#777" stroke-width="1"/>
+<path d="M 320.223880597,219.402985075 L 569.776119403,219.402985075 L 569.776119403,196.71641791 L 320.223880597,196.71641791 L 320.223880597,219.402985075 Z" fill="#dadada" fill-rule="evenodd" stroke="#777" stroke-width="1"/>
+<polyline points="65,900 825,900" fill="none" stroke="#777" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="65" y="890" fill="#111" font-size="12" text-anchor="start">source FFL 0.0 m</text>
+<polyline points="65,525.671641791 825,525.671641791" fill="none" stroke="#777" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="65" y="515.671641791" fill="#111" font-size="12" text-anchor="start">destination FFL 3.3 m</text>
+<polyline points="65,525.671641791 320.223880597,525.671641791" fill="none" stroke="#b833a9" stroke-width="2" stroke-dasharray="5 4"/>
+<polyline points="569.776119403,525.671641791 825,525.671641791" fill="none" stroke="#b833a9" stroke-width="2" stroke-dasharray="5 4"/>
+<polyline points="320.223880597,525.671641791 569.776119403,525.671641791" fill="none" stroke="#b833a9" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="445" y="541.671641791" fill="#b833a9" font-size="10" text-anchor="middle">VOID-F2</text>
+<polyline points="65,900 65,881.28358209 93.3582089552,881.28358209 93.3582089552,862.567164179 121.71641791,862.567164179 121.71641791,843.850746269 150.074626866,843.850746269 150.074626866,825.134328358 178.432835821,825.134328358 178.432835821,806.417910448 206.791044776,806.417910448 206.791044776,787.701492537 235.149253731,787.701492537 235.149253731,768.985074627 263.507462687,768.985074627 263.507462687,750.268656716 291.865671642,750.268656716 291.865671642,731.552238806 320.223880597,731.552238806 320.223880597,712.835820896" fill="none" stroke="#214882" stroke-width="2"/>
+<polyline points="320.223880597,712.835820896 569.776119403,712.835820896" fill="none" stroke="#214882" stroke-width="2"/>
+<polyline points="569.776119403,712.835820896 569.776119403,694.119402985 598.134328358,694.119402985 598.134328358,675.402985075 626.492537313,675.402985075 626.492537313,656.686567164 654.850746269,656.686567164 654.850746269,637.970149254 683.208955224,637.970149254 683.208955224,619.253731343 711.567164179,619.253731343 711.567164179,600.537313433 739.925373134,600.537313433 739.925373134,581.820895522 768.28358209,581.820895522 768.28358209,563.104477612 796.641791045,563.104477612 796.641791045,544.388059701 825,544.388059701 825,525.671641791" fill="none" stroke="#214882" stroke-width="2"/>
+<text x="79.1791044776" y="877.28358209" fill="#214882" font-size="8" text-anchor="middle">1</text>
+<text x="107.537313433" y="858.567164179" fill="#214882" font-size="8" text-anchor="middle">2</text>
+<text x="135.895522388" y="839.850746269" fill="#214882" font-size="8" text-anchor="middle">3</text>
+<text x="164.253731343" y="821.134328358" fill="#214882" font-size="8" text-anchor="middle">4</text>
+<text x="192.611940299" y="802.417910448" fill="#214882" font-size="8" text-anchor="middle">5</text>
+<text x="220.970149254" y="783.701492537" fill="#214882" font-size="8" text-anchor="middle">6</text>
+<text x="249.328358209" y="764.985074627" fill="#214882" font-size="8" text-anchor="middle">7</text>
+<text x="277.686567164" y="746.268656716" fill="#214882" font-size="8" text-anchor="middle">8</text>
+<text x="306.044776119" y="727.552238806" fill="#214882" font-size="8" text-anchor="middle">9</text>
+<text x="583.955223881" y="690.119402985" fill="#214882" font-size="8" text-anchor="middle">1</text>
+<text x="612.313432836" y="671.402985075" fill="#214882" font-size="8" text-anchor="middle">2</text>
+<text x="640.671641791" y="652.686567164" fill="#214882" font-size="8" text-anchor="middle">3</text>
+<text x="669.029850746" y="633.970149254" fill="#214882" font-size="8" text-anchor="middle">4</text>
+<text x="697.388059701" y="615.253731343" fill="#214882" font-size="8" text-anchor="middle">5</text>
+<text x="725.746268657" y="596.537313433" fill="#214882" font-size="8" text-anchor="middle">6</text>
+<text x="754.104477612" y="577.820895522" fill="#214882" font-size="8" text-anchor="middle">7</text>
+<text x="782.462686567" y="559.104477612" fill="#214882" font-size="8" text-anchor="middle">8</text>
+<text x="810.820895522" y="540.388059701" fill="#214882" font-size="8" text-anchor="middle">9</text>
+<polyline points="810.820895522,544.388059701 810.820895522,219.402985075" fill="none" stroke="#b12323" stroke-width="2"/>
+<text x="802.820895522" y="211.402985075" fill="#b12323" font-size="10" text-anchor="end">2.865 m known min</text>
+<text x="25" y="1055" font-size="11">Witness XY [4.125, 2.7]; on supplied section path</text>
+<text x="25" y="97" font-size="12">Headroom: VERIFIED_MODELED_SCOPE; continuous modeled area scope</text>
+<line x1="65" y1="950" x2="178.432835821" y2="950" stroke="black" stroke-width="2"/>
+<text x="65" y="970" font-size="12">1 m / uniform scale</text>
+</svg>
