@@ -79,6 +79,8 @@ def run() -> None:
             shutil.copyfile(source, work / ("openingdraft-" + source.name))
         for source in (root / "examples/batch007b3").glob("*.json"):
             shutil.copyfile(source, work / ("stairdraft-" + source.name))
+        for source in (root / "examples/batch007c").glob("*.json"):
+            shutil.copyfile(source, work / ("drafting-" + source.name))
         shutil.copyfile(root / "examples/townhouse_4x20_brief.json", work / "brief.json")
         shutil.copyfile(root / "examples/townhouse_sample.json", work / "legacy.json")
         for name in (
@@ -433,6 +435,23 @@ def run() -> None:
                 ),
             ]
         )
+        commands.extend(
+            [
+                (["design", "drafting", "generate", "drafting-oracle-exterior-clear.json", "--out", "drafting-oracle-a.json"], 0),
+                (["design", "drafting", "validate", "drafting-oracle-a.json"], 0),
+                (["design", "drafting", "generate", "drafting-oracle-dimension-chain.json"], 0),
+                (["design", "drafting", "generate", "drafting-oracle-stair-section.json"], 0),
+                (["design", "drafting", "generate", "drafting-collision-example.json"], 4),
+                (["design", "drafting", "generate", "drafting-townhouse-6rooms-drafting.json", "--out", "drafting-townhouse.json"], 0),
+                (["design", "drafting", "validate", "drafting-townhouse.json"], 0),
+                (["design", "drafting", "report", "drafting-townhouse.json", "--markdown", "drafting-townhouse.md"], 0),
+                (["design", "drafting", "layers", "drafting-townhouse.json", "--markdown", "drafting-layers.md"], 0),
+                (["design", "drafting", "preview", "drafting-townhouse.json", "--floor", "F1", "--out", "drafting-F1.svg"], 0),
+                (["design", "drafting", "preview", "drafting-townhouse-6rooms-drafting.json", "--view", "sheet", "--scale", "50", "--out", "drafting-sheet-50.svg"], 0),
+            ]
+        )
+        th100_geom_digest: str | None = None
+        th100_pres_digest: str | None = None
         for args, expected in commands:
             result = subprocess.run(
                 [str(python), "-I", "-X", "utf8", "-m", "vnai", *args],
@@ -445,6 +464,46 @@ def run() -> None:
             )
             if result.returncode != expected:
                 raise RuntimeError(f"{args}: {result.returncode}, {result.stdout}, {result.stderr}")
+            if args[:2] == ["design", "drafting"]:
+                draft_rep = json.loads(result.stdout)
+                if draft_rep["cad_writes_permitted"] or draft_rep["architect_approval"] != "NOT_GRANTED":
+                    raise RuntimeError("Installed drafting engine granted CAD writes or approval")
+                if args[2] == "generate" and args[3] == "drafting-oracle-exterior-clear.json":
+                    clear_dims = [
+                        d for d in draft_rep["dimensions"] if d["measurement_basis"] == "clear_room_interior"
+                    ]
+                    if sorted(round(d["measured_value"], 6) for d in clear_dims) != [3600.0, 4600.0]:
+                        raise RuntimeError("Installed Oracle A clear dimensions failed")
+                    if abs(draft_rep["annotations"]["rooms"][0]["clear_area_m2"] - 16.56) > 1e-10:
+                        raise RuntimeError("Installed Oracle A clear area failed")
+                if args[2] == "generate" and args[3] == "drafting-oracle-dimension-chain.json":
+                    ch = next(
+                        c for c in draft_rep["dimension_chains"] if c["chain_id"] == "CHAIN-F1-X-SOUTH"
+                    )
+                    if ch["reference_coordinates"] != [0.0, 1200.0, 2800.0, 4000.0] or ch["closure_status"] != "GEOMETRIC_CLOSED_EXACT":
+                        raise RuntimeError("Installed Oracle B dimension chain failed")
+                if args[2] == "generate" and args[3] == "drafting-townhouse-6rooms-drafting.json":
+                    if draft_rep["collisions"] or draft_rep["source_digests"]["verification_coverage"]["verified"] != 48:
+                        raise RuntimeError("Installed drafting townhouse benchmark check failed")
+                    th100_geom_digest = draft_rep["geometry_and_dimensions_digest"]
+                    th100_pres_digest = draft_rep["presentation_digest"]
+                if args[2] == "preview":
+                    import xml.etree.ElementTree as ET
+
+                    if "--scale" in args:
+                        if (
+                            draft_rep["paper_space"]["scale_denominator"] != 50
+                            or draft_rep["geometry_and_dimensions_digest"] != th100_geom_digest
+                            or draft_rep["presentation_digest"] == th100_pres_digest
+                            or draft_rep["collisions"]
+                        ):
+                            raise RuntimeError("Installed drafting 1:50 scale invariance check failed")
+
+                    svg_file = work / args[-1]
+                    ET.parse(svg_file)
+                    svg_txt = svg_file.read_text(encoding="utf-8")
+                    if 'preserveAspectRatio="xMidYMid meet"' not in svg_txt or "Phòng khách" not in svg_txt:
+                        raise RuntimeError("Installed drafting SVG lost uniform scale or Vietnamese Unicode")
             if args[:2] == ["design", "integrated"]:
                 integrated = json.loads(result.stdout)
                 if (

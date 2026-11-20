@@ -1,0 +1,820 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Architectural Drafting Intermediate Representation Contract v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "report_schema_version",
+    "engine_version",
+    "contract",
+    "status",
+    "drafting_status",
+    "errors",
+    "warnings",
+    "missing_information",
+    "diagnostics",
+    "cad_writes_permitted",
+    "approval_inherited",
+    "architect_approval",
+    "standards_review",
+    "fengshui_review",
+    "construction_readiness",
+    "source_kind",
+    "source_digests",
+    "unit_policy",
+    "paper_space",
+    "layer_policy",
+    "style",
+    "model_space",
+    "dimensions",
+    "dimension_chains",
+    "unsupported_dimensions",
+    "annotations",
+    "reference_symbols",
+    "collisions",
+    "unresolved_items",
+    "source_conflicts",
+    "geometry_and_dimensions_digest",
+    "model_space_digest",
+    "presentation_digest",
+    "drawing_ir_digest",
+    "sources"
+  ],
+  "properties": {
+    "report_schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "engine_version": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "contract": {
+      "const": "architectural-drafting-v1"
+    },
+    "status": {
+      "enum": [
+        "VALID",
+        "INVALID",
+        "INCOMPLETE"
+      ]
+    },
+    "drafting_status": {
+      "enum": [
+        "GENERATED",
+        "INVALID_INPUT",
+        "INCOMPLETE",
+        "CONFLICT",
+        "UNSUPPORTED"
+      ]
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/issue"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/issue"
+      }
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/issue"
+      }
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/issue"
+      }
+    },
+    "cad_writes_permitted": {
+      "const": false
+    },
+    "approval_inherited": {
+      "const": false
+    },
+    "architect_approval": {
+      "const": "NOT_GRANTED"
+    },
+    "standards_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "fengshui_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "construction_readiness": {
+      "const": "NOT_FOR_CONSTRUCTION_CONCEPTUAL_ONLY"
+    },
+    "source_kind": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_digests": {
+      "type": "object"
+    },
+    "unit_policy": {
+      "type": "object"
+    },
+    "paper_space": {
+      "type": "object"
+    },
+    "layer_policy": {
+      "type": "object"
+    },
+    "style": {
+      "type": "object"
+    },
+    "model_space": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "units",
+        "blocks",
+        "views"
+      ],
+      "properties": {
+        "units": {
+          "enum": [
+            "mm",
+            "m"
+          ]
+        },
+        "blocks": {
+          "type": "object"
+        },
+        "views": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "view_id",
+              "view_kind",
+              "floor_id",
+              "title",
+              "bounds",
+              "source_revision_digest",
+              "entities"
+            ],
+            "properties": {
+              "view_id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "view_kind": {
+                "enum": [
+                  "floor_plan",
+                  "stair_section"
+                ]
+              },
+              "floor_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "title": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "section_kind": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "bounds": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "min_x",
+                  "min_y",
+                  "max_x",
+                  "max_y"
+                ],
+                "properties": {
+                  "min_x": {
+                    "type": "number"
+                  },
+                  "min_y": {
+                    "type": "number"
+                  },
+                  "max_x": {
+                    "type": "number"
+                  },
+                  "max_y": {
+                    "type": "number"
+                  }
+                }
+              },
+              "source_revision_digest": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "entities": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/primitive"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "dimensions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/dimension"
+      }
+    },
+    "dimension_chains": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/dimension_chain"
+      }
+    },
+    "unsupported_dimensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "entity_id",
+          "floor_id",
+          "basis",
+          "reason"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "entity_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "floor_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "basis": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "reason": {
+            "type": "string",
+            "pattern": "\\S"
+          }
+        }
+      }
+    },
+    "annotations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rooms",
+        "openings",
+        "stairs",
+        "placement_adjustments"
+      ],
+      "properties": {
+        "rooms": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "openings": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "stairs": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "placement_adjustments": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "reference_symbols": {
+      "type": "object"
+    },
+    "collisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "view_id",
+          "collision_kind",
+          "category",
+          "entity_a",
+          "entity_b",
+          "overlap_box",
+          "attempted_placements",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "view_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "collision_kind": {
+            "enum": [
+              "EXACT_GEOMETRIC",
+              "APPROXIMATE_TEXT_BOUNDS"
+            ]
+          },
+          "category": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "entity_a": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "entity_b": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "overlap_box": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "attempted_placements": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "status": {
+            "const": "UNRESOLVED"
+          }
+        }
+      }
+    },
+    "unresolved_items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "source_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "geometry_and_dimensions_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "model_space_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "presentation_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "drawing_ir_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sources": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "path",
+        "message",
+        "requirement_ids"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "path": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "requirement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          }
+        }
+      }
+    },
+    "primitive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "entity_type",
+        "coordinates",
+        "view_id",
+        "floor_id",
+        "layer",
+        "style_ref",
+        "source_geometry_id",
+        "source_revision_digest",
+        "provenance"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "entity_type": {
+          "enum": [
+            "LINE",
+            "POLYLINE",
+            "ARC",
+            "CIRCLE",
+            "TEXT",
+            "MTEXT",
+            "DIMENSION",
+            "HATCH",
+            "SYMBOL",
+            "BLOCK_REFERENCE"
+          ]
+        },
+        "coordinates": {
+          "type": "object"
+        },
+        "view_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "floor_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "layer": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "style_ref": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "source_geometry_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "source_revision_digest": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "provenance": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "metadata": {
+          "type": "object"
+        }
+      }
+    },
+    "dimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "view_id",
+        "floor_id",
+        "dimension_type",
+        "measurement_basis",
+        "measured_vs_required",
+        "ref_point_1",
+        "ref_point_2",
+        "measured_value",
+        "source_measured_value",
+        "measurement_unit",
+        "display_format",
+        "display_text",
+        "displayed_numeric",
+        "rounding_discrepancy",
+        "dim_line_location",
+        "extension_lines",
+        "associated_entity_ids",
+        "source_geometry_digest"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "view_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "floor_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dimension_type": {
+          "enum": [
+            "linear_horizontal",
+            "linear_vertical",
+            "vertical_elevation",
+            "vertical_clearance"
+          ]
+        },
+        "measurement_basis": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "measured_vs_required": {
+          "const": "actual_measured"
+        },
+        "ref_point_1": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "ref_point_2": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "measured_value": {
+          "type": "number"
+        },
+        "source_measured_value": {
+          "type": "number"
+        },
+        "measurement_unit": {
+          "enum": [
+            "mm",
+            "m"
+          ]
+        },
+        "display_format": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "display_text": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "displayed_numeric": {
+          "type": "number"
+        },
+        "rounding_discrepancy": {
+          "type": "number"
+        },
+        "dim_line_location": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "start",
+            "end",
+            "text_point"
+          ],
+          "properties": {
+            "start": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "end": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "text_point": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          }
+        },
+        "extension_lines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "start",
+              "end"
+            ],
+            "properties": {
+              "start": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "end": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            }
+          }
+        },
+        "associated_entity_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          }
+        },
+        "source_geometry_digest": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "chain_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "dimension_chain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chain_id",
+        "view_id",
+        "floor_id",
+        "axis",
+        "side",
+        "measurement_unit",
+        "reference_coordinates",
+        "segment_dimension_ids",
+        "overall_dimension_id",
+        "exact_segments_sum",
+        "exact_overall",
+        "geometric_closure_error",
+        "geometric_closed",
+        "displayed_segments_sum",
+        "displayed_overall",
+        "display_rounding_discrepancy",
+        "display_closed",
+        "closure_status"
+      ],
+      "properties": {
+        "chain_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "view_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "floor_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "axis": {
+          "enum": [
+            "x",
+            "y"
+          ]
+        },
+        "side": {
+          "enum": [
+            "bottom",
+            "top",
+            "left",
+            "right"
+          ]
+        },
+        "measurement_unit": {
+          "enum": [
+            "mm",
+            "m"
+          ]
+        },
+        "reference_coordinates": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2
+        },
+        "segment_dimension_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          }
+        },
+        "overall_dimension_id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "exact_segments_sum": {
+          "type": "number"
+        },
+        "exact_overall": {
+          "type": "number"
+        },
+        "geometric_closure_error": {
+          "type": "number"
+        },
+        "geometric_closed": {
+          "type": "boolean"
+        },
+        "displayed_segments_sum": {
+          "type": "number"
+        },
+        "displayed_overall": {
+          "type": "number"
+        },
+        "display_rounding_discrepancy": {
+          "type": "number"
+        },
+        "display_closed": {
+          "type": "boolean"
+        },
+        "closure_status": {
+          "enum": [
+            "GEOMETRIC_CLOSED_EXACT",
+            "GEOMETRIC_CLOSED_DISPLAY_ROUNDING_DISCREPANCY",
+            "GEOMETRIC_CLOSURE_MISMATCH"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.14 - 2026-11-20
+
+- Add CAD-neutral Drawing Intermediate Representation (`architectural-drafting-v1`) with 10 primitives (`LINE`, `POLYLINE`, `ARC`, `CIRCLE`, `TEXT`, `MTEXT`, `DIMENSION`, `HATCH`, `SYMBOL`, `BLOCK_REFERENCE`), analytic swing-arc preservation, deduplicated wall unions, and separated model-space vs paper-space settings.
+- Add deterministic architectural dimension engine (`vnai.drafting_dimensions`) supporting overall envelope/outline dimensions, orthogonal horizontal/vertical dimension chains with exact `Decimal` closure vs display-rounding discrepancy tracking, clear room interior dimensions, wall thicknesses, rough vs clear opening widths, orthogonal circulation strip widths, stair flight/landing/opening spans, and vertical elevations/headroom.
+- Add explicit `Decimal` unit conversion guard (`mm`/`m`) and project drawing scale independence (`1:50`, `1:100`) verified by invariant `geometry_and_dimensions_digest`.
+- Add Vietnamese Unicode room annotations using strictly interior `polylabel` placement, B2 opening tags/schedule consistency, B3 stair callouts/sections, and source-grounded reference symbols (confirmed-only north arrows, architectural reference grids, level marks, section markers, scale bars).
+- Add configurable versioned CAD layer policy (`vnai-cad-layers-v1`) with `ezdxf_mapping`, monochrome/color architectural styles, bounded placement/leader callouts, and `EXACT_GEOMETRIC` vs `APPROXIMATE_TEXT_BOUNDS` collision detection (`A-REVIEW` markers).
+- Add `vnai design drafting` CLI (`generate`, `validate`, `report`, `preview`, `layers`), 8 Batch 007-C fixtures, 9 actual SVG previews including the complete 6-room two-storey townhouse benchmark (48/48 unchanged geometric checks preserved), independent mathematical oracles, documentation, and wheel/CI coverage.
+- Preserve immutable source geometry, historical golden fixtures/reports, separate technical/Feng Shui layers, `architect_approval: NOT_GRANTED`, and `cad_writes_permitted: false`.
+
+
 ## 0.1.13 - 2026-11-20
 
 - Classify incomplete modeling inventories/cut datum before search; never label missing critical data as search exhaustion.

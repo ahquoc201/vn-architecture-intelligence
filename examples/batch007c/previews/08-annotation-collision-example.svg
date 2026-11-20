@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="689.6" viewBox="0 0 620 689.6" preserveAspectRatio="xMidYMid meet" font-family="Noto Sans, Segoe UI, Arial, sans-serif">
+<title>Proposed Conceptual Architectural Drawing — Not For Construction</title>
+<metadata>{&quot;architect_approval&quot;: &quot;NOT_GRANTED&quot;, &quot;cad_writes_permitted&quot;: false, &quot;drawing_ir_digest&quot;: &quot;a006e5397b8b2ce43223e44f15bd5f05ad990b0029ae334660d1d8529d85e73f&quot;, &quot;drawing_units&quot;: &quot;mm&quot;, &quot;engine_version&quot;: &quot;0.1.14&quot;, &quot;geometry_and_dimensions_digest&quot;: &quot;1fa3096bbde2086db1f6223f8a6f1d9d8f065fefbcc69927f516a0040c540d3f&quot;, &quot;hidden_layers&quot;: [], &quot;model_space_digest&quot;: &quot;1124d9d0c9e27128f41ac8be195a0c0518e8dc8aad1f180379dbdb91b2a0503d&quot;, &quot;presentation_digest&quot;: &quot;630618096e71c8c55d55f9ca016f54a232280d92dc635e4a7deec0385fe0f9b5&quot;, &quot;px_per_model_unit&quot;: 0.016, &quot;px_per_paper_mm&quot;: 4.0, &quot;scale_denominator&quot;: 250.0, &quot;scale_label&quot;: &quot;1:250&quot;, &quot;source_revision_id&quot;: &quot;WR-0a674f9279e6d8e8704a712578b9ebbd7fff3987cbbb8318f4766ec32beceed5&quot;, &quot;view_ids&quot;: [&quot;PLAN-F1&quot;], &quot;visible_layers&quot;: [&quot;A-DIMS&quot;, &quot;A-DOOR&quot;, &quot;A-DOOR-SWING&quot;, &quot;A-GRID&quot;, &quot;A-HATCH&quot;, &quot;A-LEVEL&quot;, &quot;A-OPENING-TAG&quot;, &quot;A-REVIEW&quot;, &quot;A-ROOM-TEXT&quot;, &quot;A-SECT&quot;, &quot;A-STAIR&quot;, &quot;A-STAIR-ABOVE&quot;, &quot;A-WALL-EXT&quot;, &quot;A-WALL-INT&quot;, &quot;A-WIND&quot;]}</metadata>
+<defs><pattern id="hatch-ansi31" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#e5e7eb"/><line x1="0" y1="0" x2="0" y2="8" stroke="#9ca3af" stroke-width="1"/></pattern></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="14" y="14" width="592" height="661.6" fill="none" stroke="#111827" stroke-width="1.6"/>
+<rect x="20" y="20" width="580" height="649.6" fill="none" stroke="#374151" stroke-width="0.6"/>
+<text x="32" y="42" font-size="14" font-weight="bold" fill="#111827">Annotation Collision Detection Example (1:250) | Scale 1:250 (project preference) | Units: mm</text>
+<text x="588" y="42" font-size="11" font-weight="bold" text-anchor="end" fill="#b91c1c">Status: CONFLICT | Collisions: 14</text>
+<rect x="48" y="54" width="320" height="491.6" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.8"/>
+<text x="60" y="74" font-size="12" font-weight="bold" fill="#111827">PLAN-F1: Floor Plan F1</text>
+<g class="cad-layer" data-layer="A-HATCH" data-view="PLAN-F1">
+<path d="M 176.7 415.8 L 176.7 342.2 L 176.7 339 L 179.9 339 L 237.5 339 L 240.7 339 L 240.7 342.2 L 240.7 415.8 L 240.7 419 L 237.5 419 L 179.9 419 L 176.7 419 L 176.7 415.8 Z M 179.9 415.8 L 237.5 415.8 L 237.5 342.2 L 179.9 342.2 L 179.9 415.8 Z" fill="url(#hatch-ansi31)" fill-rule="evenodd" stroke="none" opacity="0.85"/>
+<path d="M 199.1 390.2 L 199.1 374.2 L 199.1 358.2 L 199.1 342.2 L 237.5 342.2 L 237.5 358.2 L 237.5 374.2 L 237.5 390.2 L 199.1 390.2 Z" fill="url(#hatch-ansi31)" fill-rule="evenodd" stroke="none" opacity="0.85"/>
+</g>
+<g class="cad-layer" data-layer="A-GRID" data-view="PLAN-F1">
+<path d="M 176.7 419 L 240.7 419 L 240.7 99 L 176.7 99 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="10 3 2 3"/>
+<path d="M 176.7 419 L 240.7 419 L 240.7 339 L 176.7 339 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="10 3 2 3"/>
+<rect x="176.7" y="500.6" width="16" height="5.0" fill="#111827" stroke="#111827" stroke-width="0.6"/>
+<rect x="192.7" y="500.6" width="16" height="5.0" fill="#ffffff" stroke="#111827" stroke-width="0.6"/>
+<text x="176.7" y="515.6" font-size="8" fill="#111827">0</text>
+<text x="192.7" y="515.6" font-size="8" text-anchor="middle" fill="#111827">1000</text>
+<text x="208.7" y="515.6" font-size="8" text-anchor="end" fill="#111827">2000 mm (1:250)</text>
+<g transform="translate(311.1,249.4) rotate(0)">
+<circle cx="0" cy="0" r="12" fill="white" stroke="#6b7280" stroke-width="1.0"/>
+<polygon points="0,-11 -4,4 0,1 4,4" fill="#6b7280"/>
+<text x="0" y="-15" font-size="9" font-weight="bold" text-anchor="middle" fill="#6b7280">N</text>
+</g>
+</g>
+<g class="cad-layer" data-layer="A-WALL-INT" data-view="PLAN-F1">
+<path d="M 199.1 390.2 L 199.1 374.2 L 199.1 358.2 L 199.1 342.2 L 237.5 342.2 L 237.5 358.2 L 237.5 374.2 L 237.5 390.2 L 199.1 390.2 Z" fill="none" fill-rule="evenodd" stroke="#374151" stroke-width="0.8"/>
+</g>
+<g class="cad-layer" data-layer="A-WALL-EXT" data-view="PLAN-F1">
+<path d="M 176.7 415.8 L 176.7 342.2 L 176.7 339 L 179.9 339 L 237.5 339 L 240.7 339 L 240.7 342.2 L 240.7 415.8 L 240.7 419 L 237.5 419 L 179.9 419 L 176.7 419 L 176.7 415.8 Z M 179.9 415.8 L 237.5 415.8 L 237.5 342.2 L 179.9 342.2 L 179.9 415.8 Z" fill="none" fill-rule="evenodd" stroke="#111827" stroke-width="1.12"/>
+</g>
+<g class="cad-layer" data-layer="A-DIMS" data-view="PLAN-F1">
+<line x1="176.7" y1="425" x2="176.7" y2="457" stroke="#374151" stroke-width="0.5"/>
+<line x1="179.9" y1="425" x2="179.9" y2="457" stroke="#374151" stroke-width="0.5"/>
+<line x1="176.7" y1="451" x2="179.9" y2="451" stroke="#374151" stroke-width="0.7"/>
+<line x1="172.54" y1="455.16" x2="180.86" y2="446.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="175.74" y1="455.16" x2="184.06" y2="446.84" stroke="#374151" stroke-width="1.1"/>
+<text x="167.5" y="453.8" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151">200</text>
+<line x1="179.9" y1="425" x2="179.9" y2="457" stroke="#374151" stroke-width="0.5"/>
+<line x1="237.5" y1="425" x2="237.5" y2="457" stroke="#374151" stroke-width="0.5"/>
+<line x1="179.9" y1="451" x2="237.5" y2="451" stroke="#374151" stroke-width="0.7"/>
+<line x1="175.74" y1="455.16" x2="184.06" y2="446.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="233.34" y1="455.16" x2="241.66" y2="446.84" stroke="#374151" stroke-width="1.1"/>
+<text x="208.7" y="453.8" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151">3600</text>
+<line x1="237.5" y1="425" x2="237.5" y2="457" stroke="#374151" stroke-width="0.5"/>
+<line x1="240.7" y1="425" x2="240.7" y2="457" stroke="#374151" stroke-width="0.5"/>
+<line x1="237.5" y1="451" x2="240.7" y2="451" stroke="#374151" stroke-width="0.7"/>
+<line x1="233.34" y1="455.16" x2="241.66" y2="446.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="236.54" y1="455.16" x2="244.86" y2="446.84" stroke="#374151" stroke-width="1.1"/>
+<text x="249.9" y="453.8" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151">200</text>
+<line x1="176.7" y1="425" x2="176.7" y2="487" stroke="#374151" stroke-width="0.5"/>
+<line x1="240.7" y1="425" x2="240.7" y2="487" stroke="#374151" stroke-width="0.5"/>
+<line x1="176.7" y1="481" x2="240.7" y2="481" stroke="#374151" stroke-width="0.7"/>
+<line x1="172.54" y1="485.16" x2="180.86" y2="476.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="236.54" y1="485.16" x2="244.86" y2="476.84" stroke="#374151" stroke-width="1.1"/>
+<text x="208.7" y="483.8" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151">4000</text>
+<line x1="170.7" y1="419" x2="138.7" y2="419" stroke="#374151" stroke-width="0.5"/>
+<line x1="170.7" y1="415.8" x2="138.7" y2="415.8" stroke="#374151" stroke-width="0.5"/>
+<line x1="144.7" y1="419" x2="144.7" y2="415.8" stroke="#374151" stroke-width="0.7"/>
+<line x1="140.54" y1="423.16" x2="148.86" y2="414.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="140.54" y1="419.96" x2="148.86" y2="411.64" stroke="#374151" stroke-width="1.1"/>
+<text x="141.1" y="428.2" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 141.1 428.2)">200</text>
+<line x1="170.7" y1="415.8" x2="138.7" y2="415.8" stroke="#374151" stroke-width="0.5"/>
+<line x1="170.7" y1="390.2" x2="138.7" y2="390.2" stroke="#374151" stroke-width="0.5"/>
+<line x1="144.7" y1="415.8" x2="144.7" y2="390.2" stroke="#374151" stroke-width="0.7"/>
+<line x1="140.54" y1="419.96" x2="148.86" y2="411.64" stroke="#374151" stroke-width="1.1"/>
+<line x1="140.54" y1="394.36" x2="148.86" y2="386.04" stroke="#374151" stroke-width="1.1"/>
+<text x="141.1" y="403" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 141.1 403)">1600</text>
+<line x1="170.7" y1="390.2" x2="138.7" y2="390.2" stroke="#374151" stroke-width="0.5"/>
+<line x1="170.7" y1="374.2" x2="138.7" y2="374.2" stroke="#374151" stroke-width="0.5"/>
+<line x1="144.7" y1="390.2" x2="144.7" y2="374.2" stroke="#374151" stroke-width="0.7"/>
+<line x1="140.54" y1="394.36" x2="148.86" y2="386.04" stroke="#374151" stroke-width="1.1"/>
+<line x1="140.54" y1="378.36" x2="148.86" y2="370.04" stroke="#374151" stroke-width="1.1"/>
+<text x="141.1" y="382.2" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 141.1 382.2)">1000</text>
+<line x1="170.7" y1="374.2" x2="138.7" y2="374.2" stroke="#374151" stroke-width="0.5"/>
+<line x1="170.7" y1="358.2" x2="138.7" y2="358.2" stroke="#374151" stroke-width="0.5"/>
+<line x1="144.7" y1="374.2" x2="144.7" y2="358.2" stroke="#374151" stroke-width="0.7"/>
+<line x1="140.54" y1="378.36" x2="148.86" y2="370.04" stroke="#374151" stroke-width="1.1"/>
+<line x1="140.54" y1="362.36" x2="148.86" y2="354.04" stroke="#374151" stroke-width="1.1"/>
+<text x="141.1" y="366.2" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 141.1 366.2)">1000</text>
+<line x1="170.7" y1="358.2" x2="138.7" y2="358.2" stroke="#374151" stroke-width="0.5"/>
+<line x1="170.7" y1="342.2" x2="138.7" y2="342.2" stroke="#374151" stroke-width="0.5"/>
+<line x1="144.7" y1="358.2" x2="144.7" y2="342.2" stroke="#374151" stroke-width="0.7"/>
+<line x1="140.54" y1="362.36" x2="148.86" y2="354.04" stroke="#374151" stroke-width="1.1"/>
+<line x1="140.54" y1="346.36" x2="148.86" y2="338.04" stroke="#374151" stroke-width="1.1"/>
+<text x="141.1" y="350.2" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 141.1 350.2)">1000</text>
+<line x1="170.7" y1="342.2" x2="138.7" y2="342.2" stroke="#374151" stroke-width="0.5"/>
+<line x1="170.7" y1="339" x2="138.7" y2="339" stroke="#374151" stroke-width="0.5"/>
+<line x1="144.7" y1="342.2" x2="144.7" y2="339" stroke="#374151" stroke-width="0.7"/>
+<line x1="140.54" y1="346.36" x2="148.86" y2="338.04" stroke="#374151" stroke-width="1.1"/>
+<line x1="140.54" y1="343.16" x2="148.86" y2="334.84" stroke="#374151" stroke-width="1.1"/>
+<text x="141.1" y="329.8" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 141.1 329.8)">200</text>
+<line x1="170.7" y1="419" x2="108.7" y2="419" stroke="#374151" stroke-width="0.5"/>
+<line x1="170.7" y1="339" x2="108.7" y2="339" stroke="#374151" stroke-width="0.5"/>
+<line x1="114.7" y1="419" x2="114.7" y2="339" stroke="#374151" stroke-width="0.7"/>
+<line x1="110.54" y1="423.16" x2="118.86" y2="414.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="110.54" y1="343.16" x2="118.86" y2="334.84" stroke="#374151" stroke-width="1.1"/>
+<text x="111.1" y="379" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 111.1 379)">5000</text>
+<line x1="176.7" y1="333" x2="176.7" y2="301" stroke="#374151" stroke-width="0.5"/>
+<line x1="179.9" y1="333" x2="179.9" y2="301" stroke="#374151" stroke-width="0.5"/>
+<line x1="176.7" y1="307" x2="179.9" y2="307" stroke="#374151" stroke-width="0.7"/>
+<line x1="172.54" y1="311.16" x2="180.86" y2="302.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="175.74" y1="311.16" x2="184.06" y2="302.84" stroke="#374151" stroke-width="1.1"/>
+<text x="167.5" y="300.2" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151">200</text>
+<line x1="179.9" y1="333" x2="179.9" y2="301" stroke="#374151" stroke-width="0.5"/>
+<line x1="237.5" y1="333" x2="237.5" y2="301" stroke="#374151" stroke-width="0.5"/>
+<line x1="179.9" y1="307" x2="237.5" y2="307" stroke="#374151" stroke-width="0.7"/>
+<line x1="175.74" y1="311.16" x2="184.06" y2="302.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="233.34" y1="311.16" x2="241.66" y2="302.84" stroke="#374151" stroke-width="1.1"/>
+<text x="208.7" y="300.2" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151">3600</text>
+<line x1="237.5" y1="333" x2="237.5" y2="301" stroke="#374151" stroke-width="0.5"/>
+<line x1="240.7" y1="333" x2="240.7" y2="301" stroke="#374151" stroke-width="0.5"/>
+<line x1="237.5" y1="307" x2="240.7" y2="307" stroke="#374151" stroke-width="0.7"/>
+<line x1="233.34" y1="311.16" x2="241.66" y2="302.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="236.54" y1="311.16" x2="244.86" y2="302.84" stroke="#374151" stroke-width="1.1"/>
+<text x="249.9" y="300.2" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151">200</text>
+<line x1="176.7" y1="333" x2="176.7" y2="271" stroke="#374151" stroke-width="0.5"/>
+<line x1="240.7" y1="333" x2="240.7" y2="271" stroke="#374151" stroke-width="0.5"/>
+<line x1="176.7" y1="277" x2="240.7" y2="277" stroke="#374151" stroke-width="0.7"/>
+<line x1="172.54" y1="281.16" x2="180.86" y2="272.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="236.54" y1="281.16" x2="244.86" y2="272.84" stroke="#374151" stroke-width="1.1"/>
+<text x="208.7" y="270.2" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151">4000</text>
+<line x1="246.7" y1="419" x2="278.7" y2="419" stroke="#374151" stroke-width="0.5"/>
+<line x1="246.7" y1="415.8" x2="278.7" y2="415.8" stroke="#374151" stroke-width="0.5"/>
+<line x1="272.7" y1="419" x2="272.7" y2="415.8" stroke="#374151" stroke-width="0.7"/>
+<line x1="268.54" y1="423.16" x2="276.86" y2="414.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="268.54" y1="419.96" x2="276.86" y2="411.64" stroke="#374151" stroke-width="1.1"/>
+<text x="279.5" y="428.2" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 279.5 428.2)">200</text>
+<line x1="246.7" y1="415.8" x2="278.7" y2="415.8" stroke="#374151" stroke-width="0.5"/>
+<line x1="246.7" y1="342.2" x2="278.7" y2="342.2" stroke="#374151" stroke-width="0.5"/>
+<line x1="272.7" y1="415.8" x2="272.7" y2="342.2" stroke="#374151" stroke-width="0.7"/>
+<line x1="268.54" y1="419.96" x2="276.86" y2="411.64" stroke="#374151" stroke-width="1.1"/>
+<line x1="268.54" y1="346.36" x2="276.86" y2="338.04" stroke="#374151" stroke-width="1.1"/>
+<text x="279.5" y="379" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 279.5 379)">4600</text>
+<line x1="246.7" y1="342.2" x2="278.7" y2="342.2" stroke="#374151" stroke-width="0.5"/>
+<line x1="246.7" y1="339" x2="278.7" y2="339" stroke="#374151" stroke-width="0.5"/>
+<line x1="272.7" y1="342.2" x2="272.7" y2="339" stroke="#374151" stroke-width="0.7"/>
+<line x1="268.54" y1="346.36" x2="276.86" y2="338.04" stroke="#374151" stroke-width="1.1"/>
+<line x1="268.54" y1="343.16" x2="276.86" y2="334.84" stroke="#374151" stroke-width="1.1"/>
+<text x="279.5" y="329.8" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 279.5 329.8)">200</text>
+<line x1="246.7" y1="419" x2="308.7" y2="419" stroke="#374151" stroke-width="0.5"/>
+<line x1="246.7" y1="339" x2="308.7" y2="339" stroke="#374151" stroke-width="0.5"/>
+<line x1="302.7" y1="419" x2="302.7" y2="339" stroke="#374151" stroke-width="0.7"/>
+<line x1="298.54" y1="423.16" x2="306.86" y2="414.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="298.54" y1="343.16" x2="306.86" y2="334.84" stroke="#374151" stroke-width="1.1"/>
+<text x="309.5" y="379" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 309.5 379)">5000</text>
+<line x1="237.5" y1="379" x2="240.7" y2="379" stroke="#374151" stroke-width="0.7"/>
+<line x1="233.34" y1="383.16" x2="241.66" y2="374.84" stroke="#374151" stroke-width="1.1"/>
+<line x1="236.54" y1="383.16" x2="244.86" y2="374.84" stroke="#374151" stroke-width="1.1"/>
+<text x="255.1" y="379" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151">200</text>
+<line x1="218.3" y1="374.2" x2="218.3" y2="358.2" stroke="#374151" stroke-width="0.7"/>
+<line x1="214.14" y1="378.36" x2="222.46" y2="370.04" stroke="#374151" stroke-width="1.1"/>
+<line x1="214.14" y1="362.36" x2="222.46" y2="354.04" stroke="#374151" stroke-width="1.1"/>
+<text x="218.3" y="345.4" dy="0.3em" font-size="8" text-anchor="middle" fill="#374151" transform="rotate(-90 218.3 345.4)">1000</text>
+</g>
+<g class="cad-layer" data-layer="A-ROOM-TEXT" data-view="PLAN-F1">
+<text font-size="9.6" text-anchor="middle"><tspan x="193.287" y="389.933" font-weight="bold" fill="#111827">Không gian phòng sinh hoạt đa năng dài</tspan><tspan x="193.287" y="402.413" font-weight="normal" fill="#111827">[BED:1]</tspan><tspan x="193.287" y="414.892" font-weight="normal" fill="#111827">Clear: 9.36 m²</tspan></text>
+</g>
+<g class="cad-layer" data-layer="A-REVIEW" data-view="PLAN-F1">
+<path d="M 212.1 343.4 L 224.5 343.4 L 224.5 337.8 L 212.1 337.8 L 212.1 343.4 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 212.1 356.52 L 224.5 356.52 L 224.5 341 L 212.1 341 L 212.1 356.52 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 175.5 420.2 L 241.9 420.2 L 241.9 381.556 L 175.5 381.556 L 175.5 420.2 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 197.9 391.4 L 238.7 391.4 L 238.7 381.556 L 197.9 381.556 L 197.9 391.4 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 134.9 423.268 L 147.3 423.268 L 147.3 419.56 L 134.9 419.56 L 134.9 423.268 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 134.9 414.12 L 147.3 414.12 L 147.3 391.88 L 134.9 391.88 L 134.9 414.12 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 134.9 377.32 L 147.3 377.32 L 147.3 371.08 L 134.9 371.08 L 134.9 377.32 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 134.9 393.32 L 147.3 393.32 L 147.3 381.556 L 134.9 381.556 L 134.9 393.32 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 134.9 361.32 L 147.3 361.32 L 147.3 355.08 L 134.9 355.08 L 134.9 361.32 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 104.9 390.12 L 117.3 390.12 L 117.3 381.556 L 104.9 381.556 L 104.9 390.12 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 273.3 423.268 L 285.7 423.268 L 285.7 419.56 L 273.3 419.56 L 273.3 423.268 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 273.3 390.12 L 285.7 390.12 L 285.7 381.556 L 273.3 381.556 L 273.3 390.12 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 303.3 390.12 L 307.576 390.12 L 307.576 381.556 L 303.3 381.556 L 303.3 390.12 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+<path d="M 246.46 385.2 L 263.74 385.2 L 263.74 381.556 L 246.46 381.556 L 246.46 385.2 Z" fill="none" fill-rule="evenodd" stroke="#b91c1c" stroke-width="0.576" stroke-dasharray="6 4"/>
+</g>
+<text x="32" y="577.6" font-size="11" font-weight="bold" fill="#111827">CONCEPTUAL / PROPOSED DRAWING (A-901) — NOT FOR CONSTRUCTION</text>
+<text x="32" y="594.6" font-size="10" fill="#374151">Architect Approval: NOT_GRANTED | CAD Writes: false | Standards/Feng Shui: NOT_EVALUATED | Engine v0.1.14</text>
+<text x="32" y="610.6" font-size="10" font-weight="bold" fill="#b91c1c">Unresolved Annotation Collisions: 14 (highlighted on layer A-REVIEW)</text>
+</svg>

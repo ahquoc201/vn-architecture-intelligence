@@ -165,6 +165,29 @@ def main(argv: list[str] | None = None) -> int:
                 "--markdown", help="Create a new human-readable report exclusively"
             )
 
+    drafting_group = design_sub.add_parser(
+        "drafting", help="Architectural dimensions, annotations, CAD layers & SVG previews; no CAD writes"
+    )
+    drafting_actions = drafting_group.add_subparsers(dest="design_action", required=True)
+    for action in ("generate", "validate", "report", "preview", "layers"):
+        command = drafting_actions.add_parser(action)
+        command.add_argument("input", help="Drafting input, integrated/wall/stair report or stored drafting IR JSON")
+        if action != "validate":
+            command.add_argument("--config", help="Optional drafting configuration overlay JSON")
+            command.add_argument("--scale", type=float, help="Optional project paper scale denominator (e.g. 50, 100)")
+            command.add_argument("--units", choices=("mm", "m"), help="Optional drawing model units")
+        if action == "generate":
+            command.add_argument("--out", help="Write drafting IR JSON to a new file exclusively")
+            command.add_argument("--markdown", help="Create a new Markdown drafting report exclusively")
+        if action in {"report", "layers"}:
+            command.add_argument("--markdown", help="Create a new Markdown report exclusively")
+        if action == "preview":
+            command.add_argument("--out", required=True, help="Create a new SVG preview exclusively")
+            command.add_argument("--floor", help="Filter preview to a specific floor or view ID")
+            command.add_argument("--view", choices=("sheet", "plan", "section"), default="sheet")
+            command.add_argument("--layers", help="Comma-separated list of visible layers")
+            command.add_argument("--hide-layers", help="Comma-separated list of hidden layers")
+
     architecture = design_sub.add_parser(
         "architectural-review", help="Separate geometry, graph, clearance and approval results"
     )
@@ -230,6 +253,106 @@ def main(argv: list[str] | None = None) -> int:
                             stream.write(integrated_markdown(report))
                     print(payload, end="")
                     return INTEGRATED_CODES[report["integrated_status"]]
+                if args.command == "design" and args.design_kind == "drafting":
+                    out_path = getattr(args, "out", None)
+                    md_path = getattr(args, "markdown", None)
+                    targets = [Path(p).resolve() for p in [out_path, md_path] if p]
+                    if len(targets) != len(set(targets)) or any(p.exists() for p in targets):
+                        raise FileExistsError(
+                            "Requested drafting output exists or output paths alias; use new versioned paths."
+                        )
+                    from vnai.drafting_engine import (
+                        EXIT_CODES as DRAFTING_CODES,
+                        ensure_no_finalized_ir_overrides,
+                        extract_layers_report,
+                        generate_drafting,
+                        validate_drafting,
+                    )
+                    from vnai.drafting_preview import (
+                        drafting_markdown,
+                        drafting_svg,
+                        layers_markdown,
+                    )
+
+                    cfg_override = load_json(args.config) if getattr(args, "config", None) else None
+                    if cfg_override is not None and not isinstance(cfg_override, dict):
+                        raise ValueError("Drafting config JSON must be an object.")
+                    scale_override = getattr(args, "scale", None)
+                    units_override = getattr(args, "units", None)
+
+                    if args.design_action in {"layers", "report", "preview"}:
+                        ensure_no_finalized_ir_overrides(
+                            brief,
+                            config_override=cfg_override,
+                            scale_override=scale_override,
+                            units_override=units_override,
+                        )
+
+                    if args.design_action == "validate":
+                        report = validate_drafting(brief)
+                    elif args.design_action == "layers":
+                        report = extract_layers_report(
+                            brief,
+                            config_override=cfg_override,
+                            scale_override=scale_override,
+                            units_override=units_override,
+                        )
+                    elif (
+                        args.design_action in {"report", "preview"}
+                        and brief.get("contract") == "architectural-drafting-v1"
+                    ):
+                        report = validate_drafting(brief)
+                    else:
+                        report = generate_drafting(
+                            brief,
+                            config_override=cfg_override,
+                            scale_override=scale_override,
+                            units_override=units_override,
+                        )
+
+                    payload = (
+                        json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False) + "\n"
+                    )
+                    target, content = None, None
+                    if args.design_action == "preview":
+                        inc = (
+                            {s.strip() for s in args.layers.split(",") if s.strip()}
+                            if args.layers
+                            else None
+                        )
+                        hid = (
+                            {s.strip() for s in args.hide_layers.split(",") if s.strip()}
+                            if args.hide_layers
+                            else None
+                        )
+                        target, content = (
+                            Path(args.out),
+                            drafting_svg(
+                                report,
+                                view=args.view,
+                                floor=args.floor,
+                                include_layers=inc,
+                                hide_layers=hid,
+                            ),
+                        )
+                    elif out_path:
+                        target, content = Path(out_path), payload
+                    if target is not None:
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        with target.open("x", encoding="utf-8", newline="\n") as stream:
+                            stream.write(content)
+                    if md_path:
+                        md_content = (
+                            layers_markdown(report)
+                            if args.design_action == "layers"
+                            else drafting_markdown(report)
+                        )
+                        target_md = Path(md_path)
+                        target_md.parent.mkdir(parents=True, exist_ok=True)
+                        with target_md.open("x", encoding="utf-8", newline="\n") as stream:
+                            stream.write(md_content)
+                    print(payload, end="")
+                    return DRAFTING_CODES[report["drafting_status"]]
                 if (
                     args.command == "design"
                     and args.design_kind == "stairs"

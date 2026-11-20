@@ -84,3 +84,10 @@ compose actual walls/openings/stairs and replay original allocation plus clear-s
 Refine only within explicit permissions; preserve fixed geometry and missing/unsupported evidence.
 Inspect actual per-floor before/after SVG and source findings. Geometric success is proposed;
 request architect review and separate specialist checks before any future CAD authorization.
+
+Batch 007-C: read `docs/ARCHITECTURAL_DRAFTING_CONTRACT.md`. Use `vnai design drafting`
+(`generate`, `validate`, `report`, `preview`, `layers`) to turn verified walls/openings/stairs
+into CAD-neutral IR with measured dimensions, closure-checked chains, Vietnamese Unicode room
+labels, opening/stair tags, configurable layers and scale-consistent SVG previews. Never fabricate
+dimensions, elevations, or north orientation; preserve immutable source geometry, `cad_writes_permitted: false`,
+`architect_approval: NOT_GRANTED`, and separate QCVN/TCVN and Feng Shui advisory layers.

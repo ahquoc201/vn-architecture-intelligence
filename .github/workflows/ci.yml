@@ -92,6 +92,18 @@ jobs:
           vnai design integrated preview outputs/integrated-v0.1.13.json --view after --floor F1 --out outputs/integrated-F1-v0.1.13.svg
           vnai design integrated preview outputs/integrated-v0.1.13.json --view after --floor F2 --out outputs/integrated-F2-v0.1.13.svg
           vnai design integrated preview outputs/integrated-v0.1.13.json --view section --out outputs/integrated-section-v0.1.13.svg
+      - name: Architectural drafting, dimensions, layers and previews (Batch 007-C)
+        run: |
+          vnai design drafting generate examples/batch007c/townhouse-6rooms-drafting.json --out outputs/drafting-v0.1.14.json --markdown outputs/drafting-v0.1.14.md
+          vnai design drafting validate outputs/drafting-v0.1.14.json
+          vnai design drafting report outputs/drafting-v0.1.14.json --markdown outputs/drafting-report-v0.1.14.md
+          vnai design drafting layers outputs/drafting-v0.1.14.json --markdown outputs/drafting-layers-v0.1.14.md
+          vnai design drafting preview outputs/drafting-v0.1.14.json --floor F1 --out outputs/drafting-F1-v0.1.14.svg
+          vnai design drafting preview outputs/drafting-v0.1.14.json --floor F2 --out outputs/drafting-F2-v0.1.14.svg
+          vnai design drafting preview outputs/drafting-v0.1.14.json --view section --out outputs/drafting-section-v0.1.14.svg
+          vnai design drafting preview outputs/drafting-v0.1.14.json --view sheet --out outputs/drafting-sheet-v0.1.14.svg
+          vnai design drafting generate examples/batch007c/oracle-exterior-clear.json > outputs/oracle-a-v0.1.14.json
+          vnai design drafting generate examples/batch007c/oracle-dimension-chain.json > outputs/oracle-b-v0.1.14.json
       - name: Fresh wheel outside checkout
         run: python scripts/smoke_wheel.py
       - run: vnai fengshui knowledge validate

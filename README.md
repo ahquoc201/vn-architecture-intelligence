@@ -1,6 +1,6 @@
 # Vietnam Architecture Intelligence (VNAI)
 
-**Phiên bản 0.1.12 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
+**Phiên bản 0.1.14 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
 
 Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, với ba nhiệm vụ tách biệt:
 
@@ -252,3 +252,27 @@ vnai design integrated preview outputs/integrated-v0.1.13.json --view comparison
 
 See [the integrated contract and architect walkthrough](docs/INTEGRATED_FLOORPLAN_CONTRACT.md).
 Geometric success remains PROPOSED, with human/technical review pending and CAD writes disabled.
+
+
+## R3 Batch 007-C — Architectural Dimensions, Annotation & CAD Layer Engine (v0.1.14)
+
+Turns verified integrated floorplans, walls, hosted openings, and stairs into a deterministic,
+CAD-neutral Drawing Intermediate Representation (`architectural-drafting-v1`) with actual measured
+dimensions, closure-verified dimension chains, Vietnamese Unicode room annotations (interior
+pole-of-inaccessibility placement), door/window/stair tags, source-grounded reference symbols, configurable CAD
+layer policy (`vnai-cad-layers-v1`, project-level convention with `ezdxf_mapping`), bounded
+collision detection, and scale-consistent SVG sheet/floor/section previews.
+
+```powershell
+vnai design drafting generate examples/batch007c/townhouse-6rooms-drafting.json --out outputs/townhouse-drafting-v0.1.14.json --markdown outputs/townhouse-drafting-v0.1.14.md
+vnai design drafting validate outputs/townhouse-drafting-v0.1.14.json
+vnai design drafting report outputs/townhouse-drafting-v0.1.14.json --markdown outputs/townhouse-drafting-report-v0.1.14.md
+vnai design drafting layers outputs/townhouse-drafting-v0.1.14.json --markdown outputs/townhouse-layers-v0.1.14.md
+vnai design drafting preview outputs/townhouse-drafting-v0.1.14.json --floor F1 --out outputs/townhouse-F1-v0.1.14.svg
+vnai design drafting preview outputs/townhouse-drafting-v0.1.14.json --view sheet --out outputs/townhouse-sheet-v0.1.14.svg
+```
+
+See [the architectural drafting contract](docs/ARCHITECTURAL_DRAFTING_CONTRACT.md),
+[Batch 007-C fixtures](examples/batch007c), and [generated SVG previews](examples/batch007c/previews).
+Source geometry remains immutable (48/48 integrated checks verified), `cad_writes_permitted` stays
+`false`, architectural approval stays `NOT_GRANTED`, and production DXF export belongs to Batch 007-D.
