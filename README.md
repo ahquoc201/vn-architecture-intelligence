@@ -235,3 +235,20 @@ vnai design stairs preview examples/batch007b3/l-shaped.json --view section --ou
 These synthetic geometry examples may return INCOMPLETE (3); townhouse returns CONFLICT (4).
 See [the stair contract](docs/STAIR_GEOMETRY_CONTRACT.md) for counting, headroom coverage,
 limits, exit codes and the distinction between modeled geometry and architectural approval.
+
+
+## R3 Batch 007-B4 ? integrated wall-aware concepts
+
+The opt-in workflow reuses existing room generation and actual wall/door/stair engines,
+checks clear areas/dimensions, and attempts only explicitly permitted partition/opening moves.
+Every accepted revision replays original hard constraints; source/fixed geometry and review
+history remain intact. New two-storey synthetic inputs include a measured before/after doorway
+refinement and actual per-floor SVG. Synthetic dimensions are not regulatory defaults.
+
+```powershell
+vnai design integrated refine examples/batch007b4/residential-4x20-six-rooms.json --out outputs/integrated-v0.1.13.json
+vnai design integrated preview outputs/integrated-v0.1.13.json --view comparison --out outputs/integrated-v0.1.13.svg
+```
+
+See [the integrated contract and architect walkthrough](docs/INTEGRATED_FLOORPLAN_CONTRACT.md).
+Geometric success remains PROPOSED, with human/technical review pending and CAD writes disabled.

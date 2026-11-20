@@ -43,7 +43,13 @@ def reviewable(value):
     return value
 
 
-def draft_openings(value: Any) -> dict:
+def draft_openings(value: Any, *, _cache=None) -> dict:
+    if _cache is not None:
+        return _cache.run("opening_drafting", value, lambda: _draft_openings(value, _cache))
+    return _draft_openings(value, None)
+
+
+def _draft_openings(value: Any, _cache) -> dict:
     result = new_report("opening-drafting-v1")
     result.update(
         drafting_status="INVALID_INPUT",
@@ -117,7 +123,7 @@ def draft_openings(value: Any) -> dict:
             "Drafting physical magnitudes are limited to 1e9 m; no overflow or approximation is attempted.",
         )
         return finish(result)
-    model = generate_walls(value["source"])
+    model = generate_walls(value["source"], _cache=_cache)
     result["sources"]["wall_model"] = model
     result.update(
         source_candidate_digest=model["source_candidate_digest"],

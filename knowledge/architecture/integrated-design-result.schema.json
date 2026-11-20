@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "contract",
+    "integrated_status",
+    "candidates",
+    "originals",
+    "attempts",
+    "search",
+    "cad_writes_permitted",
+    "approval_inherited",
+    "architect_approval",
+    "sources"
+  ],
+  "properties": {
+    "contract": {
+      "const": "integrated-design-v1"
+    },
+    "integrated_status": {
+      "enum": [
+        "GENERATED",
+        "REFINED",
+        "INVALID_INPUT",
+        "CONFLICT",
+        "INCOMPLETE",
+        "UNSUPPORTED",
+        "INFEASIBLE",
+        "SEARCH_EXHAUSTED"
+      ]
+    },
+    "cad_writes_permitted": {
+      "const": false
+    },
+    "approval_inherited": {
+      "const": false
+    },
+    "architect_approval": {
+      "const": "NOT_GRANTED"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "revision_id",
+          "verification_status",
+          "candidate",
+          "engines",
+          "conflicts",
+          "accounting",
+          "cad_writes_permitted"
+        ],
+        "properties": {
+          "cad_writes_permitted": {
+            "const": false
+          },
+          "candidate": {
+            "$ref": "floorplan-candidate.schema.json"
+          },
+          "verification_status": {
+            "const": "VERIFIED_SUPPORTED_GEOMETRY"
+          }
+        }
+      },
+      "maxItems": 3
+    },
+    "originals": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 64
+    },
+    "attempts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 64
+    },
+    "search": {
+      "type": "object"
+    },
+    "sources": {
+      "type": "object"
+    }
+  }
+}

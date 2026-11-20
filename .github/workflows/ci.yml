@@ -84,6 +84,14 @@ jobs:
           expect_stair_exit 3 vnai design stairs preview examples/batch007b3/straight.json --view plan --out outputs/stair-plan-v0.1.12.svg
           expect_stair_exit 3 vnai design stairs preview examples/batch007b3/u-shaped.json --view section --out outputs/stair-section-v0.1.12.svg
           expect_stair_exit 4 vnai design stairs preview examples/batch007b3/townhouse-benchmark.json --view plan --out outputs/townhouse-stairs-v0.1.12.svg
+      - name: Integrated two-storey townhouse refinement and actual previews
+        run: |
+          vnai design integrated refine examples/batch007b4/residential-4x20-six-rooms.json --out outputs/integrated-v0.1.13.json --markdown outputs/integrated-v0.1.13.md
+          vnai design integrated validate outputs/integrated-v0.1.13.json
+          vnai design integrated preview outputs/integrated-v0.1.13.json --view comparison --out outputs/integrated-comparison-v0.1.13.svg
+          vnai design integrated preview outputs/integrated-v0.1.13.json --view after --floor F1 --out outputs/integrated-F1-v0.1.13.svg
+          vnai design integrated preview outputs/integrated-v0.1.13.json --view after --floor F2 --out outputs/integrated-F2-v0.1.13.svg
+          vnai design integrated preview outputs/integrated-v0.1.13.json --view section --out outputs/integrated-section-v0.1.13.svg
       - name: Fresh wheel outside checkout
         run: python scripts/smoke_wheel.py
       - run: vnai fengshui knowledge validate

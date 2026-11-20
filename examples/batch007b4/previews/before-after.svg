@@ -1,0 +1,280 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1260" viewBox="0 0 1920 1260" font-family="Arial, sans-serif" preserveAspectRatio="xMidYMid meet">
+<rect width="100%" height="100%" fill="white"/>
+<metadata>{&quot;cad_writes_permitted&quot;: false, &quot;engine_version&quot;: &quot;0.1.13&quot;, &quot;revisions&quot;: [&quot;IR-6bcdce39f161cb32efaabd47bebaab1c451988d5406fc77b02f28b5ded00b98b&quot;, &quot;IR-4dabfa947848c1ae7596f6c3ae79fec225f81e26998b229a0be813e3667c2f0b&quot;], &quot;scale_px_per_m&quot;: 45.0, &quot;view&quot;: &quot;comparison&quot;}</metadata>
+<text x="25" y="30" font-size="18" fill="#1f2937">ORIGINAL / F1</text>
+<text x="25" y="54" font-size="12" fill="#b91c1c">CONFLICT</text>
+<text x="25" y="77" font-size="12" fill="#1f2937">Design-wide: failed findings 5 | unknown 10</text>
+<path d="M100 1060 L280 1060 L280 160 L100 160 L100 1060 Z " fill="#fafafa" fill-rule="evenodd" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/>
+<path d="M100 1015 L280 1015 L280 205 L100 205 L100 1015 Z " fill="white" fill-rule="evenodd" stroke="#111827" stroke-width="1" stroke-dasharray=""/>
+<path d="M100 745 L147.25 745 L147.25 565 L190 565 L190 475 L100 475 L100 745 Z " fill="#e0f2fe" fill-rule="evenodd" stroke="#7dd3fc" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M253 596.5 L271 596.5 L271 565 L253 565 L253 596.5 Z " fill="#e5e7eb" fill-rule="evenodd" stroke="#4b5563" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M100 205 L167.5 205 L167.5 214 L109 214 L109 470.5 L109.675 470.5 L109.675 475 L109 475 L109 745 L109.675 745 L109.675 749.5 L109 749.5 L109 1006 L190 1006 L190 1015 L100 1015 L100 205 Z " fill="#374151" fill-rule="evenodd" stroke="#111827" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M142.75 745 L142.75 690.1 L147.25 690.1 L147.25 745 L271 745 L271 565 L190 565 L190 536.2 L194.5 536.2 L194.5 560.5 L271 560.5 L271 475 L194.5 475 L194.5 503.8 L190 503.8 L190 475 L142.075 475 L142.075 470.5 L271 470.5 L271 214 L203.5 214 L203.5 205 L280 205 L280 1015 L222.4 1015 L222.4 1006 L271 1006 L271 749.5 L142.075 749.5 L142.075 745 L142.75 745 Z " fill="#374151" fill-rule="evenodd" stroke="#111827" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M147.25 565 L147.25 646.9 L142.75 646.9 L142.75 565 L147.25 565 Z " fill="#374151" fill-rule="evenodd" stroke="#111827" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M199 1001.5 L228.25 1001.5 L228.25 965.5 L199 965.5 L199 1001.5 Z " fill="#fda4af" fill-rule="evenodd" stroke="#be123c" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M190 534.4 L194.5 534.4 L194.5 536.2 L190 536.2 L190 534.4 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M190 503.8 L194.5 503.8 L194.5 505.6 L190 505.6 L190 503.8 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M194.5 534.175 L221.5 534.175 L221.5 532.825 L194.5 532.825 L194.5 534.175 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M194.5 506.5 A27 27 0 0 1 221.5 533.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M190 1006 L191.8 1006 L191.8 1015 L190 1015 L190 1006 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M220.6 1006 L222.4 1006 L222.4 1015 L220.6 1015 L220.6 1006 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M192.025 1006 L193.375 1006 L193.375 979 L192.025 979 L192.025 1006 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M219.7 1006 A27 27 0 0 0 192.7 979" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M109.675 745 L111.475 745 L111.475 749.5 L109.675 749.5 L109.675 745 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M140.275 745 L142.075 745 L142.075 749.5 L140.275 749.5 L140.275 745 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M111.7 776.5 L113.05 776.5 L113.05 749.5 L111.7 749.5 L111.7 776.5 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M139.375 749.5 A27 27 0 0 1 112.375 776.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M109.675 470.5 L111.475 470.5 L111.475 475 L109.675 475 L109.675 470.5 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M140.275 470.5 L142.075 470.5 L142.075 475 L140.275 475 L140.275 470.5 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M111.7 470.5 L113.05 470.5 L113.05 443.5 L111.7 443.5 L111.7 470.5 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M139.375 470.5 A27 27 0 0 0 112.375 443.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M142.75 688.3 L147.25 688.3 L147.25 690.1 L142.75 690.1 L142.75 688.3 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M142.75 646.9 L147.25 646.9 L147.25 648.7 L142.75 648.7 L142.75 646.9 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M140.5 646.9 L141.85 646.9 L141.85 609.1 L140.5 609.1 L140.5 646.9 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<polyline points="141.175,687.4 141.175,646.9" fill="none" stroke="#7c3aed" stroke-width="1" stroke-dasharray=""/>
+<path d="M167.5 205 L169.3 205 L169.3 214 L167.5 214 L167.5 205 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M201.7 205 L203.5 205 L203.5 214 L201.7 214 L201.7 205 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<polyline points="169.3,209.5 201.7,209.5" fill="none" stroke="#0284c7" stroke-width="1.5" stroke-dasharray=""/>
+<path d="M147.25 686.5 L158.05 686.5 L158.05 650.5 L147.25 650.5 L147.25 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M158.05 686.5 L168.85 686.5 L168.85 650.5 L158.05 650.5 L158.05 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M168.85 686.5 L179.65 686.5 L179.65 650.5 L168.85 650.5 L168.85 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M179.65 686.5 L190.45 686.5 L190.45 650.5 L179.65 650.5 L179.65 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M190.45 686.5 L201.25 686.5 L201.25 650.5 L190.45 650.5 L190.45 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M201.25 686.5 L212.05 686.5 L212.05 650.5 L201.25 650.5 L201.25 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M212.05 686.5 L222.85 686.5 L222.85 650.5 L212.05 650.5 L212.05 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M222.85 686.5 L233.65 686.5 L233.65 650.5 L222.85 650.5 L222.85 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M233.65 686.5 L244.45 686.5 L244.45 650.5 L233.65 650.5 L233.65 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M244.45 686.5 L271 686.5 L271 605.5 L244.45 605.5 L244.45 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M233.65 641.5 L244.45 641.5 L244.45 605.5 L233.65 605.5 L233.65 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M222.85 641.5 L233.65 641.5 L233.65 605.5 L222.85 605.5 L222.85 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M212.05 641.5 L222.85 641.5 L222.85 605.5 L212.05 605.5 L212.05 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M201.25 641.5 L212.05 641.5 L212.05 605.5 L201.25 605.5 L201.25 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M190.45 641.5 L201.25 641.5 L201.25 605.5 L190.45 605.5 L190.45 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M179.65 641.5 L190.45 641.5 L190.45 605.5 L179.65 605.5 L179.65 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M168.85 641.5 L179.65 641.5 L179.65 605.5 L168.85 605.5 L168.85 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M158.05 641.5 L168.85 641.5 L168.85 605.5 L158.05 605.5 L158.05 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M147.25 641.5 L158.05 641.5 L158.05 605.5 L147.25 605.5 L147.25 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<polyline points="147.25,668.5 244.45,668.5" fill="none" stroke="#c2410c" stroke-width="1.4" stroke-dasharray=""/>
+<path d="M237.45 665.5 L244.45 668.5 L237.45 671.5" fill="none" stroke="#c2410c"/>
+<polyline points="244.45,623.5 147.25,623.5" fill="none" stroke="#c2410c" stroke-width="1.4" stroke-dasharray=""/>
+<path d="M154.25 626.5 L147.25 623.5 L154.25 620.5" fill="none" stroke="#c2410c"/>
+<text x="198.394322709" y="646" font-size="9" fill="#9a3412">UP</text>
+<path d="M232.75 517.75 L300 517.75" stroke="#64748b" fill="none" stroke-width=".6"/>
+<text x="310" y="517.75" font-size="11" fill="#1f2937">BATH-G:1</text>
+<text x="310" y="534.75" font-size="10" fill="#1f2937">3.23 m2 clear</text>
+<text x="156" y="342.25" font-size="12" fill="#1f2937">KITCHEN:1</text>
+<text x="156" y="359.25" font-size="11" fill="#1f2937">20.52 m2 clear</text>
+<text x="156" y="877.75" font-size="12" fill="#1f2937">LIVING:1</text>
+<text x="156" y="894.75" font-size="11" fill="#1f2937">20.52 m2 clear</text>
+<polyline points="100,1075.75 145,1075.75" fill="none" stroke="#111827" stroke-width="3" stroke-dasharray=""/>
+<text x="100" y="1097" font-size="11" fill="#1f2937">1 m | uniform geometric scale</text>
+<text x="25" y="1120" font-size="12" fill="#1f2937">PROPOSED - architect review pending</text>
+<text x="25" y="1141" font-size="11" fill="#1f2937">CAD writes: false | construction: NOT_EVALUATED</text>
+<text x="25" y="1159" font-size="10" fill="#1f2937">Design-wide codes: first 4/7; see full report</text>
+<text x="25" y="1179" font-size="10" fill="#b91c1c">DRAFTED_OPENING_BLOCKED</text>
+<text x="25" y="1197" font-size="10" fill="#b91c1c">GRAPH_NOT_VERIFIED</text>
+<text x="25" y="1215" font-size="10" fill="#b91c1c">MOTION_FIXED_COLLISION</text>
+<text x="25" y="1233" font-size="10" fill="#b91c1c">PASSAGE_FIXED_COLLISION</text>
+<text x="505" y="30" font-size="18" fill="#1f2937">ORIGINAL / F2</text>
+<text x="505" y="54" font-size="12" fill="#b91c1c">CONFLICT</text>
+<text x="505" y="77" font-size="12" fill="#1f2937">Design-wide: failed findings 5 | unknown 10</text>
+<path d="M580 1060 L760 1060 L760 160 L580 160 L580 1060 Z " fill="#fafafa" fill-rule="evenodd" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/>
+<path d="M580 1015 L760 1015 L760 205 L580 205 L580 1015 Z " fill="white" fill-rule="evenodd" stroke="#111827" stroke-width="1" stroke-dasharray=""/>
+<path d="M580 745 L627.25 745 L627.25 565 L670 565 L670 475 L580 475 L580 745 Z " fill="#e0f2fe" fill-rule="evenodd" stroke="#7dd3fc" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M733 596.5 L751 596.5 L751 565 L733 565 L733 596.5 Z " fill="#e5e7eb" fill-rule="evenodd" stroke="#4b5563" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M580 205 L647.5 205 L647.5 214 L589 214 L589 470.5 L589.675 470.5 L589.675 475 L589 475 L589 745 L589.675 745 L589.675 749.5 L589 749.5 L589 1006 L751 1006 L751 749.5 L622.075 749.5 L622.075 745 L622.75 745 L622.75 645.1 L627.25 645.1 L627.25 745 L751 745 L751 565 L670 565 L670 536.2 L674.5 536.2 L674.5 560.5 L751 560.5 L751 475 L674.5 475 L674.5 503.8 L670 503.8 L670 475 L622.075 475 L622.075 470.5 L751 470.5 L751 214 L683.5 214 L683.5 205 L760 205 L760 1015 L580 1015 L580 205 Z " fill="#374151" fill-rule="evenodd" stroke="#111827" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M622.75 565 L627.25 565 L627.25 601.9 L622.75 601.9 L622.75 565 Z " fill="#374151" fill-rule="evenodd" stroke="#111827" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M670 534.4 L674.5 534.4 L674.5 536.2 L670 536.2 L670 534.4 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M670 503.8 L674.5 503.8 L674.5 505.6 L670 505.6 L670 503.8 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M674.5 534.175 L701.5 534.175 L701.5 532.825 L674.5 532.825 L674.5 534.175 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M674.5 506.5 A27 27 0 0 1 701.5 533.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M589.675 745 L591.475 745 L591.475 749.5 L589.675 749.5 L589.675 745 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M620.275 745 L622.075 745 L622.075 749.5 L620.275 749.5 L620.275 745 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M591.7 776.5 L593.05 776.5 L593.05 749.5 L591.7 749.5 L591.7 776.5 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M619.375 749.5 A27 27 0 0 1 592.375 776.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M589.675 470.5 L591.475 470.5 L591.475 475 L589.675 475 L589.675 470.5 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M620.275 470.5 L622.075 470.5 L622.075 475 L620.275 475 L620.275 470.5 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M591.7 470.5 L593.05 470.5 L593.05 443.5 L591.7 443.5 L591.7 470.5 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M619.375 470.5 A27 27 0 0 0 592.375 443.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M622.75 643.3 L627.25 643.3 L627.25 645.1 L622.75 645.1 L622.75 643.3 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M622.75 601.9 L627.25 601.9 L627.25 603.7 L622.75 603.7 L622.75 601.9 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M620.5 601.9 L621.85 601.9 L621.85 564.1 L620.5 564.1 L620.5 601.9 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<polyline points="621.175,642.4 621.175,601.9" fill="none" stroke="#7c3aed" stroke-width="1" stroke-dasharray=""/>
+<path d="M647.5 205 L649.3 205 L649.3 214 L647.5 214 L647.5 205 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M681.7 205 L683.5 205 L683.5 214 L681.7 214 L681.7 205 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<polyline points="649.3,209.5 681.7,209.5" fill="none" stroke="#0284c7" stroke-width="1.5" stroke-dasharray=""/>
+<path d="M627.25 686.5 L638.05 686.5 L638.05 650.5 L627.25 650.5 L627.25 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M638.05 686.5 L648.85 686.5 L648.85 650.5 L638.05 650.5 L638.05 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M648.85 686.5 L659.65 686.5 L659.65 650.5 L648.85 650.5 L648.85 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M659.65 686.5 L670.45 686.5 L670.45 650.5 L659.65 650.5 L659.65 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M670.45 686.5 L681.25 686.5 L681.25 650.5 L670.45 650.5 L670.45 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M681.25 686.5 L692.05 686.5 L692.05 650.5 L681.25 650.5 L681.25 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M692.05 686.5 L702.85 686.5 L702.85 650.5 L692.05 650.5 L692.05 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M702.85 686.5 L713.65 686.5 L713.65 650.5 L702.85 650.5 L702.85 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M713.65 686.5 L724.45 686.5 L724.45 650.5 L713.65 650.5 L713.65 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M724.45 686.5 L751 686.5 L751 605.5 L724.45 605.5 L724.45 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M713.65 641.5 L724.45 641.5 L724.45 605.5 L713.65 605.5 L713.65 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M702.85 641.5 L713.65 641.5 L713.65 605.5 L702.85 605.5 L702.85 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M692.05 641.5 L702.85 641.5 L702.85 605.5 L692.05 605.5 L692.05 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M681.25 641.5 L692.05 641.5 L692.05 605.5 L681.25 605.5 L681.25 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M670.45 641.5 L681.25 641.5 L681.25 605.5 L670.45 605.5 L670.45 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M659.65 641.5 L670.45 641.5 L670.45 605.5 L659.65 605.5 L659.65 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M648.85 641.5 L659.65 641.5 L659.65 605.5 L648.85 605.5 L648.85 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M638.05 641.5 L648.85 641.5 L648.85 605.5 L638.05 605.5 L638.05 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M627.25 641.5 L638.05 641.5 L638.05 605.5 L627.25 605.5 L627.25 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<polyline points="724.45,668.5 627.25,668.5" fill="none" stroke="#c2410c" stroke-width="1.4" stroke-dasharray=""/>
+<path d="M634.25 671.5 L627.25 668.5 L634.25 665.5" fill="none" stroke="#c2410c"/>
+<polyline points="627.25,623.5 724.45,623.5" fill="none" stroke="#c2410c" stroke-width="1.4" stroke-dasharray=""/>
+<path d="M717.45 620.5 L724.45 623.5 L717.45 626.5" fill="none" stroke="#c2410c"/>
+<text x="678.394322709" y="646" font-size="9" fill="#9a3412">DOWN</text>
+<path d="M627.25 745 L751 745 L751 596.5 L627.25 596.5 L627.25 745 Z " fill="none" fill-rule="evenodd" stroke="#0891b2" stroke-width="1" stroke-dasharray="5 3"/>
+<path d="M712.75 517.75 L780 517.75" stroke="#64748b" fill="none" stroke-width=".6"/>
+<text x="790" y="517.75" font-size="11" fill="#1f2937">BATH-U:1</text>
+<text x="790" y="534.75" font-size="10" fill="#1f2937">3.23 m2 clear</text>
+<text x="636" y="877.75" font-size="12" fill="#1f2937">BED:1</text>
+<text x="636" y="894.75" font-size="11" fill="#1f2937">20.52 m2 clear</text>
+<text x="636" y="342.25" font-size="12" fill="#1f2937">BED:2</text>
+<text x="636" y="359.25" font-size="11" fill="#1f2937">20.52 m2 clear</text>
+<polyline points="580,1075.75 625,1075.75" fill="none" stroke="#111827" stroke-width="3" stroke-dasharray=""/>
+<text x="580" y="1097" font-size="11" fill="#1f2937">1 m | uniform geometric scale</text>
+<text x="505" y="1120" font-size="12" fill="#1f2937">PROPOSED - architect review pending</text>
+<text x="505" y="1141" font-size="11" fill="#1f2937">CAD writes: false | construction: NOT_EVALUATED</text>
+<text x="505" y="1159" font-size="10" fill="#1f2937">Design-wide codes: first 4/7; see full report</text>
+<text x="505" y="1179" font-size="10" fill="#b91c1c">DRAFTED_OPENING_BLOCKED</text>
+<text x="505" y="1197" font-size="10" fill="#b91c1c">GRAPH_NOT_VERIFIED</text>
+<text x="505" y="1215" font-size="10" fill="#b91c1c">MOTION_FIXED_COLLISION</text>
+<text x="505" y="1233" font-size="10" fill="#b91c1c">PASSAGE_FIXED_COLLISION</text>
+<text x="985" y="30" font-size="18" fill="#1f2937">PROPOSED REFINED / F1</text>
+<text x="985" y="54" font-size="12" fill="#166534">VERIFIED SUPPORTED GEOMETRY</text>
+<text x="985" y="77" font-size="12" fill="#1f2937">Design-wide: failed findings 0 | unknown 0</text>
+<path d="M1060 1060 L1240 1060 L1240 160 L1060 160 L1060 1060 Z " fill="#fafafa" fill-rule="evenodd" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/>
+<path d="M1060 1015 L1240 1015 L1240 205 L1060 205 L1060 1015 Z " fill="white" fill-rule="evenodd" stroke="#111827" stroke-width="1" stroke-dasharray=""/>
+<path d="M1060 745 L1107.25 745 L1107.25 565 L1150 565 L1150 475 L1060 475 L1060 745 Z " fill="#e0f2fe" fill-rule="evenodd" stroke="#7dd3fc" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1213 596.5 L1231 596.5 L1231 565 L1213 565 L1213 596.5 Z " fill="#e5e7eb" fill-rule="evenodd" stroke="#4b5563" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1060 205 L1127.5 205 L1127.5 214 L1069 214 L1069 470.5 L1069.675 470.5 L1069.675 475 L1069 475 L1069 745 L1069.675 745 L1069.675 749.5 L1069 749.5 L1069 1006 L1096 1006 L1096 1015 L1060 1015 L1060 205 Z " fill="#374151" fill-rule="evenodd" stroke="#111827" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1102.75 745 L1102.75 690.1 L1107.25 690.1 L1107.25 745 L1231 745 L1231 565 L1150 565 L1150 536.2 L1154.5 536.2 L1154.5 560.5 L1231 560.5 L1231 475 L1154.5 475 L1154.5 503.8 L1150 503.8 L1150 475 L1102.075 475 L1102.075 470.5 L1231 470.5 L1231 214 L1163.5 214 L1163.5 205 L1240 205 L1240 1015 L1128.4 1015 L1128.4 1006 L1231 1006 L1231 749.5 L1102.075 749.5 L1102.075 745 L1102.75 745 Z " fill="#374151" fill-rule="evenodd" stroke="#111827" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1107.25 565 L1107.25 646.9 L1102.75 646.9 L1102.75 565 L1107.25 565 Z " fill="#374151" fill-rule="evenodd" stroke="#111827" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1159 1001.5 L1188.25 1001.5 L1188.25 965.5 L1159 965.5 L1159 1001.5 Z " fill="#fda4af" fill-rule="evenodd" stroke="#be123c" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1150 534.4 L1154.5 534.4 L1154.5 536.2 L1150 536.2 L1150 534.4 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1150 503.8 L1154.5 503.8 L1154.5 505.6 L1150 505.6 L1150 503.8 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1154.5 534.175 L1181.5 534.175 L1181.5 532.825 L1154.5 532.825 L1154.5 534.175 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1154.5 506.5 A27 27 0 0 1 1181.5 533.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M1096 1006 L1097.8 1006 L1097.8 1015 L1096 1015 L1096 1006 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1126.6 1006 L1128.4 1006 L1128.4 1015 L1126.6 1015 L1126.6 1006 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1098.025 1006 L1099.375 1006 L1099.375 979 L1098.025 979 L1098.025 1006 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1125.7 1006 A27 27 0 0 0 1098.7 979" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M1069.675 745 L1071.475 745 L1071.475 749.5 L1069.675 749.5 L1069.675 745 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1100.275 745 L1102.075 745 L1102.075 749.5 L1100.275 749.5 L1100.275 745 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1071.7 776.5 L1073.05 776.5 L1073.05 749.5 L1071.7 749.5 L1071.7 776.5 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1099.375 749.5 A27 27 0 0 1 1072.375 776.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M1069.675 470.5 L1071.475 470.5 L1071.475 475 L1069.675 475 L1069.675 470.5 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1100.275 470.5 L1102.075 470.5 L1102.075 475 L1100.275 475 L1100.275 470.5 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1071.7 470.5 L1073.05 470.5 L1073.05 443.5 L1071.7 443.5 L1071.7 470.5 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1099.375 470.5 A27 27 0 0 0 1072.375 443.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M1102.75 688.3 L1107.25 688.3 L1107.25 690.1 L1102.75 690.1 L1102.75 688.3 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1102.75 646.9 L1107.25 646.9 L1107.25 648.7 L1102.75 648.7 L1102.75 646.9 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1100.5 646.9 L1101.85 646.9 L1101.85 609.1 L1100.5 609.1 L1100.5 646.9 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<polyline points="1101.175,687.4 1101.175,646.9" fill="none" stroke="#7c3aed" stroke-width="1" stroke-dasharray=""/>
+<path d="M1127.5 205 L1129.3 205 L1129.3 214 L1127.5 214 L1127.5 205 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1161.7 205 L1163.5 205 L1163.5 214 L1161.7 214 L1161.7 205 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<polyline points="1129.3,209.5 1161.7,209.5" fill="none" stroke="#0284c7" stroke-width="1.5" stroke-dasharray=""/>
+<path d="M1107.25 686.5 L1118.05 686.5 L1118.05 650.5 L1107.25 650.5 L1107.25 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1118.05 686.5 L1128.85 686.5 L1128.85 650.5 L1118.05 650.5 L1118.05 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1128.85 686.5 L1139.65 686.5 L1139.65 650.5 L1128.85 650.5 L1128.85 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1139.65 686.5 L1150.45 686.5 L1150.45 650.5 L1139.65 650.5 L1139.65 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1150.45 686.5 L1161.25 686.5 L1161.25 650.5 L1150.45 650.5 L1150.45 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1161.25 686.5 L1172.05 686.5 L1172.05 650.5 L1161.25 650.5 L1161.25 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1172.05 686.5 L1182.85 686.5 L1182.85 650.5 L1172.05 650.5 L1172.05 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1182.85 686.5 L1193.65 686.5 L1193.65 650.5 L1182.85 650.5 L1182.85 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1193.65 686.5 L1204.45 686.5 L1204.45 650.5 L1193.65 650.5 L1193.65 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1204.45 686.5 L1231 686.5 L1231 605.5 L1204.45 605.5 L1204.45 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1193.65 641.5 L1204.45 641.5 L1204.45 605.5 L1193.65 605.5 L1193.65 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1182.85 641.5 L1193.65 641.5 L1193.65 605.5 L1182.85 605.5 L1182.85 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1172.05 641.5 L1182.85 641.5 L1182.85 605.5 L1172.05 605.5 L1172.05 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1161.25 641.5 L1172.05 641.5 L1172.05 605.5 L1161.25 605.5 L1161.25 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1150.45 641.5 L1161.25 641.5 L1161.25 605.5 L1150.45 605.5 L1150.45 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1139.65 641.5 L1150.45 641.5 L1150.45 605.5 L1139.65 605.5 L1139.65 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1128.85 641.5 L1139.65 641.5 L1139.65 605.5 L1128.85 605.5 L1128.85 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1118.05 641.5 L1128.85 641.5 L1128.85 605.5 L1118.05 605.5 L1118.05 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1107.25 641.5 L1118.05 641.5 L1118.05 605.5 L1107.25 605.5 L1107.25 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<polyline points="1107.25,668.5 1204.45,668.5" fill="none" stroke="#c2410c" stroke-width="1.4" stroke-dasharray=""/>
+<path d="M1197.45 665.5 L1204.45 668.5 L1197.45 671.5" fill="none" stroke="#c2410c"/>
+<polyline points="1204.45,623.5 1107.25,623.5" fill="none" stroke="#c2410c" stroke-width="1.4" stroke-dasharray=""/>
+<path d="M1114.25 626.5 L1107.25 623.5 L1114.25 620.5" fill="none" stroke="#c2410c"/>
+<text x="1158.39432271" y="646" font-size="9" fill="#9a3412">UP</text>
+<path d="M1192.75 517.75 L1260 517.75" stroke="#64748b" fill="none" stroke-width=".6"/>
+<text x="1270" y="517.75" font-size="11" fill="#1f2937">BATH-G:1</text>
+<text x="1270" y="534.75" font-size="10" fill="#1f2937">3.23 m2 clear</text>
+<text x="1116" y="342.25" font-size="12" fill="#1f2937">KITCHEN:1</text>
+<text x="1116" y="359.25" font-size="11" fill="#1f2937">20.52 m2 clear</text>
+<text x="1116" y="877.75" font-size="12" fill="#1f2937">LIVING:1</text>
+<text x="1116" y="894.75" font-size="11" fill="#1f2937">20.52 m2 clear</text>
+<polyline points="1060,1075.75 1105,1075.75" fill="none" stroke="#111827" stroke-width="3" stroke-dasharray=""/>
+<text x="1060" y="1097" font-size="11" fill="#1f2937">1 m | uniform geometric scale</text>
+<text x="985" y="1120" font-size="12" fill="#1f2937">PROPOSED - architect review pending</text>
+<text x="985" y="1141" font-size="11" fill="#1f2937">CAD writes: false | construction: NOT_EVALUATED</text>
+<text x="1465" y="30" font-size="18" fill="#1f2937">PROPOSED REFINED / F2</text>
+<text x="1465" y="54" font-size="12" fill="#166534">VERIFIED SUPPORTED GEOMETRY</text>
+<text x="1465" y="77" font-size="12" fill="#1f2937">Design-wide: failed findings 0 | unknown 0</text>
+<path d="M1540 1060 L1720 1060 L1720 160 L1540 160 L1540 1060 Z " fill="#fafafa" fill-rule="evenodd" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/>
+<path d="M1540 1015 L1720 1015 L1720 205 L1540 205 L1540 1015 Z " fill="white" fill-rule="evenodd" stroke="#111827" stroke-width="1" stroke-dasharray=""/>
+<path d="M1540 745 L1587.25 745 L1587.25 565 L1630 565 L1630 475 L1540 475 L1540 745 Z " fill="#e0f2fe" fill-rule="evenodd" stroke="#7dd3fc" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1693 596.5 L1711 596.5 L1711 565 L1693 565 L1693 596.5 Z " fill="#e5e7eb" fill-rule="evenodd" stroke="#4b5563" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1540 205 L1607.5 205 L1607.5 214 L1549 214 L1549 470.5 L1549.675 470.5 L1549.675 475 L1549 475 L1549 745 L1549.675 745 L1549.675 749.5 L1549 749.5 L1549 1006 L1711 1006 L1711 749.5 L1582.075 749.5 L1582.075 745 L1582.75 745 L1582.75 645.1 L1587.25 645.1 L1587.25 745 L1711 745 L1711 565 L1630 565 L1630 536.2 L1634.5 536.2 L1634.5 560.5 L1711 560.5 L1711 475 L1634.5 475 L1634.5 503.8 L1630 503.8 L1630 475 L1582.075 475 L1582.075 470.5 L1711 470.5 L1711 214 L1643.5 214 L1643.5 205 L1720 205 L1720 1015 L1540 1015 L1540 205 Z " fill="#374151" fill-rule="evenodd" stroke="#111827" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1582.75 565 L1587.25 565 L1587.25 601.9 L1582.75 601.9 L1582.75 565 Z " fill="#374151" fill-rule="evenodd" stroke="#111827" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1630 534.4 L1634.5 534.4 L1634.5 536.2 L1630 536.2 L1630 534.4 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1630 503.8 L1634.5 503.8 L1634.5 505.6 L1630 505.6 L1630 503.8 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1634.5 534.175 L1661.5 534.175 L1661.5 532.825 L1634.5 532.825 L1634.5 534.175 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1634.5 506.5 A27 27 0 0 1 1661.5 533.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M1549.675 745 L1551.475 745 L1551.475 749.5 L1549.675 749.5 L1549.675 745 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1580.275 745 L1582.075 745 L1582.075 749.5 L1580.275 749.5 L1580.275 745 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1551.7 776.5 L1553.05 776.5 L1553.05 749.5 L1551.7 749.5 L1551.7 776.5 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1579.375 749.5 A27 27 0 0 1 1552.375 776.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M1549.675 470.5 L1551.475 470.5 L1551.475 475 L1549.675 475 L1549.675 470.5 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1580.275 470.5 L1582.075 470.5 L1582.075 475 L1580.275 475 L1580.275 470.5 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1551.7 470.5 L1553.05 470.5 L1553.05 443.5 L1551.7 443.5 L1551.7 470.5 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1579.375 470.5 A27 27 0 0 0 1552.375 443.5" fill="none" stroke="#b45309" stroke-width=".8"/>
+<path d="M1582.75 643.3 L1587.25 643.3 L1587.25 645.1 L1582.75 645.1 L1582.75 643.3 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1582.75 601.9 L1587.25 601.9 L1587.25 603.7 L1582.75 603.7 L1582.75 601.9 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1580.5 601.9 L1581.85 601.9 L1581.85 564.1 L1580.5 564.1 L1580.5 601.9 Z " fill="#92400e" fill-rule="evenodd" stroke="#92400e" stroke-width="0.7" stroke-dasharray=""/>
+<polyline points="1581.175,642.4 1581.175,601.9" fill="none" stroke="#7c3aed" stroke-width="1" stroke-dasharray=""/>
+<path d="M1607.5 205 L1609.3 205 L1609.3 214 L1607.5 214 L1607.5 205 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<path d="M1641.7 205 L1643.5 205 L1643.5 214 L1641.7 214 L1641.7 205 Z " fill="#60a5fa" fill-rule="evenodd" stroke="#60a5fa" stroke-width="0.7" stroke-dasharray=""/>
+<polyline points="1609.3,209.5 1641.7,209.5" fill="none" stroke="#0284c7" stroke-width="1.5" stroke-dasharray=""/>
+<path d="M1587.25 686.5 L1598.05 686.5 L1598.05 650.5 L1587.25 650.5 L1587.25 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1598.05 686.5 L1608.85 686.5 L1608.85 650.5 L1598.05 650.5 L1598.05 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1608.85 686.5 L1619.65 686.5 L1619.65 650.5 L1608.85 650.5 L1608.85 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1619.65 686.5 L1630.45 686.5 L1630.45 650.5 L1619.65 650.5 L1619.65 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1630.45 686.5 L1641.25 686.5 L1641.25 650.5 L1630.45 650.5 L1630.45 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1641.25 686.5 L1652.05 686.5 L1652.05 650.5 L1641.25 650.5 L1641.25 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1652.05 686.5 L1662.85 686.5 L1662.85 650.5 L1652.05 650.5 L1652.05 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1662.85 686.5 L1673.65 686.5 L1673.65 650.5 L1662.85 650.5 L1662.85 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1673.65 686.5 L1684.45 686.5 L1684.45 650.5 L1673.65 650.5 L1673.65 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1684.45 686.5 L1711 686.5 L1711 605.5 L1684.45 605.5 L1684.45 686.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1673.65 641.5 L1684.45 641.5 L1684.45 605.5 L1673.65 605.5 L1673.65 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1662.85 641.5 L1673.65 641.5 L1673.65 605.5 L1662.85 605.5 L1662.85 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1652.05 641.5 L1662.85 641.5 L1662.85 605.5 L1652.05 605.5 L1652.05 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1641.25 641.5 L1652.05 641.5 L1652.05 605.5 L1641.25 605.5 L1641.25 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1630.45 641.5 L1641.25 641.5 L1641.25 605.5 L1630.45 605.5 L1630.45 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1619.65 641.5 L1630.45 641.5 L1630.45 605.5 L1619.65 605.5 L1619.65 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1608.85 641.5 L1619.65 641.5 L1619.65 605.5 L1608.85 605.5 L1608.85 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1598.05 641.5 L1608.85 641.5 L1608.85 605.5 L1598.05 605.5 L1598.05 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<path d="M1587.25 641.5 L1598.05 641.5 L1598.05 605.5 L1587.25 605.5 L1587.25 641.5 Z " fill="#fff7ed" fill-rule="evenodd" stroke="#c2410c" stroke-width="0.55" stroke-dasharray=""/>
+<polyline points="1684.45,668.5 1587.25,668.5" fill="none" stroke="#c2410c" stroke-width="1.4" stroke-dasharray=""/>
+<path d="M1594.25 671.5 L1587.25 668.5 L1594.25 665.5" fill="none" stroke="#c2410c"/>
+<polyline points="1587.25,623.5 1684.45,623.5" fill="none" stroke="#c2410c" stroke-width="1.4" stroke-dasharray=""/>
+<path d="M1677.45 620.5 L1684.45 623.5 L1677.45 626.5" fill="none" stroke="#c2410c"/>
+<text x="1638.39432271" y="646" font-size="9" fill="#9a3412">DOWN</text>
+<path d="M1587.25 745 L1711 745 L1711 596.5 L1587.25 596.5 L1587.25 745 Z " fill="none" fill-rule="evenodd" stroke="#0891b2" stroke-width="1" stroke-dasharray="5 3"/>
+<path d="M1672.75 517.75 L1740 517.75" stroke="#64748b" fill="none" stroke-width=".6"/>
+<text x="1750" y="517.75" font-size="11" fill="#1f2937">BATH-U:1</text>
+<text x="1750" y="534.75" font-size="10" fill="#1f2937">3.23 m2 clear</text>
+<text x="1596" y="877.75" font-size="12" fill="#1f2937">BED:1</text>
+<text x="1596" y="894.75" font-size="11" fill="#1f2937">20.52 m2 clear</text>
+<text x="1596" y="342.25" font-size="12" fill="#1f2937">BED:2</text>
+<text x="1596" y="359.25" font-size="11" fill="#1f2937">20.52 m2 clear</text>
+<polyline points="1540,1075.75 1585,1075.75" fill="none" stroke="#111827" stroke-width="3" stroke-dasharray=""/>
+<text x="1540" y="1097" font-size="11" fill="#1f2937">1 m | uniform geometric scale</text>
+<text x="1465" y="1120" font-size="12" fill="#1f2937">PROPOSED - architect review pending</text>
+<text x="1465" y="1141" font-size="11" fill="#1f2937">CAD writes: false | construction: NOT_EVALUATED</text>
+</svg>

@@ -186,3 +186,17 @@ failures and uncovered regions separately from graph links and technical complia
 Request child-bound architect feedback on unresolved risks; prepare read-only geometry for
 future annotation/export. Keep one user-facing agent, immutable sources, approval ungranted
 and CAD false. Synthetic fixture expectations are not expert validation.
+
+
+## Integrated wall-aware concepts (007-B4)
+
+- Read `docs/INTEGRATED_FLOORPLAN_CONTRACT.md` after collecting the confirmed brief/program,
+  supplied footprint, zoning and fixed inventory. Keep allocation and clear-space bounds distinct.
+- Supply actual wall intent, explicit doors/windows/routes, stair/levels/overhead geometry and
+  permitted refinement intervals. Run `vnai design integrated refine <input>`; unknown critical
+  inputs and unsupported constraints must be resolved or explained, never silently weakened.
+- Inspect original/revised measured clear areas, door/stair/headroom and composed route evidence.
+  Preserve source/fixed geometry; compare only verified revisions under an explicit evaluation policy.
+- Present actual `integrated preview --view comparison` and `--view after --floor <id>` SVG,
+  explain trade-offs/conflicts, then request human architect review. Preserve original requirements
+  across revisions. Geometric success is not construction readiness or CAD-write authorization.

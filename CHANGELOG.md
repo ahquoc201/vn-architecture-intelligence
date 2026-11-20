@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.13 - 2026-11-20
+
+- Classify incomplete modeling inventories/cut datum before search; never label missing critical data as search exhaustion.
+
+- Compose existing finite-grid generation, wall-aware clear measurements, hosted openings,
+  actual stairs, source replay and verified portal/path chains into proposed integrated revisions.
+- Add bounded explicitly permitted partition/opening-offset refinement, fixed-geometry protection,
+  exact dependency caching per invocation and before/after/floor/section SVG review.
+- Add opt-in declared circulation/wall contact masks; retain actual obstructions and prohibit
+  stair/shaft/fixed exemptions. Historical default behavior and versioned goldens are preserved.
+- Add independently checked synthetic multi-storey townhouse, retained failed fixture revisions,
+  mathematical area/partition/clearance oracles, CLI/schema/wheel coverage and documentation.
+- Freeze B3 CLI golden comparisons at their historical 0.1.12 metadata; retain every assertion.
+- Keep unknown/unsupported evidence, specialist reviews and architect approval separate;
+  cad_writes_permitted remains false. No production CAD exporter or automatic approval.
+
+
 ## 0.1.12 - 2026-11-19
 
 - Pin B2 CLI historical golden comparisons to their 0.1.11 engine metadata; preserve full hashes, geometric assertions and all historical fixtures.

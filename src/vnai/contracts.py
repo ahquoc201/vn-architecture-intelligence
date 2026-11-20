@@ -15,6 +15,8 @@ from vnai import __version__
 from vnai.resources import data_path
 
 SCHEMA_NAMES = (
+    "integrated-design-input.schema.json",
+    "integrated-design-result.schema.json",
     "design-brief.schema.json",
     "zoning.schema.json",
     "geometry.schema.json",
@@ -45,7 +47,6 @@ SCHEMA_NAMES = (
     "opening-drafting-result.schema.json",
     "stair-drafting-input.schema.json",
     "stair-drafting-result.schema.json",
-
 )
 BASE = "https://vnai.invalid/contracts/"
 

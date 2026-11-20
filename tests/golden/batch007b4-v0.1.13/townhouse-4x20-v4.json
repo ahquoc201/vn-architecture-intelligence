@@ -1,0 +1,140 @@
+{
+  "integrated_status": "REFINED",
+  "full_report_sha256": "7e441c244166dffe9b202dc8c730fc42cc042b3412e54d69094cb29fba99570e",
+  "search": {
+    "termination": "REQUESTED_COUNT_REACHED",
+    "evaluations": 2,
+    "steps": 190,
+    "duplicate_states_skipped": 0,
+    "cache": {
+      "hits": 5,
+      "misses": 5,
+      "scope": "ONE_SEARCH_INVOCATION_FULL_INPUT_DIGEST"
+    },
+    "requested_candidate_count": 1,
+    "distinct_states": 2,
+    "valid_proposed_candidates": 1,
+    "refinement_attempts": 1,
+    "optimality_proven": false
+  },
+  "svg_sha256": {
+    "comparison": "6634cc4d7babd708250104dd0e65894eb63487156956f77d049a11f1fd6847a5",
+    "after-F1": "ce7df4ef00184d5b10b79b5955a69ec6326d18d5cdf6f7264f8d2dbbfda2f5b2",
+    "after-F2": "4baf6c94d3d2a17ecfaca78039c511e0958d0cf6d08d54a63a7ddc0b0af37e4c",
+    "section": "0f3d6b299689f7732fe3a8374cafa735cba97f2e518fb32cf64bce5fd64a5e5c"
+  },
+  "proposals": [
+    {
+      "revision_id": "IR-e1e80966091bb01161394f989f90aac3688066454cbb19cbcc941d27b00385bf",
+      "candidate_digest": "072f9b510db3c39ecd87598f66b75d4979105732bb26e8e67b082014e96e6dec",
+      "coverage": {
+        "required_checks": 36,
+        "verified": 36,
+        "unresolved": 0,
+        "all_required_verified": true,
+        "scope": "SUPPORTED_GEOMETRY_EXCLUDING_HUMAN_APPROVAL_AND_TECHNICAL_CERTIFICATION"
+      },
+      "room_areas_m2": {
+        "BED:1": 20.52,
+        "BED:2": 20.520000000000003,
+        "KITCHEN:1": 20.520000000000003,
+        "LIVING:1": 20.52
+      }
+    }
+  ],
+  "original_findings": [
+    [
+      [
+        "FAILED",
+        "DRAFTED_OPENING_BLOCKED",
+        [
+          "graph.ENTRANCE"
+        ]
+      ],
+      [
+        "FAILED",
+        "SOURCE_DRAFTING_CONFLICTS_RETAINED",
+        [
+          "source"
+        ]
+      ],
+      [
+        "UNKNOWN",
+        "REQUIRED_CHECK_NOT_VERIFIED",
+        [
+          "path:ENTRANCE-INTERIOR"
+        ]
+      ],
+      [
+        "UNKNOWN",
+        "WALKING_ROUTE_NOT_VERIFIED",
+        [
+          "paths.LIVING:1"
+        ]
+      ],
+      [
+        "UNKNOWN",
+        "GRAPH_NOT_VERIFIED",
+        [
+          "graph"
+        ]
+      ],
+      [
+        "UNKNOWN",
+        "REQUIRED_CHECK_NOT_VERIFIED",
+        [
+          "integrated_portal_chains"
+        ]
+      ],
+      [
+        "FAILED",
+        "PASSAGE_FIXED_COLLISION",
+        [
+          "paths.passages.ENTRANCE-INTERIOR"
+        ]
+      ],
+      [
+        "UNKNOWN",
+        "WALKING_ROUTE_NOT_VERIFIED",
+        [
+          "paths.BED:1"
+        ]
+      ],
+      [
+        "UNKNOWN",
+        "WALKING_ROUTE_NOT_VERIFIED",
+        [
+          "paths.BED:2"
+        ]
+      ],
+      [
+        "FAILED",
+        "DRAFTED_OPENING_BLOCKED",
+        [
+          "graph.ENTRANCE"
+        ]
+      ],
+      [
+        "UNKNOWN",
+        "REQUIRED_CHECK_NOT_VERIFIED",
+        [
+          "opening:ENTRANCE"
+        ]
+      ],
+      [
+        "FAILED",
+        "MOTION_FIXED_COLLISION",
+        [
+          "ENTRANCE"
+        ]
+      ],
+      [
+        "UNKNOWN",
+        "WALKING_ROUTE_NOT_VERIFIED",
+        [
+          "paths.KITCHEN:1"
+        ]
+      ]
+    ]
+  ]
+}

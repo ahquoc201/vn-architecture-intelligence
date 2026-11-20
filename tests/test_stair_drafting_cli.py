@@ -28,7 +28,9 @@ def test_versioned_stair_golden(path, monkeypatch):
 
 
 @pytest.mark.parametrize("path", CASES, ids=lambda p: p.stem)
-def test_stair_draft_cli(path, capsys):
+def test_stair_draft_cli(path, capsys, monkeypatch):
+    monkeypatch.setattr("vnai.contracts.__version__", "0.1.12")
+    monkeypatch.setattr("vnai.design_brief.__version__", "0.1.12")
     before = path.read_bytes()
     expected = json.loads((GOLD / path.name).read_text())
     code = main(["design", "stairs", "draft", str(path)])
@@ -44,7 +46,9 @@ def test_stair_draft_cli(path, capsys):
 @pytest.mark.parametrize(
     "action", ["drafting-validate", "section", "schedule", "plan-preview", "section-preview"]
 )
-def test_other_stair_commands(name, action, tmp_path, capsys):
+def test_other_stair_commands(name, action, tmp_path, capsys, monkeypatch):
+    monkeypatch.setattr("vnai.contracts.__version__", "0.1.12")
+    monkeypatch.setattr("vnai.design_brief.__version__", "0.1.12")
     path = ROOT / "examples/batch007b3" / (name + ".json")
     expected = json.loads((GOLD / path.name).read_text())
     target = tmp_path / (name + (".svg" if "preview" in action else ".md"))

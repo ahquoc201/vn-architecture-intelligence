@@ -1,0 +1,77 @@
+{
+  "integrated_status": "SEARCH_EXHAUSTED",
+  "full_report_sha256": "974cb5255c2f9d8e6eabba12bde4654d9f8e4f9a4e7b051397351247f5761a62",
+  "search": {
+    "termination": "EVALUATION_LIMIT",
+    "evaluations": 1,
+    "steps": 6,
+    "duplicate_states_skipped": 0,
+    "cache": {
+      "hits": 1,
+      "misses": 2,
+      "scope": "ONE_SEARCH_INVOCATION_FULL_INPUT_DIGEST"
+    },
+    "requested_candidate_count": 1,
+    "distinct_states": 1,
+    "valid_proposed_candidates": 0,
+    "refinement_attempts": 0,
+    "optimality_proven": false
+  },
+  "svg_sha256": {
+    "comparison": "9af4580b4b81e3fbc48577487c6022a536c0aaf66a1ad48d616888cf5925547c"
+  },
+  "proposals": [],
+  "original_findings": [
+    [
+      [
+        "UNKNOWN",
+        "GRAPH_NOT_VERIFIED",
+        [
+          "graph"
+        ]
+      ],
+      [
+        "FAILED",
+        "KNOWN_CIRCULATION_BLOCKAGE",
+        [
+          "paths.clearance"
+        ]
+      ],
+      [
+        "FAILED",
+        "CLEAR_AREA_M2_VIOLATION",
+        [
+          "BED:1"
+        ]
+      ],
+      [
+        "FAILED",
+        "NO_ENTRANCE_CONNECTION",
+        [
+          "graph.exteriors"
+        ]
+      ],
+      [
+        "UNKNOWN",
+        "REQUIRED_CHECK_NOT_VERIFIED",
+        [
+          "integrated_portal_chains"
+        ]
+      ],
+      [
+        "UNKNOWN",
+        "WALKING_ROUTE_NOT_VERIFIED",
+        [
+          "paths.BED:1"
+        ]
+      ],
+      [
+        "FAILED",
+        "ROOM_DISCONNECTED",
+        [
+          "graph.BED:1"
+        ]
+      ]
+    ]
+  ]
+}

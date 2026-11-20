@@ -436,6 +436,39 @@
             ]
           },
           "maxItems": 64
+        },
+        "reservation_wall_contacts": {
+          "type": "array",
+          "maxItems": 64,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "reservation_id": {
+                "type": "string"
+              },
+              "floor_id": {
+                "type": "string"
+              },
+              "geometry": {
+                "$ref": "wall-result.schema.json#/$defs/geometry"
+              },
+              "confirmation": {
+                "const": "confirmed"
+              },
+              "provenance": {
+                "type": "string",
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "reservation_id",
+              "floor_id",
+              "geometry",
+              "confirmation",
+              "provenance"
+            ]
+          }
         }
       },
       "required": [

@@ -109,6 +109,21 @@ def main(argv: list[str] | None = None) -> int:
                     "--out", help="Write JSON report to a new file; never overwrite"
                 )
 
+    integrated = design_sub.add_parser(
+        "integrated", help="Bounded proposed wall-aware design workflow"
+    )
+    integrated_actions = integrated.add_subparsers(dest="design_action", required=True)
+    for action in ("generate", "refine", "validate", "report", "preview"):
+        command = integrated_actions.add_parser(action)
+        command.add_argument("input")
+        command.add_argument("--out", required=action == "preview")
+        command.add_argument("--markdown")
+        if action == "preview":
+            command.add_argument(
+                "--view", choices=("before", "after", "comparison", "section"), default="comparison"
+            )
+            command.add_argument("--floor")
+
     candidates = design_sub.add_parser(
         "candidates", help="Evidence-based evaluation; no auto approval"
     )
@@ -175,6 +190,46 @@ def main(argv: list[str] | None = None) -> int:
         if args.command in {"design", "geometry"}:
             try:
                 brief = load_json(args.input)
+                if args.command == "design" and args.design_kind == "integrated":
+                    targets = [Path(p).resolve() for p in [args.out, args.markdown] if p]
+                    if len(targets) != len(set(targets)) or any(p.exists() for p in targets):
+                        raise FileExistsError(
+                            "Requested integrated output exists or output paths alias; use new versioned paths."
+                        )
+                    from vnai.integrated_design import (
+                        integrated_design,
+                        validate_integrated,
+                        EXIT_CODES as INTEGRATED_CODES,
+                    )
+                    from vnai.integrated_preview import integrated_svg, integrated_markdown
+
+                    report = (
+                        validate_integrated(brief)
+                        if args.design_action in {"validate", "report", "preview"}
+                        else integrated_design(brief, refine=args.design_action == "refine")
+                    )
+                    payload = (
+                        json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False) + "\n"
+                    )
+                    target, content = None, None
+                    if args.design_action == "preview":
+                        target, content = (
+                            Path(args.out),
+                            integrated_svg(report, view=args.view, floor=args.floor),
+                        )
+                    elif args.out:
+                        target, content = Path(args.out), payload
+                    if target is not None:
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        with target.open("x", encoding="utf-8", newline="\n") as stream:
+                            stream.write(content)
+                    if args.markdown:
+                        target = Path(args.markdown)
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        with target.open("x", encoding="utf-8", newline="\n") as stream:
+                            stream.write(integrated_markdown(report))
+                    print(payload, end="")
+                    return INTEGRATED_CODES[report["integrated_status"]]
                 if (
                     args.command == "design"
                     and args.design_kind == "stairs"

@@ -81,7 +81,111 @@ def run() -> None:
             shutil.copyfile(source, work / ("stairdraft-" + source.name))
         shutil.copyfile(root / "examples/townhouse_4x20_brief.json", work / "brief.json")
         shutil.copyfile(root / "examples/townhouse_sample.json", work / "legacy.json")
+        for name in (
+            "residential-4x20-six-rooms",
+            "oracle-area",
+            "historical-4x20-loaded",
+            "historical-8x15-separation",
+        ):
+            shutil.copyfile(
+                root / "examples/batch007b4" / (name + ".json"),
+                work / ("integrated-" + name + ".json"),
+            )
+        feasible = json.loads(
+            (work / "integrated-residential-4x20-six-rooms.json").read_text(encoding="utf-8")
+        )
+        opening_spec = feasible["opening_specification"]
+        next(o for o in opening_spec["openings"] if o["id"] == "ENTRANCE")["offset"] = 0.8
+        alternate = feasible["refinements"][0]["passage_alternatives"][0]
+        for key in ("passages", "clearance_regions"):
+            updates = {r["id"]: r for r in alternate.get(key, [])}
+            opening_spec[key] = [updates.get(r["id"], r) for r in opening_spec[key]]
+        feasible["refinements"] = []
+        (work / "integrated-feasible.json").write_text(json.dumps(feasible), encoding="utf-8")
         commands = [
+            (
+                [
+                    "design",
+                    "integrated",
+                    "refine",
+                    "integrated-residential-4x20-six-rooms.json",
+                    "--out",
+                    "integrated-stored.json",
+                ],
+                0,
+            ),
+            (["design", "integrated", "generate", "integrated-feasible.json"], 0),
+            (["design", "integrated", "validate", "integrated-stored.json"], 0),
+            (
+                [
+                    "design",
+                    "integrated",
+                    "report",
+                    "integrated-stored.json",
+                    "--markdown",
+                    "integrated.md",
+                ],
+                0,
+            ),
+            (
+                [
+                    "design",
+                    "integrated",
+                    "preview",
+                    "integrated-stored.json",
+                    "--view",
+                    "comparison",
+                    "--out",
+                    "integrated-comparison.svg",
+                ],
+                0,
+            ),
+            (
+                [
+                    "design",
+                    "integrated",
+                    "preview",
+                    "integrated-stored.json",
+                    "--view",
+                    "after",
+                    "--floor",
+                    "F1",
+                    "--out",
+                    "integrated-F1.svg",
+                ],
+                0,
+            ),
+            (
+                [
+                    "design",
+                    "integrated",
+                    "preview",
+                    "integrated-stored.json",
+                    "--view",
+                    "after",
+                    "--floor",
+                    "F2",
+                    "--out",
+                    "integrated-F2.svg",
+                ],
+                0,
+            ),
+            (
+                [
+                    "design",
+                    "integrated",
+                    "preview",
+                    "integrated-stored.json",
+                    "--view",
+                    "section",
+                    "--out",
+                    "integrated-section.svg",
+                ],
+                0,
+            ),
+            (["design", "integrated", "validate", "integrated-oracle-area.json"], 6),
+            (["design", "integrated", "validate", "integrated-historical-4x20-loaded.json"], 4),
+            (["design", "integrated", "validate", "integrated-historical-8x15-separation.json"], 5),
             (["design", "stairs", "draft", "stairdraft-straight.json"], 3),
             (["design", "stairs", "drafting-validate", "stairdraft-stored.json"], 3),
             (
@@ -341,6 +445,45 @@ def run() -> None:
             )
             if result.returncode != expected:
                 raise RuntimeError(f"{args}: {result.returncode}, {result.stdout}, {result.stderr}")
+            if args[:2] == ["design", "integrated"]:
+                integrated = json.loads(result.stdout)
+                if (
+                    integrated["cad_writes_permitted"]
+                    or integrated["approval_inherited"]
+                    or integrated["architect_approval"] != "NOT_GRANTED"
+                ):
+                    raise RuntimeError("Installed integrated workflow granted approval/CAD writes")
+                if expected == 0:
+                    state = integrated["candidates"][0]
+                    if (
+                        not state["verification_coverage"]["all_required_verified"]
+                        or state["hard_violations"]
+                        or state["required_unknown"]
+                    ):
+                        raise RuntimeError(
+                            "Installed integrated proposal lacks complete supported geometric verification"
+                        )
+                    if len(state["engines"]["walls"]["rooms"]) != 6 or any(
+                        abs(
+                            r["clear_area_m2"]
+                            - (3.23 if r["room_id"].startswith("BATH") else 20.52)
+                        )
+                        > 1e-12
+                        for r in state["engines"]["walls"]["rooms"]
+                    ):
+                        raise RuntimeError("Installed integrated clear-area oracle failed")
+                    stair = state["engines"]["stairs"]["stairs"][0]
+                    if stair["final_elevation_m"] != 3.3 or [
+                        f["risers"] for f in stair["flights"]
+                    ] != [10, 10]:
+                        raise RuntimeError("Installed integrated stair oracle failed")
+                    if args[2] == "preview":
+                        import xml.etree.ElementTree as ET
+
+                        target = work / args[-1]
+                        ET.parse(target)
+                        if state["revision_id"] not in target.read_text(encoding="utf-8"):
+                            raise RuntimeError("Integrated SVG lacks proposed revision binding")
             if args[:2] == ["design", "stairs"] and args[2] != "validate":
                 stair_report = json.loads(result.stdout)
                 if (
