@@ -1,0 +1,459 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Architectural Drafting Input Contract v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract",
+    "source"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "contract": {
+      "const": "architectural-drafting-input-v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "provenance": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_kind",
+        "payload"
+      ],
+      "properties": {
+        "source_kind": {
+          "enum": [
+            "integrated_report",
+            "integrated_spec",
+            "wall_report",
+            "wall_spec",
+            "opening_report",
+            "opening_spec",
+            "stair_report",
+            "stair_spec"
+          ]
+        },
+        "payload": {
+          "type": "object"
+        },
+        "candidate_revision_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "refine": {
+          "type": "boolean"
+        }
+      }
+    },
+    "unit_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "drawing_units": {
+          "enum": [
+            "mm",
+            "m"
+          ]
+        },
+        "display_precision_mm": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "display_precision_m": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "display_precision_m2": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        }
+      }
+    },
+    "paper_space": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "scale_denominator": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 10000
+        },
+        "scale_authority": {
+          "const": "project_drawing_preference"
+        },
+        "border": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "project_title": {
+              "type": "string"
+            },
+            "drawing_number": {
+              "type": "string"
+            },
+            "author_note": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "enum": [
+            "arch-mono-v1",
+            "arch-color-v1"
+          ]
+        },
+        "font_family": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "paper_text_height_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 50
+        },
+        "paper_dim_text_height_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 50
+        },
+        "paper_arrow_size_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 50
+        },
+        "paper_dim_offset_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 200
+        },
+        "paper_chain_spacing_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 200
+        },
+        "paper_extension_offset_mm": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "paper_extension_overshoot_mm": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "paper_grid_bubble_radius_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 50
+        },
+        "tick_style": {
+          "enum": [
+            "slash",
+            "arrow"
+          ]
+        },
+        "hatch_enabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "layer_policy_overrides": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "entity_category": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "aci_color": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 255
+          },
+          "svg_color": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "linetype": {
+            "enum": [
+              "CONTINUOUS",
+              "DASHED",
+              "DASHDOT",
+              "CENTER",
+              "DOTTED"
+            ]
+          },
+          "lineweight_mm": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 5
+          },
+          "visible": {
+            "type": "boolean"
+          },
+          "plottable": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "room_labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "\\S"
+      }
+    },
+    "annotation_options": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "show_room_dimensions": {
+          "type": "boolean"
+        },
+        "show_opening_dimensions": {
+          "type": "boolean"
+        },
+        "opening_dimension_basis": {
+          "enum": [
+            "rough_and_clear",
+            "rough",
+            "clear",
+            "none"
+          ]
+        },
+        "number_steps": {
+          "type": "boolean"
+        },
+        "show_wall_thickness_dims": {
+          "type": "boolean"
+        },
+        "show_circulation_dims": {
+          "type": "boolean"
+        },
+        "show_floor_opening_dims": {
+          "type": "boolean"
+        },
+        "require_north_arrow": {
+          "type": "boolean"
+        },
+        "show_scale_bar": {
+          "type": "boolean"
+        },
+        "show_level_marks": {
+          "type": "boolean"
+        }
+      }
+    },
+    "reference_grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "grid_role": {
+          "enum": [
+            "architectural_reference_grid",
+            "supplied_structural_column_grid"
+          ]
+        },
+        "provenance": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "x_axes": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "coord_source_units"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "coord_source_units": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "y_axes": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "coord_source_units"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "coord_source_units": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "section_markers": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "label",
+          "floor_id",
+          "start",
+          "end",
+          "look_direction"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "label": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "floor_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "start": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "end": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "look_direction": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "referenced_view_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "DEFINED_SECTION_VIEW",
+              "PROPOSED_SECTION_MARKER"
+            ]
+          }
+        }
+      }
+    },
+    "orientation_override": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "north_degrees",
+        "confirmation",
+        "provenance"
+      ],
+      "properties": {
+        "north_degrees": {
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMaximum": 360
+        },
+        "confirmation": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "provenance": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      }
+    },
+    "placement_options": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allow_reposition": {
+          "type": "boolean"
+        },
+        "allow_leader_callout": {
+          "type": "boolean"
+        },
+        "max_attempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 32
+        }
+      }
+    },
+    "views": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "enum": [
+          "floor_plans",
+          "stair_sections"
+        ]
+      }
+    }
+  }
+}

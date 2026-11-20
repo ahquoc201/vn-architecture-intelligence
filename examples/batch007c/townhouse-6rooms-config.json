@@ -1,0 +1,93 @@
+{
+  "unit_policy": {
+    "drawing_units": "mm",
+    "display_precision_mm": 0,
+    "display_precision_m2": 2
+  },
+  "paper_space": {
+    "scale_denominator": 100,
+    "scale_authority": "project_drawing_preference",
+    "border": {
+      "enabled": true,
+      "project_title": "Nhà phố 2 tầng 4x18m (Benchmark B4-6Rooms)",
+      "drawing_number": "A-101",
+      "author_note": "PROPOSED CONCEPTUAL DRAFTING — ARCHITECT REVIEW PENDING"
+    }
+  },
+  "style": {
+    "name": "arch-mono-v1"
+  },
+  "room_labels": {
+    "LIVING:1": "Phòng khách",
+    "KITCHEN:1": "Bếp - Ăn",
+    "BATH-G:1": "WC Tầng 1",
+    "BED:1": "Phòng ngủ 1",
+    "BED:2": "Phòng ngủ 2",
+    "BATH-U:1": "WC Tầng 2"
+  },
+  "reference_grid": {
+    "grid_role": "architectural_reference_grid",
+    "provenance": "Confirmed townhouse structural bay reference grid (synthetic fixture).",
+    "x_axes": [
+      {
+        "label": "1",
+        "coord_source_units": 0
+      },
+      {
+        "label": "2",
+        "coord_source_units": 4
+      }
+    ],
+    "y_axes": [
+      {
+        "label": "A",
+        "coord_source_units": 1
+      },
+      {
+        "label": "B",
+        "coord_source_units": 7
+      },
+      {
+        "label": "C",
+        "coord_source_units": 13
+      },
+      {
+        "label": "D",
+        "coord_source_units": 19
+      }
+    ]
+  },
+  "section_markers": [
+    {
+      "id": "SM-S1",
+      "label": "S1",
+      "floor_id": "F1",
+      "start": [
+        1.05,
+        8.7
+      ],
+      "end": [
+        3.8,
+        8.7
+      ],
+      "look_direction": [
+        0,
+        1
+      ],
+      "referenced_view_id": "SECT-S1",
+      "status": "DEFINED_SECTION_VIEW"
+    }
+  ],
+  "annotation_options": {
+    "show_room_dimensions": true,
+    "show_opening_dimensions": true,
+    "opening_dimension_basis": "rough_and_clear",
+    "number_steps": true,
+    "show_wall_thickness_dims": true,
+    "show_circulation_dims": true,
+    "show_floor_opening_dims": true,
+    "require_north_arrow": true,
+    "show_scale_bar": true,
+    "show_level_marks": true
+  }
+}

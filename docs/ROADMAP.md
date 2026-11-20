@@ -90,3 +90,12 @@ See `STAIR_GEOMETRY_CONTRACT.md` for supported model scope and limitations.
 - Provide a separate synthetic two-storey end-to-end benchmark and actual before/after SVG.
 - Next 007-C: architect-reviewed annotations, dimension/layer contracts and controlled export
   preparation. Full optimization, structures/MEP and automatic CAD writes remain out of scope.
+
+## R3 Batch 007-C / v0.1.14
+
+- [x] CAD-neutral Drawing IR (`architectural-drafting-v1`) separating model-space geometry from paper-space scale and preserving analytic arcs.
+- [x] Deterministic architectural dimension engine, orthogonal dimension chains with exact vs display rounding closure verification, and non-rectangular span refusal.
+- [x] Vietnamese Unicode room annotations (verified interior `polylabel` placement), B2 opening tags, B3 stair annotations (`TRUE_LONGITUDINAL` vs `DEVELOPED_EXPLICIT_WALKING_LINE`), and confirmed-only reference symbols.
+- [x] Configurable 15-layer project CAD policy (`vnai-cad-layers-v1`) with `ezdxf_mapping`, monochrome/color styles, bounded annotation placement and `EXACT_GEOMETRIC` vs `APPROXIMATE_TEXT_BOUNDS` collision reporting.
+- [x] Scale-consistent SVG previews (9 actual outputs including complete 6-room two-storey benchmark), CLI (`vnai design drafting`), independent oracles, and wheel integration.
+- [ ] Batch 007-D: production DXF export & round-trip verification after architect review and explicit CAD authorization.

@@ -200,3 +200,21 @@ and CAD false. Synthetic fixture expectations are not expert validation.
 - Present actual `integrated preview --view comparison` and `--view after --floor <id>` SVG,
   explain trade-offs/conflicts, then request human architect review. Preserve original requirements
   across revisions. Geometric success is not construction readiness or CAD-write authorization.
+
+
+## Architectural dimensions, annotation & CAD layers (007-C)
+
+Read `docs/ARCHITECTURAL_DRAFTING_CONTRACT.md` for IR primitives, measurement bases, layer policy
+and limits. Keep one user-facing Claude Code agent; never fabricate measurements or grant CAD writes.
+
+1. Select an integrated architectural candidate (or verified B1/B2/B3 source) by exact revision ID/digest.
+2. Confirm drawing units (`mm` default or `m`) and project paper-space scale preference (e.g. `1:50`, `1:100`); changing scale never alters real-world dimensions.
+3. Generate actual measured dimensions and orthogonal chains via `vnai design drafting generate <input> --out <new.json>`; inspect clear vs allocated values, closure statuses and `unsupported_dimensions`.
+4. Produce Vietnamese Unicode room annotations placed inside verified clear interior regions (never blind centroids or invented room names/finishes).
+5. Generate door, window and stair tags from verified B2/B3 schedules and cut views without confusing rough, leaf and clear widths or true vs developed sections.
+6. Configure/inspect CAD layers (`vnai design drafting layers <input>`) and drawing style (`arch-mono-v1` / `arch-color-v1`).
+7. Render scale-consistent previews with `vnai design drafting preview <input> --floor <id> --out <new.svg>` (or `--view section` / `--view sheet` / `--layers ...`).
+8. Inspect `collisions` (`EXACT_GEOMETRIC` vs `APPROXIMATE_TEXT_BOUNDS`) and `A-REVIEW` overlays; never move building geometry to hide collisions.
+9. Explain unresolved items (e.g., missing confirmed north arrow, missing elevations, unsupported irregular room spans) and source conflicts via `vnai design drafting report`.
+10. Validate stored IR (`vnai design drafting validate <ir.json>`) to keep `model_space`, digests and `ezdxf_mapping` ready for Batch 007-D DXF export.
+11. Obtain real architect review (and separate QCVN/TCVN and Feng Shui reviews); `cad_writes_permitted` stays `false` and `architect_approval` stays `NOT_GRANTED`.

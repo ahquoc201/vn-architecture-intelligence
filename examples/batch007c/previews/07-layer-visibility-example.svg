@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="1199.2" viewBox="0 0 620 1199.2" preserveAspectRatio="xMidYMid meet" font-family="Noto Sans, Segoe UI, Arial, sans-serif">
+<title>Proposed Conceptual Architectural Drawing — Not For Construction</title>
+<metadata>{&quot;architect_approval&quot;: &quot;NOT_GRANTED&quot;, &quot;cad_writes_permitted&quot;: false, &quot;drawing_ir_digest&quot;: &quot;b71d008c0594e6ca6ff254fd158e87f09c7e77f9ef4a8e2f29f86fbc7476f5bb&quot;, &quot;drawing_units&quot;: &quot;mm&quot;, &quot;engine_version&quot;: &quot;0.1.14&quot;, &quot;geometry_and_dimensions_digest&quot;: &quot;93023f7d747220dd6d60eb5a7923925992e9991647100075d3cfda9fc744299c&quot;, &quot;hidden_layers&quot;: [&quot;A-DIMS&quot;, &quot;A-GRID&quot;, &quot;A-HATCH&quot;, &quot;A-LEVEL&quot;, &quot;A-OPENING-TAG&quot;, &quot;A-REVIEW&quot;, &quot;A-ROOM-TEXT&quot;, &quot;A-SECT&quot;], &quot;model_space_digest&quot;: &quot;1f770528e93251ecaa5ee237f137601996fc62098747dc697c779269b8499512&quot;, &quot;presentation_digest&quot;: &quot;0084c925f853c01ade796fe226b6b82e47ed88d2012da9f506c70baa38224579&quot;, &quot;px_per_model_unit&quot;: 0.04, &quot;px_per_paper_mm&quot;: 4.0, &quot;scale_denominator&quot;: 100.0, &quot;scale_label&quot;: &quot;1:100&quot;, &quot;source_revision_id&quot;: &quot;IR-b355820d5c0b3291d3e4d26237afbef7ab97ac6fb7f8ca6fd5d9af7391ee6203&quot;, &quot;view_ids&quot;: [&quot;PLAN-F1&quot;], &quot;visible_layers&quot;: [&quot;A-DOOR&quot;, &quot;A-DOOR-SWING&quot;, &quot;A-STAIR&quot;, &quot;A-STAIR-ABOVE&quot;, &quot;A-WALL-EXT&quot;, &quot;A-WALL-INT&quot;, &quot;A-WIND&quot;]}</metadata>
+<defs><pattern id="hatch-ansi31" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#e5e7eb"/><line x1="0" y1="0" x2="0" y2="8" stroke="#9ca3af" stroke-width="1"/></pattern></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="14" y="14" width="592" height="1171.2" fill="none" stroke="#111827" stroke-width="1.6"/>
+<rect x="20" y="20" width="580" height="1159.2" fill="none" stroke="#374151" stroke-width="0.6"/>
+<text x="32" y="42" font-size="14" font-weight="bold" fill="#111827">Nhà phố 2 tầng 4x18m (Benchmark B4-6Rooms) | Scale 1:100 (project preference) | Units: mm</text>
+<text x="588" y="42" font-size="11" font-weight="bold" text-anchor="end" fill="#166534">Status: GENERATED | Collisions: 0</text>
+<rect x="48" y="54" width="483.264" height="1001.2" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.8"/>
+<text x="60" y="74" font-size="12" font-weight="bold" fill="#111827">PLAN-F1: Floor Plan F1</text>
+<g class="cad-layer" data-layer="A-STAIR-ABOVE" data-view="PLAN-F1">
+<path d="M 311.8 636.6 L 321.4 636.6 L 321.4 604.6 L 311.8 604.6 L 311.8 636.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 321.4 636.6 L 331 636.6 L 331 604.6 L 321.4 604.6 L 321.4 636.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 331 636.6 L 354.6 636.6 L 354.6 564.6 L 331 564.6 L 331 636.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 321.4 596.6 L 331 596.6 L 331 564.6 L 321.4 564.6 L 321.4 596.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 311.8 596.6 L 321.4 596.6 L 321.4 564.6 L 311.8 564.6 L 311.8 596.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 302.2 596.6 L 311.8 596.6 L 311.8 564.6 L 302.2 564.6 L 302.2 596.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 292.6 596.6 L 302.2 596.6 L 302.2 564.6 L 292.6 564.6 L 292.6 596.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 283 596.6 L 292.6 596.6 L 292.6 564.6 L 283 564.6 L 283 596.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 273.4 596.6 L 283 596.6 L 283 564.6 L 273.4 564.6 L 273.4 596.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 263.8 596.6 L 273.4 596.6 L 273.4 564.6 L 263.8 564.6 L 263.8 596.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 254.2 596.6 L 263.8 596.6 L 263.8 564.6 L 254.2 564.6 L 254.2 596.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 244.6 596.6 L 254.2 596.6 L 254.2 564.6 L 244.6 564.6 L 244.6 596.6 Z" fill="none" fill-rule="evenodd" stroke="#6b7280" stroke-width="0.55" stroke-dasharray="6 4"/>
+</g>
+<g class="cad-layer" data-layer="A-STAIR" data-view="PLAN-F1">
+<path d="M 244.6 636.6 L 254.2 636.6 L 254.2 604.6 L 244.6 604.6 L 244.6 636.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<text x="249.4" y="612.6" dy="0.35em" font-size="7" text-anchor="middle" fill="#1f2937">1</text>
+<path d="M 254.2 636.6 L 263.8 636.6 L 263.8 604.6 L 254.2 604.6 L 254.2 636.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<text x="259" y="612.6" dy="0.35em" font-size="7" text-anchor="middle" fill="#1f2937">2</text>
+<path d="M 263.8 636.6 L 273.4 636.6 L 273.4 604.6 L 263.8 604.6 L 263.8 636.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<text x="268.6" y="612.6" dy="0.35em" font-size="7" text-anchor="middle" fill="#1f2937">3</text>
+<path d="M 273.4 636.6 L 283 636.6 L 283 604.6 L 273.4 604.6 L 273.4 636.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<text x="278.2" y="612.6" dy="0.35em" font-size="7" text-anchor="middle" fill="#1f2937">4</text>
+<path d="M 283 636.6 L 292.6 636.6 L 292.6 604.6 L 283 604.6 L 283 636.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<text x="287.8" y="612.6" dy="0.35em" font-size="7" text-anchor="middle" fill="#1f2937">5</text>
+<path d="M 292.6 636.6 L 302.2 636.6 L 302.2 604.6 L 292.6 604.6 L 292.6 636.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<text x="297.4" y="612.6" dy="0.35em" font-size="7" text-anchor="middle" fill="#1f2937">6</text>
+<path d="M 302.2 636.6 L 311.8 636.6 L 311.8 604.6 L 302.2 604.6 L 302.2 636.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<text x="307" y="612.6" dy="0.35em" font-size="7" text-anchor="middle" fill="#1f2937">7</text>
+<polyline points="244.6,620.6 331,620.6" fill="none" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 323 624.6 L 331 620.6 L 323 616.6" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<polyline points="331,580.6 244.6,580.6" fill="none" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 252.6 576.6 L 244.6 580.6 L 252.6 584.6" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<text font-size="8" text-anchor="middle"><tspan x="304.375" y="614.725" font-weight="bold" fill="#1f2937">ST01 (UP)</tspan><tspan x="304.375" y="624.725" font-weight="normal" fill="#1f2937">20R x 165 / T 240</tspan></text>
+</g>
+<g class="cad-layer" data-layer="A-WALL-INT" data-view="PLAN-F1">
+<path d="M 211.2 688.6 L 211.2 692.6 L 210.6 692.6 L 210.6 688.6 L 211.2 688.6 Z" fill="none" fill-rule="evenodd" stroke="#374151" stroke-width="0.8"/>
+<path d="M 354.6 688.6 L 354.6 692.6 L 244.6 692.6 L 240.6 692.6 L 240 692.6 L 240 688.6 L 240.6 688.6 L 240.6 639.8 L 244.6 639.8 L 244.6 688.6 L 354.6 688.6 Z" fill="none" fill-rule="evenodd" stroke="#374151" stroke-width="0.8"/>
+<path d="M 244.6 528.6 L 244.6 556.6 L 244.6 601.4 L 240.6 601.4 L 240.6 556.6 L 240.6 528.6 L 244.6 528.6 Z" fill="none" fill-rule="evenodd" stroke="#374151" stroke-width="0.8"/>
+<path d="M 282.6 503 L 286.6 503 L 286.6 524.6 L 338.6 524.6 L 354.6 524.6 L 354.6 528.6 L 338.6 528.6 L 286.6 528.6 L 282.6 528.6 L 282.6 524.6 L 282.6 503 Z" fill="none" fill-rule="evenodd" stroke="#374151" stroke-width="0.8"/>
+<path d="M 211.2 444.6 L 211.2 448.6 L 210.6 448.6 L 210.6 444.6 L 211.2 444.6 Z" fill="none" fill-rule="evenodd" stroke="#374151" stroke-width="0.8"/>
+<path d="M 282.6 444.6 L 286.6 444.6 L 354.6 444.6 L 354.6 448.6 L 286.6 448.6 L 286.6 474.2 L 282.6 474.2 L 282.6 448.6 L 240 448.6 L 240 444.6 L 282.6 444.6 Z" fill="none" fill-rule="evenodd" stroke="#374151" stroke-width="0.8"/>
+</g>
+<g class="cad-layer" data-layer="A-WALL-EXT" data-view="PLAN-F1">
+<path d="M 210.6 928.6 L 202.6 928.6 L 202.6 920.6 L 202.6 692.6 L 202.6 688.6 L 202.6 448.6 L 202.6 444.6 L 202.6 216.6 L 202.6 208.6 L 210.6 208.6 L 262.6 208.6 L 262.6 216.6 L 210.6 216.6 L 210.6 444.6 L 210.6 448.6 L 210.6 688.6 L 210.6 692.6 L 210.6 920.6 L 234.6 920.6 L 234.6 928.6 L 210.6 928.6 Z" fill="none" fill-rule="evenodd" stroke="#111827" stroke-width="1.12"/>
+<path d="M 354.6 928.6 L 263.4 928.6 L 263.4 920.6 L 354.6 920.6 L 354.6 692.6 L 354.6 688.6 L 354.6 528.6 L 354.6 524.6 L 354.6 448.6 L 354.6 444.6 L 354.6 216.6 L 294.6 216.6 L 294.6 208.6 L 354.6 208.6 L 362.6 208.6 L 362.6 216.6 L 362.6 444.6 L 362.6 448.6 L 362.6 524.6 L 362.6 528.6 L 362.6 688.6 L 362.6 692.6 L 362.6 920.6 L 362.6 928.6 L 354.6 928.6 Z" fill="none" fill-rule="evenodd" stroke="#111827" stroke-width="1.12"/>
+</g>
+<g class="cad-layer" data-layer="A-WIND" data-view="PLAN-F1">
+<path d="M 262.6 208.6 L 264.2 208.6 L 264.2 216.6 L 262.6 216.6 L 262.6 208.6 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.576"/>
+<path d="M 293 208.6 L 294.6 208.6 L 294.6 216.6 L 293 216.6 L 293 208.6 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.576"/>
+<path d="M 262.6 216.6 L 294.6 216.6 L 294.6 208.6 L 262.6 208.6 L 262.6 216.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.576"/>
+<line x1="264.2" y1="212.6" x2="293" y2="212.6" stroke="#1f2937" stroke-width="0.576"/>
+</g>
+<g class="cad-layer" data-layer="A-DOOR-SWING" data-view="PLAN-F1">
+<path d="M 286.6 476.6 A 24 24 0 0 1 310.6 500.6" fill="none" stroke="#4b5563" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 261 920.6 A 24 24 0 0 0 237 896.6" fill="none" stroke="#4b5563" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 237.6 692.6 A 24 24 0 0 1 213.6 716.6" fill="none" stroke="#4b5563" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 237.6 444.6 A 24 24 0 0 0 213.6 420.6" fill="none" stroke="#4b5563" stroke-width="0.55" stroke-dasharray="6 4"/>
+<line x1="239.2" y1="637.4" x2="239.2" y2="601.4" stroke="#4b5563" stroke-width="0.55" stroke-dasharray="6 4"/>
+<path d="M 243.2 609.4 L 239.2 601.4 L 235.2 609.4" fill="none" stroke="#4b5563" stroke-width="1.4"/>
+</g>
+<g class="cad-layer" data-layer="A-DOOR" data-view="PLAN-F1">
+<path d="M 282.6 501.4 L 286.6 501.4 L 286.6 503 L 282.6 503 L 282.6 501.4 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 282.6 474.2 L 286.6 474.2 L 286.6 475.8 L 282.6 475.8 L 282.6 474.2 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 282.6 503 L 286.6 503 L 286.6 474.2 L 282.6 474.2 L 282.6 503 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 286.6 501.2 L 310.6 501.2 L 310.6 500 L 286.6 500 L 286.6 501.2 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 286 500.6 L 287.2 500.6 L 287.2 476.6 L 286 476.6 L 286 500.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 234.6 920.6 L 236.2 920.6 L 236.2 928.6 L 234.6 928.6 L 234.6 920.6 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 261.8 920.6 L 263.4 920.6 L 263.4 928.6 L 261.8 928.6 L 261.8 920.6 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 234.6 928.6 L 263.4 928.6 L 263.4 920.6 L 234.6 920.6 L 234.6 928.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 236.4 920.6 L 237.6 920.6 L 237.6 896.6 L 236.4 896.6 L 236.4 920.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 237 921.2 L 261 921.2 L 261 920 L 237 920 L 237 921.2 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 211.2 688.6 L 212.8 688.6 L 212.8 692.6 L 211.2 692.6 L 211.2 688.6 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 238.4 688.6 L 240 688.6 L 240 692.6 L 238.4 692.6 L 238.4 688.6 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 211.2 692.6 L 240 692.6 L 240 688.6 L 211.2 688.6 L 211.2 692.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 213 716.6 L 214.2 716.6 L 214.2 692.6 L 213 692.6 L 213 716.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 213.6 693.2 L 237.6 693.2 L 237.6 692 L 213.6 692 L 213.6 693.2 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 211.2 444.6 L 212.8 444.6 L 212.8 448.6 L 211.2 448.6 L 211.2 444.6 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 238.4 444.6 L 240 444.6 L 240 448.6 L 238.4 448.6 L 238.4 444.6 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 211.2 448.6 L 240 448.6 L 240 444.6 L 211.2 444.6 L 211.2 448.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 213 444.6 L 214.2 444.6 L 214.2 420.6 L 213 420.6 L 213 444.6 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 213.6 445.2 L 237.6 445.2 L 237.6 444 L 213.6 444 L 213.6 445.2 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 240.6 638.2 L 244.6 638.2 L 244.6 639.8 L 240.6 639.8 L 240.6 638.2 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 240.6 601.4 L 244.6 601.4 L 244.6 603 L 240.6 603 L 240.6 601.4 Z" fill="#f3f4f6" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 240.6 639.8 L 244.6 639.8 L 244.6 601.4 L 240.6 601.4 L 240.6 639.8 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 238.6 601.4 L 239.8 601.4 L 239.8 567.8 L 238.6 567.8 L 238.6 601.4 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+<path d="M 238.6 637.4 L 239.8 637.4 L 239.8 603.8 L 238.6 603.8 L 238.6 637.4 Z" fill="none" fill-rule="evenodd" stroke="#1f2937" stroke-width="0.64"/>
+</g>
+<text x="32" y="1087.2" font-size="11" font-weight="bold" fill="#111827">CONCEPTUAL / PROPOSED DRAWING (A-101) — NOT FOR CONSTRUCTION</text>
+<text x="32" y="1104.2" font-size="10" fill="#374151">Architect Approval: NOT_GRANTED | CAD Writes: false | Standards/Feng Shui: NOT_EVALUATED | Engine v0.1.14</text>
+</svg>
