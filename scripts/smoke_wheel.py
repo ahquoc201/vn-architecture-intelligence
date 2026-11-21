@@ -40,6 +40,8 @@ def run() -> None:
             "knowledge/fengshui/*.yaml",
             "knowledge/insights.yaml",
             "sources/bibliography.yaml",
+            "skills/*/SKILL.md",
+            "skills/*/reference/*.md",
         )
         for pattern in patterns:
             for source in root.glob(pattern):
@@ -289,6 +291,13 @@ def run() -> None:
             (["design", "architectural-review", "review-corridor-clearance.json"], 0),
             (["design", "architectural-review", "review-missing-openings.json"], 3),
             (["design", "architectural-review", "review-swing-obstacle.json"], 1),
+            (["skills", "check", "--dest", "."], 3),
+            (["skills", "install", "--dest", "."], 0),
+            (["skills", "check", "--dest", "."], 0),
+            (["doctor", "--dest", "."], 0),
+            (["project", "init", "proj", "--name", "smoke"], 0),
+            (["project", "step", "proj", "brief", "brief.json"], 3),
+            (["project", "status", "proj"], 0),
         ]
         commands.extend(
             [

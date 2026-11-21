@@ -117,6 +117,9 @@ jobs:
           vnai design dxf verify outputs/drafting-v0.1.14.json --floor F2 --dxf outputs/townhouse-F2-v0.1.15.dxf
           vnai design dxf verify outputs/drafting-v0.1.14.json --view SECT-S1 --dxf outputs/townhouse-stair-section-v0.1.15.dxf
           vnai design dxf manifest outputs/townhouse-F1-v0.1.15.dxf --sidecar outputs/townhouse-F1-v0.1.15.manifest.json --markdown outputs/townhouse-F1-manifest.md
+      - run: vnai skills install && vnai skills check
+      - run: vnai doctor
+      - run: python scripts/demo_synthetic_townhouse.py --dir outputs/demo-townhouse
       - name: Fresh wheel outside checkout
         run: python scripts/smoke_wheel.py
       - run: vnai fengshui knowledge validate

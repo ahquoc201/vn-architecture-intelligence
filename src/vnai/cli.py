@@ -37,6 +37,53 @@ def load_plan(file: str | Path) -> dict:
     return plan
 
 
+def _engine_version() -> str:
+    from vnai import __version__
+
+    return __version__
+
+
+def _utf8_stdout() -> None:
+    """Vietnamese text must survive legacy Windows code pages (cp1252/cp437 consoles)."""
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            try:
+                reconfigure(encoding="utf-8")
+            except (ValueError, OSError):
+                pass
+
+
+def _doctor(dest: Path) -> dict:
+    """Report whether this environment can run the Claude Code design workflow."""
+    import importlib.util
+
+    checks = []
+
+    def add(name: str, ok: bool, detail: str, required: bool = True) -> None:
+        state = "OK" if ok else ("MISSING" if required else "OPTIONAL_MISSING")
+        checks.append({"check": name, "state": state, "detail": detail})
+
+    add("python>=3.11", sys.version_info >= (3, 11), sys.version.split()[0])
+    for module in ("yaml", "shapely", "jsonschema", "referencing"):
+        add(f"import {module}", importlib.util.find_spec(module) is not None, module)
+    add("import ezdxf (DXF export)", importlib.util.find_spec("ezdxf") is not None,
+        'pip install "vn-architecture-intelligence[cad]"', required=False)
+    add("bundled data", DEFAULT_SOURCES.is_file(), DEFAULT_SOURCES.as_posix())
+    try:
+        from vnai.skills_install import check_skills
+
+        skills = check_skills(dest)
+        detail = ", ".join(f"{s['skill']}={s['state']}" for s in skills["skills"])
+        add("claude skills installed", skills["status"] == "CURRENT",
+            detail + " (run: vnai skills install)")
+    except (OSError, ValueError) as exc:
+        add("claude skills installed", False, str(exc))
+    ready = all(c["state"] != "MISSING" for c in checks)
+    return {"status": "READY" if ready else "NOT_READY", "engine_version": _engine_version(),
+            "checks": checks}
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="vnai")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -257,8 +304,105 @@ def main(argv: list[str] | None = None) -> int:
     dxf.add_argument("plan")
     dxf.add_argument("--out", required=True)
 
+    parser.add_argument("--version", action="version", version=f"vnai {_engine_version()}")
+    skills = sub.add_parser("skills", help="Install/check canonical Claude Code project skills")
+    skills_sub = skills.add_subparsers(dest="skills_action", required=True)
+    skills_sub.add_parser("list")
+    for action in ("check", "install"):
+        command = skills_sub.add_parser(action)
+        command.add_argument("--dest", default=".", help="Workspace root holding .claude/skills")
+        if action == "install":
+            command.add_argument(
+                "--force", action="store_true", help="Replace modified/unmanaged copies"
+            )
+    doctor = sub.add_parser("doctor", help="Check Python, dependencies, data and skills")
+    doctor.add_argument("--dest", default=".", help="Workspace root holding .claude/skills")
+
+    from vnai.project_workflow import DECISION_KINDS, FOLDERS, REFUSED_KINDS, STEPS
+
+    project = sub.add_parser("project", help="Resumable workflow workspace; no CAD writes")
+    project_sub = project.add_subparsers(dest="project_action", required=True)
+    command = project_sub.add_parser("init")
+    command.add_argument("dir")
+    command.add_argument("--name", required=True)
+    command = project_sub.add_parser("import")
+    command.add_argument("dir")
+    command.add_argument("file")
+    command.add_argument("--folder", required=True, choices=FOLDERS)
+    command.add_argument("--label")
+    command = project_sub.add_parser("step")
+    command.add_argument("dir")
+    command.add_argument("step", choices=sorted(STEPS))
+    command.add_argument("input")
+    command.add_argument("--floor")
+    command.add_argument("--view")
+    command.add_argument("--mode", choices=("generate", "refine"))
+    command.add_argument("--candidates", type=int, choices=(1, 2, 3))
+    command.add_argument("--dxf")
+    command.add_argument("--units", choices=("mm", "m"))
+    command = project_sub.add_parser("decide")
+    command.add_argument("dir")
+    command.add_argument("--kind", required=True, choices=sorted({*DECISION_KINDS, *REFUSED_KINDS}))
+    command.add_argument("--target", required=True)
+    command.add_argument("--statement", required=True, help="The person's own words")
+    command.add_argument("--by", required=True, help="Name/role exactly as the person gave it")
+    command.add_argument("--synthetic", action="store_true", help="Demo/test record only")
+    command = project_sub.add_parser("status")
+    command.add_argument("dir")
+    command.add_argument("--markdown", action="store_true", help="Print Vietnamese summary")
+
     args = parser.parse_args(argv)
+    if args.command in {"skills", "doctor", "project"}:
+        _utf8_stdout()
     try:
+        if args.command == "skills":
+            from vnai.skills_install import EXIT_CODES, check_skills, install_skills, list_skills
+
+            if args.skills_action == "list":
+                print(json.dumps(list_skills(), ensure_ascii=False, indent=2))
+                return 0
+            fn = install_skills if args.skills_action == "install" else check_skills
+            kwargs = {"force": args.force} if args.skills_action == "install" else {}
+            report = fn(Path(args.dest), **kwargs)
+            print(json.dumps(report, ensure_ascii=False, indent=2))
+            return EXIT_CODES[report["status"]]
+        if args.command == "doctor":
+            report = _doctor(Path(args.dest))
+            print(json.dumps(report, ensure_ascii=False, indent=2))
+            return 0 if report["status"] == "READY" else 3
+        if args.command == "project":
+            from vnai import project_workflow as pw
+
+            try:
+                if args.project_action == "init":
+                    result = pw.init_project(Path(args.dir), args.name)
+                elif args.project_action == "import":
+                    result = pw.import_file(Path(args.dir), Path(args.file), args.folder,
+                                            args.label)
+                elif args.project_action == "step":
+                    result = pw.run_step(
+                        Path(args.dir), args.step, Path(args.input), floor=args.floor,
+                        view=args.view, mode=args.mode, candidates=args.candidates,
+                        dxf=args.dxf, units=args.units,
+                    )
+                elif args.project_action == "decide":
+                    result = pw.record_decision(Path(args.dir), args.kind, Path(args.target),
+                                                args.statement, args.by, args.synthetic)
+                else:
+                    result = pw.project_status(Path(args.dir))
+                    if args.markdown:
+                        print(pw.status_markdown(result))
+                        return 0 if result["status"] == "INTACT" else 4
+            except pw.WorkflowError as exc:
+                print(json.dumps({"status": "REFUSED", "reason": str(exc),
+                                  "cad_writes_permitted": False}, ensure_ascii=False, indent=2))
+                return 3
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            if args.project_action == "step":
+                return result["exit_code"]
+            if args.project_action == "status":
+                return 0 if result["status"] == "INTACT" else 4
+            return 0
         if args.command in {"design", "geometry"}:
             try:
                 if args.command == "design" and args.design_kind == "dxf":

@@ -18,3 +18,8 @@ outputs/
 *.pdf
 secrets/
 licensed-documents/
+# Generated Claude Code skill copies (canonical source: skills/; run `vnai skills install`)
+.claude/skills/
+.claude/settings.local.json
+# Private architectural project workspaces (vnai project init projects/<name>)
+projects/

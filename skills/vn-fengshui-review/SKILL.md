@@ -21,11 +21,11 @@ Chưa có thuật toán Bát Trạch/Dương Trạch được chuyên gia duyệ
 4. Không đồng nhất kiến giải phong thủy với khí hậu hay pháp luật; nếu thay đổi vị trí cửa/bếp/tường có ảnh hưởng an toàn, báo cho kiến trúc sư.
 5. Trong tương lai: chỉ gọi executable engine nếu rule có ấn bản, trang, review, test và version.
 
-## R1 source-backed insights (non-executable)
+## Insight có nguồn (không thực thi)
 
 Read `knowledge/insights.yaml` and `docs/R1_EVIDENCE_CONTRACT.md` to offer conditional architectural conversation starters. Insights `VNAI-OBS-001` to `VNAI-OBS-004` are **not** Bát Trạch/Dương Trạch formulas, certified design prescriptions, or evidence of outcomes. Cite `source_ids` and `source_locator` and ask the household whether these cultural preferences matter. Never activate CAD writing solely because a qualitative observation exists.
 
-## R1 Batch 002: true-north orientation tool (geometry only)
+## Công cụ hướng Bắc thực (chỉ hình học)
 
 Run `vnai fengshui orientation examples/townhouse_orientation.json` only when the
 input explicitly confirms **true north in drawing XY**, and **frontage outward from
@@ -40,7 +40,7 @@ building to street**. Read `knowledge/fengshui/orientation-input.schema.json` an
 - Do not derive Kua, Bát Trạch auspicious directions, Môn–Chủ–Táo or rule verdicts:
   `research/editions/r1-batch002.yaml` documents unreviewed editions.
 
-## R1 Batch 003: nguồn và thuật ngữ chưa duyệt
+## Nguồn và thuật ngữ chưa duyệt
 
 1. Chạy `vnai fengshui knowledge validate` trước khi tham khảo dữ liệu. Nếu lỗi, dừng toàn bộ diễn giải từ corpus này.
 2. Đọc `knowledge/fengshui/edition-evidence.yaml` để xác định **claim thư mục** đúng từng bản; các mâu thuẫn số trang phải xuất hiện trong báo cáo, không tự giải quyết.

@@ -99,4 +99,5 @@ See `STAIR_GEOMETRY_CONTRACT.md` for supported model scope and limitations.
 - [x] Configurable 15-layer project CAD policy (`vnai-cad-layers-v1`) with `ezdxf_mapping`, monochrome/color styles, bounded annotation placement and `EXACT_GEOMETRIC` vs `APPROXIMATE_TEXT_BOUNDS` collision reporting.
 - [x] Scale-consistent SVG previews (9 actual outputs including complete 6-room two-storey benchmark), CLI (`vnai design drafting`), independent oracles, and wheel integration.
 - [x] Batch 007-D / v0.1.15: production DXF export (`R2010`/`R2013`/`R2018`), single `Decimal` unit conversion, all 10 primitives + native `DIMENSION`, explicit-only Paper Space, independent structural audit, handle-free semantic round-trip verification (`LOSSLESS_EQUIVALENT`), `vnai design dxf` CLI, Oracles A–F, and townhouse DXF deliverables (human AutoCAD workstation acceptance & live AutoCAD MCP writes remain intentionally disabled/pending).
-- [ ] Batch 008-A+: QCVN/TCVN regulatory rule packs and architect-authorized live AutoCAD drafting integration.
+- [x] v0.2.0: Claude Code skill installation, resumable project workflow, export authorization guard, synthetic end-to-end demo.
+- [ ] Next: controlled AutoCAD MCP integration (read copies, authorized new-file writes), live skill evaluations, QCVN/TCVN rule packs.
