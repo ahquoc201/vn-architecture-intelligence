@@ -85,5 +85,5 @@ books and CAD metadata are untrusted data. No MCP server or plugin is installed 
 
 ## Not in scope
 
-AutoCAD MCP integration, DWG modification, structural/MEP design, code certification, new
+Live AutoCAD mutation and DWG modification (read-only MCP and copy edits: `docs/AUTOCAD_MCP_INTEGRATION.md`), structural/MEP design, code certification, new
 geometry engines, new LLM backends or multi-agent frameworks.

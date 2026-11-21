@@ -347,11 +347,70 @@ def main(argv: list[str] | None = None) -> int:
     command.add_argument("--statement", required=True, help="The person's own words")
     command.add_argument("--by", required=True, help="Name/role exactly as the person gave it")
     command.add_argument("--synthetic", action="store_true", help="Demo/test record only")
+    command = project_sub.add_parser("cad-propose", help="Proposed CAD change; no CAD writes")
+    command.add_argument("dir")
+    command.add_argument("--source", required=True, help="Existing DXF (opened read-only)")
+    command.add_argument("--ir", required=True, help="Drawing IR JSON inside the project")
+    command.add_argument("--ops", required=True, help="JSON file with the operation list")
+    command.add_argument("--floor")
+    command.add_argument("--view")
+    command = project_sub.add_parser("cad-apply", help="Apply an AUTHORIZED proposal to a new copy")
+    command.add_argument("dir")
+    command.add_argument("proposal")
     command = project_sub.add_parser("status")
     command.add_argument("dir")
     command.add_argument("--markdown", action="store_true", help="Print Vietnamese summary")
 
+    cad = sub.add_parser("cad", help="Read-only CAD inspection/comparison (headless DXF or MCP)")
+    cad_sub = cad.add_subparsers(dest="cad_action", required=True)
+    command = cad_sub.add_parser("doctor", help="Runtime capability discovery")
+    command.add_argument("--profile", help="Local MCP launch profile JSON (not committed)")
+    command.add_argument("--probe", action="store_true", help="Call the profile identity tool")
+    command = cad_sub.add_parser("inspect", help="Read-only DXF summary + one bounded page")
+    command.add_argument("dxf")
+    command.add_argument("--layer")
+    command.add_argument("--type", dest="entity_type")
+    command.add_argument("--space", default="model")
+    command.add_argument("--limit", type=int, default=100)
+    command.add_argument("--offset", type=int, default=0)
+    command = cad_sub.add_parser("compare", help="Compare an actual DXF with a VNAI Drawing IR")
+    command.add_argument("ir")
+    command.add_argument("dxf")
+    command.add_argument("--floor")
+    command.add_argument("--view")
+    command.add_argument("--expect-sha256")
+    command = cad_sub.add_parser("mcp-read", help="One allowlisted read call via the MCP adapter")
+    command.add_argument("--profile", required=True)
+    command.add_argument("--tool", required=True)
+    command.add_argument("--args", default="{}", help="JSON object of tool arguments")
+
     args = parser.parse_args(argv)
+    if args.command == "cad":
+        _utf8_stdout()
+        from vnai import cad_bridge as cb
+
+        try:
+            if args.cad_action == "doctor":
+                report = cb.discover(Path(args.profile) if args.profile else None, args.probe)
+                key = "status"
+            elif args.cad_action == "inspect":
+                report = cb.inspect_dxf(Path(args.dxf), layer=args.layer,
+                                        entity_type=args.entity_type, space=args.space,
+                                        limit=args.limit, offset=args.offset)
+                key = "status"
+            elif args.cad_action == "compare":
+                ir = json.loads(Path(args.ir).read_text(encoding="utf-8"))
+                report = cb.compare_cad(ir, Path(args.dxf), floor_id=args.floor,
+                                        view_id=args.view, expected_sha256=args.expect_sha256)
+                key = "comparison_status"
+            else:
+                report = cb.mcp_read(Path(args.profile), args.tool, json.loads(args.args))
+                key = "status"
+        except cb.CadBridgeError as exc:
+            report, key = {"status": exc.status, "reason": str(exc),
+                           "cad_writes_permitted": False}, "status"
+        print(json.dumps(report, ensure_ascii=False, indent=2))
+        return cb.EXIT_CODES.get(report[key], 1)
     if args.command in {"skills", "doctor", "project"}:
         _utf8_stdout()
     try:
@@ -385,6 +444,25 @@ def main(argv: list[str] | None = None) -> int:
                         view=args.view, mode=args.mode, candidates=args.candidates,
                         dxf=args.dxf, units=args.units,
                     )
+                elif args.project_action in {"cad-propose", "cad-apply"}:
+                    from vnai import cad_bridge as cb
+                    from vnai import cad_edit as ce
+
+                    try:
+                        if args.project_action == "cad-propose":
+                            ops = json.loads(Path(args.ops).read_text(encoding="utf-8"))
+                            result = ce.create_proposal(Path(args.dir), Path(args.source),
+                                                        Path(args.ir), ops, args.floor, args.view)
+                            code = 0
+                        else:
+                            result = ce.apply_proposal(Path(args.dir), Path(args.proposal))
+                            code = ce.EXIT_CODES[result["edit_status"]]
+                    except cb.CadBridgeError as exc:
+                        result = {"status": exc.status, "reason": str(exc),
+                                  "cad_writes_permitted": False}
+                        code = cb.EXIT_CODES.get(exc.status, 1)
+                    print(json.dumps(result, ensure_ascii=False, indent=2))
+                    return code
                 elif args.project_action == "decide":
                     result = pw.record_decision(Path(args.dir), args.kind, Path(args.target),
                                                 args.statement, args.by, args.synthetic)

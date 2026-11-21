@@ -79,6 +79,11 @@ manifest ở `manifests/`. Claude đã chạy audit (`CLEAN`) và round-trip (`L
 cần kiểm tra thủ công: đơn vị mm, layer `A-*`, font tiếng Việt hiển thị đúng, kích thước khớp
 `drafting/*.md`. Trạng thái giữ `PENDING_HUMAN_AUTOCAD_VERIFICATION` đến khi bạn xác nhận.
 
+**Bản vẽ có sẵn của bạn (v0.2.1):** Claude có thể *đọc* DXF (hoặc AutoCAD qua MCP chỉ đọc), đối chiếu
+với phương án VNAI, lập đề xuất thay đổi, và — chỉ khi bạn đồng ý đúng đề xuất đó — tạo **bản sao DXF
+mới** đã sửa. Bản gốc và tài liệu AutoCAD đang mở không bao giờ bị sửa. Cài đặt và checklist:
+`docs/AUTOCAD_MCP_INTEGRATION.md`.
+
 ## 6. Lỗi thường gặp
 
 | Hiện tượng | Cách xử lý |
@@ -95,5 +100,5 @@ cần kiểm tra thủ công: đơn vị mm, layer `A-*`, font tiếng Việt hi
 ## 7. Giới hạn hiện tại
 
 Nhà ở thấp tầng, mặt bằng trực giao; cầu thang thẳng/L/U; không xoắn, không winders. Không có thiết
-kế kết cấu/MEP, không kết luận QCVN/TCVN, không thuật toán phong thủy đã duyệt, không kết nối AutoCAD
-trực tiếp. Chi tiết kỹ thuật: `docs/CLAUDE_WORKFLOW.md`.
+kế kết cấu/MEP, không kết luận QCVN/TCVN, không thuật toán phong thủy đã duyệt, không sửa trực tiếp
+AutoCAD (MCP chỉ đọc). Chi tiết kỹ thuật: `docs/CLAUDE_WORKFLOW.md`.
