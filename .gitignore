@@ -11,6 +11,7 @@ build/
 outputs/
 *.dwg
 *.dxf
+!examples/batch007d/exports/*.dxf
 *.ifc
 *.blend
 *.FCStd

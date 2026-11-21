@@ -2,12 +2,15 @@
 
 import json
 from pathlib import Path
+import shutil
+import subprocess
 
 from jsonschema import Draft202012Validator
 import pytest
 
 from vnai.cli import main
 from vnai.drafting_engine import generate_drafting
+from vnai.dxf_manifest import extract_manifest_from_dxf
 
 ROOT = Path(__file__).resolve().parents[1]
 EX7C = ROOT / "examples" / "batch007c"
@@ -218,3 +221,56 @@ def test_committed_townhouse_deliverable_dxfs_audit_and_verify():
         assert man["source_digests"]["verification_coverage"]["verified"] == 48
         assert main(["design", "dxf", "audit", str(dxf_p)]) == 0
         assert main(["design", "dxf", "manifest", str(dxf_p), "--sidecar", str(man_p)]) == 0
+
+
+def test_deliverable_dxfs_gitignore_policy_and_sidecar_checksums():
+    """Deliverable townhouse DXFs remain unignored with matching sidecar SHA-256 while *.dxf guards stay active."""
+    for dxf_name, man_name in (
+        ("townhouse-F1.dxf", "townhouse-F1.manifest.json"),
+        ("townhouse-F2.dxf", "townhouse-F2.manifest.json"),
+        ("townhouse-stair-section.dxf", "townhouse-stair-section.manifest.json"),
+    ):
+        ext = extract_manifest_from_dxf(EXPORTS / dxf_name, sidecar_path=EXPORTS / man_name)
+        assert ext["status"] == "VALID"
+        assert ext["sidecar_checksum_match"] is True
+        assert ext["warnings"] == []
+
+    if (ROOT / ".git").exists() and shutil.which("git"):
+        deliverables = [
+            "examples/batch007d/exports/townhouse-F1.dxf",
+            "examples/batch007d/exports/townhouse-F2.dxf",
+            "examples/batch007d/exports/townhouse-stair-section.dxf",
+        ]
+        res_deliv = subprocess.run(
+            ["git", "check-ignore", *deliverables],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        assert res_deliv.returncode == 1, f"Deliverable DXF ignored by .gitignore: {res_deliv.stdout}"
+
+        guarded = [
+            "customer-drawing.dxf",
+            "outputs/temp.dxf",
+            "examples/batch007d/untracked-temp.dxf",
+        ]
+        res_guard = subprocess.run(
+            ["git", "check-ignore", *guarded],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        assert res_guard.returncode == 0
+        assert set(res_guard.stdout.splitlines()) == set(guarded)
+
+        res_attr = subprocess.run(
+            ["git", "check-attr", "binary", "--", "examples/batch007d/exports/townhouse-F1.dxf"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        assert res_attr.returncode == 0
+        assert "binary: set" in res_attr.stdout
