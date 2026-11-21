@@ -91,3 +91,10 @@ into CAD-neutral IR with measured dimensions, closure-checked chains, Vietnamese
 labels, opening/stair tags, configurable layers and scale-consistent SVG previews. Never fabricate
 dimensions, elevations, or north orientation; preserve immutable source geometry, `cad_writes_permitted: false`,
 `architect_approval: NOT_GRANTED`, and separate QCVN/TCVN and Feng Shui advisory layers.
+
+Batch 007-D: read `docs/DXF_EXPORT_CONTRACT.md`. Use `vnai design dxf` (`export`, `audit`, `verify`, `manifest`)
+to export validated Drawing IR v1 into editable `R2010`/`R2013`/`R2018` DXF artifacts with all 10 native primitives,
+exact single `Decimal` unit conversion (`mm`/`m`, `$INSUNITS` 4/6), explicit-only Paper Space (never invent sheet sizes),
+structural `ezdxf` audit, handle-free semantic round-trip verification (`LOSSLESS_EQUIVALENT`/`NUMERICALLY_EQUIVALENT`/`MISMATCH`),
+and `dxf-export-manifest-v1`. Preserve legacy `vnai dxf`, keep `cad_writes_permitted: false`, `architect_approval: NOT_GRANTED`,
+and mark `manual_autocad_acceptance_status: PENDING_HUMAN_AUTOCAD_VERIFICATION`.

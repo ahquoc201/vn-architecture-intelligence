@@ -49,6 +49,8 @@ SCHEMA_NAMES = (
     "stair-drafting-result.schema.json",
     "drafting-input.schema.json",
     "drafting-ir.schema.json",
+    "dxf-export-spec.schema.json",
+    "dxf-manifest.schema.json",
 )
 BASE = "https://vnai.invalid/contracts/"
 

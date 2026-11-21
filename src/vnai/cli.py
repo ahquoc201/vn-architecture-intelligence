@@ -188,6 +188,55 @@ def main(argv: list[str] | None = None) -> int:
             command.add_argument("--layers", help="Comma-separated list of visible layers")
             command.add_argument("--hide-layers", help="Comma-separated list of hidden layers")
 
+    dxf_design = design_sub.add_parser(
+        "dxf", help="Production DXF export, audit, manifest and semantic round-trip verification"
+    )
+    dxf_actions = dxf_design.add_subparsers(dest="design_action", required=True)
+    for action in ("export", "audit", "verify", "manifest"):
+        command = dxf_actions.add_parser(action)
+        command.add_argument(
+            "input",
+            help="Drawing IR / Export Spec JSON (export, verify) or DXF file (audit, manifest)",
+        )
+        if action == "export":
+            command.add_argument("--out", required=True, help="Explicit new .dxf output path")
+            command.add_argument("--view", help="Exact view_id to export")
+            command.add_argument("--floor", help="Exact floor_id to export")
+            command.add_argument("--units", choices=("mm", "m"), help="Target DXF model units")
+            command.add_argument(
+                "--dxf-version",
+                default="R2010",
+                help="Target DXF release version (R2010, R2013, R2018)",
+            )
+            command.add_argument(
+                "--font",
+                default="Arial.ttf",
+                help="Text style font filename reference (no proprietary font files bundled)",
+            )
+            command.add_argument(
+                "--paper-size",
+                help="Explicit supplied paper size WxH in mm (e.g. 420x297) for Paper Space layout",
+            )
+            command.add_argument(
+                "--require-paper-space",
+                action="store_true",
+                help="Return INCOMPLETE if no explicit paper size is supplied",
+            )
+            command.add_argument("--manifest", help="Optional sidecar manifest JSON output path")
+            command.add_argument(
+                "--overwrite",
+                action="store_true",
+                help="Allow replacing an existing non-protected output artifact",
+            )
+        if action == "verify":
+            command.add_argument("--dxf", required=True, help="DXF file to reopen and verify")
+            command.add_argument("--view", help="Exact view_id to verify")
+            command.add_argument("--floor", help="Exact floor_id to verify")
+            command.add_argument("--units", choices=("mm", "m"), help="Expected DXF model units")
+        if action == "manifest":
+            command.add_argument("--sidecar", help="Optional sidecar manifest JSON to cross-check")
+        command.add_argument("--markdown", help="Optional Markdown summary report output path")
+
     architecture = design_sub.add_parser(
         "architectural-review", help="Separate geometry, graph, clearance and approval results"
     )
@@ -212,6 +261,101 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.command in {"design", "geometry"}:
             try:
+                if args.command == "design" and args.design_kind == "dxf":
+                    from vnai.dxf_export import EXIT_CODES as DXF_EXIT_CODES, export_drafting_dxf
+                    from vnai.dxf_manifest import (
+                        dxf_audit_markdown,
+                        dxf_export_markdown,
+                        dxf_extracted_manifest_markdown,
+                        dxf_roundtrip_markdown,
+                        extract_manifest_from_dxf,
+                    )
+                    from vnai.dxf_roundtrip import (
+                        ROUNDTRIP_EXIT_CODES,
+                        audit_dxf_file,
+                        verify_dxf_roundtrip,
+                    )
+
+                    md_path = getattr(args, "markdown", None)
+                    overwrite = bool(getattr(args, "overwrite", False))
+                    if md_path and not overwrite and Path(md_path).exists():
+                        raise FileExistsError(f"Markdown report already exists: {md_path}")
+
+                    if args.design_action == "export":
+                        man_path = getattr(args, "manifest", None)
+                        if md_path and Path(md_path).resolve() in {
+                            Path(args.out).resolve(),
+                            *(({Path(man_path).resolve()}) if man_path else set()),
+                        }:
+                            raise ValueError("Markdown output path aliases DXF or manifest path.")
+                        ir_doc = load_json(args.input)
+                        ps_layout: dict[str, object] | None = None
+                        if getattr(args, "paper_size", None) or getattr(
+                            args, "require_paper_space", False
+                        ):
+                            ps_layout = {
+                                "enabled": True,
+                                "require_paper_space": bool(
+                                    getattr(args, "require_paper_space", False)
+                                ),
+                            }
+                            if getattr(args, "paper_size", None):
+                                raw_sz = str(args.paper_size).lower().split("x")
+                                if len(raw_sz) != 2:
+                                    raise ValueError(
+                                        f"Invalid --paper-size {args.paper_size!r}; use WxH in mm (e.g. 420x297)."
+                                    )
+                                pw, ph = float(raw_sz[0]), float(raw_sz[1])
+                                if pw <= 0 or ph <= 0:
+                                    raise ValueError("Paper size dimensions must be positive.")
+                                ps_layout["paper_size_mm"] = [pw, ph]
+                        report = export_drafting_dxf(
+                            ir_doc,
+                            args.out,
+                            view_id=getattr(args, "view", None),
+                            floor_id=getattr(args, "floor", None),
+                            target_units=getattr(args, "units", None),
+                            dxf_version=args.dxf_version,
+                            text_font_name=args.font,
+                            paper_space_layout=ps_layout,
+                            manifest_out=man_path,
+                            overwrite=overwrite,
+                            source_input_path=args.input,
+                        )
+                        md_text = dxf_export_markdown(report)
+                        exit_code = DXF_EXIT_CODES[report["export_status"]]
+                    elif args.design_action == "audit":
+                        report = audit_dxf_file(args.input)
+                        md_text = dxf_audit_markdown(report)
+                        exit_code = ROUNDTRIP_EXIT_CODES[report["audit_status"]]
+                    elif args.design_action == "verify":
+                        ir_doc = load_json(args.input)
+                        report = verify_dxf_roundtrip(
+                            ir_doc,
+                            args.dxf,
+                            view_id=getattr(args, "view", None),
+                            floor_id=getattr(args, "floor", None),
+                            target_units=getattr(args, "units", None),
+                        )
+                        md_text = dxf_roundtrip_markdown(report)
+                        exit_code = ROUNDTRIP_EXIT_CODES[report["roundtrip_status"]]
+                    else:  # manifest
+                        report = extract_manifest_from_dxf(
+                            args.input, sidecar_path=getattr(args, "sidecar", None)
+                        )
+                        md_text = dxf_extracted_manifest_markdown(report)
+                        exit_code = 0 if report["status"] == "VALID" else 1
+
+                    if md_path:
+                        target_md = Path(md_path)
+                        target_md.parent.mkdir(parents=True, exist_ok=True)
+                        with target_md.open(
+                            "w" if overwrite else "x", encoding="utf-8", newline="\n"
+                        ) as stream:
+                            stream.write(md_text)
+                    print(json.dumps(report, ensure_ascii=True, indent=2, allow_nan=False))
+                    return exit_code
+
                 brief = load_json(args.input)
                 if args.command == "design" and args.design_kind == "integrated":
                     targets = [Path(p).resolve() for p in [args.out, args.markdown] if p]

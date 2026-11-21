@@ -104,6 +104,19 @@ jobs:
           vnai design drafting preview outputs/drafting-v0.1.14.json --view sheet --out outputs/drafting-sheet-v0.1.14.svg
           vnai design drafting generate examples/batch007c/oracle-exterior-clear.json > outputs/oracle-a-v0.1.14.json
           vnai design drafting generate examples/batch007c/oracle-dimension-chain.json > outputs/oracle-b-v0.1.14.json
+      - name: Production DXF export, audit, manifest and semantic round-trip (Batch 007-D)
+        run: |
+          vnai design drafting generate examples/batch007d/oracle-e-vietnamese-unicode.json --out outputs/oracle-e-drafting-v0.1.15.json
+          vnai design dxf export outputs/drafting-v0.1.14.json --floor F1 --out outputs/townhouse-F1-v0.1.15.dxf --manifest outputs/townhouse-F1-v0.1.15.manifest.json
+          vnai design dxf export outputs/drafting-v0.1.14.json --floor F2 --out outputs/townhouse-F2-v0.1.15.dxf --manifest outputs/townhouse-F2-v0.1.15.manifest.json
+          vnai design dxf export outputs/drafting-v0.1.14.json --view SECT-S1 --out outputs/townhouse-stair-section-v0.1.15.dxf --manifest outputs/townhouse-stair-section-v0.1.15.manifest.json
+          vnai design dxf export outputs/oracle-a-v0.1.14.json --out outputs/oracle-a-v0.1.15.dxf --manifest outputs/oracle-a-v0.1.15.manifest.json
+          vnai design dxf export outputs/oracle-e-drafting-v0.1.15.json --out outputs/oracle-e-v0.1.15.dxf --manifest outputs/oracle-e-v0.1.15.manifest.json
+          vnai design dxf audit outputs/townhouse-F1-v0.1.15.dxf --markdown outputs/townhouse-F1-audit.md
+          vnai design dxf verify outputs/drafting-v0.1.14.json --floor F1 --dxf outputs/townhouse-F1-v0.1.15.dxf --markdown outputs/townhouse-F1-verify.md
+          vnai design dxf verify outputs/drafting-v0.1.14.json --floor F2 --dxf outputs/townhouse-F2-v0.1.15.dxf
+          vnai design dxf verify outputs/drafting-v0.1.14.json --view SECT-S1 --dxf outputs/townhouse-stair-section-v0.1.15.dxf
+          vnai design dxf manifest outputs/townhouse-F1-v0.1.15.dxf --sidecar outputs/townhouse-F1-v0.1.15.manifest.json --markdown outputs/townhouse-F1-manifest.md
       - name: Fresh wheel outside checkout
         run: python scripts/smoke_wheel.py
       - run: vnai fengshui knowledge validate

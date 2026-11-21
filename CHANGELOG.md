@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.15 - 2026-11-21
+
+- Add production CAD DXF export and semantic round-trip verification (`vnai design dxf export|audit|verify|manifest`) built directly on Drawing IR v1 (`architectural-drafting-v1`) and `ezdxf` (`R2010`/`R2013`/`R2018`).
+- Implement `src/vnai/dxf_export.py`, `src/vnai/dxf_roundtrip.py`, `src/vnai/dxf_manifest.py`, standalone contracts (`dxf-export-spec.schema.json`, `dxf-manifest.schema.json`), and `docs/DXF_EXPORT_CONTRACT.md`.
+- Map all 10 IR primitives (`LINE`, `POLYLINE`, analytic `ARC`, `CIRCLE`, `TEXT`, `MTEXT`, native rendered `DIMENSION`, Shapely-validated `HATCH`, `BLOCK_REFERENCE` -> `INSERT`+`ATTRIB`, and explicit `SYMBOL`), enforce single `Decimal` unit conversion (`mm`/`m`, `$INSUNITS` `4`/`6`), register all 15 `vnai-cad-layers-v1` layers (+ non-plot `VIEWPORTS` when Paper Space is requested), preserve UTF-8 Vietnamese Unicode strings, and keep Paper Space opt-in only when explicit `paper_size_mm` is supplied.
+- Add independent structural DXF audit (`CLEAN`, `RECOVERED_WITH_FIXES`, `CRITICAL_ERRORS`) separated from handle-free semantic round-trip equivalence verification (`LOSSLESS_EQUIVALENT`, `NUMERICALLY_EQUIVALENT`, `MISMATCH`), 6 mathematical oracles (Oracles A–F), exported townhouse DXF deliverables under `examples/batch007d/exports/`, CLI regression tests, and isolated wheel smoke coverage while keeping legacy `vnai dxf`, `cad_writes_permitted: false`, `architect_approval: NOT_GRANTED`, and `manual_autocad_acceptance_status: PENDING_HUMAN_AUTOCAD_VERIFICATION`.
+
 ## 0.1.14 - 2026-11-20
 
 - Add CAD-neutral Drawing Intermediate Representation (`architectural-drafting-v1`) with 10 primitives (`LINE`, `POLYLINE`, `ARC`, `CIRCLE`, `TEXT`, `MTEXT`, `DIMENSION`, `HATCH`, `SYMBOL`, `BLOCK_REFERENCE`), analytic swing-arc preservation, deduplicated wall unions, and separated model-space vs paper-space settings.

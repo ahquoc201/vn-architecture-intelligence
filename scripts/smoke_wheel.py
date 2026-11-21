@@ -81,6 +81,8 @@ def run() -> None:
             shutil.copyfile(source, work / ("stairdraft-" + source.name))
         for source in (root / "examples/batch007c").glob("*.json"):
             shutil.copyfile(source, work / ("drafting-" + source.name))
+        for source in (root / "examples/batch007d").glob("*.json"):
+            shutil.copyfile(source, work / ("dxfspec-" + source.name))
         shutil.copyfile(root / "examples/townhouse_4x20_brief.json", work / "brief.json")
         shutil.copyfile(root / "examples/townhouse_sample.json", work / "legacy.json")
         for name in (
@@ -448,6 +450,17 @@ def run() -> None:
                 (["design", "drafting", "layers", "drafting-townhouse.json", "--markdown", "drafting-layers.md"], 0),
                 (["design", "drafting", "preview", "drafting-townhouse.json", "--floor", "F1", "--out", "drafting-F1.svg"], 0),
                 (["design", "drafting", "preview", "drafting-townhouse-6rooms-drafting.json", "--view", "sheet", "--scale", "50", "--out", "drafting-sheet-50.svg"], 0),
+                (["design", "drafting", "generate", "dxfspec-oracle-e-vietnamese-unicode.json", "--out", "drafting-oracle-e.json"], 0),
+                (["design", "dxf", "export", "drafting-oracle-a.json", "--out", "dxf-oracle-a.dxf", "--manifest", "dxf-oracle-a.manifest.json"], 0),
+                (["design", "dxf", "export", "drafting-oracle-e.json", "--out", "dxf-oracle-e.dxf", "--manifest", "dxf-oracle-e.manifest.json"], 0),
+                (["design", "dxf", "export", "drafting-townhouse.json", "--floor", "F1", "--out", "dxf-townhouse-F1.dxf", "--manifest", "dxf-townhouse-F1.manifest.json"], 0),
+                (["design", "dxf", "export", "drafting-townhouse.json", "--floor", "F2", "--out", "dxf-townhouse-F2.dxf", "--manifest", "dxf-townhouse-F2.manifest.json"], 0),
+                (["design", "dxf", "export", "drafting-townhouse.json", "--view", "SECT-S1", "--out", "dxf-townhouse-sect.dxf", "--manifest", "dxf-townhouse-sect.manifest.json"], 0),
+                (["design", "dxf", "audit", "dxf-townhouse-F1.dxf", "--markdown", "dxf-townhouse-F1-audit.md"], 0),
+                (["design", "dxf", "verify", "drafting-townhouse.json", "--floor", "F1", "--dxf", "dxf-townhouse-F1.dxf", "--markdown", "dxf-townhouse-F1-verify.md"], 0),
+                (["design", "dxf", "verify", "drafting-oracle-e.json", "--dxf", "dxf-oracle-e.dxf"], 0),
+                (["design", "dxf", "manifest", "dxf-townhouse-F1.dxf", "--sidecar", "dxf-townhouse-F1.manifest.json", "--markdown", "dxf-townhouse-F1-manifest.md"], 0),
+                (["design", "dxf", "export", "drafting-oracle-a.json", "--require-paper-space", "--out", "dxf-missing-ps.dxf"], 3),
             ]
         )
         th100_geom_digest: str | None = None
@@ -464,6 +477,38 @@ def run() -> None:
             )
             if result.returncode != expected:
                 raise RuntimeError(f"{args}: {result.returncode}, {result.stdout}, {result.stderr}")
+            if args[:2] == ["design", "dxf"]:
+                dxf_rep = json.loads(result.stdout)
+                if dxf_rep["cad_writes_permitted"] or dxf_rep["architect_approval"] != "NOT_GRANTED":
+                    raise RuntimeError("Installed DXF exporter granted CAD writes or approval")
+                if args[2] == "export" and expected == 0:
+                    if (
+                        dxf_rep["export_status"] != "EXPORTED"
+                        or dxf_rep["dxf_audit"]["audit_status"] != "CLEAN"
+                        or dxf_rep["roundtrip_verification"]["equivalence_status"] != "LOSSLESS_EQUIVALENT"
+                    ):
+                        raise RuntimeError(f"Installed DXF export failed audit/roundtrip: {args}")
+                if args[2] == "audit" and (
+                    dxf_rep["audit_status"] != "CLEAN" or not dxf_rep["lossless_eligible"]
+                ):
+                    raise RuntimeError("Installed DXF audit failed CLEAN check")
+                if args[2] == "verify":
+                    if (
+                        dxf_rep["roundtrip_status"] != "VERIFIED"
+                        or dxf_rep["equivalence_status"] != "LOSSLESS_EQUIVALENT"
+                    ):
+                        raise RuntimeError("Installed DXF semantic verify failed")
+                    if "dxf-oracle-e.dxf" in args and (
+                        not dxf_rep["unicode_text_verification"]["all_codepoints_match"]
+                        or dxf_rep["unicode_text_verification"]["text_count"] < 1
+                    ):
+                        raise RuntimeError("Installed DXF Vietnamese Unicode check failed")
+                if args[2] == "manifest" and (
+                    dxf_rep["status"] != "VALID"
+                    or dxf_rep["manifest_status"] != "EXTRACTED"
+                    or not dxf_rep["sidecar_checksum_match"]
+                ):
+                    raise RuntimeError("Installed DXF manifest check failed")
             if args[:2] == ["design", "drafting"]:
                 draft_rep = json.loads(result.stdout)
                 if draft_rep["cad_writes_permitted"] or draft_rep["architect_approval"] != "NOT_GRANTED":
