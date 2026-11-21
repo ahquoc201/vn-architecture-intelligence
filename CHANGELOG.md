@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 - 2026-11-21
+
+- Add Claude Code skill installation from one canonical `skills/` source (`vnai skills list|check|install`, `vnai-skill-install-v1` digest marker; MISSING/STALE/MODIFIED/UNMANAGED states; no symlinks required; skills bundled in the wheel) and `vnai doctor`.
+- Add resumable project workspace `vnai project init|import|step|decide|status` (`vnai-workflow-project-v1`): fixed-argv orchestration of existing commands with versioned outputs, SHA-256 ledger, exit-code categories and Vietnamese meanings, digest-bound human decisions, stale/superseded detection, and an export guard requiring a current `export_authorization` for new DXF files. `cad_modification` is refused.
+- Restructure `vn-house-design` into an entry-point SKILL.md with progressive-disclosure references (`intake`, `stages`, `status-codes`); existing safeguards preserved; batch identifiers removed from permanent agent instructions; CLAUDE.md condensed.
+- Add deterministic synthetic townhouse workflow demo (`scripts/demo_synthetic_townhouse.py`), live-eval case set (`evals/vn-house-design/cases.json`) with a transcript collector (`scripts/run_skill_evals.py`), negative/recovery tests, and architect/engineering documentation. Engines, goldens and fixtures unchanged.
+
 ## 0.1.15 - 2026-11-21
 
 - Add production CAD DXF export and semantic round-trip verification (`vnai design dxf export|audit|verify|manifest`) built directly on Drawing IR v1 (`architectural-drafting-v1`) and `ezdxf` (`R2010`/`R2013`/`R2018`).

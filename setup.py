@@ -18,6 +18,8 @@ class BuildWithData(build_py):
             "knowledge/fengshui/*.yaml",
             "knowledge/insights.yaml",
             "sources/bibliography.yaml",
+            "skills/*/SKILL.md",
+            "skills/*/reference/*.md",
         )
         for pattern in patterns:
             for source in sorted(root.glob(pattern)):

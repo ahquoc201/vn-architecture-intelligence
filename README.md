@@ -1,12 +1,28 @@
 # Vietnam Architecture Intelligence (VNAI)
 
-**Phiên bản 0.1.14 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
+**Phiên bản 0.2.0 — nền tảng nghiên cứu có thể chạy, không phải hệ thống tự thiết kế hoặc phê duyệt hồ sơ thi công.**
 
 Repo mã nguồn mở phục vụ **Claude Code là một agent duy nhất**, với ba nhiệm vụ tách biệt:
 
 1. **Kiến trúc**: tổ chức brief, hình học khu đất/phòng, kiểm tra diện tích cơ bản, chuẩn bị dữ liệu CAD.
 2. **Phong thủy Việt Nam**: tìm và đối chiếu các trường phái được gia chủ lựa chọn; **không đưa kết luận dự báo như bằng chứng khoa học**. Chỉ áp dụng quy tắc sau khi kiểm chứng đúng ấn bản, phép tính và có bài test.
 3. **Tiêu chuẩn và xây dựng**: **chỉ báo cáo** quy chuẩn/tiêu chuẩn liên quan, điều khoản và dữ liệu thiếu; không tự sửa bản vẽ. Các vấn đề an toàn hoặc pháp lý phải được xử lý trước khi đưa hồ sơ vào thi công.
+
+## Dùng với Claude Code (v0.2.0)
+
+Kiến trúc sư mô tả nhà bằng tiếng Việt; Claude Code dùng skill `/vn-house-design` để chạy các engine
+`vnai` qua một workspace dự án có thể tiếp tục (`vnai project ...`), hỏi lại khi thiếu dữ liệu, ghi các
+quyết định của người thật tách biệt, và chỉ xuất DXF **mới** khi được yêu cầu rõ ràng.
+
+```powershell
+python -m pip install -e ".[dev,cad]"
+vnai skills install      # chép skills/ -> .claude/skills/ (có kiểm digest)
+vnai doctor              # kiểm tra Python, thư viện, dữ liệu, skill
+python scripts/demo_synthetic_townhouse.py --dir projects/demo-townhouse
+```
+
+Xem [hướng dẫn nhanh cho kiến trúc sư](docs/ARCHITECT_QUICKSTART.md) và
+[tài liệu kỹ thuật workflow](docs/CLAUDE_WORKFLOW.md).
 
 ## Hiện đã làm được
 
