@@ -1,0 +1,20 @@
+{
+  "contract": "vnai-cad-mcp-profile-v1",
+  "note": "Template. Copy to a git-ignored *.local.json, review, then run: vnai cad doctor --profile <file> --probe. Tool names below are UNVERIFIED until a live tools/list on your machine confirms them.",
+  "server_name": "autocad",
+  "package": "autocad-mcp-pro",
+  "pinned_version": "1.8.0",
+  "pinned_tag_commit": "v1.8.0 (6f6a538)",
+  "tool_names_status": "UNVERIFIED_PENDING_LIVE_DISCOVERY",
+  "command": ["uvx", "--from", "autocad-mcp-pro[com]==1.8.0", "autocad-mcp"],
+  "env": {
+    "READ_ONLY": "true",
+    "TOOL_ALLOWLIST": "drawing_info,entity_list",
+    "TOOL_DENYLIST": "system_run_command,system_run_lisp",
+    "LISP_POLICY": "read",
+    "ALLOWED_PATHS": "${VNAI_CAD_ALLOWED_PATHS}"
+  },
+  "read_tools": ["drawing_info", "entity_list"],
+  "identity_tool": "drawing_info",
+  "desktop_backend_values": ["com"]
+}

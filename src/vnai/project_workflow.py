@@ -56,9 +56,15 @@ DECISION_KINDS = {
     "architect_review": "Kiến trúc sư đã xem xét (không phải phê duyệt)",
     "architect_approval": "Kiến trúc sư phê duyệt (chỉ ghi lời người thật)",
     "export_authorization": "Cho phép tạo tệp DXF MỚI từ đúng Drawing IR này",
+    "cad_copy_edit_authorization": (
+        "Cho phép áp dụng đúng đề xuất thay đổi này lên MỘT bản sao DXF mới (một lần)"
+    ),
 }
 REFUSED_KINDS = {
-    "cad_modification": "Sửa bản vẽ CAD/DWG hiện có không được hỗ trợ trong workflow này.",
+    "cad_modification": (
+        "Sửa trực tiếp bản vẽ CAD/DWG gốc hoặc tài liệu AutoCAD đang mở không được hỗ trợ; "
+        "hãy lập đề xuất (project cad-propose) và cho phép sửa trên bản sao."
+    ),
 }
 PIPELINE = (
     "brief",
@@ -418,6 +424,13 @@ def record_decision(
         raise WorkflowError("Decision target must be an existing artifact inside the project")
     if kind == "export_authorization" and target.suffix.lower() != ".json":
         raise WorkflowError("export_authorization must target a Drawing IR JSON artifact")
+    if kind == "cad_copy_edit_authorization":
+        try:
+            contract = json.loads(target.read_text(encoding="utf-8")).get("contract")
+        except (json.JSONDecodeError, UnicodeDecodeError, AttributeError):
+            contract = None
+        if contract != "vnai-cad-change-proposal-v1":
+            raise WorkflowError("cad_copy_edit_authorization must target a CAD change proposal")
     number = sum(e["type"] == "decision" for e in data["events"]) + 1
     event = {
         "type": "decision",
@@ -438,6 +451,8 @@ def record_decision(
     }
     if kind == "export_authorization":
         event["scope"] = "NEW_DXF_FILES_ONLY_NO_OVERWRITE"
+    if kind == "cad_copy_edit_authorization":
+        event["scope"] = "SINGLE_USE_NEW_COPY_EXACT_PROPOSAL_OPERATIONS"
     data["events"].append(event)
     _save(project, data)
     return event
@@ -512,6 +527,18 @@ def project_status(project: Path) -> dict:
         next_actions.append("Chưa có bước nào: thu thập brief rồi chạy bước 'brief'.")
     if integrity:
         next_actions.insert(0, "Có tệp bị sửa/mất sau khi ghi nhận: chạy lại bước liên quan.")
+    finished = {e.get("started_id") for e in data["events"] if e["type"] == "cad_edit"}
+    cad_edits = [
+        {"id": e["id"], "edit_status": e["edit_status"], "target": e.get("target"),
+         "report": e["report"]}
+        for e in data["events"] if e["type"] == "cad_edit"
+    ] + [
+        {"id": e["id"], "edit_status": "INTERRUPTED_UNCERTAIN", "target": e["target"],
+         "report": None}
+        for e in data["events"] if e["type"] == "cad_edit_started" and e["id"] not in finished
+    ]
+    if any(c["edit_status"] == "INTERRUPTED_UNCERTAIN" for c in cad_edits):
+        next_actions.insert(0, "Có lần sửa bản sao CAD bị gián đoạn: kiểm tra tay, không tự chạy lại.")
     approvals = [d for d in decisions if d["kind"] == "architect_approval"
                  and d["validity"] == "CURRENT" and not d["synthetic"]]
     return {
@@ -524,6 +551,7 @@ def project_status(project: Path) -> dict:
         "integrity_issues": integrity,
         "decisions": decisions,
         "human_approval_recorded": bool(approvals),
+        "cad_copy_edits": cad_edits,
         "cad_writes_permitted": False,
         "cad_modification_permitted": False,
         "next_actions_vi": next_actions,

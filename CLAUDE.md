@@ -23,6 +23,8 @@ Không giả định mình là kỹ sư thẩm tra hoặc có quyền duyệt ph
    các quyết định riêng. Không bao giờ tổng hợp approval từ fixture, validator hay lời không rõ ràng.
 6. `cad_writes_permitted: false`. Không sửa bản vẽ CAD/DWG có sẵn. Chỉ tạo DXF **mới** khi người dùng
    yêu cầu rõ, qua exporter có kiểm soát (`vnai project step ... export`), rồi audit + verify.
+   AutoCAD MCP chỉ đọc (`vnai cad ...`); thay đổi CAD = đề xuất → `cad_copy_edit_authorization` →
+   bản sao mới (`vnai project cad-propose/cad-apply`). Không gọi công cụ ghi/chạy lệnh của MCP.
 7. Không tự xuất hồ sơ thi công, không cam kết đạt PCCC, kết cấu, MEP khi chưa có chuyên gia kiểm tra.
 8. Không nới ràng buộc cứng để chạy tiếp. INCOMPLETE/CONFLICT/UNSUPPORTED/SEARCH_EXHAUSTED là kết quả
    hợp lệ, không phải lỗi ứng dụng — giải thích và hỏi.

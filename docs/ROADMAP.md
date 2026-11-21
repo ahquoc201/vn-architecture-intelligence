@@ -33,7 +33,8 @@
 ## R3 — AutoCAD MCP & 3D
 - [x] Batch-007-A: verification/review foundation before drafting; no new CAD writes
 - [ ] Batch-007-B: wall/hosted-opening and detailed stair information contracts with reviewed fixtures before drafting exporters
-- [ ] Import/export DWG qua AutoCAD MCP trên máy Windows, đọc được bản vẽ gốc
+- [x] v0.2.1: AutoCAD MCP chỉ đọc có kiểm soát, đối chiếu DXF ↔ VNAI, đề xuất + sửa bản sao DXF mới (mock/headless; live PENDING)
+- [ ] Import/export DWG qua AutoCAD MCP trên máy Windows — chờ nghiệm thu live
 - [ ] Xuất bản vẽ V1 đầy đủ mặt bằng có dim, layer, cửa, cầu thang, nội thất
 - [ ] Kiểm tra mở lại CAD, phép đo, diff, backup, human approval
 - [ ] Tạo mặt đứng/mặt cắt/3D từ một model có cao độ thống nhất
@@ -100,4 +101,5 @@ See `STAIR_GEOMETRY_CONTRACT.md` for supported model scope and limitations.
 - [x] Scale-consistent SVG previews (9 actual outputs including complete 6-room two-storey benchmark), CLI (`vnai design drafting`), independent oracles, and wheel integration.
 - [x] Batch 007-D / v0.1.15: production DXF export (`R2010`/`R2013`/`R2018`), single `Decimal` unit conversion, all 10 primitives + native `DIMENSION`, explicit-only Paper Space, independent structural audit, handle-free semantic round-trip verification (`LOSSLESS_EQUIVALENT`), `vnai design dxf` CLI, Oracles A–F, and townhouse DXF deliverables (human AutoCAD workstation acceptance & live AutoCAD MCP writes remain intentionally disabled/pending).
 - [x] v0.2.0: Claude Code skill installation, resumable project workflow, export authorization guard, synthetic end-to-end demo.
-- [ ] Next: controlled AutoCAD MCP integration (read copies, authorized new-file writes), live skill evaluations, QCVN/TCVN rule packs.
+- [x] Batch 008-B / v0.2.1: controlled read-only AutoCAD MCP bridge, VNAI-to-CAD comparison, authorized edits on new DXF copies (live AutoCAD acceptance pending).
+- [ ] Next: live AutoCAD/Claude acceptance, live skill evaluations, QCVN/TCVN rule packs.

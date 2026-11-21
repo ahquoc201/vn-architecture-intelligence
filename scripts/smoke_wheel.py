@@ -298,6 +298,7 @@ def run() -> None:
             (["project", "init", "proj", "--name", "smoke"], 0),
             (["project", "step", "proj", "brief", "brief.json"], 3),
             (["project", "status", "proj"], 0),
+            (["cad", "doctor"], 0),
         ]
         commands.extend(
             [
@@ -466,6 +467,8 @@ def run() -> None:
                 (["design", "dxf", "export", "drafting-townhouse.json", "--floor", "F2", "--out", "dxf-townhouse-F2.dxf", "--manifest", "dxf-townhouse-F2.manifest.json"], 0),
                 (["design", "dxf", "export", "drafting-townhouse.json", "--view", "SECT-S1", "--out", "dxf-townhouse-sect.dxf", "--manifest", "dxf-townhouse-sect.manifest.json"], 0),
                 (["design", "dxf", "audit", "dxf-townhouse-F1.dxf", "--markdown", "dxf-townhouse-F1-audit.md"], 0),
+                (["cad", "inspect", "dxf-townhouse-F1.dxf", "--type", "MTEXT", "--limit", "2"], 0),
+                (["cad", "compare", "drafting-townhouse.json", "dxf-townhouse-F1.dxf", "--floor", "F1"], 0),
                 (["design", "dxf", "verify", "drafting-townhouse.json", "--floor", "F1", "--dxf", "dxf-townhouse-F1.dxf", "--markdown", "dxf-townhouse-F1-verify.md"], 0),
                 (["design", "dxf", "verify", "drafting-oracle-e.json", "--dxf", "dxf-oracle-e.dxf"], 0),
                 (["design", "dxf", "manifest", "dxf-townhouse-F1.dxf", "--sidecar", "dxf-townhouse-F1.manifest.json", "--markdown", "dxf-townhouse-F1-manifest.md"], 0),

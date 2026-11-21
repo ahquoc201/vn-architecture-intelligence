@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1 - 2026-11-21
+
+- Add controlled CAD bridge `vnai cad doctor|inspect|compare|mcp-read` (`vnai-cad-capabilities-v1`, `vnai-cad-inspection-v1`, `vnai-cad-comparison-v1`): runtime MCP capability discovery over stdio JSON-RPC with separate statuses (configured / connected / read-only enforcement / version / desktop AutoCAD / live document), a VNAI-side read allowlist that refuses every call when the server advertises tools outside it, bounded/paged headless DXF inspection with source-unchanged proof, and handle-free VNAI-to-CAD comparison reusing the round-trip verifier (VERIFIED_MATCH / VERIFIED_MISMATCH / MISSING_ENTITY / UNKNOWN / NOT_EVALUATED / UNSUPPORTED / STALE).
+- Add `vnai project cad-propose|cad-apply` (`vnai-cad-change-proposal-v1`, `vnai-cad-copy-edit-v1`) and decision kind `cad_copy_edit_authorization`: proposals never write CAD; edits need a single-use authorization bound to the exact proposal digest, revalidate source/IR digests, allow only `translate_source_geometry`/`replace_text`, write one new copy in `<project>/exports` (temp + link, no overwrite), then audit, read back and compare. Live AutoCAD mutation remains UNSUPPORTED; `cad_writes_permitted` stays false.
+- Add mock MCP server and negative tests, `docs/AUTOCAD_MCP_INTEGRATION.md` (provider assessment of `autocad-mcp-pro` 1.8.0, Windows setup, live acceptance checklist), example profile, skill reference `autocad-mcp.md`, and live eval scenarios A–D. Engines, goldens and fixtures unchanged.
+
 ## 0.2.0 - 2026-11-21
 
 - Add Claude Code skill installation from one canonical `skills/` source (`vnai skills list|check|install`, `vnai-skill-install-v1` digest marker; MISSING/STALE/MODIFIED/UNMANAGED states; no symlinks required; skills bundled in the wheel) and `vnai doctor`.

@@ -23,3 +23,7 @@ licensed-documents/
 .claude/settings.local.json
 # Private architectural project workspaces (vnai project init projects/<name>)
 projects/
+
+# Local MCP / CAD profiles (may contain personal paths)
+*.local.json
+.mcp.json
