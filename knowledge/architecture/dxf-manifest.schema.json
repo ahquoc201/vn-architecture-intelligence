@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Production DXF Export Manifest & Verification Report v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "report_schema_version",
+    "contract",
+    "status",
+    "export_status",
+    "export_id",
+    "export_schema_version",
+    "exporter_version",
+    "ezdxf_version",
+    "dxf_version",
+    "source_drawing_ir_digest",
+    "source_revision_digest",
+    "source_digests",
+    "source_units",
+    "target_units",
+    "unit_policy",
+    "scale_metadata",
+    "view_id",
+    "floor_id",
+    "view_kind",
+    "section_kind",
+    "entity_count_by_type",
+    "entity_count_by_layer",
+    "supported_transformations",
+    "unsupported_or_omitted_entities",
+    "entity_id_map",
+    "paper_space_composition",
+    "unicode_text_verification",
+    "dxf_audit",
+    "roundtrip_verification",
+    "semantic_fingerprint",
+    "dxf_file_sha256",
+    "dxf_path",
+    "cad_writes_permitted",
+    "existing_cad_modification_permitted",
+    "artifact_export_mode",
+    "approval_inherited",
+    "architect_approval",
+    "standards_review",
+    "fengshui_review",
+    "construction_readiness",
+    "manual_autocad_acceptance_status",
+    "errors",
+    "warnings",
+    "missing_information",
+    "diagnostics"
+  ],
+  "properties": {
+    "report_schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "contract": {
+      "const": "dxf-export-manifest-v1"
+    },
+    "status": {
+      "enum": [
+        "VALID",
+        "INVALID",
+        "INCOMPLETE"
+      ]
+    },
+    "export_status": {
+      "enum": [
+        "EXPORTED",
+        "INVALID_INPUT",
+        "INCOMPLETE",
+        "CONFLICT",
+        "AUDIT_ERROR",
+        "UNSUPPORTED"
+      ]
+    },
+    "export_id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "export_schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "exporter_version": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "ezdxf_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dxf_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_drawing_ir_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_revision_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_digests": {
+      "type": "object"
+    },
+    "source_units": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "target_units": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unit_policy": {
+      "type": "object"
+    },
+    "scale_metadata": {
+      "type": "object"
+    },
+    "view_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "floor_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "view_kind": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "section_kind": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "entity_count_by_type": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "entity_count_by_layer": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "supported_transformations": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "unsupported_or_omitted_entities": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "entity_id_map": {
+      "type": "object"
+    },
+    "paper_space_composition": {
+      "type": "object"
+    },
+    "unicode_text_verification": {
+      "type": "object"
+    },
+    "dxf_audit": {
+      "type": "object"
+    },
+    "roundtrip_verification": {
+      "type": "object"
+    },
+    "semantic_fingerprint": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dxf_file_sha256": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "dxf_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cad_writes_permitted": {
+      "const": false
+    },
+    "existing_cad_modification_permitted": {
+      "const": false
+    },
+    "artifact_export_mode": {
+      "const": "EXPLICIT_NEW_DXF_ARTIFACT"
+    },
+    "approval_inherited": {
+      "const": false
+    },
+    "architect_approval": {
+      "const": "NOT_GRANTED"
+    },
+    "standards_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "fengshui_review": {
+      "const": "NOT_EVALUATED"
+    },
+    "construction_readiness": {
+      "const": "NOT_FOR_CONSTRUCTION_CONCEPTUAL_ONLY"
+    },
+    "manual_autocad_acceptance_status": {
+      "const": "PENDING_HUMAN_AUTOCAD_VERIFICATION"
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/issue"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/issue"
+      }
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/issue"
+      }
+    },
+    "diagnostics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/issue"
+      }
+    }
+  },
+  "$defs": {
+    "issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "path",
+        "message",
+        "requirement_ids"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "path": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "requirement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          }
+        }
+      }
+    }
+  }
+}

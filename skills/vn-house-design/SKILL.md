@@ -218,3 +218,15 @@ and limits. Keep one user-facing Claude Code agent; never fabricate measurements
 9. Explain unresolved items (e.g., missing confirmed north arrow, missing elevations, unsupported irregular room spans) and source conflicts via `vnai design drafting report`.
 10. Validate stored IR (`vnai design drafting validate <ir.json>`) to keep `model_space`, digests and `ezdxf_mapping` ready for Batch 007-D DXF export.
 11. Obtain real architect review (and separate QCVN/TCVN and Feng Shui reviews); `cad_writes_permitted` stays `false` and `architect_approval` stays `NOT_GRANTED`.
+
+
+## Production DXF export & round-trip verification (007-D)
+
+Read `docs/DXF_EXPORT_CONTRACT.md` for IR-to-DXF entity mappings, unit conversion rules, native dimension
+handling, Paper Space rules and safety guards. Keep `cad_writes_permitted: false`, `architect_approval: NOT_GRANTED`,
+and `manual_autocad_acceptance_status: PENDING_HUMAN_AUTOCAD_VERIFICATION`.
+
+1. Export only a validated `architectural-drafting-v1` IR view (`--view <id>` or `--floor <id>`) via `vnai design dxf export <ir.json> --out <new.dxf> --manifest <new.manifest.json>`.
+2. Keep Model Space `1:1` (`mm` or `m`); pass `--paper-size WxH` only when the architect explicitly supplies sheet dimensions (never invent a paper size). Pass `--overwrite` only for regenerating non-protected output paths.
+3. Run `vnai design dxf audit <new.dxf>`, `vnai design dxf verify <ir.json> --dxf <new.dxf> ...`, and `vnai design dxf manifest <new.dxf> --sidecar <new.manifest.json>` to confirm `CLEAN` structural audit, `LOSSLESS_EQUIVALENT`/`NUMERICALLY_EQUIVALENT` round-trip status, and exact UTF-8 Vietnamese Unicode code points.
+4. Present the exported `.dxf`, sidecar `.manifest.json`, and the Manual AutoCAD Acceptance Checklist to the architect for workstation font/AutoCAD inspection before downstream use; never modify source fixtures or claim live AutoCAD writes.

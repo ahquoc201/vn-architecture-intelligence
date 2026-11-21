@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Production DXF Export Specification v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract",
+    "drafting_ir"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "contract": {
+      "const": "dxf-export-spec-v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "provenance": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "drafting_ir": {
+      "type": "object"
+    },
+    "view_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "floor_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "target_units": {
+      "enum": [
+        "mm",
+        "m"
+      ]
+    },
+    "dxf_version": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "text_font_name": {
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "paper_space_layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "require_paper_space": {
+          "type": "boolean"
+        },
+        "paper_size_mm": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 5000
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "margins_mm": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 500
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "title_block_supplied": {
+          "type": "boolean"
+        },
+        "sheet_title": {
+          "type": "string"
+        },
+        "drawing_number": {
+          "type": "string"
+        }
+      }
+    },
+    "overwrite_existing": {
+      "type": "boolean"
+    }
+  }
+}

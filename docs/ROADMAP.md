@@ -98,4 +98,5 @@ See `STAIR_GEOMETRY_CONTRACT.md` for supported model scope and limitations.
 - [x] Vietnamese Unicode room annotations (verified interior `polylabel` placement), B2 opening tags, B3 stair annotations (`TRUE_LONGITUDINAL` vs `DEVELOPED_EXPLICIT_WALKING_LINE`), and confirmed-only reference symbols.
 - [x] Configurable 15-layer project CAD policy (`vnai-cad-layers-v1`) with `ezdxf_mapping`, monochrome/color styles, bounded annotation placement and `EXACT_GEOMETRIC` vs `APPROXIMATE_TEXT_BOUNDS` collision reporting.
 - [x] Scale-consistent SVG previews (9 actual outputs including complete 6-room two-storey benchmark), CLI (`vnai design drafting`), independent oracles, and wheel integration.
-- [ ] Batch 007-D: production DXF export & round-trip verification after architect review and explicit CAD authorization.
+- [x] Batch 007-D / v0.1.15: production DXF export (`R2010`/`R2013`/`R2018`), single `Decimal` unit conversion, all 10 primitives + native `DIMENSION`, explicit-only Paper Space, independent structural audit, handle-free semantic round-trip verification (`LOSSLESS_EQUIVALENT`), `vnai design dxf` CLI, Oracles A–F, and townhouse DXF deliverables (human AutoCAD workstation acceptance & live AutoCAD MCP writes remain intentionally disabled/pending).
+- [ ] Batch 008-A+: QCVN/TCVN regulatory rule packs and architect-authorized live AutoCAD drafting integration.

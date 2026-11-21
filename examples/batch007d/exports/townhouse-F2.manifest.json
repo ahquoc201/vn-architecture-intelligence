@@ -1,0 +1,2179 @@
+{
+  "report_schema_version": 1,
+  "contract": "dxf-export-manifest-v1",
+  "status": "VALID",
+  "export_status": "EXPORTED",
+  "export_id": "DXF-6d12e94b9b5e9a27",
+  "export_schema_version": 1,
+  "exporter_version": "0.1.15",
+  "ezdxf_version": "1.4.5",
+  "dxf_version": "R2010",
+  "source_drawing_ir_digest": "b72d41cfeb4f34092da12f8a3e2b5345ca864ee7f9b9f622edb5c3672ddd04d0",
+  "source_revision_digest": "IR-423f3c113fced00b94bd8809bf9636dbebd708e8263e456d1258600e72902aaa",
+  "source_digests": {
+    "source_input_digest": "5dc2dd8a4b34729ef9a4b2466599f8ef1a3f33a9f95ee3290b705aa1a6a18679",
+    "source_candidate_digest": "ec8ce2d38c872129926cbc2d9e4963b8cca7c7c6a3203fdc194242f25398a2f8",
+    "source_revision_id": "IR-423f3c113fced00b94bd8809bf9636dbebd708e8263e456d1258600e72902aaa",
+    "wall_revision_id": "WR-7fd99ba3e9e8cfff13ccdaa0bf1082d058139d205af9d53a05f664de27d18fa4",
+    "wall_geometry_digest": "0ee609cde0ea72e573fe1a32da4a44b9323bb9621dc2f9114d6f66d3b1c1983b",
+    "opening_revision_id": "OR-e9489f0d5998c21ac9f37b2da0531043b780abf7ce486fed6719242d4bde1ae3",
+    "opening_geometry_digest": "f19ad15ffe728ba27fc544e3e3989775131147abd84b89541215549382de464a",
+    "stair_revision_id": "SR-84c99cab5634a03fc7bb01b4a4f37c5d31c708f3a1af6326fabd16e3f0272040",
+    "verification_coverage": {
+      "required_checks": 48,
+      "verified": 48,
+      "unresolved": 0,
+      "all_required_verified": true,
+      "scope": "SUPPORTED_GEOMETRY_EXCLUDING_HUMAN_APPROVAL_AND_TECHNICAL_CERTIFICATION"
+    }
+  },
+  "source_units": "mm",
+  "target_units": "mm",
+  "unit_policy": {
+    "source_units": "mm",
+    "target_units": "mm",
+    "conversion_factor": 1.0,
+    "unit_conversion_applied": false,
+    "insunits": 4,
+    "double_conversion_guard": "EXPLICIT_IR_TO_DXF_ONCE"
+  },
+  "scale_metadata": {
+    "scale_denominator": 100.0,
+    "scale_label": "1:100",
+    "scale_authority": "project_drawing_preference",
+    "model_geometry_scaled_by_paper_scale": false
+  },
+  "view_id": "PLAN-F2",
+  "floor_id": "F2",
+  "view_kind": "floor_plan",
+  "section_kind": null,
+  "entity_count_by_type": {
+    "ARC": 3,
+    "CIRCLE": 6,
+    "DIMENSION": 23,
+    "HATCH": 7,
+    "INSERT": 8,
+    "LINE": 14,
+    "LWPOLYLINE": 57,
+    "MTEXT": 4,
+    "TEXT": 24
+  },
+  "entity_count_by_layer": {
+    "A-DIMS": 23,
+    "A-DOOR": 20,
+    "A-DOOR-SWING": 6,
+    "A-GRID": 22,
+    "A-HATCH": 7,
+    "A-LEVEL": 1,
+    "A-OPENING-TAG": 7,
+    "A-ROOM-TEXT": 4,
+    "A-STAIR": 44,
+    "A-STAIR-ABOVE": 1,
+    "A-WALL-EXT": 1,
+    "A-WALL-INT": 6,
+    "A-WIND": 4
+  },
+  "supported_transformations": [
+    {
+      "ir_primitive": "LINE",
+      "dxf_entity": "LINE",
+      "analytic": true
+    },
+    {
+      "ir_primitive": "POLYLINE",
+      "dxf_entity": "LWPOLYLINE",
+      "analytic": true
+    },
+    {
+      "ir_primitive": "ARC",
+      "dxf_entity": "ARC",
+      "analytic": true
+    },
+    {
+      "ir_primitive": "CIRCLE",
+      "dxf_entity": "CIRCLE",
+      "analytic": true
+    },
+    {
+      "ir_primitive": "TEXT",
+      "dxf_entity": "TEXT",
+      "analytic": true
+    },
+    {
+      "ir_primitive": "MTEXT",
+      "dxf_entity": "MTEXT",
+      "analytic": true
+    },
+    {
+      "ir_primitive": "DIMENSION",
+      "dxf_entity": "DIMENSION (*D rendered)",
+      "analytic": true
+    },
+    {
+      "ir_primitive": "HATCH",
+      "dxf_entity": "HATCH",
+      "analytic": true
+    },
+    {
+      "ir_primitive": "BLOCK_REFERENCE",
+      "dxf_entity": "INSERT + ATTRIB",
+      "analytic": true
+    },
+    {
+      "ir_primitive": "SYMBOL",
+      "dxf_entity": "INSERT / LINE+CIRCLE+TEXT+LWPOLYLINE",
+      "analytic": true
+    }
+  ],
+  "unsupported_or_omitted_entities": [],
+  "entity_id_map": {
+    "DE-0263d718d8991639": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_north",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-0cf4a17f7f78c02f": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_north",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-0e571a62ded43278": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "GRID-B",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-0eb6af7e47093f72": {
+      "ir_entity_type": "LINE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-X-1",
+      "dxf_types": [
+        "LINE"
+      ],
+      "parts": [
+        "line"
+      ]
+    },
+    "DE-1034f71b11f4f314": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T1",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-12580de8f67a7e4c": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T1",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-1cae99aae045d49d": {
+      "ir_entity_type": "SYMBOL",
+      "layer": "A-GRID",
+      "source_geometry_id": "F2",
+      "dxf_types": [
+        "INSERT"
+      ],
+      "parts": [
+        "scale_bar"
+      ]
+    },
+    "DE-1f09797653a6ffa2": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T8",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-217359a498df268f": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "STAIR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-231e8da6c5be0b76": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_east",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-231e95e08ebda03f": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_north",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-234da2153417f574": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-B",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-27064de08a7cda76": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-WALL-INT",
+      "source_geometry_id": "F2:wall_int:4",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-2e59ba04b3111e5f": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-D",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-2f4f55cbc12c4ac7": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-WIND",
+      "source_geometry_id": "WINDOW-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-300d00ad16168397": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T4",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-32e3a023a4528335": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T6",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-3323e7982d3fd826": {
+      "ir_entity_type": "CIRCLE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-D",
+      "dxf_types": [
+        "CIRCLE"
+      ],
+      "parts": [
+        "circle"
+      ]
+    },
+    "DE-3378cc0516aeb2e6": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "STAIR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-35e7692c9cefde8a": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-WIND",
+      "source_geometry_id": "WINDOW-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-36faffaf59f44fc3": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "REAR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-373e5b934c63a099": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR-ABOVE",
+      "source_geometry_id": "VOID-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-3bb602517df30a39": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T7",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-3e734da62b4440d3": {
+      "ir_entity_type": "MTEXT",
+      "layer": "A-ROOM-TEXT",
+      "source_geometry_id": "BATH-U:1",
+      "dxf_types": [
+        "MTEXT"
+      ],
+      "parts": [
+        "mtext"
+      ]
+    },
+    "DE-40393fa6ac2c4c1d": {
+      "ir_entity_type": "LINE",
+      "layer": "A-WIND",
+      "source_geometry_id": "WINDOW-F2",
+      "dxf_types": [
+        "LINE"
+      ],
+      "parts": [
+        "line"
+      ]
+    },
+    "DE-43add2d5c0e5b7f1": {
+      "ir_entity_type": "LINE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-D",
+      "dxf_types": [
+        "LINE"
+      ],
+      "parts": [
+        "line"
+      ]
+    },
+    "DE-4943ce0faccfbf02": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "REAR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-4ae9be41cbc76a23": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-C",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-4b9e2d2f8658a059": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "FRONT-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-4c781a4a8dad00f4": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "STAIR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-4d3698c740c2e68d": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T7",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-4e0a917c94da6079": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "BATH-DOOR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-4ef569860b88e53d": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T9",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-50c073416b63a3e8": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T4",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-51caa27ef750161a": {
+      "ir_entity_type": "HATCH",
+      "layer": "A-HATCH",
+      "source_geometry_id": "F2:wall_int:4",
+      "dxf_types": [
+        "HATCH"
+      ],
+      "parts": [
+        "hatch"
+      ]
+    },
+    "DE-526ac43283c0df3d": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T5",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-55e0770f6474b488": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "W-0b1a923e6d116c8d40c9c7db234b71424ba7c1ffcc88130ff9f6bab90d97fbe7",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-5754bdbf52fc387b": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "W-061e242849372db3a515b029962ba4fe62ad472f01c169d352848832f033a11e",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-579f0bd08ba42700": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_north",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-59eca1d23c13212f": {
+      "ir_entity_type": "LINE",
+      "layer": "A-OPENING-TAG",
+      "source_geometry_id": "STAIR-F2",
+      "dxf_types": [
+        "LINE"
+      ],
+      "parts": [
+        "line"
+      ]
+    },
+    "DE-5a01dfbf8ca3db44": {
+      "ir_entity_type": "LINE",
+      "layer": "A-OPENING-TAG",
+      "source_geometry_id": "REAR-F2",
+      "dxf_types": [
+        "LINE"
+      ],
+      "parts": [
+        "line"
+      ]
+    },
+    "DE-5c88d8ec2a3e9c33": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "BATH-DOOR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-6076406d8028dd7f": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T9",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-63f5ffa6e736e7a0": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T6",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-64b2a49e49930d1a": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T6",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-64ca1ec9d43bb4e6": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T8",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-6661b4461163e61a": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-WALL-EXT",
+      "source_geometry_id": "F2:wall_ext:0",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-6829bf3b2ff818c2": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-68359ce75fe07a9a": {
+      "ir_entity_type": "SYMBOL",
+      "layer": "A-DOOR-SWING",
+      "source_geometry_id": "STAIR-F2",
+      "dxf_types": [
+        "LINE",
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "shaft",
+        "chevron"
+      ]
+    },
+    "DE-6b855a6bedc6713b": {
+      "ir_entity_type": "ARC",
+      "layer": "A-DOOR-SWING",
+      "source_geometry_id": "FRONT-F2",
+      "dxf_types": [
+        "ARC"
+      ],
+      "parts": [
+        "arc"
+      ]
+    },
+    "DE-6c54e4aacc2b42f1": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-WALL-INT",
+      "source_geometry_id": "F2:wall_int:1",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-6ffda5deae653f20": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "W-4560afee6446f41a113e018a4250ed9500257a5e291a80673600213bc9e10ed7",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-70f3be0cec0ea49f": {
+      "ir_entity_type": "CIRCLE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-X-2",
+      "dxf_types": [
+        "CIRCLE"
+      ],
+      "parts": [
+        "circle"
+      ]
+    },
+    "DE-74517ae854c50f66": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-75b3cd43b06d5b9a": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-WALL-INT",
+      "source_geometry_id": "F2:wall_int:2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-76d2994312ba4c42": {
+      "ir_entity_type": "BLOCK_REFERENCE",
+      "layer": "A-OPENING-TAG",
+      "source_geometry_id": "BATH-DOOR-F2",
+      "dxf_types": [
+        "INSERT"
+      ],
+      "parts": [
+        "block_ref"
+      ]
+    },
+    "DE-7909670f51d88d44": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_east",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-7a654a707862bd76": {
+      "ir_entity_type": "HATCH",
+      "layer": "A-HATCH",
+      "source_geometry_id": "F2:wall_int:5",
+      "dxf_types": [
+        "HATCH"
+      ],
+      "parts": [
+        "hatch"
+      ]
+    },
+    "DE-7b7bcbca71aa9906": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-7c421442d8e925f4": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-GRID",
+      "source_geometry_id": "SITE",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-7cb8a73d0ebe0547": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-WALL-INT",
+      "source_geometry_id": "F2:wall_int:3",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-84eff658210244f6": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T8",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-851db1921c215fd3": {
+      "ir_entity_type": "CIRCLE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-B",
+      "dxf_types": [
+        "CIRCLE"
+      ],
+      "parts": [
+        "circle"
+      ]
+    },
+    "DE-86a7a2db58888710": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_east",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-87c3318a9dacea20": {
+      "ir_entity_type": "BLOCK_REFERENCE",
+      "layer": "A-OPENING-TAG",
+      "source_geometry_id": "STAIR-F2",
+      "dxf_types": [
+        "INSERT"
+      ],
+      "parts": [
+        "block_ref"
+      ]
+    },
+    "DE-89f19c72f4537f98": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-GRID",
+      "source_geometry_id": "FOOTPRINT",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-8a6c635b412286c4": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T3",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-8b5ba416559cc16f": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-WIND",
+      "source_geometry_id": "WINDOW-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-8bad89d15adcf4e6": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_west",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-8cdd41e660308d40": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T7",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-8db99775c95ac158": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_south",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-8e4973418d2e51a0": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "REAR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-919b08b2544588a7": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T1",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-92e4fb42f8f78929": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T5",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-95c2b918e1397764": {
+      "ir_entity_type": "MTEXT",
+      "layer": "A-ROOM-TEXT",
+      "source_geometry_id": "BED:2",
+      "dxf_types": [
+        "MTEXT"
+      ],
+      "parts": [
+        "mtext"
+      ]
+    },
+    "DE-969f3a8a714efecd": {
+      "ir_entity_type": "BLOCK_REFERENCE",
+      "layer": "A-OPENING-TAG",
+      "source_geometry_id": "FRONT-F2",
+      "dxf_types": [
+        "INSERT"
+      ],
+      "parts": [
+        "block_ref"
+      ]
+    },
+    "DE-974c60d22a2e4b7a": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T9",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-977ba4bb2cdf83f4": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "FRONT-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-995c88640da2e97a": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_south",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-99e6892dbcdb8669": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "BATH-DOOR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-9a55f1e823b02fc2": {
+      "ir_entity_type": "BLOCK_REFERENCE",
+      "layer": "A-OPENING-TAG",
+      "source_geometry_id": "REAR-F2",
+      "dxf_types": [
+        "INSERT"
+      ],
+      "parts": [
+        "block_ref"
+      ]
+    },
+    "DE-9a71e3f5d22bd706": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-X-1",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-9c63bd5fdb34c6e9": {
+      "ir_entity_type": "MTEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "S1",
+      "dxf_types": [
+        "MTEXT"
+      ],
+      "parts": [
+        "mtext"
+      ]
+    },
+    "DE-9d5cc7f64fa03da0": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "W-0b1a923e6d116c8d40c9c7db234b71424ba7c1ffcc88130ff9f6bab90d97fbe7",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-9d75b826e33e41a1": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T5",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-a20aeff00addce69": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T8",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-a293dfc156f0925f": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T3",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-a61f224346461317": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T7",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-a6e50408f69d64eb": {
+      "ir_entity_type": "HATCH",
+      "layer": "A-HATCH",
+      "source_geometry_id": "F2:wall_ext:0",
+      "dxf_types": [
+        "HATCH"
+      ],
+      "parts": [
+        "hatch"
+      ]
+    },
+    "DE-a7225d660b4a06c1": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "GRID-B",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-aacd79548eeb3dbf": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "FRONT-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-aae9985be0c3edd1": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "REAR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-ab5838af517679b5": {
+      "ir_entity_type": "SYMBOL",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1",
+      "dxf_types": [
+        "LINE",
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "shaft",
+        "chevron"
+      ]
+    },
+    "DE-aca6fc2d0c8638a0": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "BATH-DOOR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-ad01bdd1ffb379de": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T4",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-b0692bd8366929fa": {
+      "ir_entity_type": "LINE",
+      "layer": "A-ROOM-TEXT",
+      "source_geometry_id": "BATH-U:1",
+      "dxf_types": [
+        "LINE"
+      ],
+      "parts": [
+        "line"
+      ]
+    },
+    "DE-b3234e2f3bd3c6c0": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T2",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-b542f1779a9d6d34": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "REAR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-b5960def7bda5738": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "STAIR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-b9a50439894ae357": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-WALL-INT",
+      "source_geometry_id": "F2:wall_int:0",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-ba21b02dbae9b469": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "W-0b1a923e6d116c8d40c9c7db234b71424ba7c1ffcc88130ff9f6bab90d97fbe7",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-bd25eef1892790cc": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "STAIR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-c0c5a0b7fe90944a": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "GRID-C",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-c56664f5d0f9a0f5": {
+      "ir_entity_type": "LINE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-B",
+      "dxf_types": [
+        "LINE"
+      ],
+      "parts": [
+        "line"
+      ]
+    },
+    "DE-c66aa285668001f1": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "FRONT-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-cffa10865f42f290": {
+      "ir_entity_type": "CIRCLE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-A",
+      "dxf_types": [
+        "CIRCLE"
+      ],
+      "parts": [
+        "circle"
+      ]
+    },
+    "DE-d02dc5c6965027e0": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "BATH-DOOR-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-d1090ad1eb08769d": {
+      "ir_entity_type": "HATCH",
+      "layer": "A-HATCH",
+      "source_geometry_id": "F2:wall_int:0",
+      "dxf_types": [
+        "HATCH"
+      ],
+      "parts": [
+        "hatch"
+      ]
+    },
+    "DE-d122c1cacee21624": {
+      "ir_entity_type": "CIRCLE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-X-1",
+      "dxf_types": [
+        "CIRCLE"
+      ],
+      "parts": [
+        "circle"
+      ]
+    },
+    "DE-d1793d473e9a331b": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-DOOR",
+      "source_geometry_id": "FRONT-F2",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-d21c52d5ca6e0b2e": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_west",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-d57f69f1ab117b58": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "W-3c0797ed19ee5932e8d849f1812d8e7478140d8f7e07f8bf8574365549846fae",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-d9543e25682cc190": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T3",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-d9e27e1bab87029b": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-dc047da08f892e24": {
+      "ir_entity_type": "BLOCK_REFERENCE",
+      "layer": "A-GRID",
+      "source_geometry_id": "NORTH-ARROW",
+      "dxf_types": [
+        "INSERT"
+      ],
+      "parts": [
+        "block_ref"
+      ]
+    },
+    "DE-dde207f368663232": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T1",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-de06b191ede36610": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-A",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-de58a4c764ca3914": {
+      "ir_entity_type": "LINE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-A",
+      "dxf_types": [
+        "LINE"
+      ],
+      "parts": [
+        "line"
+      ]
+    },
+    "DE-df33f3f6dd276744": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "WINDOW-F2",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-e10231281fe36fca": {
+      "ir_entity_type": "ARC",
+      "layer": "A-DOOR-SWING",
+      "source_geometry_id": "BATH-DOOR-F2",
+      "dxf_types": [
+        "ARC"
+      ],
+      "parts": [
+        "arc"
+      ]
+    },
+    "DE-e485e595318c7501": {
+      "ir_entity_type": "LINE",
+      "layer": "A-DOOR-SWING",
+      "source_geometry_id": "STAIR-F2",
+      "dxf_types": [
+        "LINE"
+      ],
+      "parts": [
+        "line"
+      ]
+    },
+    "DE-e4ff4e7b067d9708": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T3",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-e68d38359e3be23c": {
+      "ir_entity_type": "HATCH",
+      "layer": "A-HATCH",
+      "source_geometry_id": "F2:wall_int:1",
+      "dxf_types": [
+        "HATCH"
+      ],
+      "parts": [
+        "hatch"
+      ]
+    },
+    "DE-e848954be09ed80b": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T2",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-e9bdc31158674aef": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-WALL-INT",
+      "source_geometry_id": "F2:wall_int:5",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-ea1fe39c94276620": {
+      "ir_entity_type": "ARC",
+      "layer": "A-DOOR-SWING",
+      "source_geometry_id": "REAR-F2",
+      "dxf_types": [
+        "ARC"
+      ],
+      "parts": [
+        "arc"
+      ]
+    },
+    "DE-ead279cf2f5f4d76": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T4",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-ec63f03023a5de2f": {
+      "ir_entity_type": "POLYLINE",
+      "layer": "A-STAIR",
+      "source_geometry_id": "LAND",
+      "dxf_types": [
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "exterior"
+      ]
+    },
+    "DE-ed356eede0de388f": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2-T5",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-ed58c44ecab52954": {
+      "ir_entity_type": "BLOCK_REFERENCE",
+      "layer": "A-LEVEL",
+      "source_geometry_id": "F2",
+      "dxf_types": [
+        "INSERT"
+      ],
+      "parts": [
+        "block_ref"
+      ]
+    },
+    "DE-edce5e4f6a38f8ae": {
+      "ir_entity_type": "BLOCK_REFERENCE",
+      "layer": "A-OPENING-TAG",
+      "source_geometry_id": "WINDOW-F2",
+      "dxf_types": [
+        "INSERT"
+      ],
+      "parts": [
+        "block_ref"
+      ]
+    },
+    "DE-ee1663e5840e42b8": {
+      "ir_entity_type": "HATCH",
+      "layer": "A-HATCH",
+      "source_geometry_id": "F2:wall_int:2",
+      "dxf_types": [
+        "HATCH"
+      ],
+      "parts": [
+        "hatch"
+      ]
+    },
+    "DE-ee1e55c18883fa6e": {
+      "ir_entity_type": "HATCH",
+      "layer": "A-HATCH",
+      "source_geometry_id": "F2:wall_int:3",
+      "dxf_types": [
+        "HATCH"
+      ],
+      "parts": [
+        "hatch"
+      ]
+    },
+    "DE-eeab4ce86b7290f6": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "F2:env_east",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-f23d082de6d5169b": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-X-2",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-f2e6f572f6e58017": {
+      "ir_entity_type": "LINE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-C",
+      "dxf_types": [
+        "LINE"
+      ],
+      "parts": [
+        "line"
+      ]
+    },
+    "DE-f3d7d818c01c7484": {
+      "ir_entity_type": "DIMENSION",
+      "layer": "A-DIMS",
+      "source_geometry_id": "GRID-C",
+      "dxf_types": [
+        "DIMENSION"
+      ],
+      "parts": [
+        "dimension"
+      ]
+    },
+    "DE-f4cc584fddd1bc62": {
+      "ir_entity_type": "CIRCLE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-Y-C",
+      "dxf_types": [
+        "CIRCLE"
+      ],
+      "parts": [
+        "circle"
+      ]
+    },
+    "DE-f59c264979b835ae": {
+      "ir_entity_type": "SYMBOL",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL2",
+      "dxf_types": [
+        "LINE",
+        "LWPOLYLINE"
+      ],
+      "parts": [
+        "shaft",
+        "chevron"
+      ]
+    },
+    "DE-f81365d353c9e41a": {
+      "ir_entity_type": "LINE",
+      "layer": "A-GRID",
+      "source_geometry_id": "GRID-X-2",
+      "dxf_types": [
+        "LINE"
+      ],
+      "parts": [
+        "line"
+      ]
+    },
+    "DE-fafd9d7ac4c82199": {
+      "ir_entity_type": "MTEXT",
+      "layer": "A-ROOM-TEXT",
+      "source_geometry_id": "BED:1",
+      "dxf_types": [
+        "MTEXT"
+      ],
+      "parts": [
+        "mtext"
+      ]
+    },
+    "DE-fc9fe2c0b005930a": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T9",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    },
+    "DE-fffaf7ba8bd27ec4": {
+      "ir_entity_type": "TEXT",
+      "layer": "A-STAIR",
+      "source_geometry_id": "FL1-T6",
+      "dxf_types": [
+        "TEXT"
+      ],
+      "parts": [
+        "text"
+      ]
+    }
+  },
+  "paper_space_composition": {
+    "status": "NOT_GENERATED_NO_PAPER_SIZE_SUPPLIED",
+    "model_space_scale": "1:1",
+    "paper_space_scale_label": "1:100"
+  },
+  "unicode_text_verification": {
+    "text_count": 28,
+    "all_codepoints_match": true,
+    "font_rendering_status": "UNVERIFIED_EXTERNAL_WORKSTATION_FONT",
+    "note": "UTF-8 DXF string code-point match is verified; workstation TTF/SHX font rendering depends on architect AutoCAD environment.",
+    "samples": [
+      {
+        "entity_id": "DE-1034f71b11f4f314",
+        "kind": "TEXT",
+        "text": "1",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-e848954be09ed80b",
+        "kind": "TEXT",
+        "text": "2",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-e4ff4e7b067d9708",
+        "kind": "TEXT",
+        "text": "3",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-300d00ad16168397",
+        "kind": "TEXT",
+        "text": "4",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-526ac43283c0df3d",
+        "kind": "TEXT",
+        "text": "5",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-fffaf7ba8bd27ec4",
+        "kind": "TEXT",
+        "text": "6",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-4d3698c740c2e68d",
+        "kind": "TEXT",
+        "text": "7",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-a20aeff00addce69",
+        "kind": "TEXT",
+        "text": "8",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-fc9fe2c0b005930a",
+        "kind": "TEXT",
+        "text": "9",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-12580de8f67a7e4c",
+        "kind": "TEXT",
+        "text": "1",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-b3234e2f3bd3c6c0",
+        "kind": "TEXT",
+        "text": "2",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-d9543e25682cc190",
+        "kind": "TEXT",
+        "text": "3",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-50c073416b63a3e8",
+        "kind": "TEXT",
+        "text": "4",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-ed356eede0de388f",
+        "kind": "TEXT",
+        "text": "5",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-63f5ffa6e736e7a0",
+        "kind": "TEXT",
+        "text": "6",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-a61f224346461317",
+        "kind": "TEXT",
+        "text": "7",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-1f09797653a6ffa2",
+        "kind": "TEXT",
+        "text": "8",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-4ef569860b88e53d",
+        "kind": "TEXT",
+        "text": "9",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-9c63bd5fdb34c6e9",
+        "kind": "MTEXT",
+        "lines": [
+          "ST01 (DOWN)",
+          "20R x 165 / T 240"
+        ],
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-3e734da62b4440d3",
+        "kind": "MTEXT",
+        "lines": [
+          "WC T\u1ea7ng 2",
+          "[BATH-U:1]",
+          "Clear: 3.23 m\u00b2",
+          "1700 x 1900 mm"
+        ],
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-fafd9d7ac4c82199",
+        "kind": "MTEXT",
+        "lines": [
+          "Ph\u00f2ng ng\u1ee7 1",
+          "[BED:1]",
+          "Clear: 20.52 m\u00b2",
+          "3600 x 5700 mm"
+        ],
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-95c2b918e1397764",
+        "kind": "MTEXT",
+        "lines": [
+          "Ph\u00f2ng ng\u1ee7 2",
+          "[BED:2]",
+          "Clear: 20.52 m\u00b2",
+          "3600 x 5700 mm"
+        ],
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-9a71e3f5d22bd706",
+        "kind": "TEXT",
+        "text": "1",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-f23d082de6d5169b",
+        "kind": "TEXT",
+        "text": "2",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-de06b191ede36610",
+        "kind": "TEXT",
+        "text": "A",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-234da2153417f574",
+        "kind": "TEXT",
+        "text": "B",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-4ae9be41cbc76a23",
+        "kind": "TEXT",
+        "text": "C",
+        "codepoint_match": true
+      },
+      {
+        "entity_id": "DE-2e59ba04b3111e5f",
+        "kind": "TEXT",
+        "text": "D",
+        "codepoint_match": true
+      }
+    ]
+  },
+  "dxf_audit": {
+    "report_schema_version": 1,
+    "contract": "dxf-audit-report-v1",
+    "exporter_version": "0.1.15",
+    "ezdxf_version": "1.4.5",
+    "dxf_path": "examples\\batch007d\\exports\\townhouse-F2.dxf",
+    "dxf_file_sha256": "34a981015dda9e4890490ba647f4c00bc6db666ae91fd330bb36eba2966a42bb",
+    "audit_status": "CLEAN",
+    "lossless_eligible": true,
+    "critical_error_count": 0,
+    "fix_count": 0,
+    "custom_issue_count": 0,
+    "critical_errors": [],
+    "fixes": [],
+    "reference_and_geometry_issues": [],
+    "cad_writes_permitted": false,
+    "architect_approval": "NOT_GRANTED",
+    "manual_autocad_acceptance_status": "PENDING_HUMAN_AUTOCAD_VERIFICATION"
+  },
+  "roundtrip_verification": {
+    "report_schema_version": 1,
+    "contract": "dxf-roundtrip-verification-v1",
+    "exporter_version": "0.1.15",
+    "roundtrip_status": "VERIFIED",
+    "equivalence_status": "LOSSLESS_EQUIVALENT",
+    "view_id": "PLAN-F2",
+    "target_units": "mm",
+    "dxf_path": "examples\\batch007d\\exports\\townhouse-F2.dxf",
+    "dxf_file_sha256": "34a981015dda9e4890490ba647f4c00bc6db666ae91fd330bb36eba2966a42bb",
+    "dxf_audit": {
+      "report_schema_version": 1,
+      "contract": "dxf-audit-report-v1",
+      "exporter_version": "0.1.15",
+      "ezdxf_version": "1.4.5",
+      "dxf_path": "examples\\batch007d\\exports\\townhouse-F2.dxf",
+      "dxf_file_sha256": "34a981015dda9e4890490ba647f4c00bc6db666ae91fd330bb36eba2966a42bb",
+      "audit_status": "CLEAN",
+      "lossless_eligible": true,
+      "critical_error_count": 0,
+      "fix_count": 0,
+      "custom_issue_count": 0,
+      "critical_errors": [],
+      "fixes": [],
+      "reference_and_geometry_issues": [],
+      "cad_writes_permitted": false,
+      "architect_approval": "NOT_GRANTED",
+      "manual_autocad_acceptance_status": "PENDING_HUMAN_AUTOCAD_VERIFICATION"
+    },
+    "max_numeric_error": 1.8189894035458565e-12,
+    "coord_tolerance": 1e-05,
+    "lossless_tolerance": 1e-09,
+    "checked_entity_count": 143,
+    "missing_entities": [],
+    "extra_entities": [],
+    "mismatches": [],
+    "unicode_text_verification": {
+      "text_count": 28,
+      "all_codepoints_match": true,
+      "font_rendering_status": "UNVERIFIED_EXTERNAL_WORKSTATION_FONT",
+      "note": "UTF-8 DXF string code-point match is verified; workstation TTF/SHX font rendering depends on architect AutoCAD environment.",
+      "samples": [
+        {
+          "entity_id": "DE-1034f71b11f4f314",
+          "kind": "TEXT",
+          "text": "1",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-e848954be09ed80b",
+          "kind": "TEXT",
+          "text": "2",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-e4ff4e7b067d9708",
+          "kind": "TEXT",
+          "text": "3",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-300d00ad16168397",
+          "kind": "TEXT",
+          "text": "4",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-526ac43283c0df3d",
+          "kind": "TEXT",
+          "text": "5",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-fffaf7ba8bd27ec4",
+          "kind": "TEXT",
+          "text": "6",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-4d3698c740c2e68d",
+          "kind": "TEXT",
+          "text": "7",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-a20aeff00addce69",
+          "kind": "TEXT",
+          "text": "8",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-fc9fe2c0b005930a",
+          "kind": "TEXT",
+          "text": "9",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-12580de8f67a7e4c",
+          "kind": "TEXT",
+          "text": "1",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-b3234e2f3bd3c6c0",
+          "kind": "TEXT",
+          "text": "2",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-d9543e25682cc190",
+          "kind": "TEXT",
+          "text": "3",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-50c073416b63a3e8",
+          "kind": "TEXT",
+          "text": "4",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-ed356eede0de388f",
+          "kind": "TEXT",
+          "text": "5",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-63f5ffa6e736e7a0",
+          "kind": "TEXT",
+          "text": "6",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-a61f224346461317",
+          "kind": "TEXT",
+          "text": "7",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-1f09797653a6ffa2",
+          "kind": "TEXT",
+          "text": "8",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-4ef569860b88e53d",
+          "kind": "TEXT",
+          "text": "9",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-9c63bd5fdb34c6e9",
+          "kind": "MTEXT",
+          "lines": [
+            "ST01 (DOWN)",
+            "20R x 165 / T 240"
+          ],
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-3e734da62b4440d3",
+          "kind": "MTEXT",
+          "lines": [
+            "WC T\u1ea7ng 2",
+            "[BATH-U:1]",
+            "Clear: 3.23 m\u00b2",
+            "1700 x 1900 mm"
+          ],
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-fafd9d7ac4c82199",
+          "kind": "MTEXT",
+          "lines": [
+            "Ph\u00f2ng ng\u1ee7 1",
+            "[BED:1]",
+            "Clear: 20.52 m\u00b2",
+            "3600 x 5700 mm"
+          ],
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-95c2b918e1397764",
+          "kind": "MTEXT",
+          "lines": [
+            "Ph\u00f2ng ng\u1ee7 2",
+            "[BED:2]",
+            "Clear: 20.52 m\u00b2",
+            "3600 x 5700 mm"
+          ],
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-9a71e3f5d22bd706",
+          "kind": "TEXT",
+          "text": "1",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-f23d082de6d5169b",
+          "kind": "TEXT",
+          "text": "2",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-de06b191ede36610",
+          "kind": "TEXT",
+          "text": "A",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-234da2153417f574",
+          "kind": "TEXT",
+          "text": "B",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-4ae9be41cbc76a23",
+          "kind": "TEXT",
+          "text": "C",
+          "codepoint_match": true
+        },
+        {
+          "entity_id": "DE-2e59ba04b3111e5f",
+          "kind": "TEXT",
+          "text": "D",
+          "codepoint_match": true
+        }
+      ]
+    },
+    "semantic_fingerprint": "361d4889c90440bfc057e1aab2245f610209d4cf8e0c678b287e083755d8ec6f",
+    "cad_writes_permitted": false,
+    "architect_approval": "NOT_GRANTED",
+    "manual_autocad_acceptance_status": "PENDING_HUMAN_AUTOCAD_VERIFICATION"
+  },
+  "semantic_fingerprint": "361d4889c90440bfc057e1aab2245f610209d4cf8e0c678b287e083755d8ec6f",
+  "dxf_file_sha256": "34a981015dda9e4890490ba647f4c00bc6db666ae91fd330bb36eba2966a42bb",
+  "dxf_path": "examples\\batch007d\\exports\\townhouse-F2.dxf",
+  "cad_writes_permitted": false,
+  "existing_cad_modification_permitted": false,
+  "artifact_export_mode": "EXPLICIT_NEW_DXF_ARTIFACT",
+  "approval_inherited": false,
+  "architect_approval": "NOT_GRANTED",
+  "standards_review": "NOT_EVALUATED",
+  "fengshui_review": "NOT_EVALUATED",
+  "construction_readiness": "NOT_FOR_CONSTRUCTION_CONCEPTUAL_ONLY",
+  "manual_autocad_acceptance_status": "PENDING_HUMAN_AUTOCAD_VERIFICATION",
+  "errors": [],
+  "warnings": [],
+  "missing_information": [],
+  "diagnostics": []
+}

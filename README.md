@@ -276,3 +276,26 @@ See [the architectural drafting contract](docs/ARCHITECTURAL_DRAFTING_CONTRACT.m
 [Batch 007-C fixtures](examples/batch007c), and [generated SVG previews](examples/batch007c/previews).
 Source geometry remains immutable (48/48 integrated checks verified), `cad_writes_permitted` stays
 `false`, architectural approval stays `NOT_GRANTED`, and production DXF export belongs to Batch 007-D.
+
+
+## R3 Batch 007-D — Production DXF Export & Semantic Round-Trip Verification (v0.1.15)
+
+Exports validated CAD-neutral Drawing IR v1 (`architectural-drafting-v1`) into genuine, editable
+`R2010`/`R2013`/`R2018` DXF files (`$INSUNITS` 4/6 via single `Decimal` unit conversion), mapping all
+10 primitives (`LINE`, `POLYLINE`, analytic `ARC`, `CIRCLE`, `TEXT`, `MTEXT`, native rendered
+`DIMENSION`, Shapely-validated `HATCH`, `BLOCK_REFERENCE`, `SYMBOL`), all 15 `vnai-cad-layers-v1`
+layers, UTF-8 Vietnamese Unicode text (`VNAI_VN_UNICODE`), and explicit-only Paper Space viewports
+(never fabricating sheet sizes), paired with structural `ezdxf` audit and handle-free semantic
+round-trip verification (`LOSSLESS_EQUIVALENT`/`NUMERICALLY_EQUIVALENT`/`MISMATCH`).
+
+```powershell
+vnai design dxf export outputs/townhouse-drafting-v0.1.14.json --floor F1 --out outputs/townhouse-F1.dxf --manifest outputs/townhouse-F1.manifest.json
+vnai design dxf audit outputs/townhouse-F1.dxf --markdown outputs/townhouse-F1-audit.md
+vnai design dxf verify outputs/townhouse-drafting-v0.1.14.json --dxf outputs/townhouse-F1.dxf --floor F1 --markdown outputs/townhouse-F1-verify.md
+vnai design dxf manifest outputs/townhouse-F1.dxf --sidecar outputs/townhouse-F1.manifest.json --markdown outputs/townhouse-F1-manifest.md
+```
+
+See [the DXF export contract](docs/DXF_EXPORT_CONTRACT.md) and
+[Batch 007-D exports & oracles](examples/batch007d). Legacy `vnai dxf` stays unchanged,
+`cad_writes_permitted` stays `false`, `architect_approval` stays `NOT_GRANTED`, and
+`manual_autocad_acceptance_status` stays `PENDING_HUMAN_AUTOCAD_VERIFICATION`.
